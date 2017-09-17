@@ -1,4 +1,4 @@
-![Flex-AntiCheat](https://directleaks.com/attachments/flex-anticheat-png.41191/)
+![Flex-AntiCheat](//i.imgur.com/8XjUwW5.png)
 
 Welcome to my AntiCheat project called Flex. In this project, I optimize AntiCheats with better and advanced configs.
 
@@ -7,7 +7,7 @@ This, of course, helps to reduce false positives and bypasses. And what's beauti
 Currently there is an [AAC]() and [AntiAura]() version.
 
 
-![About-Flex](https://directleaks.com/attachments/about-flex-png.41190/)
+![About-Flex](//i.imgur.com/RYHUP74.png)
 
 Flex AntiCheat has started on 15-03-2017 on BlackSpigotMC and has been in development since then.
 
@@ -16,7 +16,7 @@ It was so popular that I decided to place it on multiple sites including DirectL
 Currently we already have version 3 and already have almost 10000 total downloads on all versions that have ever been released.
 
 
-![Requirements](https://directleaks.com/attachments/requirements-png.41192/)
+![Requirements](//i.imgur.com/kDsgRhA.png)
 
 To make the configs work well, you need to do some things.
 
@@ -37,7 +37,7 @@ AntiAura Edition:
 2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE]().
 
 
-![Support](https://directleaks.com/attachments/support-png.41209/)
+![Support](//i.imgur.com/XwDyFDS.png)
 
 If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE]().
 
