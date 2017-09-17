@@ -30,9 +30,6 @@ AAC Edition:
 
 
 The following checks are already optimized:
-
-
-
 Combat checks:
 * Hitbox
 * Criticals
@@ -42,9 +39,6 @@ Combat checks:
 * Killaura
 * Heuristics
 * FastUse
-
-
-
 Movement checks:
 * BadPackets
 * Fly
