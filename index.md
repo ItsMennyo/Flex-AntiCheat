@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+## Flex AntiCheat
+
+Welcome to Flex AntiCheat project!
 
 You can use the [editor on GitHub](https://github.com/ItsMennyo/Flex-AntiCheat/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
