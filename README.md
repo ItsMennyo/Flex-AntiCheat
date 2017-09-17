@@ -37,7 +37,7 @@ AntiAura Edition:
 2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE]().
 
 
-![Support](https://imgur.com/XwDyFDS)
+![Support](//i.imgur.com/XwDyFDS.png)
 
 If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE]().
 
