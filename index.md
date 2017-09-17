@@ -30,78 +30,11 @@ AAC Edition:
 3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click HERE.
 
 
-The following checks are already optimized:
-
-Combat checks:
-* Hitbox
-* Criticals
-* Fastbow
-* FightSpeed
-* Regen
-* Killaura
-* Heuristics
-* FastUse
-
-Movement checks:
-* BadPackets
-* Fly
-* Speed
-* Derp
-* NoSwing
-* NoFall
-* Jesus
-* Phase
-* FastBreak
-* FastPlace
-* Nuker
-* Interact
-* Velocity
-* Move
-
-
 
 AntiAura Edition:
 1. Download AntiAura HERE to support the delevoper.
 
 2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click HERE.
-
-
-The following checks are already optimized:
-
-* PingAccounting
-* Forcefield
-  * Angle
-  * Reach
-  * Occlusion
-  * HeadMove
-  * Accuracy
-
-* FastClick
-* AutoBow
-* Soup
-* Map
-  * TileESP
-  * XRay
-
-* Knockback
-* Criticals
-* FastEat
-* Step
-* VelocityAccounting
-* Spider
-* Flight
-* Speed
-* Teleport
-* FastPlace
-* NoFall
-* Phase
-* FastBreak
-* NoSwing
-* AntiFire
-* AntiPotion
-* Regen
-* Elytra
-* BowAimbot
 
 
 ![Support](https://directleaks.com/attachments/support-png.41209/)
