@@ -33,32 +33,35 @@ The following checks are already optimized:
 ```markdown
 Combat Checks:
 
-    Hitbox
-    Criticals
-    Fastbow
-    FightSpeed
-    Regen
-    Killaura
-    Heuristics
-    FastUse
 
+# This is an <h1> tag
+## This is an <h2> tag
+###### This is an <h6> tag
+Combat checks:
+1. Hitbox
+1. Criticals
+1. Fastbow
+1. FightSpeed
+1. Regen
+1. Killaura
+1. Heuristics
+1. FastUse
 
 Movement checks:
-
-    BadPackets
-    Fly
-    Speed
-    Derp
-    NoSwing
-    NoFall
-    Jesus
-    Phase
-    FastBreak
-    FastPlace
-    Nuker
-    Interact
-    Velocity
-    Move
+1. BadPackets
+1. Fly
+1. Speed
+1. Derp
+1. NoSwing
+1. NoFall
+1. Jesus
+1. Phase
+1. FastBreak
+1. FastPlace
+1. Nuker
+1. Interact
+1. Velocity
+1. Move
 ```
 
 
