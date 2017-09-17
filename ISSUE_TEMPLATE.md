@@ -36,7 +36,7 @@
 
 **Do you have any proof?**
 
-**Video or Photo**:
+**Video or Photo**: 
 
 ---
 
