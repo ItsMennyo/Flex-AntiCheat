@@ -5,9 +5,9 @@ Welcome to my AntiCheat project called Flex. In this project, I optimize AntiChe
 This, of course, helps to reduce false positives and bypasses. And what's beautiful is that it's completely free.
 
 Currently there is an AAC and AntiAura version.
-
-$$$
-
+ 
+ 
+ 
 ![About-Flex](https://directleaks.com/attachments/about-flex-png.41190/)
 
 Flex AntiCheat has started on 15-03-2017 on BlackSpigotMC and has been in development since then.
