@@ -4,7 +4,7 @@ Welcome to my AntiCheat project called Flex. In this project, I optimize AntiChe
 
 This, of course, helps to reduce false positives and bypasses. And what's beautiful is that it's completely free.
 
-Currently there is an [AAC]() and [AntiAura]() version.
+Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) version.
 
 ![About-Flex](//i.imgur.com/RYHUP74.png)
 
