@@ -22,7 +22,7 @@ To make the configs work well, you need to do some things.
 
 
 AAC Edition:
-1. Download AAC. And for that you have 2 options. Buy AAC to support the delevoper HERE or download a nulled version on DirectLeaks HERE.
+1. Buy AAC HERE to support the delevoper.
 
 2. (Not required) Download ConditionalCommands HERE to run the VLs commands.
 
@@ -30,7 +30,7 @@ AAC Edition:
 
 
 The following checks are already optimized:
-[QUOTE=""]
+```markdown
 Combat Checks:
 
     Hitbox
@@ -59,10 +59,7 @@ Movement checks:
     Interact
     Velocity
     Move
-
-[/QUOTE]
-
-
+```
 
 
 ![Support](https://directleaks.com/attachments/support-png.41209/)
