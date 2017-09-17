@@ -30,13 +30,7 @@ AAC Edition:
 
 
 The following checks are already optimized:
-```markdown
-Combat Checks:
 
-
-# This is an <h1> tag
-## This is an <h2> tag
-###### This is an <h6> tag
 Combat checks:
 1. Hitbox
 1. Criticals
@@ -62,7 +56,6 @@ Movement checks:
 1. Interact
 1. Velocity
 1. Move
-```
 
 
 ![Support](https://directleaks.com/attachments/support-png.41209/)
