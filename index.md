@@ -22,6 +22,7 @@ To make the configs work well, you need to do some things.
 
 
 AAC Edition:
+
 1. Buy AAC HERE to support the delevoper.
 
 2. (Not required) Download ConditionalCommands HERE to run the VLs commands.
@@ -58,4 +59,51 @@ Movement checks:
 * Move
 
 
+AntiAura Edition:
+1. Download AntiAura HERE to support the delevoper.
+
+2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click HERE.
+
+
+The following checks are already optimized:
+
+* PingAccounting
+* Forcefield
+  * Angle
+  * Reach
+  * Occlusion
+  * HeadMove
+  * Accuracy
+* FastClick
+* AutoBow
+* Soup
+* Map
+  * TileESP
+  * XRay
+*  Knockback
+* Criticals
+* FastEat
+* Step
+* VelocityAccounting
+* Spider
+* Flight
+* Speed
+* Teleport
+* FastPlace
+* NoFall
+* Phase
+* FastBreak
+* NoSwing
+* AntiFire
+* AntiPotion
+* Regen
+* Elytra
+* BowAimbot
+
+[/QUOTE]
+
 ![Support](https://directleaks.com/attachments/support-png.41209/)
+
+If you have found a language mistake, bypass, bug or need help then you can ask/report it HERE.
+
+I do not respond to conversations or on Discord/Skype/SpigotMC for that.
