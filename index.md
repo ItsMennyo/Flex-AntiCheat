@@ -4,7 +4,7 @@ Welcome to my AntiCheat project called Flex. In this project, I optimize AntiChe
 
 This, of course, helps to reduce false positives and bypasses. And what's beautiful is that it's completely free.
 
-Currently there is an AAC and AntiAura version.
+Currently there is an [AAC]() and [AntiAura]() version.
 
 
 ![About-Flex](https://directleaks.com/attachments/about-flex-png.41190/)
@@ -23,22 +23,22 @@ To make the configs work well, you need to do some things.
 
 AAC Edition:
 
-1. Buy AAC HERE to support the delevoper.
+1. Buy AAC [HERE](https://www.spigotmc.org/resources/aac-advanced-anti-cheat-hack-kill-aura-blocker.6442/) to support the delevoper.
 
-2. (Not required) Download ConditionalCommands HERE to run the VLs commands.
+2. (Not required) Download ConditionalCommands [HERE](https://www.spigotmc.org/resources/conditionalcommands.14295/) to run the VLs commands.
 
-3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click HERE.
+3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE]().
 
 
 
 AntiAura Edition:
-1. Download AntiAura HERE to support the delevoper.
+1. Buy AntiAura [HERE](https://www.spigotmc.org/resources/antiaura-hack-blocker-1-7-1-12-compatible.1368/) to support the delevoper.
 
-2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click HERE.
+2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE]().
 
 
 ![Support](https://directleaks.com/attachments/support-png.41209/)
 
-If you have found a language mistake, bypass, bug or need help then you can ask/report it HERE.
+If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE]().
 
 I do not respond to conversations or on Discord/Skype/SpigotMC for that.
