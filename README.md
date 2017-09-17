@@ -24,15 +24,15 @@ AAC Edition:
 
 2. (Not required) Download ConditionalCommands [HERE](https://www.spigotmc.org/resources/conditionalcommands.14295/) to run the VLs commands.
 
-3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE]().
+3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
 AntiAura Edition:
 1. Buy AntiAura [HERE](https://www.spigotmc.org/resources/antiaura-hack-blocker-1-7-1-12-compatible.1368/) to support the delevoper.
 
-2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE]().
+2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
 ![Support](//i.imgur.com/XwDyFDS.png)
 
-If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE]().
+If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
 I do not respond to conversations or on Discord/Skype/SpigotMC for that.
