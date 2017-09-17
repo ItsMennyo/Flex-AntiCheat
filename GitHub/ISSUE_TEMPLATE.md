@@ -2,10 +2,20 @@
 
 **AAC** or **AntiAura**
 
-AntiCheat: 
+**AntiCheat**: 
 
 **What's the problem?**
 
 **Bypass**, **False Positive**, **Bug**, **Help**
 
-Problem: 
+**Problem**: 
+
+**Server Version**: 
+
+**Minecraft Client**: 
+
+**Flex BUILD**: 
+
+**AntiCheat Version**: 
+
+**Description**: 
