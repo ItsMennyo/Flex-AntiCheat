@@ -59,6 +59,7 @@ Movement checks:
 * Move
 
 
+
 AntiAura Edition:
 1. Download AntiAura HERE to support the delevoper.
 
@@ -74,13 +75,15 @@ The following checks are already optimized:
   * Occlusion
   * HeadMove
   * Accuracy
+
 * FastClick
 * AutoBow
 * Soup
 * Map
   * TileESP
   * XRay
-*  Knockback
+
+* Knockback
 * Criticals
 * FastEat
 * Step
@@ -101,6 +104,7 @@ The following checks are already optimized:
 * BowAimbot
 
 [/QUOTE]
+
 
 ![Support](https://directleaks.com/attachments/support-png.41209/)
 
