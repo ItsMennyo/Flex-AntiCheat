@@ -103,8 +103,6 @@ The following checks are already optimized:
 * Elytra
 * BowAimbot
 
-[/QUOTE]
-
 
 ![Support](https://directleaks.com/attachments/support-png.41209/)
 
