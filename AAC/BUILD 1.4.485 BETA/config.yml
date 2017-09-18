@@ -1,0 +1,306 @@
+####################################################
+#                                                  #
+#   Flex V3 ➤ Minecraft AntiCheat ➤ AAC Version    #
+#                                                  #
+#   Plugin Name: AdvancedAntiCheat (AAC)           #
+#   Plugin Developer: konsolas                     #
+#   Plugin Link: http://bit.ly/1QeLY6m             #
+#   Config based on version: 3.2.1                 #
+#   Config configurator: ItsMennyo                 #
+#   Version: BUILD 1.4.485 BETA                    #
+#   Page/Download: http://bit.ly/2sJWcua           #
+#                                                  #
+#   Copyright © 2017 ItsMennyo, The Netherlands    #
+#                                                  #
+####################################################
+
+hitbox:
+ #Hitbox check ensures that players attacking an entity only attack the entity in front of them.
+ #Default: true
+  enabled: true
+  lenience: 0.7
+  #Should the impossible hits be canceled? When turned on, it will consume more resources.
+  #Default: true
+  cancel: false
+  max_dist: 2.5
+  min_vl: 8
+  thresholds:
+   #Here you can customize the command that is executed when a player is kicked by this check.
+   #Default: aackick {player} Hitbox
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->2500 do aackick {player} Internet/Server Issues?"
+    12: "conditionalcommands:cc {player} if (-ping-<100&-ping->-1)&-tps->19.5 do aackick {player} Hitbox"
+    16: "conditionalcommands:cc {player} if (-ping-<250&-ping->100)&-tps->19.0 do aackick {player} Hitbox"
+    20: "conditionalcommands:cc {player} if (-ping-<500&-ping->250)&-tps->19.0 do aackick {player} Hitbox"
+    24: "conditionalcommands:cc {player} if (-ping-<1000&-ping->500)&-tps->18.0 do aackick {player} Hitbox"
+    28: "aackick {player} Hitbox"
+
+badpackets:
+   enabled: false
+   cancel_threshold: 30
+   max_moves: 10
+   thresholds:
+      90: "aacstaffnotify {player} in {world} is trying to speed up time (ping = {ping}, tps = {tps})"
+      150: "aackick {player} Suspicious activity"
+   
+criticals:
+   enabled: false
+   cancel_false_hit: true
+   jump_delay: 5
+   thresholds:
+      3: "aacstaffnotify {player} in {world} is suspected for Criticals (ping = {ping}, tps = {tps})"
+      8: "aackick {player} Incorrect movement (Criticals hacking?)"
+
+fastbow:
+   enabled: false
+   lenience_ms: 130
+   block_ticks: 100
+   thresholds:
+      3: "aacstaffnotify {player} in {world} is suspected for FastBow (ping = {ping}, tps = {tps})"
+      10: "aackick {player} Shooting arrows too quickly"
+
+fightspeed:
+ #FightSpeed check ensures that players do not use AutoClickers or Macros.
+ #Default: true
+  enabled: true
+  max_hits_per_second: 16
+  max_interact_per_second: 42
+  consistent_check: true
+  thresholds:
+   #Here you can customize the command that is executed when a player is kicked by this check.
+   #Default: aackick {player} FightSpeed
+    10: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->2500 do aackick {player} Internet/Server Issues?"
+    15: "conditionalcommands:cc {player} if (-ping-<100&-ping->-1)&-tps->19.5 do aackick {player} FightSpeed"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->100&)-tps->19.0 do aackick {player} FightSpeed"
+    25: "conditionalcommands:cc {player} if (-ping-<500&-ping->250&)-tps->19.0 do aackick {player} FightSpeed"
+    30: "conditionalcommands:cc {player} if (-ping-<1000&-ping->500&)-tps->18.0 do aackick {player} FightSpeed"
+    35: "aackick {player} FightSpeed"
+
+fly:
+   enabled: false
+   tolerance: 0.015
+   e_tolerance: 0.2
+   vl_multiplier: 6.0
+   min_vl: 28
+   vel_ticks: 30
+   teleport: true
+   abilities: true
+   reduce_delay: 20
+   reset_pitch: false
+   thresholds:
+      120: "aacstaffnotify {player} in {world} is suspected for Fly (ping = {ping}, tps = {tps})"
+      210: "aacstaffnotify {player} in {world} is suspected for Fly #2 (ping = {ping}, tps = {tps}"
+      300: "aackick {player} Moved unexpectedly"
+
+speed:
+   enabled: false
+   threshold: 0.005
+   vel_ticks: 30
+   vl_multiplier: 6.0
+   max_sneak_toggles: 15
+   max_use_toggles: 35
+   min_vl: 36
+   reduce_delay: 20
+   thresholds:
+      60: "aacmessage {player} It looks like you might be glitching, please tap sneak and block with your sword"
+      150: "aacstaffnotify {player} in {world} is suspected for Speed hacking (ping = {ping}, tps = {tps})"
+      210: "aackick {player} Moved too quickly"
+
+derp:
+   enabled: false
+   thresholds:
+      1: "aackick {player} Illegal position"
+
+knockback:
+   enabled: false
+   tick_delay: 9
+   add_ping: true
+   max_ping: 500
+   min_knockback_dist: 0.01
+   min_knockback_time: 2
+   thresholds:
+      9: "aacstaffnotify {player} in {world} is suspected for Anti-Knockback (ping = {ping}, tps = {tps})"
+      16: "aackick {player} Not taking knockback"
+
+noswing:
+   enabled: false
+   thresholds:
+      20: "aacstaffnotify {player} in {world} is not swinging their arm (ping = {ping}, tps = {tps})"
+      40: "aackick {player} Not swinging arm"
+
+regen:
+   enabled: false
+   cancel_regen: true
+   min_regen_delay: 3600
+   min_satiated_delay: 450
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is suspected for Regen (ping = {ping}, tps = {tps})"
+      30: "aackick {player} Regenerating health too quickly"
+
+killaura:
+ #Killaura check detects people with an unfair combat advantage.
+ #Default: true
+  enabled: true
+  check_chance: 100
+  check_delay: 2
+  listen_delay: 7
+  min_dist: 2.4
+  duration: 20
+  weight: 3
+  max_diff: 0.11
+  max_reach: 4.5
+  thresholds:
+   #Here you can customize the command that is executed when a player is kicked by this check.
+   #Default: aackick {player} Killaura
+    25: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->2500 do aackick {player} Internet/Server Issues?"
+    30: "conditionalcommands:cc {player} if (-ping-<100&-ping->-1)&-tps->19.5 do aackick {player} Killaura"
+    35: "conditionalcommands:cc {player} if (-ping-<250&-ping->100)&-tps->19.0 do aackick {player} Killaura"
+    40: "conditionalcommands:cc {player} if (-ping-<500&-ping->250)&-tps->19.0 do aackick {player} Killaura"
+    45: "conditionalcommands:cc {player} if (-ping-<1000&-ping->500)&-tps->18.0 do aackick {player} Killaura"
+    50: "aackick {player} Killaura"
+
+heuristics:
+   enabled: false
+   min_confidence: 80
+   exempt:
+    - "P/00"
+   thresholds:
+      1: "aacstaffnotify {player} in {world} is suspected for Killaura (Heuristic analysis) (ping = {ping}, tps = {tps})"
+      10: "aackick {player} Suspicious (killaura-like) combat"
+
+nofall:
+   enabled: false
+   required_velocity: -0.2
+   deal_damage: true
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is suspected for NoFall hacks (ping = {ping}, tps = {tps})"
+      30: "aackick {player} Suspicious activity midair"
+
+jesus:
+   enabled: false
+   teleport: true
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is suspected for Jesus hacks (ping = {ping}, tps = {tps})"
+      30: "aacstaffnotify {player} in {world} is very likely to be using Jesus hacks"
+      50: "aackick {player} Walking on water?"
+
+phase:
+   enabled: false
+   exclude:
+    - "ANVIL"
+    - "CHEST"
+    - "ENDER_CHEST"
+    - "TRAPPED_CHEST"
+    - "SOIL"
+    - "AIR"
+    - "STATIONARY_WATER"
+    - "WATER"
+    - "STATIONARY_LAVA"
+    - "LAVA"
+    - "WATER_LILY"
+    - "PISTON_MOVING_PIECE"
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is suspected for Phase (ping = {ping}, tps = {tps})"
+      30: "aacstaffnotify {player} in {world} is suspected for Phase #2 (ping = {ping}, tps = {tps})"
+
+fastuse:
+   enabled: false
+   ms_to_use: 1200
+   thresholds:
+      2: "aacstaffnotify {player} in {world} is suspected for FastEat hacks (ping = {ping}, tps = {tps})"
+      4: "aackick {player} Using items too quickly"
+
+fastbreak:
+   enabled: false
+   let_ticks: 2
+   cancel_break: true
+   check_delay: true
+   cancel_vl: 1
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is suspected for FastBreak hacks (ping = {ping}, tps = {tps})"
+      15: "aackick {player} Breaking blocks too fast"
+
+fastplace:
+   enabled: false
+   max_place_per_second: 10
+   cancel_place: true
+   cancel_vl: 2
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is suspected for FastPlace hacks (ping = {ping}, tps = {tps})"
+      20: "aackick {player} Placing blocks too fast"
+
+nuker:
+   enabled: false
+   max_breaks_per_second: 40
+   vl_divisor: 41
+   thresholds:
+      5: "aacstaffnotify {player} in {world} is suspected for Nuker (ping = {ping}, tps = {tps})"
+      10: "aackick {player} Breaking too many blocks"
+
+interact:
+   enabled: false
+   cancel_liquids: true
+   cancel_ghost_block: true
+   cancel_dead: true
+   cancel_item_attack: true
+   cancel_ghost_attack: true
+   cancel_vl_interact: 5
+   cancel_vl_place: 5
+   cancel_vl_break: 0
+   thresholds:
+      14: "aacstaffnotify {player} in {world} is interacting suspiciously (ping = {ping}, tps = {tps})"
+      25: "aacstaffnotify {player} in {world} is interacting suspiciously #2 (ping = {ping}, tps = {tps})"
+
+velocity:
+   enabled: false
+   check_length: 15
+   max_tp_dist: 3.0
+   min_vl: 5
+   vl_normal: 2
+   vl_no_packet: 0
+   thresholds:
+      6: "aacstaffnotify {player} in {world} seems to be ignoring velocity"
+      12: "aackick {player} Not taking knockback"
+
+spam:
+   enabled: false
+   whitelist:
+     - "lol"
+     - "hello"
+     - "okay"
+   message_limit: 4
+   chat_speed: 10
+   thresholds:
+      10: "aacstaffnotify {player} in {world} is probably spamming"
+      15: "aackick {player} Stop spamming, you sad person"
+
+move:
+   enabled: false
+   min_balance: -50
+   cancel_threshold: 5
+   reset_level: -1
+   balance_cap: 10
+   decay: 25
+   thresholds:
+      200: "aacstaffnotify {player} in {world} is sending unusual movement information (ping = {ping}, tps = {tps})"
+      500: "aackick {player} Sending unusual movement packets"
+
+#You can set the limit for the amount of times a player is kicked by the AntiCheat.
+#Default: -1
+ban_threshold: -1
+#Here you can customize the command that is executed when the ban_threshold is achieved.
+#Default: "aacban {player}"
+ban_command: "tempban {player} 7d Illegal Client!"
+#If a player is just kicked by the AntiCheat, how long does it take before they can join the server again?
+#Default: 120
+kick_ticks: -1
+#How long should a player in combat mode?
+#Default: 50
+combat_time: -1
+kill_loggers: false
+log_file: true
+#If a player is kicked by the AntiCheat, should that be broadcasted?
+#Default: false
+aackick_broadcast: false
+usetps: true
+verbose: false
+log_console: true
