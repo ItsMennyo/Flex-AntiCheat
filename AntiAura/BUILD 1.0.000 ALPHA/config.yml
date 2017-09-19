@@ -1,0 +1,308 @@
+########################################################
+#                                                      #
+#   Flex V3 ➤ Minecraft AntiCheat ➤ AntiAura Edition   #
+#                                                      #
+#   Plugin Name: AntiAura (AA)                         #
+#   Plugin Developer: joehot200.147                    #
+#   Plugin Link: https://goo.gl/8wrt6R                 #
+#   Config based on Version: 10.99                     #
+#   Config Configurator: ItsMennyo                     #
+#   Config Build: BUILD 1.0.000 ALPHA                  #
+#   Download Page: SOON                                #
+#                                                      #
+#   Copyright © 2017 ItsMennyo, The Netherlands        #
+#                                                      #
+########################################################
+
+DisableElytraChecks: true
+ConsoleLogDragbacks: true
+
+Violations:
+  ExecuteAllCommands: true
+  ViolationDecreasePerHour: 1
+  2: tempban %PLAYER% 10m You have been temporarily banned for hacking. Please disable your hacks.
+  5: ban %PLAYER% You have been banned for using the %HACKNAME% hack %HACKAMOUNT% times!
+
+PingAccounting:
+  Enabled: false
+  PingLeniency: 150
+  SilenceWarnings: false
+  UseRealPing: false
+  MaxPing: 600
+
+Forcefield:
+  Angle:
+    Enabled: false
+    HackingAngle: 1.8
+    BlockImpossibleHits: true
+    Threshold: 8
+    SafeHitDecrease: 1.0
+    AngleCommand: kick %PLAYER% Killaura is not allowed!#broadcast %PLAYER% was kicked for hacking! (Killaura)(An)
+  Reach:
+    Enabled: false
+    MaxReach: 4.6
+  HeadMove:
+    Enabled: false
+    CancelExtremeMovement: true
+    LagBackThreshold: 3.0
+    MaxMove: 0.08
+    CancelMove:
+      CancelMove: 0.15
+      UseHeadMoveThreshold: true
+      MinimumBlockThreshold: 2
+    CantAttackTime: 5
+    Threshold: 8
+    SafeHitDecrease: 0.65
+    DecreasePerSecond: 1.2
+    HeadCommand: kick %PLAYER% Killaura is not allowed!#broadcast %PLAYER% was kicked for hacking! (Killaura)(H)
+  Accuracy:
+    Enabled: false
+    IsMoving: 0.010
+    IsMoving2: 0.0075
+    MovingAttackTime: 6
+    DistanceAccounting:
+      Enabled: false
+      DistanceAmount: 3.5
+      DistanceWeight: 0.25
+    YawOnly: true
+    Threshold: 8
+    ArmSwingDecrease: 0.25
+    DecreasePerSecond: 0.35
+    AccuracyCommand: kick %PLAYER% Killaura is not allowed!#broadcast %PLAYER% was kicked for hacking! (Killaura)(A)
+
+FastClick:
+  Enabled: false
+  Threshold: 5
+  MaxClicksPerSecond: 8
+  LagAccounting: false
+  FastClickCommand: kick %PLAYER% AutoClicker/Macros are not allowed!#broadcast %PLAYER% was kicked for hacking! (AutoClick/Macros)
+
+AutoBow:
+  Enable: false
+  BowThreshhold: 3
+  BlockArrowsIfSpeedTooHigh: true
+  LowVelocityAllowedSpeed: 5.5
+  MidVelocityAllowedSpeed: 3.0
+  HighVelocityAllowedSpeed: 1.5
+  AutoBowCommand: kick %PLAYER% AutoBow is not allowed!#broadcast %PLAYER% was kicked for hacking! (AutoBow)
+
+Soup:
+  Enabled: false
+  SoupTime: 1
+
+Map:
+  MapScrewer: false
+  LenientMode: true
+  DistanceChecked: 50
+  DistanceCheckedY: 30
+  HowOften: 10
+  MinDistance: 10
+  HideOnlyPlayers: false
+  HidePlayersThroughBlocks: true
+  HidePlayersBehind: true
+  TileESP:
+    Enabled: false
+    ShowDistance: 15
+    TracerDistance: 60
+    IntervalMult: 1
+    SuperLenientMode: false
+    ChunkDistance: 5
+  XRay:
+    Enabled: false
+    IntervalMult: 1
+    ShowBlocksIfExposedToAir: false
+    MaxChunksPerIntervalMult: 2
+    ChunkDistance: 5
+
+Knockback:
+  Enabled: false
+  TicksAfterHitToCheck: 10
+  DontCheckLaggyPeople: false
+  MinimumKnockbackCheck: 0.1
+  LowKnockbackValues: 0.35
+  AmountMoved: 1.0
+  DontCheckOnWalls: true
+  KnockbackCommand: kick %PLAYER% AntiKnockback is not allowed!#broadcast %PLAYER% was kicked for hacking!
+  Threshhold: 8
+  LowerAmount: 0.6
+  DontCheckIfPlayerIsSprinting: false
+
+Specifics:
+  CommandPermissions: false
+  CrackShotCompatibilityTime: 40
+  AutoUpdaterMinutes: 60
+  version: 39
+  CallFakeLeaveEvent: false
+  InvalidChatCommand: tempban %PLAYER% 30m You have been temporarily banned for invalid chat used for PVP Logging!
+  EnablePermissions: false
+  ShowDebug: true
+  EnableTargetblockChecking: false
+
+JoinTeleport: true
+
+Criticals:
+  Enabled: false
+  BlockPacketCriticalHits: false
+  IncreaseThresholdWithPacketCriticals: true
+  SafeHitDecrease: 2.0
+  Threshhold: 8
+  CriticalsCommand: kick %PLAYER% Criticals is not allowed!#broadcast %PLAYER% was kicked for hacking!
+  
+FastEat:
+  Enabled: false
+  Time: 1.5
+  BlockIfSpeedTooHigh: true
+  MaxEatingTravelSpeed: 1.4
+  Threshold: 3
+  SafeEatDecrease: 1.0
+  FastEatCommand: kick %PLAYER% FastEat is not allowed!#broadcast %PLAYER% was kicked for hacking!
+  
+Spambots:
+  Captcha:
+    Enabled: false
+    EnabledOnlyWhenSpammed: true
+    NewPlayersOnly: true
+    CaptchaCommand: kick %PLAYER% You failed the captcha!
+    Message: Please type CAPTCHA to move and type commands!
+  MessageDisabling:
+    StopChatBeforeMovement: true
+    DisableJoinAndLeaveMessages: true
+    
+EnableNormalChecks: true
+
+Step:
+  Enabled: false
+  TimePerCheck: 3
+  MaxDistanceMovedUpwards: 1.4
+  ForceUserToGround: true
+  Threshold: 8
+  SingleBlock: false
+  StepCommand: kick %PLAYER% Step/FastFlight is not allowed!#broadcast %PLAYER% was kicked for hacking! (Step)
+
+VelocityAccounting:
+  AllowBowBoosting: false
+  AllowMultipleVelocities: true
+  MultipleXZVelocities: true
+  UsePlayerVelocity: false
+  NormalVelocityLeniency: 1.1
+  CombatVelocityLeniency: 2.0
+  FlatLeniencyInBlocks: 0.1
+
+Spider:
+  Enabled: false
+  MaxHeightOffGround: 1.30
+  DragBackThreshold: 0
+  Threshold: 5
+  SpiderCommand: kick %PLAYER% Spider is not allowed!#broadcast %PLAYER% was kicked for hacking! (Spider)
+
+Flight:
+  Enabled: false
+  StrictMode: false
+  Threshhold: 5
+  LowerAmount: 1.0
+  ValuePerPotionLevel: 2
+  MaxHeightOffGround: 1.4
+  TimeInTheAir: 22
+  FlightCommand: kick %PLAYER% Flying is not allowed!#broadcast %PLAYER% was kicked for hacking!
+
+CancelChecksIfPlayerIsTeleportedDistance: 1
+DontCheckTime: 1
+
+Speed:
+  Enabled: false
+  ValuePerPotionLevel: 2
+  EfficientCheck: false
+  ExemptWhenUsingVelocity: false
+  SpeedLeniency: 0.35
+  ForceDragbackLeniency: 0.80
+  Threshhold: 15
+  DragBackThreshold: 10
+  LowerAmount: 1.5
+  SpeedCommand: kick %PLAYER% SpeedHack is not allowed!#broadcast %PLAYER% was kicked for hacking!
+  KeepDirection: false
+  MaxSneakingSpeed: 1.25
+  Water: true
+  DamageHearts: 1.0
+ 
+Teleport:
+  Enable: false
+  TeleportCommand: kick %PLAYER% Teleportation is not allowed!#broadcast %PLAYER% was kicked for hacking!
+  ForceKick: true
+  BlockTeleport: true
+  MinTeleportDistance: 12
+  Threshold: 5
+
+FastPlace:
+  Enabled: false
+  Threshold: 5
+  MaxBlocksAllowedPerSecond: 5
+  BlockPlacingWithHeadMovement: true
+  OnlyWithBelowFeet: true
+  BlockTower: true
+  TowerDistance: 1.5
+  MaxTowerPerSec: 2
+  FastPlaceCommand: kick %PLAYER% FastPlace is not allowed!#broadcast %PLAYER% was kicked for hacking! (FastPlace)
+
+NoFall:
+  Enabled: false
+  Threshold: 15
+  LeniencyTime: 0
+  DragToGround: false
+  DamagePlayer: true
+  NoFallCommand: kick %PLAYER% NoFall is not allowed!#broadcast %PLAYER% was kicked for hacking! (NoFall)
+
+Phase:
+  Enabled: false
+  Threshold: 5
+  PhaseCommand: kick %PLAYER% Phase is not allowed!#broadcast %PLAYER% was kicked for hacking! (Phase)
+  
+FastBreak:
+  Enabled: false
+  AccuracyCreative: false
+  BreakSpeedIgnore: 500
+  Threshold: 15
+  SafeHitDecrease: 0.4
+  MaxSurvivalBlocksPerSecond: 20
+  MaxCreativeBlocksPerSecond: 40
+  DisableFastBreakOnWood: false
+  FastBreakCommand: kick %PLAYER% FastBreak is not allowed!#broadcast %PLAYER% was kicked for hacking! (FastBreak)
+
+NoSwing:
+  Enabled: false
+  Threshold: 5
+  SafeInteractDecrease: 0.5
+  SwingLeniency: 3
+  NoSwingCommand: kick %PLAYER% NoSwing is not allowed!#broadcast %PLAYER% was kicked for hacking! (NoSwing)
+  
+AntiFire:
+  Enabled: false
+  Threshold: 4
+  SafeFireDecrease: 0.1
+  AntiFireCommand: kick %PLAYER% AntiFire is not allowed!#broadcast %PLAYER% was kicked for hacking! (AntiFire)
+
+AntiPotion:
+  Enabled: false
+  Threshold: 1.5
+  ReLightPlayer: false
+  SafePotionDecrease: 0.05
+  AntiPotionCommand: kick %PLAYER% AntiPotion is not allowed!#broadcast %PLAYER% was kicked for hacking! (AntiPotion)
+  
+Regen:
+  Enabled: false
+  MaxHalfHeartsPerRegen: 1.0
+  MaxHeartsPerSecond: 5.0
+  RegenCommand: kick %PLAYER% Regen is not allowed!#broadcast %PLAYER% was kicked for hacking! (Regen)
+  Threshold: 5
+
+Elytra:
+  HeightBlockage: true
+  DistanceBlockage: true
+
+BowAimbot:
+  ArrowVelocity: 1.3
+  ArrowsOnly: false
+
+All:
+  MinTPS: 10
+  StopCrashes: false
+  ForceDependencyDownload: false
