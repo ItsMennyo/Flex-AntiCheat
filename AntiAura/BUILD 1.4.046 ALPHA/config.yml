@@ -1,0 +1,661 @@
+########################################################
+#                                                      #
+#   Flex V3 ➤ Minecraft AntiCheat ➤ AntiAura Edition   #
+#                                                      #
+#   Plugin Name: AntiAura (AA)                         #
+#   Plugin Developer: joehot200.147                    #
+#   Plugin Link: https://goo.gl/8wrt6R                 #
+#   Config based on Version: 11.07                     #
+#   Config Configurator: ItsMennyo                     #
+#   Config Build: BUILD 1.4.046 ALPHA                  #
+#   Official Support Pages:                            #
+#   - DirectLeaks: https://goo.gl/kF4hn4               #
+#   - BlackSpigotMC: https://goo.gl/RZZiw9             #
+#   Official Download Pages:                           #
+#   - DirectLeaks: https://goo.gl/qNPB4C               #
+#   - BlackSpigotMC: https://goo.gl/TFZgks             #
+#                                                      #
+#   Copyright © 2017 ItsMennyo, The Netherlands        #
+#                                                      #
+########################################################
+
+DisableElytraChecks: true
+ConsoleLogDragbacks: true
+IgnoreUnknownTeleportCause: true
+
+Violations:
+  KickCommand: kick %PLAYER% %HACKNAME%/%CHECKNAME%
+  ExecuteAllCommands: true
+  ViolationDecreasePerHour: 0
+  2: tempban %PLAYER% 10m You have been temporarily banned for hacking. Please disable your hacks!
+  5: ban %PLAYER% You have been banned for using the %HACKNAME% hack %HACKAMOUNT% times!
+
+SuperThreshold:
+  Enabled: false
+  SuperThreshold: 2
+  ViolationDecreasePerSecond: 0.01
+
+#Enable the accounting of ping?
+PingAccounting:
+  #Do you want to enable the PingAccounting check?
+  #Default: true
+  Enabled: true
+  #How much leniency do you want to give the players?
+  #Default: 150
+  PingLeniency: 250
+  #Setting this to true will silence all warnings related to ping?
+  #Default: false
+  SilenceWarnings: true
+  #This will use the real ping sent by clients?
+  #Default: false
+  UseRealPing: false
+  #This is the maximum ping to allow clients?
+  #Default: 600
+  MaxPing: 1000
+
+Forcefield:
+  #Block players hits outside their field of view?
+  Angle:
+    #Do you want to enable the Forcefield/Angle check?
+    #Default: true
+    Enabled: true
+    #The distance, in blocks, that the players cursor must be from the target to count the hit as hacking?
+    #Default: 1.8
+    HackingAngle: 1.5
+    #If the distance between the cursor and the target is more than HackingAngle multiplied by 2, cancel the hit?
+    #Default: true
+    BlockImpossibleHits: true
+    #Amount of hacking hits to detect the person as hacking?
+    #Default: 8
+    Threshold: 8
+    #How low should the Threshold be lowered every time a non-hacking hit occurs?
+    #Default: 1.2
+    SafeHitDecrease: 0.8
+    #What specific command should be performed when amount of threshold is reached?
+    #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+    AngleCommand: # 
+  #Block players hitting entities too far away?
+  Reach:
+    #Do you want to enable the Forcefield/Reach check?
+    #Default: true
+    Enabled: true
+    #What is the maximum distance players can hit before the hit is canceled?
+    #Default: 4.4
+    MaxReach: 4.4
+  #Block players from hitting entities through other entities or blocks?
+  Occlusion:
+    #Do you want to enable the Forcefield/Occlusion check?
+    #Default: true
+    Enabled: true
+    #The amount of times a player must be detected to be hitting a block or entity through walls to be detected?
+    #Default: 2
+    Threshold: 3
+    #The amount that the amount of times a player has been detected decreases per hit which is not through blocks or entities?
+    #Default: 0.25
+    SafeHitDecrease: 0.20
+    #Block any hits which are detected to be through blocks or entities?
+    #Default: true
+    BlockOccludingHits: true
+    #What specific command should be performed when amount of threshold is reached?
+    #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+    OcclusionCommand: # 
+  #Blockage of clients attacking during fast rotations?
+  HeadMove:
+    #Do you want to enable the Forcefield/HeadMove check?
+    #Default: true
+    Enabled: true
+    #Cancel extremely fast head movement?
+    #Default: true
+    CancelExtremeMovement: true
+    #The amount a player must have turned their head in the past tick to drag their head back to the original position?
+    #Default: 3.0
+    LagBackThreshold: 2.0
+    #The amount that a player must have turned their head in the last hit?
+    #Default: 0.09
+    MaxMove: 0.075
+    CancelMove:
+      #The amount that a player must have turned their head during recent ticks to have their attacks temporarily cancelled?
+      #Default: 0.15
+      CancelMove: 0.2
+      #If this is true, use the HeadMove threshold to set how much damage is to be blocked?
+      #Default: true
+      UseHeadMoveThreshold: true
+      #The minimum Threshold a player must have hit for the HeadMove checks to cancel ANY damage from CancelMove?
+      #Default: 2
+      MinimumBlockThreshold: 2
+    #The time that a player "cannot" attack, and if they do their threshold will be raised?
+    #Default: 4
+    CantAttackTime: 5
+    #Amount of hacking hits to detect the person as hacking.
+    #Default: 8
+    Threshold: 8
+    #How low should the Threshold be lowered every time a non-hacking hit occurs?
+    #Default: 0.85
+    SafeHitDecrease: 1.0
+    #How much should the Threshold decrease per second?
+    #Default: 1.4
+    DecreasePerSecond: 0.8
+    #What specific command should be performed when amount of threshold is reached?
+    #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+    HeadCommand: # 
+  #Accuracy checks how many hits are on target?
+  Accuracy:
+    #Do you want to enable the Forcefield/Accuracy check?
+    #Default: true
+    Enabled: true
+    #Default: 0.010
+    IsMoving: 0.02
+    #Default: 0.0075
+    IsMoving2: 0.015
+    #In ticks, How long ago can a player have recently moved their head to be counted as having head movement?
+    #Default: 5
+    MovingAttackTime: 6
+    DistanceAccounting:
+      #Do you want to enable the DistanceAccounting check?
+      #Default: true
+      Enabled: true
+      #How far away do you want the hit to be before extra threshold is added to it?
+      #Default: 3.5
+      DistanceAmount: 3.5
+      #The "weight" of distance. Each block of distance is multiplied by the DistanceWeight?
+      #Default: 0.50
+      DistanceWeight: 0.25
+    #Take into account movement on the yaw axis only?
+    #Default: true
+    YawOnly: true
+    #How high the threshold has to be to detect the player as hacking?
+    #Default: 8
+    Threshold: 8
+    #How much should the Threshold decrease each time a player interacts without hitting an opponent?
+    #Default: 0.35
+    ArmSwingDecrease: 0.25
+    #How much should the Threshold decrease per second of time?
+    #Default: 0.40
+    DecreasePerSecond: 0.20
+    #What specific command should be performed when amount of threshold is reached?
+    #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+    AccuracyCommand: # 
+
+#Blocks very fast clicking.
+FastClick:
+  #Do you want to enable the FastClick check?
+  #Default: true
+  Enabled: true
+  #When the amount of threshold is reached, the command is executed?
+  #Default: 5
+  Threshold: 5
+  #What is the maximum amount of clicks allowed per second?
+  #Default: 8
+  MaxClicksPerSecond: 10
+  #If the player is frozen, do not count clicks?
+  #Default: false
+  LagAccounting: true
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  FastClickCommand: # 
+
+#Block AutoBow/FastBow.
+AutoBow:
+  #Do you want to enable the AutoBow check?
+  #Default: true
+  Enable: true
+  #When the amount of threshold is reached, the command is executed?
+  #Default: 3
+  BowThreshold: 3
+  #Do you want to block the arrow being shot if the player recently moved too quickly?
+  #Default: true
+  BlockArrowsIfSpeedTooHigh: true
+  #The animation of Low Velocity bows?
+  #Default: 5.5
+  LowVelocityAllowedSpeed: 5.5
+  #The animation of Mid Velocity bows?
+  #Default: 3.0
+  MidVelocityAllowedSpeed: 3.0
+  #The animation of High Velocity bows?
+  #Default: 1.5
+  HighVelocityAllowedSpeed: 1.5
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  AutoBowCommand: # 
+
+#block Anti-Autosoup.
+Soup:
+  #Do you want to enable the AutoBow check?
+  #Default: true
+  Enabled: true
+  #Block players from moving items in their inventory after they are attacked?
+  #Default: false
+  BlockAttackedPlayerToo: false
+  #The maximum blocks a player can have recently walked when moving items in their inventory?
+  #Default: 1.0
+  MaxSpeedWhenMovingInventoryItems: 1.0
+  #How long after last hitting someone is the person not allowed to move items in their inventory?
+  #Default: 1.5
+  SoupTime: 1.8
+  #How many times the player must be detected to be AutoSouping to be kicked?
+  #Default: 5
+  Threshold: 5
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  SoupCommand: #
+
+Map:
+  MapScrewer: false
+  LenientMode: true
+  DistanceChecked: 50
+  DistanceCheckedY: 30
+  HowOften: 10
+  MinDistance: 10
+  HideOnlyPlayers: false
+  HidePlayersThroughBlocks: true
+  HidePlayersBehind: true
+  TileESP:
+    Enabled: false
+    ShowDistance: 15
+    TracerDistance: 60
+    IntervalMult: 1
+    SuperLenientMode: false
+    ChunkDistance: 5
+  XRay:
+    Enabled: false
+    IntervalMult: 1
+    ShowBlocksIfExposedToAir: false
+    MaxChunksPerIntervalMult: 1
+    ChunkDistance: 5
+
+#Knockback checks whether the player moves after he is hitted.
+Knockback:
+  #Do you want to enable the Knockback check?
+  #Default: true
+  Enabled: true
+  #How many ticks after the player has been hit should he be checked to see if he has moved?
+  #Default: 10
+  TicksAfterHitToCheck: 9
+  #Don't check players who are lagging out?
+  #Default: false
+  DontCheckLaggyPeople: false
+  #What is the LOWEST velocity to check a player?
+  #Default: 0.1
+  MinimumKnockbackCheck: 0.1
+  #If the knockback is below this, AmountMoved is changed to 0.5 to help avoid false positives?
+  #Default: 0.35
+  LowKnockbackValues: 0.3
+  #This is how far the player has to move after being given a velocity?
+  #Default: 1.0
+  AmountMoved: 2.0
+  #Set this to true if you DON'T want to check players if they are standing next to a wall?
+  #Default: true
+  DontCheckOnWalls: true
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  KnockbackCommand: # 
+  #When the amount of threshold is reached, the command is executed?
+  #Default: 8
+  Threshold: 10
+  #How much do you want to lower the threshold when a player is detected as legit?
+  #Default: 0.6
+  LowerAmount: 0.5
+  #If a player is sprinting towards another player, he may travel too far forward after being hit and trigger the detection?
+  #Default: false
+  DontCheckIfPlayerIsSprinting: true
+
+Specifics:
+  CommandPermissions: false
+  CrackShotCompatibilityTime: 40
+  AutoUpdaterMinutes: 60
+  version: 40
+  CallFakeLeaveEvent: false
+  InvalidChatCommand: tempban %PLAYER% 30m You have been temporarily banned for invalid chat used for PVP Logging!
+  EnablePermissions: false
+  ShowDebug: true
+  EnableTargetblockChecking: false
+
+JoinTeleport: true
+
+#The Criticals check blocks packet criticals.
+Criticals:
+  #Do you want to enable the Criticals check?
+  #Default: true
+  Enabled: true
+  #Block hits where the player claims to be off the ground when they are not?
+  #Default: false
+  BlockPacketCriticalHits: false
+  #Increase the threshold with a definite packet critical?
+  #Default: true
+  IncreaseThresholdWithPacketCriticals: true
+  #The decrease amount on a legitimate hit?
+  #Default: 2.0
+  SafeHitDecrease: 1.8
+  #When the amount of threshold is reached, the command is executed?
+  #Default: 8
+  Threshold: 8
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  CriticalsCommand: # 
+  
+FastEat:
+  Enabled: false
+  Time: 1.5
+  BlockIfSpeedTooHigh: true
+  MaxEatingTravelSpeed: 1.4
+  Threshold: 3
+  SafeEatDecrease: 1.0
+  FastEatCommand: # 
+  
+Spambots:
+  Captcha:
+    Enabled: false
+    EnabledOnlyWhenSpammed: true
+    NewPlayersOnly: true
+    CaptchaCommand: kick %PLAYER% You failed the captcha!
+    Message: Please type CAPTCHA to move and type commands!
+  MessageDisabling:
+    StopChatBeforeMovement: true
+    DisableJoinAndLeaveMessages: true
+    
+EnableNormalChecks: true
+
+#Blocks the step hack, where players instantly climb up blocks without jumping.
+Step:
+  #Do you want to enable the Step check?
+  #Default: true
+  Enabled: true
+  #How often do you want to check if the person has moved too much?
+  #Default: 3
+  TimePerCheck: 3
+  #In the TimePerCheck, what is the maximum distance a player can move upwards?
+  #Default: 1.4
+  MaxDistanceMovedUpwards: 1.45
+  #If a person is dragged back for hacking, do you want to force them to the ground?
+  #Default: true
+  ForceUserToGround: false
+  #How many times must a user be detected for Step to kick the user?
+  #Default: 8
+  Threshold: 8
+  #Block single-block stepping?
+  #Default: false
+  SingleBlockPackets: true
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  StepCommand: # 
+
+VelocityAccounting:
+  AllowBowBoosting: true
+  AllowMultipleVelocities: true
+  MultipleXZVelocities: true
+  XZVelocityMul: 20
+  UsePlayerVelocity: false
+  NormalVelocityLeniency: 1.1
+  CombatVelocityLeniency: 2.0
+  FlatLeniencyInBlocks: 0.1
+
+#This blocks any unexpected Y movement.
+Spider:
+  #Do you want to enable the Spider check?
+  #Default: true
+  Enabled: true
+  #Height to drag players down for Spider?
+  #Default: 1.30
+  MaxHeightOffGround: 1.45
+  #Maximum height when on climbable objects such as ladders or vines?
+  #Default: 1.30
+  MaxHeightOnLadders: 1.40
+  #What the threshold must be at to drag a player back?
+  #Default: 0
+  DragBackThreshold: 0
+  #How many times must a person be detected for Spider to be kicked?
+  #Default: 5
+  Threshold: 5
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  SpiderCommand: # 
+
+Flight:
+  #Do you want to enable the Flight check?
+  #Default: true
+  Enabled: true
+  #Use client ground data to make flight detection a lot more strict on like SkyWars and Parkour?
+  #Default: false
+  StrictMode: false
+  #How many times must the person be detected as flying to be detected?
+  #Default: 5
+  Threshold: 5
+  #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
+  #Default: 1.0
+  LowerAmount: 0.8
+  #This value is automatically added onto the MaxDistancePerSecond of a player if he has a jump potion?
+  #Default: 2
+  ValuePerPotionLevel: 2.1
+  #The maximum height a player can be off the ground to be counted as in the air?
+  #Default: 1.80
+  MaxHeightOffGround: 1.70
+  #How long should the player be allowed to not be standing on a block without going down significantly?
+  #Default: 20
+  TimeInTheAir: 15
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  FlightCommand: # 
+  #Do we need to dragg back the players to the ground from the current location where they are flying?
+  #Default: false
+  TeleportDownOnly: false
+  #Enabling DetectJesus will make the Flight check believe the ground is 2 blocks lower if a player is on water?
+  #Default: true
+  DetectJesus: true
+
+CancelChecksIfPlayerIsTeleportedDistance: 1
+DontCheckTime: 1
+
+Speed:
+  #Do you want to enable the Speed check?
+  #Default: true
+  Enabled: true
+  #This speed is automatically added onto the normal speed of a player if he has a potion?
+  #Default: 2
+  ValuePerPotionLevel: 2.05
+  #Do you want to make this check more efficient, at the cost of worse detection?
+  #Default: false
+  EfficientCheck: false
+  #Exempt players from this check if they have been given an upward velocity?
+  #Default: false
+  ExemptWhenUsingVelocity: false
+  #Do you want to block players from sprinting while stationary?
+  #Default: false
+  BlockStationarySprinting: true
+  #How many more blocks can players travel than normal walking speed before being dragged back?
+  #Default: 0.40
+  SpeedLeniency: 0.35
+  #What leniency most a player be at to be forced to be dragged back, even if below the DragBackThreshold?
+  #Default: 1.0
+  ForceDragbackLeniency: 0.8
+  #How many times must the player be detected for speed hacks to be kicked?
+  #Default: 15
+  Threshold: 15
+  #If the Threshold is higher than this, drag the player back for speed hacking?
+  #Default: 10
+  DragBackThreshold: 10
+  #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
+  #Default: 0.5
+  LowerAmount: 0.4
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  SpeedCommand: #
+  #Keeping this to false will make players look the same direction they were with their last non-violating movement?  
+  #Default: false
+  KeepDirection: false
+  #Maximum speed while sneaking?
+  #Default: 1.25
+  MaxSneakingSpeed: 1.30
+  #Enable accountung for water?
+  #Default: true
+  Water: true
+  #How much damage should the player take when dragged back?
+  #Default: 1.0
+  DamageHearts: 1.0
+
+#This blocks teleportation hacks.
+Teleport:
+  #Do you want to enable the Teleport check?
+  #Default: true
+  Enable: true
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  TeleportCommand: # 
+  #This will kick the player even if you do not kick them in the teleport command?
+  #Default: true
+  ForceKick: true
+  #Attempt to block the teleportations?
+  #Default: true
+  BlockTeleport: true
+  #The minimum distance a player must teleport to be detected?
+  #Default: 6
+  MinTeleportDistance: 8
+  #How many times must the player be detected for teleport hacks to be kicked?
+  #Default: 5
+  Threshold: 5
+
+FastPlace:
+  Enabled: false
+  Threshold: 5
+  MaxBlocksAllowedPerSecond: 6
+  BlockPlacingWithHeadMovement: true
+  OnlyWithBelowFeet: true
+  BlockTower: true
+  TowerDistance: 1.5
+  MaxTowerPerSec: 2
+  FastPlaceCommand: # 
+
+#Blocks NoFall, a hack where players take no fall damage.
+NoFall:
+  #Do you want to enable the NoFall check?
+  #Default: true
+  Enabled: true
+  #How many times must the person be detected to be kicked?
+  #Default: 15
+  Threshold: 10
+  #How long, in ticks, do you want to allow the person to be falling but still be "on the ground"?
+  #Default: 2
+  LeniencyTime: 2
+  #Do you want to force the player to be dragged to the ground from the air?
+  #Default: true
+  DragToGround: true
+  #Do you want to damage the player when they are detected for NoFall?
+  #Default: true
+  DamagePlayer: true
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  NoFallCommand: # 
+
+#Blocks players from phasing through blocks.
+Phase:
+  #Do you want to enable the Phase check?
+  #Default: true
+  Enabled: true
+  #When the amount of threshold is reached, the command is executed?
+  #Default: 5
+  Threshold: 5
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  PhaseCommand: # 
+  
+FastBreak:
+  Enabled: false
+  AccuracyCreative: false
+  BreakSpeedIgnore: 500
+  Threshold: 15
+  SafeHitDecrease: 0.4
+  MaxSurvivalBlocksPerSecond: 20
+  MaxCreativeBlocksPerSecond: 40
+  DisableFastBreakOnWood: false
+  FastBreakCommand: # 
+
+#Blocks the NoSwing hack?
+NoSwing:
+  #Do you want to enable the NoSwing check?
+  #Default: true
+  Enabled: true
+  #Amount of times person must be detected to be kicked?
+  #Default: 5
+  Threshold: 5
+  #Decrease of the threshold with a safe interaction?
+  #Default: 0.5
+  SafeInteractDecrease: 0.4
+  #In ticks, how long after the person has done an action as to when they place something?
+  #Default: 3
+  SwingLeniency: 4
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  NoSwingCommand: # 
+  
+#Blocks the NoFire hack, a hack where clients cannot be set on fire?
+AntiFire:
+  #Do you want to enable the AntiFire check?
+  #Default: true
+  Enabled: true
+  #Amount of times person must be detected to be kicked?
+  #Default: 4
+  Threshold: 5
+  #Decrease of the threshold with a safe interaction?
+  #Default: 0.1
+  SafeFireDecrease: 0.15
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  AntiFireCommand: # 
+
+#Block PotionSaver and NoPotion hack?
+AntiPotion:
+  #Do you want to enable the AntiPotion check?
+  #Default: true
+  Enabled: true
+  #Amount of times person must be detected to be kicked?
+  #Default: 1.5
+  Threshold: 2
+  #If a player is on fire and puts it out, do you want to re-light him on fire?
+  #Default: true
+  ReLightPlayer: false
+  #Decrease of the threshold with a safe interaction?
+  #Default: 0.05
+  SafePotionDecrease: 0.1
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  AntiPotionCommand: # 
+
+#Block regeneration hack?
+Regen:
+  #Do you want to enable the Regen check?
+  #Default: true
+  Enabled: true
+  #What is the maximum amount of half-hearts allowed for each regeneration?
+  #Default: 1
+  MaxHalfHeartsPerRegen: 1.0
+  #Maximum half-hearts that a player can regen per second?
+  #Default: 4.0
+  MaxHeartsPerSecond: 5.0
+  #What specific command should be performed when amount of threshold is reached?
+  #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
+  RegenCommand: # 
+  #Threshold for when players are kicked.
+  #Default: 5
+  Threshold: 5
+
+#Block hacks using the Elytra?
+Elytra:
+  #Block players using Elytra from flying higher than their take-off position?
+  #Default: true
+  HeightBlockage: true
+  #Block players using Elytra travelling further than they could from their take-off position?
+  #Default: true
+  DistanceBlockage: true
+
+#Block manual BowAimbot?
+BowAimbot:
+  #You are changing the velocity of arrows that are shot from the player?
+  #Default: 1.3
+  ArrowVelocity: 1.2
+  #Change velocity only for arrows?
+  #Default: false
+  ArrowsOnly: false
+
+All:
+  MinTPS: 10
+  StopCrashes: false
+  ForceDependencyDownload: false
