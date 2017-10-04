@@ -8,7 +8,7 @@
 # |   Download Link: https://goo.gl/YgNG9b          | #
 # |   Config Made For Plugin Version: 3.3.3         | #
 # |   Config Configurator: ItsMennyo.305436         | #
-# |   Config Build: BUILD 1.5.370 BETA              | #
+# |   Config Build: BUILD 1.5.479 BETA              | #
 # |   Official Support Pages:                       | #
 # |   - DirectLeaks: https://goo.gl/HNRqzU          | #
 # |   - BlackSpigotMC: https://goo.gl/VWQoR2        | #
@@ -28,13 +28,13 @@ hitbox:
   enabled: true
   #How much should AAC expand hitboxes by?
   #Default: 0.6
-  lenience: 0.6
+  lenience: 0.63
   #Should AAC cancel illegal hits?
   #Default: true
-  cancel: false
+  cancel: true
   #How far should a player be able to reach?
   #Default: 3.5
-  max_reach: 3.5
+  max_reach: 3.53
   #How much should AAC compensate for the movement of the target?
   #Default: 5.0
   move_compensation: 8.0
@@ -153,7 +153,7 @@ fly:
   min_vl: 30
   #Ticks after velocity a player should be immune to the glide check?
   #Default: 30
-  vel_ticks: 35
+  vel_ticks: 40
   #Teleport the player down if detected?
   #Default: true
   teleport: true
@@ -196,17 +196,17 @@ speed:
   max_use_toggles: 30
   #How many violations before a player will start being teleported?
   #Default: 36
-  min_vl: 20
+  min_vl: 30
   #How many ticks should AAC wait before reducing a player's violation level?
   #Default: 20
   reduce_delay: 10
   #Map of violation levels to commands?
   thresholds:
-    20: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    40: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Speed"
-    50: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Speed"
-    60: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Speed"
-    80: "aackick {player} Speed"
+    30: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    60: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Speed"
+    75: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Speed"
+    90: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Speed"
+    120: "aackick {player} Speed"
 
 #Derp stops some forms of derp hacking.
 derp:
@@ -405,7 +405,7 @@ fastbreak:
   let_ticks: 3
   #Should AAC cancel an illegal block break?
   #Default: true
-  cancel_break: false
+  cancel_break: true
   #Should AAC check for a break delay?
   #Default: true
   check_delay: true
@@ -430,7 +430,7 @@ fastplace:
   max_place_per_second: 8
   #Should AAC cancel an illegal block place?
   #Default: true
-  cancel_place: false
+  cancel_place: true
   #How many violations before AAC starts cancelling block placements?
   #Default: 2
   cancel_vl: 10
@@ -547,7 +547,7 @@ move:
   balance_cap: 10
   #At what tick interval should AAC reduce 1 VL from the player?
   #Default: 25
-  decay: 15
+  decay: 10
   #Teleport offset which AAC will accept from players?
   tp_accept_threshold: 0.001
   #Map of violation levels to commands?
