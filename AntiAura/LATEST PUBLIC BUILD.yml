@@ -4,17 +4,14 @@
 # |   Flex ➤ Minecraft AntiCheat ➤ AntiAura Edition   | #
 # |                                                   | #
 # |   AntiCheat Name: AntiAura (AA)                   | #
-# |   Plugin Developer: joehot200.147                 | #
-# |   Download Link: https://goo.gl/8wrt6R            | #
-# |   Config Made For Plugin Version: 11.1            | #
-# |   Config Configurator: ItsMennyo.305436           | #
-# |   Config Build: BUILD 1.6.091 BETA                | #
-# |   Official Support Pages:                         | #
-# |   - DirectLeaks: https://goo.gl/kF4hn4            | #
-# |   - BlackSpigotMC: https://goo.gl/RZZiw9          | #
-# |   Official Download Pages:                        | #
-# |   - DirectLeaks: https://goo.gl/qNPB4C            | #
-# |   - BlackSpigotMC: https://goo.gl/TFZgks          | #
+# |   AntiCheat Developer: joehot200.147              | #
+# |   AntiCheat Link: https://goo.gl/8wrt6R           | #
+# |   Config Version: 11.17                           | #
+# |   Config Configurator: ItsMennyo                  | #
+# |   Config Build: BUILD 1.6.107 BETA                | #
+# |   Overview Page: https://goo.gl/NJQDFA            | #
+# |   Support Page: https://goo.gl/DAfLsX             | #
+# |   Last Build: https://goo.gl/9YedUw               | #
 # |                                                   | #
 # |   Copyright © 2017 ItsMennyo, The Netherlands     | #
 # |                                                   | #
@@ -83,7 +80,7 @@ Forcefield:
     #Default: true
     Enabled: true
     #The distance, in blocks, that the players cursor must be from the target to count the hit as hacking?
-    #Default: 1.8
+    #Default: 1.9
     HackingAngle: 1.4
     #If the distance between the cursor and the target is more than HackingAngle multiplied by 2, cancel the hit?
     #Default: true
@@ -168,13 +165,16 @@ Forcefield:
     Enabled: true
     #Amount of hacking value to detect the person as hacking?
     #Default: 8
-    Threshold: 7
+    Threshold: 10
     #How much a players' hacking value should go down per each legitimate hit?
-    #Default: 0.3
-    SafeHitDecrease: 0.2
+    #Default: 0.325
+    SafeHitDecrease: 0.4
     #The maximum distance in which hits are counted as in the same place?
-    #Default: 0.5
-    NearDistance: 0.4
+    #Default: 0.45
+    NearDistance: 0.3
+    #The minimum amount of recent head movement to take hits into account?
+    #Default: 0.0225
+    MinHeadMovement: 0.02
     #What specific command should be performed when amount of threshold is reached?
     #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
     PositionCommand: # 
@@ -183,13 +183,14 @@ Forcefield:
     #Do you want to enable the Accuracy check?
     #Default: true
     Enabled: true
-    #Default: 0.010
-    IsMoving: 0.02
     #Default: 0.0075
+    IsMoving: 0.02
+    #Default: 0.005
     IsMoving2: 0.04
     #In ticks, How long ago can a player have recently moved their head to be counted as having head movement?
     #Default: 5
     MovingAttackTime: 4
+    #This will add extra threshold to a hit if it is from a large distance.
     DistanceAccounting:
       #Do you want to enable the DistanceAccounting check?
       #Default: true
@@ -388,9 +389,6 @@ Specifics:
   #Time after using a CrackShot weapon a person should not be checked for forcefield?
   #Default: 80
   CrackShotCompatibilityTime: 80
-  #How many minutes do you want the AutoUpdater notification to remind you after last reminding you?
-  #Default: 60
-  AutoUpdaterMinutes: 60
   #Don't change this! It will reset your whole config if you do!
   version: 40
   #Do you want to call a fake leave event to the server that tells other plugins that the player has "left" when he is actually kicked?
@@ -551,8 +549,17 @@ Jump:
   #Do you want to enable the Jump check?
   #Default: true
   Enabled: true
-  #Default: 4
-  MaxJumpBlocks: 4
+  #The maximum distance a player can jump on a level surface.
+  #Default: 5.1
+  MaxJumpOnLevelSurface: 5.4
+  #How much the players Jump violation level goes down after a legitimate jump.
+  #Default: 0.5
+  SafeJumpDecrease: 0.6
+  #The threshold the players Jump violation level must reach for them to be detected for Jump.
+  #Default: 8
+  Threshold: 10
+  #Command to execute when Jump is detected.
+  JumpCommand: #
 
 #Block flight hacks.
 Flight:
@@ -575,7 +582,7 @@ Flight:
   #Default: 1.80
   MaxHeightOffGround: 1.75
   #How long should the player be allowed to not be standing on a block without going down significantly?
-  #Default: 20
+  #Default: 12
   TimeInTheAir: 15
   #What specific command should be performed when amount of threshold is reached?
   #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
@@ -612,7 +619,7 @@ Speed:
   #Default: false
   BlockStationarySprinting: true
   #How many more blocks can players travel than normal walking speed before being dragged back?
-  #Default: 0.40
+  #Default: 0.30
   SpeedLeniency: 0.35
   #What leniency most a player be at to be forced to be dragged back, even if below the DragBackThreshold?
   #Default: 1.0
@@ -630,7 +637,7 @@ Speed:
   #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
   SpeedCommand: #
   #Keeping this to false will make players look the same direction they were with their last non-violating movement?  
-  #Default: false
+  #Default: true
   KeepDirection: false
   #Maximum speed while sneaking?
   #Default: 1.25
@@ -847,7 +854,7 @@ BowAimbot:
 All:
   #If server TPS goes below this Threshold, don't kick anyone?
   #Default: 10
-  MinTPS: 18
+  MinTPS: 15
   #Takes special measures to stop crashes?
   #Default: false
   StopCrashes: false
