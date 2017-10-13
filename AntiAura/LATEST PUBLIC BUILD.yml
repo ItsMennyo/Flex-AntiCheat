@@ -6,9 +6,9 @@
 # |   AntiCheat Name: AntiAura (AA)                   | #
 # |   AntiCheat Developer: joehot200.147              | #
 # |   AntiCheat Link: https://goo.gl/8wrt6R           | #
-# |   Config Version: 11.17                           | #
+# |   Config Version: 11.18                           | #
 # |   Config Configurator: ItsMennyo                  | #
-# |   Config Build: BUILD 1.6.107 BETA                | #
+# |   Config Build: BUILD 1.7.087 BETA                | #
 # |   Overview Page: https://goo.gl/NJQDFA            | #
 # |   Support Page: https://goo.gl/DAfLsX             | #
 # |   Last Build: https://goo.gl/9YedUw               | #
@@ -81,10 +81,10 @@ Forcefield:
     Enabled: true
     #The distance, in blocks, that the players cursor must be from the target to count the hit as hacking?
     #Default: 1.9
-    HackingAngle: 1.4
+    HackingAngle: 1.5
     #If the distance between the cursor and the target is more than HackingAngle multiplied by 2, cancel the hit?
     #Default: true
-    BlockImpossibleHits: false
+    BlockImpossibleHits: true
     #Amount of hacking hits to detect the person as hacking?
     #Default: 8
     Threshold: 8
@@ -115,7 +115,7 @@ Forcefield:
     SafeHitDecrease: 0.20
     #Block any hits which are detected to be through blocks or entities?
     #Default: true
-    BlockOccludingHits: false
+    BlockOccludingHits: true
     #What specific command should be performed when amount of threshold is reached?
     #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
     OcclusionCommand: # 
@@ -132,29 +132,30 @@ Forcefield:
     LagBackThreshold: 2.5
     #The amount that a player must have turned their head in the last hit?
     #Default: 0.09
-    MaxMove: 0.06
+    MaxMove: 0.1
+    #A sub-section for the HeadMove check which cancels unlikely hits.
     CancelMove:
       #The amount that a player must have turned their head during recent ticks to have their attacks temporarily cancelled?
       #Default: 0.15
-      CancelMove: 0.2
+      CancelMove: 0.25
       #If this is true, use the HeadMove threshold to set how much damage is to be blocked?
       #Default: true
       UseHeadMoveThreshold: true
       #The minimum Threshold a player must have hit for the HeadMove checks to cancel ANY damage from CancelMove?
       #Default: 2
-      MinimumBlockThreshold: 2
+      MinimumBlockThreshold: 4
     #The time that a player "cannot" attack, and if they do their threshold will be raised?
     #Default: 4
-    CantAttackTime: 5
+    CantAttackTime: 4
     #Amount of hacking hits to detect the person as hacking.
     #Default: 8
     Threshold: 8
     #How low should the Threshold be lowered every time a non-hacking hit occurs?
     #Default: 1.2
-    SafeHitDecrease: 0.8
+    SafeHitDecrease: 1.0
     #How much should the Threshold decrease per second?
     #Default: 0.5
-    DecreasePerSecond: 0.4
+    DecreasePerSecond: 0.5
     #What specific command should be performed when amount of threshold is reached?
     #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
     HeadCommand: # 
@@ -168,7 +169,7 @@ Forcefield:
     Threshold: 10
     #How much a players' hacking value should go down per each legitimate hit?
     #Default: 0.325
-    SafeHitDecrease: 0.4
+    SafeHitDecrease: 0.6
     #The maximum distance in which hits are counted as in the same place?
     #Default: 0.45
     NearDistance: 0.3
@@ -184,9 +185,9 @@ Forcefield:
     #Default: true
     Enabled: true
     #Default: 0.0075
-    IsMoving: 0.02
+    IsMoving: 0.008
     #Default: 0.005
-    IsMoving2: 0.04
+    IsMoving2: 0.005
     #In ticks, How long ago can a player have recently moved their head to be counted as having head movement?
     #Default: 5
     MovingAttackTime: 4
@@ -197,10 +198,10 @@ Forcefield:
       Enabled: true
       #How far away do you want the hit to be before extra threshold is added to it?
       #Default: 3.5
-      DistanceAmount: 3.0
+      DistanceAmount: 3.25
       #The "weight" of distance. Each block of distance is multiplied by the DistanceWeight?
       #Default: 0.50
-      DistanceWeight: 0.25
+      DistanceWeight: 0.5
     #Take into account movement on the yaw axis only?
     #Default: true
     YawOnly: true
@@ -209,10 +210,10 @@ Forcefield:
     Threshold: 8
     #How much should the Threshold decrease each time a player interacts without hitting an opponent?
     #Default: 0.45
-    ArmSwingDecrease: 0.25
+    ArmSwingDecrease: 0.4
     #How much should the Threshold decrease per second of time?
     #Default: 0.20
-    DecreasePerSecond: 0.20
+    DecreasePerSecond: 0.2
     #What specific command should be performed when amount of threshold is reached?
     #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
     AccuracyCommand: # 
@@ -224,13 +225,13 @@ FastClick:
   Enabled: true
   #When the amount of threshold is reached, the command is executed?
   #Default: 5
-  Threshold: 5
+  Threshold: 8
   #What is the maximum amount of clicks allowed per second?
   #Default: 8
   MaxClicksPerSecond: 10
   #If the player is frozen, do not count clicks?
   #Default: false
-  LagAccounting: true
+  LagAccounting: false
   #What specific command should be performed when amount of threshold is reached?
   #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
   FastClickCommand: # 
@@ -364,7 +365,7 @@ Knockback:
   LowKnockbackValues: 0.3
   #This is how far the player has to move after being given a velocity?
   #Default: 1.0
-  AmountMoved: 2.0
+  AmountMoved: 0.8
   #Set this to true if you DON'T want to check players if they are standing next to a wall?
   #Default: true
   DontCheckOnWalls: true
@@ -376,10 +377,10 @@ Knockback:
   Threshold: 10
   #How much do you want to lower the threshold when a player is detected as legit?
   #Default: 0.6
-  LowerAmount: 0.5
+  LowerAmount: 0.6
   #If a player is sprinting towards another player, he may travel too far forward after being hit and trigger the detection?
   #Default: false
-  DontCheckIfPlayerIsSprinting: true
+  DontCheckIfPlayerIsSprinting: false
 
 #Some things about the plugin itself that are'nt related to any specific detection.
 Specifics:
@@ -439,13 +440,13 @@ FastEat:
   Enabled: true
   #The time, in seconds, that a player can consume food after last having consumed food?
   #Default: 1.5
-  Time: 1.5
+  Time: 1.2
   #Block the player from eating if they are travelling at too high a speed while eating?
   #Default: true
   BlockIfSpeedTooHigh: true
   #The maximum distance a player may have travelled recently to be allowed to eat the food?
   #Default: 1.4
-  MaxEatingTravelSpeed: 1.0
+  MaxEatingTravelSpeed: 1.3
   #How many times can a player attempt to use FastEat before being detected?
   #Default: 3
   Threshold: 4
@@ -469,7 +470,6 @@ Spambots:
 
 #If you have NoCheatPlus anything below here is techically blocked by that?
 #However, you may also want these checks on top of NoCheatPlus?
-#Default: true
 EnableNormalChecks: true
 
 #Blocks the step hack, where players instantly climb up blocks without jumping.
@@ -482,7 +482,7 @@ Step:
   TimePerCheck: 3
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
   #Default: 1.4
-  MaxDistanceMovedUpwards: 1.4
+  MaxDistanceMovedUpwards: 1.45
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #Default: true
   ForceUserToGround: true
@@ -530,16 +530,16 @@ Spider:
   Enabled: true
   #Height to drag players down for Spider?
   #Default: 1.30
-  MaxHeightOffGround: 1.4
+  MaxHeightOffGround: 1.35
   #Maximum height when on climbable objects such as ladders or vines?
   #Default: 1.30
-  MaxHeightOnLadders: 1.4
+  MaxHeightOnLadders: 1.35
   #What the threshold must be at to drag a player back?
   #Default: 0
   DragBackThreshold: 0
   #How many times must a person be detected for Spider to be kicked?
   #Default: 5
-  Threshold: 5
+  Threshold: 6
   #What specific command should be performed when amount of threshold is reached?
   #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
   SpiderCommand: # 
@@ -574,10 +574,10 @@ Flight:
   Threshold: 6
   #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
   #Default: 1.0
-  LowerAmount: 0.8
+  LowerAmount: 1.2
   #This value is automatically added onto the MaxDistancePerSecond of a player if he has a jump potion?
   #Default: 2
-  ValuePerPotionLevel: 2.05
+  ValuePerPotionLevel: 2.0
   #The maximum height a player can be off the ground to be counted as in the air?
   #Default: 1.80
   MaxHeightOffGround: 1.75
@@ -608,7 +608,7 @@ Speed:
   Enabled: true
   #This speed is automatically added onto the normal speed of a player if he has a potion?
   #Default: 2
-  ValuePerPotionLevel: 2.05
+  ValuePerPotionLevel: 2
   #Do you want to make this check more efficient, at the cost of worse detection?
   #Default: false
   EfficientCheck: false
@@ -623,16 +623,16 @@ Speed:
   SpeedLeniency: 0.35
   #What leniency most a player be at to be forced to be dragged back, even if below the DragBackThreshold?
   #Default: 1.0
-  ForceDragbackLeniency: 0.8
+  ForceDragbackLeniency: 1.2
   #How many times must the player be detected for speed hacks to be kicked?
   #Default: 15
-  Threshold: 15
+  Threshold: 12
   #If the Threshold is higher than this, drag the player back for speed hacking?
   #Default: 10
-  DragBackThreshold: 10
+  DragBackThreshold: 8
   #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
   #Default: 0.5
-  LowerAmount: 0.6
+  LowerAmount: 0.8
   #What specific command should be performed when amount of threshold is reached?
   #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
   SpeedCommand: #
@@ -641,13 +641,13 @@ Speed:
   KeepDirection: false
   #Maximum speed while sneaking?
   #Default: 1.25
-  MaxSneakingSpeed: 1.30
+  MaxSneakingSpeed: 1.3
   #Enable accountung for water?
   #Default: true
   Water: true
   #How much damage should the player take when dragged back?
   #Default: 1.0
-  DamageHearts: 1.0
+  DamageHearts: 0.5
 
 #This blocks teleportation hacks.
 Teleport:
@@ -680,7 +680,7 @@ FastPlace:
   Threshold: 5
   #How many blocks should a person be allowed to place per second to be detected?
   #Default: 6
-  MaxBlocksAllowedPerSecond: 5
+  MaxBlocksAllowedPerSecond: 10
   #If the player has moved their head a lot and has placed more than two blocks, stop the block being placed?
   #Default: true
   BlockPlacingWithHeadMovement: true
@@ -743,7 +743,7 @@ FastBreak:
   AccuracyCreative: true
   #If this block can be broken in under this time, ignore FastBreak checks?
   #Default: 500
-  BreakSpeedIgnore: 600
+  BreakSpeedIgnore: 500
   #Threshold for how many times user must be detected as hacking before the command executing?
   #Default: 15
   Threshold: 10
@@ -755,7 +755,7 @@ FastBreak:
   MaxSurvivalBlocksPerSecond: 15
   #Max blocks allowed to be broken in creative per second?
   #Default: 40
-  MaxCreativeBlocksPerSecond: 30
+  MaxCreativeBlocksPerSecond: 20
   #Disable FastBreak when breaking tree logs?
   #Default: false
   DisableFastBreakOnWood: false
@@ -788,10 +788,10 @@ AntiFire:
   Enabled: true
   #Amount of times person must be detected to be kicked?
   #Default: 4
-  Threshold: 5
+  Threshold: 2
   #Decrease of the threshold with a safe interaction?
   #Default: 0.1
-  SafeFireDecrease: 0.15
+  SafeFireDecrease: 0.1
   #What specific command should be performed when amount of threshold is reached?
   #DON'T CHANGE IT OR THE PLUGIN CAN BE BREAK!
   AntiFireCommand: # 
@@ -845,7 +845,7 @@ Elytra:
 BowAimbot:
   #You are changing the velocity of arrows that are shot from the player?
   #Default: 1.3
-  ArrowVelocity: 1.2
+  ArrowVelocity: 1.3
   #Change velocity only for arrows?
   #Default: false
   ArrowsOnly: false
