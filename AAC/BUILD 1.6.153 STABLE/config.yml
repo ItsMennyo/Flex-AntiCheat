@@ -577,7 +577,7 @@ aackick_broadcast: false
 usetps: true
 #Enable verbose logging?
 #Default: false
-verbose: true
+verbose: false
 #Enable verbose logging to console?
 #Default: false
-log_console: true
+log_console: false
