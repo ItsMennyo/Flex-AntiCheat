@@ -4,7 +4,7 @@ Welcome to my AntiCheat project called Flex. In this project, I optimize AntiChe
 
 This, of course, helps to reduce false positives and bypasses. And what's beautiful is that it's completely free.
 
-Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) version.
+Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC), [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) version.
 
 ![About-Flex](//i.imgur.com/RYHUP74.png)
 
@@ -21,6 +21,14 @@ To make the configs work well, you need to do some things.
 AAC Edition:
 
 1. Buy AAC [HERE](https://www.spigotmc.org/resources/aac-advanced-anti-cheat-hack-kill-aura-blocker.6442/) to support the delevoper.
+
+2. (Not required) Download ConditionalCommands [HERE](https://www.spigotmc.org/resources/conditionalcommands.14295/) to run the VLs commands.
+
+3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
+
+AACAdditionPro Edition:
+
+1. Buy AACAdditionPro [HERE](https://www.spigotmc.org/resources/aacadditionpro.33590/) to support the delevoper.
 
 2. (Not required) Download ConditionalCommands [HERE](https://www.spigotmc.org/resources/conditionalcommands.14295/) to run the VLs commands.
 
