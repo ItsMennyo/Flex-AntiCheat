@@ -125,9 +125,12 @@ Forcefield:
     HeadMovementPerHit:
       #The minimum amount of head movement that the average of all hits should have.
       #Reducing this far could cause false positives as not moving your head and hitting could produce consistent results, of course.
-      MinAverageMovementToCalculate: 0.06
+      MinAverageMovementToCalculate: 0.1
       #The amount that a hit must be near the average of all hits to be counted as a "similar movement" per hit.
-      SimilarMovementAmount: 0.08
+      #This is the main value you want to adjust if you get false positives.
+      #If false positives have a percent lower than ConsistentPercentageMin, raising this will help reduce false positives.
+      #If false positives have a higher percent than ConsistentPercentageMax, lowering this will help reduce false positives.
+      SimilarHeadMovementAmount: 0.1
       #If less than ConsistentPercentageMin have consistent head movement, player is kicked for hacking.
       ConsistentPercentageMin: 4
       #If more than ConsistentPercentageMax have consistent head movement, player is kicked for hacking.
