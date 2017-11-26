@@ -6,9 +6,9 @@
 # |   AntiCheat Name: AAC (Advanced Anti Cheat)     | #
 # |   AntiCheat Developer: konsolas.58100           | #
 # |   AntiCheat Link: https://goo.gl/YgNG9b         | #
-# |   Config Version: 3.3.4                         | #
+# |   Config Version: 3.3.5                         | #
 # |   Config Configurator: ItsMennyo                | #
-# |   Config Build: BUILD 1.6.153 STABLE            | #
+# |   Config Build: BUILD 1.6.202 STABLE            | #
 # |   Overview Page: https://goo.gl/NJQDFA          | #
 # |   Support Page: https://goo.gl/DAfLsX           | #
 # |   Last Build: https://goo.gl/CFH892             | #
@@ -140,8 +140,8 @@ fly:
   #Default: 0.015
   tolerance: 0.015
   #How strongly should AAC enforce fall speeds?
-  #Default: 0.2
-  e_tolerance: 0.2
+  #Default: 0.015
+  e_tolerance: 0.015
   #Multiplier of violation size to be added to VL level?
   #Default: 6.0
   vl_multiplier: 1.0
@@ -556,7 +556,7 @@ move:
 
 #How many times must a player be kicked before he is banned?
 #Default: -1
-ban_threshold: 3
+ban_threshold: -1
 #What command should be executed when a player is banned?
 #Default: "aacban {player}"
 ban_command: "aacban {player}"
