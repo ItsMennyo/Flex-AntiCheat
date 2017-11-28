@@ -1,0 +1,627 @@
+#######################################################
+# +-------------------------------------------------+ #
+# |                                                 | #
+# |   Flex ➤ Minecraft AntiCheat ➤ AACAP Edition   | #
+# |                                                 | #
+# |   AntiCheat Name: AACAdditionPro (AACAP)        | #
+# |   AntiCheat Developer: Photon.166336            | #
+# |   AntiCheat Link: https://goo.gl/GrX6dA         | #
+# |   Config Version: 3.4.3                         | #
+# |   Config Configurator: ItsMennyo                | #
+# |   Config Build: BUILD 1.1.076 BETA              | #
+# |   Overview Page: https://goo.gl/NJQDFA          | #
+# |   Support Page: https://goo.gl/DAfLsX           | #
+# |   Last Build: https://goo.gl/Gv626M             | #
+# |                                                 | #
+# |   Copyright © 2017 ItsMennyo, The Netherlands   | #
+# |                                                 | #
+# +-------------------------------------------------+ #
+#######################################################
+
+#Blocks AutoFish.
+AutoFish:
+  #Do you want to enable the AutoFish check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the fishing?
+  #Default: 10
+  cancel_vl: 4
+  #Control the different solutions of AutoFish.
+  parts:
+    #The inhuman_reaction part recognizes very fast reaction speeds to detect AutoFishing mods.
+    inhuman_reaction:
+      #Should this part of the check be enabled?
+      #Default: true
+      enabled: true
+      #How many milliseconds should have passed before a fishing action counts as legit?
+      #Default: 145
+      fishing_milliseconds: 145
+    #The consistency part recognizes static times between a successful catch and fishing again.
+    consistency:
+      #Should this part of the check be enabled?
+      #Default: true
+      enabled: true
+      #How many FishEvents should be checked by the consistency check?
+      #Default: 5
+      consistency_events: 5
+      #The offset that will be flagged as cheating?
+      #Default: 25
+      violation_offset: 25
+      #How many violation-levels should be given for failing this part?
+      #Default: 9
+      weight: 8
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} AutoFish"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} AutoFish"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoFish"
+    16: "aackick {player} AutoFish"
+
+#AutoPotion detects automated bots which splash the player with potions that have positive effects.
+AutoPotion:
+  #Do you want to enable the AutoPotion check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel throwing potions?
+  #Default: 2
+  cancel_vl: 2
+  #After a detection which surpasses cancel_vl AACAdditionPro cancels all potion throws to effectively?
+  #Default: 1000
+  timeout: 1000
+  #How much time in milliseconds must pass between?
+  #Default: 150
+  time_offset: 150
+  #How much offset measured in degrees is allowed when comparing the previous angle to the angle of the back-rotation to continue the check?
+  #Default: 5
+  angle_offset: 5
+  #The initial pitch-difference, measured in degrees, to start the check?
+  #Default: 40
+  angle_start_threshold: 40
+  #The minimum angle, measured in degrees, that is counted as looking down?
+  #Default: 80
+  look_down_angle: 80
+  #Map of violation levels to commands?
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} AutoPotion"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
+    8: "aackick {player} AutoPotion"
+
+#EqualRotation checks for invalid rotation packets which have the rotation of the last packet as content.
+EqualRotation:
+  #Do you want to enable the EqualRotation check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the rotations?
+  #Default: 15
+  cancel_vl: 6
+  #After a detection which surpasses cancel_vl AACAdditionPro cancels all movement to effectively prevent the cheat for this amount of milliseconds?
+  #Default: 1000
+  timeout: 1000
+  #Map of violation levels to commands?
+  thresholds:
+    6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    12: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} EqualRotation"
+    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
+    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
+    24: "aackick {player} EqualRotation"
+
+#This module uses advanced mathematics to determine if players can see each other.
+Esp:
+  #Do you want to enable the Esp check?
+  #Default: true
+  enabled: false
+  #After this amount of ticks the positions will be updated again?
+  #Default: 3
+  update_ticks: 5
+
+#The Fastswitch check prevents players from switching their hotbar-selection too quickly.
+Fastswitch:
+  #Do you want to enable the Fastswitch check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the interacts?
+  #Default: 3
+  cancel_vl: 4
+  #If a player has a ping higher than that value he bypasses the check?
+  #Default: 400
+  max_ping: 250
+  #The minimum time between switches that are not considered scrolling?
+  #Default: 50
+  switch_milliseconds: 50
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Fastswitch"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Fastswitch"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Fastswitch"
+    16: "aackick {player} Fastswitch"
+
+#This check will block most Freecam cheats.
+Freecam:
+  #Do you want to enable the Freecam check?
+  #Default: true
+  enabled: true
+  #The time in ms before AACAdditionPro starts to initiate teleports for an idling player?
+  #Default: 1000
+  idle_time: 2500
+  #How often should players be checked and possibly teleported?
+  #Default: 30
+  frequency: 30
+
+#GravitationalModifier improves the detection speed of various movement-cheats.
+GravitationalModifier:
+  #Do you want to enable the GravitationalModifier check?
+  #Default: true
+  enabled: true
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} GravitationalModifier"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
+    16: "aackick {player} GravitationalModifier"
+
+#InventoryHit checks if a player modifies his inventory while hitting at the same time.
+InventoryHit:
+  #Do you want to enable the InventoryHit check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the hits?
+  #Default: 3
+  cancel_vl: 4
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHit"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
+    16: "aackick {player} InventoryHit"
+
+# The InventoryChat check detects sending chat messages while being in an inventory.
+InventoryChat:
+  #Do you want to enable the InventoryChat check?
+  #Default: false
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the messages?
+  #Default: 2
+  cancel_vl: 2
+  #Map of violation levels to commands?
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryChat"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
+    8: "aackick {player} InventoryChat"
+
+#The InventoryHeuristics check uses a neural network to detect cheats.
+InventoryHeuristics:
+  #Do you want to enable the InventoryHeuristics check?
+  #Default: false
+  enabled: false
+
+#The InventoryMove check detects inventory clicks while moving.
+InventoryMove:
+  #Do you want to enable the InventoryMove check?
+  #Default: true
+  enabled: true
+  #The minimum TPS the server must have to activate this check?
+  #Default: 19.5
+  min_tps: 19.5
+  #Violation before AACAdditionPro starts to cancel the movements?
+  #Default: 10
+  cancel_vl: 8
+  #Map of violation levels to commands?
+  thresholds:
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryMove"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
+    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
+    32: "aackick {player} InventoryMove"
+
+#InventoryRotation checks if a player is moving his head while being in an inventory.
+InventoryRotation:
+  #Do you want to enable the InventoryRotation check?
+  #Default: true
+  enabled: true
+  #Map of violation levels to commands?
+  thresholds:
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryRotation"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
+    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
+    32: "aackick {player} InventoryRotation"
+
+#Brings back an entity check of the old AAC 1.9.10 times but much more advanced.
+KillauraEntity:
+  #Do you want to enable the KillauraEntity check?
+  #Default: true
+  enabled: true
+  #Enable this to only spawn an entity if requested by a command?
+  #Default: false
+  on_command: false
+  #The general behaviour of the entity, mostly important for certain gamemodes.
+  behaviour:
+    #Should the entity join a team?
+    team:
+      #Default: true
+      enabled: true
+    #Should the entity swap the items it is wearing and using?
+    swap:
+      #Default: true
+      enabled: true
+    #Should the entity swing items to simulate an attack?
+    swing:
+      #Default: true
+      enabled: true
+  #Here you can find all options regarding the positioning of the entity.
+  position:
+    #How far should the entity at least be away from the player?
+    #Default: 3.4
+    entityOffset: 3.3
+    #How much randomized offset should at most be added to entityOffset?
+    #Default: 0.2
+    offsetRandomizationRange: 0.3
+    #This prevents the entity from floating directly over/under a player, therefore preventing distraction and willingly caused false positives?
+    #Default: 1.55
+    minXZDifference: 1.6
+  #Here you can choose the equipment of your entity.
+  equipment:
+    #The armor the entities will spawn with?
+    armor:
+      helmet: true
+      chestplate: true
+      leggings: true
+      boots: true
+      leather: true
+      gold: true
+      iron: true
+      diamond: true
+    #Normal equipment will be used upon spawning the entity and if behaviour.swap is enabled?
+    normal:
+      cooked: true
+      wood: true
+      stone: true
+      gold: true
+      diamond: true
+      iron: true
+      flint_and_steel: true
+      bow: true
+      fishing_rod: true
+      sandstone: true
+      golden_apple: true
+      bowl: true
+      potion: true
+      glass_bottle: true
+      exp_bottle: true
+      dirt: true
+      grass: true
+      stone: true
+      coal: true
+      gold_ore: true
+      iron_ore: true
+      ingot: true
+      wood: true
+      diamond: true
+    #The weapons the entities will use in a fake fight?
+    weapons:
+      sword: true
+      axe: true
+      wood: true
+      gold: true
+      stone: true
+      iron: true
+      diamond: true
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} KillauraEntity"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} KillauraEntity"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} KillauraEntity"
+    16: "aackick {player} KillauraEntity"
+
+#The MultiInteraction check prevents players from moving more than one item per tick.
+MultiInteraction:
+  #Do you want to enable the MultiInteraction check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the interacts?
+  #Default: 6
+  cancel_vl: 8
+  #If a player has a ping higher than that value he bypasses the check?
+  #Default: 400
+  max_ping: 250
+  #The minimum TPS the server must have to activate this check?
+  #Default: 18.5
+  min_tps: 19.0
+  #The time AACAdditionPro should force between two interactions in milliseconds?
+  #Default: 51
+  min_time: 51
+  #Map of violation levels to commands?
+  thresholds:
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} MultiInteraction"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
+    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
+    32: "aackick {player} MultiInteraction"
+
+#The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
+Pingspoof:
+  #Do you want to enable the Pingspoof check?
+  #Default: true
+  enabled: true
+  #This is the ping-offset?
+  #Default: 3.0
+  ping_offset: 4.0
+  #If the measured real-ping of a player is higher than this, he will be ignored?
+  #Default: 100
+  max_real_ping: 100
+  #In order to minimize possible false positives with temporarily bad connections a player's ping will be refreshed once this threshold is reached?
+  #Default: 5
+  refresh_at_vl: 4
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Pingspoof"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Pingspoof"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Pingspoof"
+    16: "aackick {player} Pingspoof"
+
+#The Scaffold check detects Scaffold cheats.
+Scaffold:
+  #Do you want to enable the Scaffold check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the block-places?
+  #Default: 5
+  cancel_vl: 4
+  #Over how many values should AACAdditionPro take the average for the check?
+  #Default: 6
+  buffer_size: 4
+  #The minimum delay between blockplaces that will be enforced by AACAdditionPro?
+  #Default: 300
+  scaffold_delay: 300
+  #After a detection which surpasses cancel_vl AACAdditionPro cancels all blockplaces in the given timeframe to prevent further scaffolding?
+  #Default: 1000
+  timeout: 1000
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    16: "aackick {player} Scaffold"
+
+#The Skinblinker check detects Skinblinker cheats when the player sprints/sneaks.
+Skinblinker:
+  #Do you want to enable the Skinblinker check?
+  #Default: true
+  enabled: true
+  #Map of violation levels to commands?
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Skinblinker"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Skinblinker"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Skinblinker"
+    8: "aackick {player} Skinblinker"
+
+Teaming:
+  enabled: false
+  delay: 5000
+  proximity_range: 4.5
+  allowed_size: 1
+  no_pvp_time: 6000
+  enabled_worlds:
+    - "world"
+    - "world_nether"
+    - "world_the_end"
+  safe_zones:
+    - "world -15 -15 15 15"
+  thresholds:
+    4: "aacstaffnotify {team} in {world} may be Teaming"
+    10: "aacstaffnotify {team} in {world} are suspected for Teaming"
+    15: "aacstaffnotify {team} in {world} are highly suspected for Teaming"
+
+#The Tower check detects Tower cheats.
+Tower:
+  #Do you want to enable the Tower check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the block-places?
+  #Default: 6
+  cancel_vl: 4
+  #Over how much values should AACAdditionPro take the average used for the check?
+  #Default: 6
+  buffer_size: 4
+  #If you have false positives decrease this slightly?
+  #Default: 1
+  tower_leniency: 1
+  #After a detection which surpasses cancel_vl AACAdditionPro cancels all blockplaces in the given timeframe to prevent further towering?
+  #Default: 5500
+  timeout: 5500
+  #Map of violation levels to commands?
+  thresholds:
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Tower"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Tower"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Tower"
+    16: "aackick {player} Tower"
+
+#This gives you full control over the clients who can join.
+ClientControl:
+  #This is a popular PVP modification granting additional information in various HUDs, such as potion effects.
+  5zig:
+    #Do you want to enable the 5zig check?
+    #Default: false
+    enabled: false
+    #This mod provides a method to disable parts of it.
+    disable:
+      #This renders the potion effect of the player on the display in form of a HUD?
+      #Default: false
+      potion_effect_hud: true
+      #This displays a vignette with different colors depending on the potion effects you have?
+      #Default: false
+      potion_indicator_vignette: true
+      #This displays the current armour of a player in a HUD?
+      #Default: false
+      armour_hud: true
+      #This renders the saturation of a player additional to the current food?
+      #Default: false
+      player_saturation: true
+      #This displays the health of entities?
+      #Default: true
+      entity_health_indicator: true
+      #A feature of 5zig to automatically reconnect to a server?
+      #Default: false
+      auto_reconnect: true
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} 5zig"
+
+  #A popular PvP modification to enhance the sprinting behaviour.
+  BetterSprinting:
+    #Do you want to enable the BetterSprinting check?
+    #Default: false
+    enabled: false
+    #This mod provides a method to disable it?
+    #Default: true
+    disable: true
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} BetterSprinting"
+
+  #A very popular mod-loader.
+  Forge:
+    #Do you want to enable the Forge check?
+    #Default: false
+    enabled: false
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} Forge"
+
+  #A very popular PvP modification similar to 5zig but with more features and TS3 support.
+  LabyMod:
+    #Do you want to enable the LabyMod check?
+    #Default: false
+    enabled: false
+    #This mod provides a method to disable parts of it.
+    disable:
+      #This renders the saturation of a player additional to the current food?
+      #Default: false
+      player_saturation: true
+      #GUI?
+      #Default: false
+      gui: true
+      #Provides custom nicknames for a person?
+      #Default: false
+      nick: true
+      #Blockbuild?
+      #Default: false
+      blockbuild: true
+      #This is an internal chat that connects LabyMod users?
+      #Default: false
+      chat: true
+      #Cosmetics inside the mod?
+      #Default: false
+      extras: true
+      #Purely cosmetic feature to switch back to the old animations of MC 1.7?
+      #Default: false
+      old_animations: true
+      #This renders the potion effect of the player on the display in form of a HUD?
+      #Default: false
+      potion_effect_hud: true
+      #This displays the current armour of a player (including durability) in a HUD?
+      #Default: false
+      armour_hud: true
+      #This displays the health of entities and players?
+      #Default: true
+      damage_indicator: true
+      #This shows the map from above as well as information about the locations of players and entities?
+      #Default: true
+      minimap_radar: true
+
+  #LiteLoader is alternative mod-loader to forge.
+  LiteLoader:
+    #Do you want to enable the LiteLoader check?
+    #Default: false
+    enabled: false
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} LiteLoader"
+
+  #A mod that lets you display holograms to improve building, but also has a module to download worlds.
+  Schematica:
+    #Do you want to enable the Schematica check?
+    #Default: false
+    enabled: false
+    #This mod provides a method to disable parts of it.
+    disable:
+      #Automatically builds based on a schematic?
+      #Default: true
+      printer: true
+      #This saves a part of the world as a schematic for later use thus being a small version of the full WorldDownloader mod?
+      #Default: true
+      save: true
+      #This allows to load a schematic on your server for printing or a hologram?
+      #Default: false
+      load: true
+
+  #Vape is a very popular ghost-client, often seen in ranked pvp gameplay and optimized to be especially hard to find in screenshares.
+  Vape:
+    #Do you want to enable the Vape check?
+    #Default: false
+    enabled: false
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} Vape"
+
+  #WorldDownloader is a popular modification to get the maps of a server.
+  WorldDownloader:
+    #Do you want to enable the WorldDownloader check?
+    #Default: false
+    enabled: false
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} WorldDownloader"
+
+#This automatically deletes old log files of both AAC and AACAdditionPro.
+LogBot:
+  #Do you want to enable the LogBot check?
+  #Default: false
+  enabled: false
+  #After how many days should AAC-logs be deleted?
+  #Default: 10
+  AAC: 10
+  #After how many days should AACAdditionPro-logs be deleted?
+  #Default: 10
+  AACAdditionPro: 10
+  #After how many days should Server-logs be deleted?
+  #Default: 10
+  Server: 10
+
+#Heuristic-Addition.
+Heuristic-Addition:
+  #Do you want to enable the Heuristic-Addition check?
+  #Default: false
+  enabled: false
+  #Map of violation levels to commands?
+  confidences:
+    50: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    60: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Heuristics"
+    70: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Heuristics"
+    80: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Heuristics"
+    90: "aackick {player} Heuristics"
+
+#Should players with the aac.verbose permission get the AACAdditionPro-verbose messages.
+Verbose:
+  #Do you want AACAdditionPro to log into a log-file?
+  #Default: true
+  file: true
+  #Should players be able to get Verbose-Messages, if they have the aac.verbose permission?
+  #Default: true
+  players: true
+  #Should the verbose output be logged in the console?
+  #Default: true
+  console: true
