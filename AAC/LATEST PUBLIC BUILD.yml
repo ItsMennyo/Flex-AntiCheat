@@ -6,9 +6,9 @@
 # |   AntiCheat Name: AAC (Advanced Anti Cheat)     | #
 # |   AntiCheat Developer: konsolas.58100           | #
 # |   AntiCheat Link: https://goo.gl/YgNG9b         | #
-# |   Config Version: 3.3.5                         | #
+# |   Config Version: 3.3.5-b1                      | #
 # |   Config Configurator: ItsMennyo                | #
-# |   Config Build: BUILD 1.6.202 STABLE            | #
+# |   Config Build: BUILD 1.6.397 BETA              | #
 # |   Overview Page: https://goo.gl/NJQDFA          | #
 # |   Support Page: https://goo.gl/DAfLsX           | #
 # |   Last Build: https://goo.gl/CFH892             | #
@@ -34,10 +34,10 @@ hitbox:
   max_reach: 3.53
   #How much should AAC compensate for the movement of the target?
   #Default: 5.0
-  move_compensation: 8.0
+  move_compensation: 7.5
   #Minimum number of violations before AAC starts cancelling hits?
   #Default: 1
-  min_vl: 10
+  min_vl: 5
   #Map of violation levels to commands?
   thresholds:
     10: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -97,7 +97,7 @@ fastbow:
   block_ticks: 100
   #How much VL does a player need before AAC starts blocking shots?
   #Default: 5
-  min_vl: 6
+  min_vl: 3
   #Map of violation levels to commands?
   thresholds:
     6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -113,10 +113,10 @@ fightspeed:
   enabled: true
   #How many times should a player be able to attack per second?
   #Default: 15
-  max_hit: 16
+  max_hit: 14
   #How many times should a player be allowed to swing per second?
   #Default: 35
-  max_swing: 30
+  max_swing: 28
   #Should fightspeed check for consistent click speed?
   #Default: true
   consistent_check: true
@@ -147,10 +147,10 @@ fly:
   vl_multiplier: 1.0
   #Minimum violation level for a player to be teleported down?
   #Default: 28
-  min_vl: 30
+  min_vl: 15
   #Ticks after velocity a player should be immune to the glide check?
   #Default: 30
-  vel_ticks: 35
+  vel_ticks: 45
   #Teleport the player down if detected?
   #Default: true
   teleport: true
@@ -159,7 +159,7 @@ fly:
   abilities: false
   #How many ticks should AAC wait before reducing a player's violation level?
   #Default: 20
-  reduce_delay: 10
+  reduce_delay: 5
   #Should AAC reset a player's pitch to 0 after a detection?
   #Default: false
   reset_pitch: false
@@ -181,7 +181,7 @@ speed:
   threshold: 0.005
   #Duration of time AAC should compensate for velocity?
   #Default: 30
-  vel_ticks: 35
+  vel_ticks: 30
   #Multiplier of violation size to be added to VL level?
   #Default: 6.0
   vl_multiplier: 1.0
@@ -190,13 +190,13 @@ speed:
   max_sneak_toggles: 20
   #How many times should a player be allowed to toggle use in a second?
   #Default: 35
-  max_use_toggles: 30
+  max_use_toggles: 40
   #How many violations before a player will start being teleported?
   #Default: 36
-  min_vl: 30
+  min_vl: 15
   #How many ticks should AAC wait before reducing a player's violation level?
   #Default: 20
-  reduce_delay: 10
+  reduce_delay: 5
   #Map of violation levels to commands?
   thresholds:
     30: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -231,11 +231,11 @@ noswing:
   enabled: true
   #Map of violation levels to commands?
   thresholds:
-    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} NoSwing"
-    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} NoSwing"
-    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} NoSwing"
-    32: "aackick {player} NoSwing"
+    6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    12: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} NoSwing"
+    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} NoSwing"
+    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} NoSwing"
+    24: "aackick {player} NoSwing"
 
 #Regen directly stops players from healing too quickly.
 regen:
@@ -247,7 +247,7 @@ regen:
   cancel_regen: true
   #What delay should AAC force between regeneration?
   #Default: 3600
-  min_regen_delay: 3500
+  min_regen_delay: 3400
   #What delay should AAC force if the player is fully satiated?
   #Default: 450
   min_satiated_delay: 400
@@ -275,7 +275,7 @@ killaura:
   listen_delay: 7
   #How far away must 2 players be to be checked?
   #Default: 1.2
-  min_dist: 2.7
+  min_dist: 2.8
   #How long should the check last?
   #Default: 20
   duration: 20
@@ -287,7 +287,7 @@ killaura:
   max_diff: 0.13
   #How far should the player be allowed to reach during the check?
   #Default: 4.5
-  max_reach: 4.5
+  max_reach: 4.8
   #Map of violation levels to commands?
   thresholds:
     20: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -303,7 +303,7 @@ heuristics:
   enabled: true
   #Heuristic confidence required for a violation?
   #Default: 75
-  min_confidence: 82
+  min_confidence: 80
   #List of patterns which should not incur a violation?
   #Default: - "P/00"
   exempt: {}
@@ -353,20 +353,25 @@ phase:
   enabled: true
   #Which items should we exclude?
   exclude:
-  - "ANVIL"
-  - "CHEST"
-  - "AIR"
-  - "STATIONARY_WATER"
-  - "WATER"
-  - "ENDER_CHEST"
-  - "TRAPPED_CHEST"
-  - "STATIONARY_LAVA"
-  - "LAVA"
-  - "SOIL"
-  - "VINE"
-  - "PISTON_MOVING_PIECE"
-  - "WATER_LILY"
-  - "LADDER"
+    - "ANVIL"
+    - "CHEST"
+    - "AIR"
+    - "STATIONARY_WATER"
+    - "WATER"
+    - "ENDER_CHEST"
+    - "TRAPPED_CHEST"
+    - "STATIONARY_LAVA"
+    - "LAVA"
+    - "SOIL"
+    - "WATER_LILY"
+    - "VINE"
+    - "CARPET"
+    - "CROPS"
+    - "WHEAT"
+    - "POTATO"
+    - "CARROT"
+    - "PISTON_MOVING_PIECE"
+    - "LADDER"
   #Map of violation levels to commands?
   thresholds:
     20: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -398,7 +403,7 @@ fastbreak:
   enabled: true
   #How many ticks should fastbreak count as lag?
   #Default: 2
-  let_ticks: 3
+  let_ticks: 4
   #Should AAC cancel an illegal block break?
   #Default: true
   cancel_break: true
@@ -407,7 +412,7 @@ fastbreak:
   check_delay: true
   #How many violations before AAC starts cancelling block breaks?
   #Default: 1
-  cancel_vl: 6
+  cancel_vl: 3
   #Map of violation levels to commands?
   thresholds:
     6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -429,7 +434,7 @@ fastplace:
   cancel_place: true
   #How many violations before AAC starts cancelling block placements?
   #Default: 2
-  cancel_vl: 6
+  cancel_vl: 3
   #Map of violation levels to commands?
   thresholds:
     6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -451,7 +456,8 @@ nuker:
   vl_divisor: 41
   #Map of violation levels to commands?
   thresholds:
-    1: "aackick {player} Nuker"
+    1: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    2: "aackick {player} Nuker"
 
 #Interact stops players interacting in impossible situations.
 interact:
@@ -475,11 +481,11 @@ interact:
   cancel_ghost_attack: true
   #Violation before AAC starts cancelling interact when detecting ghosthand?
   #Default: 5
-  cancel_vl_interact: 20
+  cancel_vl_interact: 10
   #Default: 5
-  cancel_vl_place: 20
+  cancel_vl_place: 10
   #Default: 0
-  cancel_vl_break: 10
+  cancel_vl_break: 5
   #Map of violation levels to commands?
   thresholds:
     20: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -501,7 +507,7 @@ velocity:
   max_tp_dist: 2.0
   #How many violations before AAC starts teleporting players who ignore velocity?
   #Default: 5
-  min_vl: 5
+  min_vl: 3
   #How much should AAC increase a player's violation level by on detection?
   #Default: 2
   vl_normal: 1
@@ -542,7 +548,7 @@ move:
   balance_cap: 10
   #At what tick interval should AAC reduce 1 VL from the player?
   #Default: 25
-  decay: 10
+  decay: 5
   #Teleport offset which AAC will accept from players?
   #Default: 0.001
   tp_accept_threshold: 0.001
@@ -563,9 +569,6 @@ ban_command: "aacban {player}"
 #How long after a player is kicked should he be allowed to log in?
 #Default: 120
 kick_ticks: -1
-#Should AAC kill combat loggers?
-#Default: false
-kill_loggers: false
 #Should AAC log events to a file?
 #Default: true
 log_file: true
@@ -577,7 +580,7 @@ aackick_broadcast: false
 usetps: true
 #Enable verbose logging?
 #Default: false
-verbose: false
+verbose: true
 #Enable verbose logging to console?
 #Default: false
-log_console: false
+log_console: true
