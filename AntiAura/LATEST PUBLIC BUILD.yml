@@ -8,7 +8,7 @@
 # |   Page: https://goo.gl/8wrt6R                  | #
 # |   Plugin Version: 11.26                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.0.000 BETA             | #
+# |   Config Build: BUILD 2.0.167 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Last Build: https://goo.gl/9YedUw            | #
@@ -89,10 +89,10 @@ Forcefield:
     Enabled: true
     #The minimum amount of hits that the player has had to have done before the hits are analyzed?
     #Default: 20
-    MinHitSampleCount: 25
+    MinHitSampleCount: 15
     #The maximum amount of hits that AntiAura will store to analyze the player?
     #Default: 30
-    MaxHitSampleCount: 40
+    MaxHitSampleCount: 25
     #This checks the consistency of hit positioning.
     HitPosition:
       #The maximum and minimum values in which player hits are legitimate.
@@ -113,13 +113,13 @@ Forcefield:
       MinAverageMovementToCalculate: 0.1
       #The amount that a hit must be near the average of all hits to be counted as similar movement per hit?
       #Default: 0.1
-      SimilarHeadMovementAmount: 0.18
+      SimilarHeadMovementAmount: 0.2
       #If less than ConsistentPercentageMin have consistent head movement, player is kicked for hacking?
       #Default: 4
-      ConsistentPercentageMin: 3.5
+      ConsistentPercentageMin: 3
       #If more than ConsistentPercentageMax have consistent head movement, player is kicked for hacking?
       #Default: 55
-      ConsistentPercentageMax: 52.5
+      ConsistentPercentageMax: 58
       #Command to execute when the player is detected?
       HeadMovementPerHitCommand: # 
   #Block players hitting outside of their field of view.
@@ -137,7 +137,7 @@ Forcefield:
     Threshold: 4
     #How much should the Threshold be lowered every time a non-hacking hit occurs?
     #Default: 1.2
-    SafeHitDecrease: 0.8
+    SafeHitDecrease: 1.0
     #Command to execute when the player is detected?
     AngleCommand: # 
   #Block players hitting entities too far away.
@@ -153,7 +153,7 @@ Forcefield:
     Enabled: true
     #Cancel hits which are detected to be through blocks or entities?
     #Default: true
-    BlockOccludingHits: true
+    BlockOccludingHits: false
     #Amount of hacking hits to detect the person as hacking?
     #Default: 2
     Threshold: 3
@@ -213,10 +213,10 @@ Forcefield:
     MinHeadMovement: 0.04
     #Amount of hacking hits to detect the person as hacking?
     #Default: 7
-    Threshold: 6
+    Threshold: 8
     #How much should the Threshold be lowered every time when a non-hacking hit occurs?
     #Default: 0.325
-    SafeHitDecrease: 0.3
+    SafeHitDecrease: 0.25
     #How much should the Threshold be lowered per second?
     #Default: 0.1
     DecreasePerSecond: 0.1
@@ -228,10 +228,10 @@ Forcefield:
     Enabled: true
     #If a player has not moved their head much it means they are hitting a static entity.
     #Default: 0.0075
-    IsMoving: 0.006
+    IsMoving: 0.007
     #This is the same as IsMoving. However it will overwrite IsMoving if the opponent is more than 3 blocks away when hit.
     #Default: 0.005
-    IsMoving2: 0.004
+    IsMoving2: 0.005
     #How long can a player have recently moved their head to be counted as having head movement?
     #Default: 4
     MovingAttackTime: 4
@@ -613,7 +613,7 @@ Flight:
   MaxHeightOffGround: 0.25
   #How long should the player be allowed to not standing on a block without going dragged back?
   #Default: 12
-  TimeInTheAir: 8
+  TimeInTheAir: 10
   #This value is automatically added onto the MaxDistancePerSecond of a player if he has a jump potion.
   #Default: 2
   ValuePerPotionLevel: 2
@@ -652,10 +652,10 @@ Speed:
   EfficientCheck: false
   #How many more blocks can players travel than normal walking Speed before being dragged back?
   #Default: 0.30
-  SpeedLeniency: 0.25
+  SpeedLeniency: 0.3
   #Maximum speed while sneaking?
   #Default: 1.25
-  MaxSneakingSpeed: 1.2
+  MaxSneakingSpeed: 1.5
   #What leniency must a player be to be forced to dragged back even if it is below the DragBackThreshold?
   #Default: 1.0
   ForceDragbackLeniency: 1.0
@@ -727,7 +727,7 @@ FastPlace:
   BlockTower: true
   #The distance that the block below the player must be from the players foot location to be cancelled if placing multiple blocks?
   #Default: 1.5
-  TowerDistance: 1.7
+  TowerDistance: 1.6
   #Maximum blocks that can be placed below the player per second?
   #Default: 2
   MaxTowerPerSec: 2
@@ -752,7 +752,7 @@ NoFall:
   DamagePlayer: true
   #How many times must the person be detected to be kicked?
   #Default: 15
-  Threshold: 5
+  Threshold: 8
   #Command to execute when NoFall is detected?
   NoFallCommand: # 
 
@@ -787,10 +787,10 @@ FastBreak:
   DisableFastBreakOnWood: false
   #How many times must the person be detected to be kicked?
   #Default: 15
-  Threshold: 5
+  Threshold: 6
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.4
-  SafeHitDecrease: 0.25
+  SafeHitDecrease: 0.3
   #Command to execute when FastBreak is detected?
   FastBreakCommand: # 
 
@@ -803,7 +803,7 @@ NoSwing:
   SwingLeniency: 4
   #How many times must the person be detected to be kicked?
   #Default: 5
-  Threshold: 4
+  Threshold: 3
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.5
   SafeInteractDecrease: 0.3
@@ -855,7 +855,7 @@ Regen:
   #Command to execute when Regen is detected?
   RegenCommand: # 
 
-#Block hacks using the Elytra?
+#Block hacks using the Elytra.
 Elytra:
   #Block players using Elytra from flying higher than their take-off position?
   #Default: true
