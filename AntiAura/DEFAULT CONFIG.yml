@@ -3,8 +3,7 @@
 #Don't forget to use /aconfig ingame! It can be faster than modifying the file.
 #
 #There are 20 ticks in 1 second.
-#DON'T use decimals in values that use ticks! If the default value ends in a decimal, you can probably use decimals in it.
-#TPS = Ticks Per Second (lower TPS = more server lag).
+#DON'T use decimals in values that are whole numbers! If the default value ends in a decimal, you can probably use decimals in it.
 #
 #Placeholders: %PLAYER% is the name of the hacker, %HACKNAME% is the name of the hack, %HACKAMOUNT% is the amount of times they have been caught for hacking previously.
 #%CHECKNAME% is the check that detected the player for hacking (this can sometimes be the same as HACKNAME but can be different too).
@@ -125,16 +124,14 @@ Forcefield:
     HeadMovementPerHit:
       #The minimum amount of head movement that the average of all hits should have.
       #Reducing this far could cause false positives as not moving your head and hitting could produce consistent results, of course.
-      MinAverageMovementToCalculate: 0.1
+      MinAverageMovementToCalculate: 0.2
       #The amount that a hit must be near the average of all hits to be counted as a "similar movement" per hit.
       #This is the main value you want to adjust if you get false positives.
       #If false positives have a percent lower than ConsistentPercentageMin, raising this will help reduce false positives.
       #If false positives have a higher percent than ConsistentPercentageMax, lowering this will help reduce false positives.
-      SimilarHeadMovementAmount: 0.1
-      #If less than ConsistentPercentageMin have consistent head movement, player is kicked for hacking.
-      ConsistentPercentageMin: 4
+      SimilarHeadMoveAmount: 0.1
       #If more than ConsistentPercentageMax have consistent head movement, player is kicked for hacking.
-      ConsistentPercentageMax: 55
+      ConsistentPercentageMax: 85
       #The command to execute if detected by this check.
       HeadMovementPerHitCommand: # 
       
@@ -155,8 +152,21 @@ Forcefield:
   Reach:
     #Block players hitting entities too far away?
     Enabled: true
+    #If one player is chasing another player who is running away, it is possible,
+    #From the point of the server, that the hit can be further away.
+    #Do you want AntiAura to give extra leniency for this scenario?
+    BackHitAccounting: true
     #What is the maximum distance players can hit before the hit is canceled?
     MaxReach: 4.4
+    #Just in case players hit a bit higher than the max reach (for example, during lag).
+    #Only reach hacks above the RaiseThresholdReach will raise the threshold.
+    RaiseThresholdReach: 4.6
+    #The Reach violation level to kick players at.
+    Threshold: 8
+    #The amount the players' reach violation level should decrease with a hit that isn't over RaiseThresholdReach.
+    SafeHitDecrease: 0.5
+    #The command to execute when Reach is detected. Overwrites KickCommand.
+    ReachCommand: # 
 
   Occlusion:
     #Block players from hitting entities through other entities or blocks?
@@ -546,12 +556,11 @@ Step:
   Enabled: true
   #How often do you want to check if the person has moved too much?
   #This value is in ticks. 20 ticks 1 second.
-  #You must restart the server for changes here to take effect.
-  TimePerCheck: 3
+  TimePerCheck: 6
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
-  MaxDistanceMovedUpwards: 1.4
+  MaxDistanceMovedUpwards: 2.8
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
-  MaxDistanceMovedDownwards: 10.0
+  MaxDistanceMovedDownwards: 21.0
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #This is better for blocking players who try and fly upwards slowly, or for things like FastLadder.
   ForceUserToGround: true
