@@ -125,9 +125,12 @@ Forcefield:
     HeadMovementPerHit:
       #The minimum amount of head movement that the average of all hits should have.
       #Reducing this far could cause false positives as not moving your head and hitting could produce consistent results, of course.
-      MinAverageMovementToCalculate: 0.06
+      MinAverageMovementToCalculate: 0.1
       #The amount that a hit must be near the average of all hits to be counted as a "similar movement" per hit.
-      SimilarMovementAmount: 0.05
+      #This is the main value you want to adjust if you get false positives.
+      #If false positives have a percent lower than ConsistentPercentageMin, raising this will help reduce false positives.
+      #If false positives have a higher percent than ConsistentPercentageMax, lowering this will help reduce false positives.
+      SimilarHeadMovementAmount: 0.1
       #If less than ConsistentPercentageMin have consistent head movement, player is kicked for hacking.
       ConsistentPercentageMin: 4
       #If more than ConsistentPercentageMax have consistent head movement, player is kicked for hacking.
@@ -604,6 +607,10 @@ Spider:
   DragBackThreshold: 0
   #Damages the player by the amount of blocks dragged back.
   DamagePlayer: true
+  #The user is teleported to the last legitimate position.
+  #The last legitimate position is USUALLY the ground.
+  #Enable this to actually cast a ray under the player and teleport them to the block below them on a Spider drag-back.
+  ForceUserToGround: false
   #How many times must a person be detected for Spider to be kicked?
   Threshold: 5
   #Command to be executed when a player is detected as hacking?
@@ -629,7 +636,7 @@ Jump:
   #The threshold the players' Jump violation level must reach for them to be detected for Jump.
   Threshold: 8
   #Command to execute when Jump is detected.
-  JumpCommand: #+
+  JumpCommand: # 
 
 
 
@@ -657,7 +664,7 @@ Flight:
   #This shops players using the Flight check to prevent fall damage.
   DamagePlayer: true
   #What command do you want to execute when someone is detected for flying?
-  FlightCommand: #  
+  FlightCommand: # 
   #If TeleportDownOnly is set to false, players are dragged back to where they were before they tried to fly.
   #If TeleportDownOnly is true, players are dragged to the ground from the current location where they are flying.
   #It is recommended to enable TeleportDownOnly on Skywars servers. 
