@@ -6,9 +6,9 @@
 # |   AntiCheat Name: AAC (Advanced Anti Cheat)     | #
 # |   AntiCheat Developer: konsolas.58100           | #
 # |   AntiCheat Link: https://goo.gl/YgNG9b         | #
-# |   Config Version: 3.3.5-b1                      | #
+# |   Config Version: 3.3.6                         | #
 # |   Config Configurator: ItsMennyo                | #
-# |   Config Build: BUILD 1.6.397 BETA              | #
+# |   Config Build: BUILD 1.6.432 BETA              | #
 # |   Overview Page: https://goo.gl/NJQDFA          | #
 # |   Support Page: https://goo.gl/DAfLsX           | #
 # |   Last Build: https://goo.gl/CFH892             | #
@@ -31,20 +31,23 @@ hitbox:
   cancel: true
   #How far should a player be able to reach?
   #Default: 3.5
-  max_reach: 3.53
+  max_reach: 3.59
   #How much should AAC compensate for the movement of the target?
   #Default: 5.0
-  move_compensation: 7.5
+  move_compensation: 10.0
   #Minimum number of violations before AAC starts cancelling hits?
   #Default: 1
-  min_vl: 5
+  min_vl: 4
+  #Number of ticks before AAC starts reducing violations
+  #Default: 60
+  reduce_delay: 50
   #Map of violation levels to commands?
   thresholds:
-    10: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    20: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Hitbox"
-    25: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Hitbox"
-    30: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Hitbox"
-    40: "aackick {player} Hitbox"
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Hitbox"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Hitbox"
+    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Hitbox"
+    32: "aackick {player} Hitbox"
 
 #BadPackets prevents players from using packets to exploit the server.
 badpackets:
@@ -116,7 +119,7 @@ fightspeed:
   max_hit: 14
   #How many times should a player be allowed to swing per second?
   #Default: 35
-  max_swing: 28
+  max_swing: 32
   #Should fightspeed check for consistent click speed?
   #Default: true
   consistent_check: true
@@ -150,7 +153,7 @@ fly:
   min_vl: 15
   #Ticks after velocity a player should be immune to the glide check?
   #Default: 30
-  vel_ticks: 45
+  vel_ticks: 50
   #Teleport the player down if detected?
   #Default: true
   teleport: true
@@ -287,7 +290,7 @@ killaura:
   max_diff: 0.13
   #How far should the player be allowed to reach during the check?
   #Default: 4.5
-  max_reach: 4.8
+  max_reach: 4.5
   #Map of violation levels to commands?
   thresholds:
     20: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -306,7 +309,8 @@ heuristics:
   min_confidence: 80
   #List of patterns which should not incur a violation?
   #Default: - "P/00"
-  exempt: {}
+  exempt:
+    - "P/32"
   #Map of violation levels to commands?
   thresholds:
     1: "aackick {player} Heuristics"
