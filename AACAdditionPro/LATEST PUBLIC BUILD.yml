@@ -6,9 +6,9 @@
 # |   AntiCheat Name: AACAdditionPro (AACAP)        | #
 # |   AntiCheat Developer: Photon.166336            | #
 # |   AntiCheat Link: https://goo.gl/GrX6dA         | #
-# |   Config Version: 3.4.3                         | #
+# |   Config Version: 3.4.4                         | #
 # |   Config Configurator: ItsMennyo                | #
-# |   Config Build: BUILD 1.1.076 BETA              | #
+# |   Config Build: BUILD 1.1.108 BETA              | #
 # |   Overview Page: https://goo.gl/NJQDFA          | #
 # |   Support Page: https://goo.gl/DAfLsX           | #
 # |   Last Build: https://goo.gl/Gv626M             | #
@@ -376,7 +376,7 @@ Scaffold:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the block-places?
   #Default: 5
-  cancel_vl: 4
+  cancel_vl: 2
   #Over how many values should AACAdditionPro take the average for the check?
   #Default: 6
   buffer_size: 4
@@ -388,11 +388,11 @@ Scaffold:
   timeout: 1000
   #Map of violation levels to commands?
   thresholds:
-    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
-    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
-    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
-    16: "aackick {player} Scaffold"
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    8: "aackick {player} Scaffold"
 
 #The Skinblinker check detects Skinblinker cheats when the player sprints/sneaks.
 Skinblinker:
