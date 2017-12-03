@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Spigot Developer: joehot200.147              | #
 # |   Page: https://goo.gl/8wrt6R                  | #
-# |   Plugin Version: 11.26                        | #
+# |   Plugin Version: 11.27                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.0.167 BETA             | #
+# |   Config Build: BUILD 2.0.242 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Last Build: https://goo.gl/9YedUw            | #
@@ -109,17 +109,14 @@ Forcefield:
     #This checks if all hits have similar head movement.
     HeadMovementPerHit:
       #The minimum amount of head movement that the average of all hits should have?
-      #Default: 0.1
-      MinAverageMovementToCalculate: 0.1
+      #Default: 0.2
+      MinAverageMovementToCalculate: 0.15
       #The amount that a hit must be near the average of all hits to be counted as similar movement per hit?
       #Default: 0.1
-      SimilarHeadMovementAmount: 0.2
-      #If less than ConsistentPercentageMin have consistent head movement, player is kicked for hacking?
-      #Default: 4
-      ConsistentPercentageMin: 3
+      SimilarHeadMoveAmount: 0.15
       #If more than ConsistentPercentageMax have consistent head movement, player is kicked for hacking?
-      #Default: 55
-      ConsistentPercentageMax: 58
+      #Default: 85
+      ConsistentPercentageMax: 75
       #Command to execute when the player is detected?
       HeadMovementPerHitCommand: # 
   #Block players hitting outside of their field of view.
@@ -146,7 +143,21 @@ Forcefield:
     Enabled: true
     #What is the maximum distance players can hit before the hit will be canceled?
     #Default: 4.4
-    MaxReach: 5.0
+    MaxReach: 4.5
+    #Do you want to give extra leniency when the player is running and hitting?
+    #Default: true
+    BackHitAccounting: true
+    #Amount of hacking hits to detect the person as hacking?
+    #Default: 8
+    Threshold: 6
+    #Reach hacks above the RaiseThresholdReach will raise the threshold.
+    #Default: 4.6
+    RaiseThresholdReach: 4.8
+    #How much should the Threshold be lowered every time a non-hacking hit occurs?
+    #Default: 4.6
+    SafeHitDecrease: 0.5
+    #Command to execute when the player is detected?
+    ReachCommand: # 
   #Block players from hitting entities through other entities or blocks.
   Occlusion:
     #Do you want to enable the Occlusion check?
@@ -266,13 +277,13 @@ FastClick:
   Enabled: true
   #What is the maximum amount of clicks allowed per second?
   #Default: 8
-  MaxClicksPerSecond: 10
+  MaxClicksPerSecond: 15
   #If the player is frozen, don't count clicks?
   #Default: false
   LagAccounting: false
   #How many times the player must be detected by the FastClick check?
   #Default: 5
-  Threshold: 5
+  Threshold: 3
   #Command to execute when the player is detected?
   FastClickCommand: # 
 
@@ -513,14 +524,14 @@ Step:
   #Do you want to enable the Step check?
   Enabled: true
   #How often do you want to check if the person has moved too much?
-  #Default: 3
-  TimePerCheck: 3
+  #Default: 6
+  TimePerCheck: 6
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
-  #Default: 1.4
-  MaxDistanceMovedUpwards: 1.2
+  #Default: 2.8
+  MaxDistanceMovedUpwards: 2.4
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
-  #Default: 10.0
-  MaxDistanceMovedDownwards: 10.5
+  #Default: 20.0
+  MaxDistanceMovedDownwards: 21.0
   #Block single-block packet stepping?
   #Default: true
   SingleBlockPackets: true
@@ -594,7 +605,7 @@ Jump:
   MaxJumpOnLevelSurface: 5.4
   #How many times the player must be detected by the Jump check?
   #Default: 8
-  Threshold: 6
+  Threshold: 5
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.5
   SafeJumpDecrease: 0.4
@@ -610,7 +621,7 @@ Flight:
   StrictMode: true
   #The maximum height a player can be off the ground to be counted as in the air?
   #Default: 0.1
-  MaxHeightOffGround: 0.25
+  MaxHeightOffGround: 0.2
   #How long should the player be allowed to not standing on a block without going dragged back?
   #Default: 12
   TimeInTheAir: 10
@@ -629,7 +640,7 @@ Flight:
   TeleportDownOnly: false
   #How many times the player must be detected by the Flight check?
   #Default: 5
-  Threshold: 4
+  Threshold: 5
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 1.0
   LowerAmount: 0.8
@@ -680,10 +691,10 @@ Speed:
   Water: true
   #How many times the player must be detected by the Speed check?
   #Default: 15
-  Threshold: 8
+  Threshold: 10
   #What the Threshold must be at to drag a player back?
   #Default: 10
-  DragBackThreshold: 4
+  DragBackThreshold: 5
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 1.0
   LowerAmount: 0.8
