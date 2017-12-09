@@ -379,7 +379,7 @@ Map:
     SuperLenientMode: false
     #How far away in chunks should the TileESP check look for tiles to hide?
     #Decreasing this somewhat improves performance, but decreases range in which tiles are hidden.
-    ChunkDistance: 5
+    ChunkDistance: -1
   #This will slightly impact your performance.
   #It will block the X-Ray hack by hiding ores as stone.
   XRay:
@@ -459,7 +459,10 @@ Specifics:
   CallFakeLeaveEvent: false
   #If the person says invalid chat, execute this command.
   #This for clients that send invalid messages to the server to kick themselves during PVP and not be detected by current plugins.
-  InvalidChatCommand: tempban %PLAYER% 30m You have been temporarily banned for invalid chat used for PVP Logging!
+  InvalidChatCommand: kick %PLAYER% You have been kicked for invalid chat used for PVP Logging!#tempban %PLAYER% 30m You have been temporarily banned for invalid chat used for PVP Logging!
+  #Blocks the "World downloader" mod. Please note this does not block all world downloaders, it only blocks one popular world downloader mod.
+  #Set the command to be blank to disable.
+  WorldDownloaderCommand: kick %PLAYER% World downloaders are not allowed on this server!#tempban %PLAYER% 30m You have been temporarily banned for trying to use a world downloader on this server!
   #Do you want to enable the AntiAura.bypass permission for admins not to be checked?
   #This won't affect the AntiAura.debug or AntiAura.reload permission nodes.
   EnablePermissions: false
@@ -584,8 +587,8 @@ VelocityAccounting:
   AllowMultipleVelocities: true
   #Allow multiple velocities on the X/Z axis.
   MultipleXZVelocities: true
-  #The distance an XZ velocity can go.
-  XZVelocityMul: 20
+  #The the multiplier to the velocity for the amount the player can move.
+  XZVelocityMul: 25
   #Calculate velocity from the clients' velocity, and NOT the event's velocity?
   #WARNING: Clients can fake their own velocity! This may be bypassed by some very advanced clients (I doubt it will happen though).
   UsePlayerVelocity: false
