@@ -127,7 +127,6 @@ Forcefield:
       MinAverageMovementToCalculate: 0.2
       #The amount that a hit must be near the average of all hits to be counted as a "similar movement" per hit.
       #This is the main value you want to adjust if you get false positives.
-      #If false positives have a percent lower than ConsistentPercentageMin, raising this will help reduce false positives.
       #If false positives have a higher percent than ConsistentPercentageMax, lowering this will help reduce false positives.
       SimilarHeadMoveAmount: 0.1
       #If more than ConsistentPercentageMax have consistent head movement, player is kicked for hacking.
@@ -403,9 +402,9 @@ Map:
 Knockback:
   #Do you want to enable AntiKnockback checking at all?
   Enabled: true
-  #How many ticks after the player has been hit should it be checked if he has moved?
+  #How many ticks after the player has been hit should it be checked if they have moved?
   #There are 20 ticks in 1 second.
-  TicksAfterHitToCheck: 10
+  TicksAfterHitToCheck: 15
   #Won't check players who are not moving.
   #By enabling AntiKnockback and not moving at all, players will be able to bypass detection if this is enabled.
   #Enable with caution.
@@ -693,6 +692,8 @@ DontCheckTime: 1
 #Disabling the Speed check will mean that TP-Aura will no longer be blocked by the Reach check.
 Speed:
   #Enable Speedhack checks?
+  #WARNING: Disabling the Speed check takes away Speed data from other checks!
+  #Disabling this will make checks such as Reach and AntiKnockback work less effectively!
   Enabled: true
   #This speed is automatically added onto the normal speed of a player if he has a potion.
   #If players get dragged back when using speed potions, increase this.
