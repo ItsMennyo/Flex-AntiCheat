@@ -386,10 +386,8 @@ Map:
     #Enable the blockage of X-Ray?
     Enabled: true
     #MaxChunksPerIntervalMult is the amount of chunks per tick that are hidden.
-    #There are 20 ticks in a second.
-    #So by default, if a player teleports to somewhere, in one second, 20 chunks around the player will have their ores hidden.
-    #The next second another 20 would be hidden, etc.
-    MaxChunksPerIntervalMult: 2
+    #Set to -1 for it to be infinite chunks.
+    MaxChunksPerIntervalMult: -1
     #How far away in chunks should the X-Ray check look for blocks to hide?
     #Decreasing this slightly improves performance, but decreases range in which blocks are hidden.
     #Setting this value to below 0 will set this to your server's view distance -1.
@@ -562,17 +560,12 @@ Step:
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
   MaxDistanceMovedUpwards: 2.8
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
-  MaxDistanceMovedDownwards: 21.0
+  MaxDistanceMovedDownwards: 22.5
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #This is better for blocking players who try and fly upwards slowly, or for things like FastLadder.
   ForceUserToGround: true
   #How many times must a user be detected for Step to kick the user?
   Threshold: 8
-  #Block single-block stepping?
-  #This is a packet-based solution and can be bypassed.
-  #It's really more a way to make hack detection look better against basic clients.
-  #SingleBlockPackets will not be enabled if you have the Teleport check disabled.
-  SingleBlockPackets: true
   #Command to execute when Step is detected?
   StepCommand: # 
 
