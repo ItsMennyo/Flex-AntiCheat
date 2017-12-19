@@ -1,29 +1,29 @@
-#######################################################
-# +-------------------------------------------------+ #
-# |                                                 | #
-# |   Flex ➤ Minecraft AntiCheat ➤ AAC Edition      | #
-# |                                                 | #
-# |   AntiCheat Name: AAC (Advanced Anti Cheat)     | #
-# |   AntiCheat Developer: konsolas.58100           | #
-# |   AntiCheat Link: https://goo.gl/YgNG9b         | #
-# |   Config Version: 3.3.6                         | #
-# |   Config Configurator: ItsMennyo                | #
-# |   Config Build: BUILD 1.6.432 BETA              | #
-# |   Overview Page: https://goo.gl/NJQDFA          | #
-# |   Support Page: https://goo.gl/DAfLsX           | #
-# |   Last Build: https://goo.gl/CFH892             | #
-# |                                                 | #
-# |   Copyright © 2017 ItsMennyo, The Netherlands   | #
-# |                                                 | #
-# +-------------------------------------------------+ #
-#######################################################
+#################################################
+# +-------------------------------------------+ #
+# |                                           | #
+# |   Flex AntiCheat - Optimized AAC Config   | #
+# |                                           | #
+# |   AntiCheat: AAC (Advanced Anti Cheat)    | #
+# |   Developer: konsolas.58100               | #
+# |   Spigot Page: https://goo.gl/YgNG9b      | #
+# |   Plugin Version: 3.3.7                   | #
+# |   Configurator: ItsMennyo                 | #
+# |   Config Build: BUILD 1.6.545 BETA        | #
+# |   Overview: https://goo.gl/NJQDFA         | #
+# |   Support: https://goo.gl/DAfLsX          | #
+# |   Latest Build: https://goo.gl/CFH892     | #
+# |                                           | #
+# |   Copyright © 2017 ItsMennyo Network      | #
+# |                                           | #
+# +-------------------------------------------+ #
+#################################################
 
 #Hitbox forces players to look at entities they want to attack.
 hitbox:
   #Do you want to enable the Hitbox check?
   #Default: true
   enabled: true
-  #How much should AAC expand hitboxes by?
+  #How much should AAC expand Hitboxes by?
   #Default: 0.6
   lenience: 0.63
   #Should AAC cancel illegal hits?
@@ -34,13 +34,13 @@ hitbox:
   max_reach: 3.59
   #How much should AAC compensate for the movement of the target?
   #Default: 5.0
-  move_compensation: 10.0
-  #Minimum number of violations before AAC starts cancelling hits?
+  move_compensation: 7.5
+  #Minimum number of violations before AAC starts canceling hits?
   #Default: 1
   min_vl: 4
-  #Number of ticks before AAC starts reducing violations
+  #Number of ticks before AAC starts reducing violations?
   #Default: 60
-  reduce_delay: 50
+  reduce_delay: 80
   #Map of violation levels to commands?
   thresholds:
     8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -54,7 +54,7 @@ badpackets:
   #Do you want to enable the BadPackets check?
   #Default: true
   enabled: true
-  #After how many moves should packets be cancelled?
+  #After how many moves should packets be canceled?
   #Default: 30
   cancel_threshold: 25
   #How many moves should a player be able to send in 3 ticks?
@@ -68,12 +68,12 @@ badpackets:
     300: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} BadPackets"
     400: "aackick {player} BadPackets"
 
-#Criticals prevents players from getting critical hits when it's not possible.
+#Criticals prevents players from getting Critical hits when it's not possible.
 criticals:
   #Do you want to enable the Criticals check?
   #Default: true
   enabled: true
-  #Should a hit be cancelled if it is a critical and the player is on the ground?
+  #Should a hit be canceled if it is a Critical and the player is on the ground?
   #Default: true
   cancel_false_hit: true
   #How many ticks should AAC enforce between jumps?
@@ -92,10 +92,10 @@ fastbow:
   #Do you want to enable the Fastbow check?
   #Default: true
   enabled: true
-  #How much lag compensation should AAC perform when checking for fastbow?
+  #How much lag compensation should AAC perform when checking for Fastbow?
   #Default: 130
   lenience_ms: 130
-  #How long should AAC block bow usage after a player is detected for fastbow?
+  #How long should AAC block bow usage after a player is detected for Fastbow?
   #Default: 100
   block_ticks: 100
   #How much VL does a player need before AAC starts blocking shots?
@@ -120,7 +120,7 @@ fightspeed:
   #How many times should a player be allowed to swing per second?
   #Default: 35
   max_swing: 32
-  #Should fightspeed check for consistent click speed?
+  #Should FightSpeed check for consistent click speed?
   #Default: true
   consistent_check: true
   #Maximum range of hit delays to be regarded as consistent?
@@ -151,7 +151,7 @@ fly:
   #Minimum violation level for a player to be teleported down?
   #Default: 28
   min_vl: 15
-  #Ticks after velocity a player should be immune to the glide check?
+  #Ticks after Velocity a player should be immune to the glide check?
   #Default: 30
   vel_ticks: 50
   #Teleport the player down if detected?
@@ -182,7 +182,7 @@ speed:
   #Maximum amount a player should be allowed to go over a calculated limit?
   #Default: 0.005
   threshold: 0.005
-  #Duration of time AAC should compensate for velocity?
+  #Duration of time AAC should compensate for Velocity?
   #Default: 30
   vel_ticks: 30
   #Multiplier of violation size to be added to VL level?
@@ -208,7 +208,7 @@ speed:
     90: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Speed"
     120: "aackick {player} Speed"
 
-#Derp stops some forms of derp hacking.
+#Derp stops some forms of Derp hacking.
 derp:
   #Do you want to enable the Derp check?
   #Default: true
@@ -250,7 +250,7 @@ regen:
   cancel_regen: true
   #What delay should AAC force between regeneration?
   #Default: 3600
-  min_regen_delay: 3400
+  min_regen_delay: 3500
   #What delay should AAC force if the player is fully satiated?
   #Default: 450
   min_satiated_delay: 400
@@ -270,15 +270,15 @@ killaura:
   #What % of the time should AAC do a check?
   #Default: 100
   check_chance: 100
-  #Lag compensation paramters?
+  #Lag compensation parameters?
   #Default: 3
   check_delay: 2
-  #Lag compensation paramters?
+  #Lag compensation parameters?
   #Default: 6
   listen_delay: 7
   #How far away must 2 players be to be checked?
   #Default: 1.2
-  min_dist: 2.8
+  min_dist: 2.0
   #How long should the check last?
   #Default: 20
   duration: 20
@@ -288,7 +288,7 @@ killaura:
   #How far off should a player be able to look to allow the hit?
   #Default: 0.11
   max_diff: 0.13
-  #How far should the player be allowed to reach during the check?
+  #How far should the player be allowed to Reach during the check?
   #Default: 4.5
   max_reach: 4.5
   #Map of violation levels to commands?
@@ -320,7 +320,7 @@ nofall:
   #Do you want to enable the NoFall check?
   #Default: true
   enabled: true
-  #Minimum downwards velocity for NoFall to apply?
+  #Minimum downwards Velocity for NoFall to apply?
   #Default: -0.2
   required_velocity: -0.2
   #Should AAC deal fall damage to players?
@@ -405,25 +405,25 @@ fastbreak:
   #Do you want to enable the FastBreak check?
   #Default: true
   enabled: true
-  #How many ticks should fastbreak count as lag?
+  #How many ticks should FastBreak count as lag?
   #Default: 2
-  let_ticks: 4
+  let_ticks: 3
   #Should AAC cancel an illegal block break?
   #Default: true
   cancel_break: true
   #Should AAC check for a break delay?
   #Default: true
   check_delay: true
-  #How many violations before AAC starts cancelling block breaks?
+  #How many violations before AAC starts canceling block breaks?
   #Default: 1
   cancel_vl: 3
   #Map of violation levels to commands?
   thresholds:
-    6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    12: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} FastBreak"
-    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} FastBreak"
-    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} FastBreak"
-    24: "aackick {player} FastBreak"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} FastBreak"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} FastBreak"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} FastBreak"
+    16: "aackick {player} FastBreak"
 
 #FastPlace stops players from placing blocks too quickly.
 fastplace:
@@ -436,7 +436,7 @@ fastplace:
   #Should AAC cancel an illegal block place?
   #Default: true
   cancel_place: true
-  #How many violations before AAC starts cancelling block placements?
+  #How many violations before AAC starts canceling block placements?
   #Default: 2
   cancel_vl: 3
   #Map of violation levels to commands?
@@ -483,7 +483,7 @@ interact:
   #Detect hitting through walls?
   #Default: true
   cancel_ghost_attack: true
-  #Violation before AAC starts cancelling interact when detecting ghosthand?
+  #Violation before AAC starts canceling interact when detecting ghosthand?
   #Default: 5
   cancel_vl_interact: 10
   #Default: 5
@@ -498,7 +498,7 @@ interact:
     60: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Interact"
     80: "aackick {player} Interact"
 
-#Velocity makes sure that players take proper knockback.
+#Velocity makes sure that players take proper Knockback.
 velocity:
   #Do you want to enable the Velocity check?
   #Default: true
@@ -509,7 +509,7 @@ velocity:
   #What is the maximum distance AAC should teleport a detected player?
   #Default: 3.0
   max_tp_dist: 2.0
-  #How many violations before AAC starts teleporting players who ignore velocity?
+  #How many violations before AAC starts teleporting players who ignore Velocity?
   #Default: 5
   min_vl: 3
   #How much should AAC increase a player's violation level by on detection?
@@ -541,7 +541,7 @@ move:
   #Maximum lagspike size to compensate for ticks?
   #Default: -50
   min_balance: -80
-  #Maximum extra packets before cancelling and causing movement violations?
+  #Maximum extra packets before canceling and causing movement violations?
   #Default: 5
   cancel_threshold: 10
   #Default balance when networking heuristics determine that the connection is normal?
