@@ -704,7 +704,7 @@ Speed:
   BlockStationarySprinting: false
   #How many more blocks can players travel than normal walking speed before being dragged back?
   #If players are exploiting this to go ~10% faster, feel free to turn it down.
-  SpeedLeniency: 0.30
+  SpeedLeniency: 0.20
   #What leniency most a player be at to be FORCED to be dragged back, even if below the DragBackThreshold?
   ForceDragbackLeniency: 1.0
   #How many times must the player be detected for speed hacks to be kicked?
@@ -852,48 +852,50 @@ NoSwing:
   #Command to execute when NoSwing is detected.
   NoSwingCommand: # 
 
-
-#Blocks the NoFire hack, a hack where clients cannot be set on fire.
-AntiFire:
-  #Enable blockage of this hack?
-  Enabled: true
-  #Amount of times person must be detected to be kicked.
-  Threshold: 1.5
-  #Decrease of the threshold with a safe interaction.
-  SafeFireDecrease: 0.1
-  #Command to execute when AntiFire is detected.
-  AntiFireCommand: # 
-
-
-#Blocks the PotionSaver hack, a hack where potion effects do not go down.
-#Blocks the NoPotion hack, a hack where potion effects can be immediately removed.
-AntiPotion:
-  #Enable blockage of this hack?
-  Enabled: true
-  #Amount of times person must be detected to be kicked.
-  Threshold: 1.5
-  #If a player is on fire and puts it out, do you want to re-light him on fire?
-  #May light players on fire who used /heal or other commands while on fire.
-  ReLightPlayer: false
-  #Decrease of the threshold with a safe interaction.
-  SafePotionDecrease: 0.05
-  #Command to execute when AntiFire is detected.
-  AntiPotionCommand: # 
-  
-
 #Block regeneration hack? This blocks clients from regenerating health really fast, and so being unkillable.
+#Please note that this now is a backup check for the MorePackets check. 
+#This check does not use packets, and so works by looking at the actual player health.
 Regen:
   #Do you want to enable regeneration blocking?
   Enabled: true
   #What is the maximum amount of half-hearts allowed for each regeneration? A value of 2 equals one heart.
   MaxHalfHeartsPerRegen: 1
   #Maximum half-hearts that a player can regen per second?
-  #Default vanilla on a localhost server can regen 4.0 hearts per second. Increased to 5.0 because possible lag may affect this.
+  #Default vanilla on a localhost server can regen 4.0 hearts per second. You may want to increase to 5.0 because possible lag may affect this.
   MaxHeartsPerSecond: 4.0
   #Command to execute when regen is detected.
   RegenCommand: # 
   #Threshold for when players are kicked.
   Threshold: 5
+
+#This is the MorePackets check. It checks for packets used for hacks such as AntiFire, AntiPotion, and Regen!
+#Please note that this check only checks for one specific packet.
+#When I say "packets the client can send per second", I am referring to the amount of this specific packet type, not the amount of all packets.
+MorePackets:
+  #Enable the MorePackets check?
+  Enabled: true
+  #What is the maximum amount of packets the client can send per second?
+  MaxPacktsPerSecond: 10
+  #If more packets have been sent in a second than MaxPacktsPerSecond, do you want to block the packets?
+  #There is a short amount of time between the player being detected and being kicked.
+  #This means that a player with a poison potion in survival could use AntiPotion, get kicked, and rejoin with their poison potion gone.
+  #If the packet is blocked, this means that the player will not be able to successfully use the hack for a short time.
+  BlockPackets: true
+  #The command to execute when MorePackets is detected.-
+  MorePacketsCommand: #
+
+
+#PotionSaver is a hack where, if a client has a positive potion (such as Speed) and stands still, the timer on the potion does not go down.
+#In short, this checks if the "Make potion go down" packet is not sent each second.
+PotionSaver:
+  #Enable the PotionSaver check?
+  Enabled: true
+  #The violation level (in seconds) that the player has to reach by not sending potion decrease information to be detected.
+  Threshold: 4
+  #How much the violation level decreases with each seconds' legitimate potion decrease.
+  SafeSecondDecrease: 0.25
+  #Command to execute when PotionSaver is detected.
+  PotionSaverCommand: #
 
 
 #Block hacks using the Elytra?
