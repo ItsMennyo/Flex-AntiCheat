@@ -639,6 +639,9 @@ Jump:
   SafeJumpDecrease: 0.5
   #The threshold the players' Jump violation level must reach for them to be detected for Jump.
   Threshold: 8
+  #If the threshold is above the DragBackThreshold, players are dragged back when jumping too far.
+  #Setting this higher than 0 can, of course, allow players to jump illegitimately far until they reach the DragBackThreshold.
+  DragBackThreshold: 0
   #Command to execute when Jump is detected.
   JumpCommand: # 
 
@@ -654,6 +657,9 @@ Flight:
   StrictMode: false
   #How many times must the person be detected as flying to be detected?
   Threshold: 5
+  #How many times must the person be detected as flying to be dragged back?
+  #Increasing this above 0 will allow players to fly illegitimately for a short amount of time.
+  DragBackThreshold: 0
   #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
   LowerAmount: 1.0
   #This value is automatically added onto the MaxDistancePerSecond of a player if he has a jump potion.
@@ -713,6 +719,9 @@ Speed:
   #Note: If you wish to use it, set it at a high value like 10 or more.
   #If players are not dragged back, threshold increases much faster than if they are.
   #Set to 0 to disable.
+  #Please note that a higher-than-zero DragBackThreshold value on OTHER checks in AntiAura will introduce unnecessary bypasses.
+  #However, the DragBackThreshold for the Speed check is important to reducing false positives, especially with laggy players.
+  #And, it does not introduce significant bypasses due to the ForceDragbackLeniency option.
   DragBackThreshold: 10
   #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
   LowerAmount: 1.0
@@ -894,6 +903,9 @@ PotionSaver:
   Threshold: 4
   #How much the violation level decreases with each seconds' legitimate potion decrease.
   SafeSecondDecrease: 0.25
+  #If a player is not sending any KeepAlive packets, do you want to not detect players for PotionSaver?
+  #Note that it's impossible for players to not send any KeepAlive packets, or else they will time out.
+  DisableWhenNotSendingKeepAlive: true
   #Command to execute when PotionSaver is detected.
   PotionSaverCommand: #
 
