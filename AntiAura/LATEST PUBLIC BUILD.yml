@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.33                        | #
+# |   Plugin Version: 11.34                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.1.075 BETA             | #
+# |   Config Build: BUILD 2.1.124 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
@@ -98,7 +98,7 @@ Forcefield:
     HitPosition:
       #The maximum values in which player hits are legitimate.
       #Default: 0.31
-      MaxValue: 0.36
+      MaxValue: 0.37
       #If the player's movements are too controlled and consistent, the average of their hits will go below MinValue.
       #Default: 0.002
       MinValue: 0.002
@@ -111,13 +111,13 @@ Forcefield:
     HeadMovementPerHit:
       #The minimum amount of head movement that the average of all hits should have?
       #Default: 0.2
-      MinAverageMovementToCalculate: 0.15
+      MinAverageMovementToCalculate: 0.24
       #The amount that a hit must be near the average of all hits to be counted as similar movement per hit?
       #Default: 0.1
-      SimilarHeadMoveAmount: 0.15
+      SimilarHeadMoveAmount: 0.16
       #If more than ConsistentPercentageMax have consistent head movement, kick the player for hacking.
       #Default: 85
-      ConsistentPercentageMax: 75
+      ConsistentPercentageMax: 88
       #Command to execute when Consistency/HeadMovementPerHit is detected?
       HeadMovementPerHitCommand: # 
   #Block players hitting outside of their field of view.
@@ -132,7 +132,7 @@ Forcefield:
     BlockImpossibleHits: true
     #Amount of times the player must be detected by the Angle check to be kicked?
     #Default: 8
-    Threshold: 4
+    Threshold: 6
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 1.2
     SafeHitDecrease: 1.0
@@ -607,6 +607,9 @@ Jump:
   #Amount of times the player must be detected by the Jump check to be kicked?
   #Default: 8
   Threshold: 6
+  #What the Threshold must be at to drag a player back?
+  #Default: 0
+  DragBackThreshold: 2
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.5
   SafeJumpDecrease: 0.4
@@ -641,7 +644,10 @@ Flight:
   TeleportDownOnly: false
   #Amount of times the player must be detected by the Flight check to be kicked?
   #Default: 5
-  Threshold: 5
+  Threshold: 6
+  #What the Threshold must be at to drag a player back?
+  #Default: 0
+  DragBackThreshold: 2
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 1.0
   LowerAmount: 0.5
@@ -692,10 +698,10 @@ Speed:
   Water: true
   #Amount of times the player must be detected by the Speed check to be kicked?
   #Default: 15
-  Threshold: 10
+  Threshold: 12
   #What the Threshold must be at to drag a player back?
   #Default: 10
-  DragBackThreshold: 5
+  DragBackThreshold: 4
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 1.0
   LowerAmount: 0.5
@@ -859,6 +865,9 @@ PotionSaver:
   #Amount of times the player must be detected by the PotionSaver check to be kicked?
   #Default: 4
   Threshold: 4
+  #If a player is not sending any KeepAlive packets, do not detect players for PotionSaver?
+  #Default: true
+  DisableWhenNotSendingKeepAlive: true
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.25
   SafeSecondDecrease: 0.2
