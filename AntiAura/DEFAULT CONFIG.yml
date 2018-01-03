@@ -95,6 +95,9 @@ Forcefield:
   Consistency:
     #Enable the consistency check?
     Enabled: true
+    #Do you want to ignore the hit if the hit is cancelled by AntiAura or another plugin, such as in safezones or spawn?
+    #Enabling can prevent false positives in these areas.
+    IgnoreIfHitCancelled: false
     #The minimum amount of stored hits the player has had to have done before the hits are analyzed.
     #This means if the player has done less than MinHitSampleCount hits after they joined the server, they CANNOT be detected.
     #When testing a value of 8 worked decently, however higher values are less likely to get a good average.
