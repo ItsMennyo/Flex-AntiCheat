@@ -8,7 +8,7 @@
 # |   Spigot Page: https://goo.gl/YgNG9b      | #
 # |   Plugin Version: 3.3.7                   | #
 # |   Configurator: ItsMennyo                 | #
-# |   Config Build: BUILD 1.6.545 BETA        | #
+# |   Config Build: BUILD 1.6.624 BETA        | #
 # |   Overview: https://goo.gl/NJQDFA         | #
 # |   Support: https://goo.gl/DAfLsX          | #
 # |   Latest Build: https://goo.gl/CFH892     | #
@@ -34,7 +34,7 @@ hitbox:
   max_reach: 3.59
   #How much should AAC compensate for the movement of the target?
   #Default: 5.0
-  move_compensation: 7.5
+  move_compensation: 10.0
   #Minimum number of violations before AAC starts canceling hits?
   #Default: 1
   min_vl: 4
@@ -309,8 +309,7 @@ heuristics:
   min_confidence: 80
   #List of patterns which should not incur a violation?
   #Default: - "P/00"
-  exempt:
-    - "P/32"
+  exempt: {}
   #Map of violation levels to commands?
   thresholds:
     1: "aackick {player} Heuristics"
@@ -473,7 +472,7 @@ interact:
   cancel_liquids: true
   #Detect ghosthand to interact with blocks?
   #Default: true
-  cancel_ghost_block: true
+  cancel_ghost_block: false
   #Detect interacting whilst dead?
   #Default: true
   cancel_dead: true
