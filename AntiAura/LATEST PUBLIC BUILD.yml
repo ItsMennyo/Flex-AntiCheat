@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.34                        | #
+# |   Plugin Version: 11.36                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.1.124 BETA             | #
+# |   Config Build: BUILD 2.1.241 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
@@ -94,6 +94,9 @@ Forcefield:
     #The maximum amount of hits that AntiAura will store to analyze the player?
     #Default: 30
     MaxHitSampleCount: 30
+    #Do you want to ignore the hits if it is canceled by AntiAura or another plugin such as safezones or spawns?
+    #Default: false
+    IgnoreIfHitCancelled: false
     #This checks the consistency of hit positioning.
     HitPosition:
       #The maximum values in which player hits are legitimate.
@@ -380,7 +383,7 @@ Map:
   #This will block the XRay hack by hiding ores as stone.
   XRay:
     #Do you want to enable the blockage of XRay?
-    Enabled: true
+    Enabled: false
     #MaxChunksPerIntervalMult is the amount of chunks per tick that are hidden.
     #Setting this value to -1 for infinite chunks render.
     #Default: -1
