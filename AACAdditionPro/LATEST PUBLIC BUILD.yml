@@ -6,9 +6,9 @@
 # |   AntiCheat: AACAdditionPro (AACAP)         | #
 # |   Developer: Photon.166336                  | #
 # |   Spigot Page: https://goo.gl/GrX6dA        | #
-# |   Plugin Version: 3.4.6                     | #
+# |   Plugin Version: 3.5.0                     | #
 # |   Configurator: ItsMennyo                   | #
-# |   Config Build: BUILD 1.1.205 BETA          | #
+# |   Config Build: BUILD 1.2.086 BETA          | #
 # |   Overview: https://goo.gl/NJQDFA           | #
 # |   Support: https://goo.gl/DAfLsX            | #
 # |   Latest Build: https://goo.gl/Gv626M       | #
@@ -164,23 +164,7 @@ GravitationalModifier:
     12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
     16: "aackick {player} GravitationalModifier"
 
-#InventoryHit checks if a player modifies his inventory while hitting at the same time.
-InventoryHit:
-  #Do you want to enable the InventoryHit check?
-  #Default: true
-  enabled: true
-  #Violation before AACAdditionPro starts to cancel the hits?
-  #Default: 3
-  cancel_vl: 4
-  #Map of violation levels to commands?
-  thresholds:
-    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHit"
-    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
-    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
-    16: "aackick {player} InventoryHit"
-
-# The InventoryChat check detects sending chat messages while being in an inventory.
+#The InventoryChat check detects sending chat messages while being in an inventory.
 InventoryChat:
   #Do you want to enable the InventoryChat check?
   #Default: false
@@ -196,11 +180,51 @@ InventoryChat:
     6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
     8: "aackick {player} InventoryChat"
 
-#The InventoryHeuristics check uses a neural network to detect cheats.
+#The InventoryHeuristics provide a neural network framework to detect advanced inventory cheats.
 InventoryHeuristics:
   #Do you want to enable the InventoryHeuristics check?
+  #Default: true
+  enabled: true
+  #The minimum confidence of a single pattern must have to count as detection?
+  #Default: 65.0
+  detection_confidence: 68.0
+  #This will give you access to the framework including the creation of your own heuristics and training them.
   #Default: false
-  enabled: false
+  unlock_full_framework: false
+  #Options that belong to this section will only work if you set "unlock_full_framework" to true.
+  framework:
+    #The epoch when training a neural net?
+    #Default: 15000
+    epoch: 15000
+    #The train parameter of all neural nets?
+    #Default: 0.6931
+    train_parameter: 0.6931
+    #The momentum parameter of all neural nets?
+    #Default: 0.4055
+    momentum_parameter: 0.4055
+  #Map of confidence levels to command.
+  thresholds:
+    75: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    80: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHeuristics"
+    85: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHeuristics"
+    90: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHeuristics"
+    95: "aackick {player} InventoryHeuristics"
+
+#InventoryHit checks if a player modifies his inventory while hitting at the same time.
+InventoryHit:
+  #Do you want to enable the InventoryHit check?
+  #Default: true
+  enabled: true
+  #Violation before AACAdditionPro starts to cancel the hits?
+  #Default: 3
+  cancel_vl: 2
+  #Map of violation levels to commands?
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHit"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
+    8: "aackick {player} InventoryHit"
 
 #The InventoryMove check detects inventory clicks while moving.
 InventoryMove:
@@ -244,6 +268,9 @@ KillauraEntity:
   on_command: false
   #The general behaviour of the entity, mostly important for certain gamemodes.
   behaviour:
+    #This determines whether the player will see the player in the tablist.
+    #Default: True
+    visible_in_tablist: true
     #Should the entity join a team?
     team:
       #Default: true
@@ -260,13 +287,13 @@ KillauraEntity:
   position:
     #How far should the entity at least be away from the player?
     #Default: 3.4
-    entityOffset: 3.3
+    entityOffset: 3.5
     #How much randomized offset should at most be added to entityOffset?
     #Default: 0.2
-    offsetRandomizationRange: 0.3
+    offsetRandomizationRange: 0.4
     #This prevents the entity from floating directly over/under a player, therefore preventing distraction and willingly caused false positives?
     #Default: 1.55
-    minXZDifference: 1.6
+    minXZDifference: 1.5
   #Here you can choose the equipment of your entity.
   equipment:
     #The armor the entities will spawn with?
@@ -381,8 +408,13 @@ Scaffold:
   #Default: 6
   buffer_size: 4
   #The minimum delay between blockplaces that will be enforced by AACAdditionPro?
-  #Default: 300
-  scaffold_delay: 300
+  delays:
+    #This delay applies to any kind of straight building?
+    #Default: 259
+    normal: 259
+    #This delay applies to diagonal building?
+    #Default: 159
+    diagonal: 159
   #After a detection which surpasses cancel_vl AACAdditionPro cancels all blockplaces in the given timeframe to prevent further scaffolding?
   #Default: 1000
   timeout: 1000
@@ -460,13 +492,13 @@ ClientControl:
     disable:
       #This renders the potion effect of the player on the display in form of a HUD?
       #Default: false
-      potion_effect_hud: true
+      potion_effect_hud: false
       #This displays a vignette with different colors depending on the potion effects you have?
       #Default: false
-      potion_indicator_vignette: true
+      potion_indicator_vignette: false
       #This displays the current armour of a player in a HUD?
       #Default: false
-      armour_hud: true
+      armour_hud: false
       #This renders the saturation of a player additional to the current food?
       #Default: false
       player_saturation: true
@@ -505,18 +537,18 @@ ClientControl:
   LabyMod:
     #Do you want to enable the LabyMod check?
     #Default: false
-    enabled: false
+    enabled: true
     #This mod provides a method to disable parts of it.
     disable:
       #This renders the saturation of a player additional to the current food?
       #Default: false
-      player_saturation: true
+      player_saturation: false
       #GUI?
       #Default: false
-      gui: true
+      gui: false
       #Provides custom nicknames for a person?
       #Default: false
-      nick: true
+      nick: false
       #Blockbuild?
       #Default: false
       blockbuild: true
@@ -528,7 +560,7 @@ ClientControl:
       extras: true
       #Purely cosmetic feature to switch back to the old animations of MC 1.7?
       #Default: false
-      old_animations: true
+      old_animations: false
       #This renders the potion effect of the player on the display in form of a HUD?
       #Default: false
       potion_effect_hud: true
@@ -555,7 +587,7 @@ ClientControl:
   Schematica:
     #Do you want to enable the Schematica check?
     #Default: false
-    enabled: false
+    enabled: true
     #This mod provides a method to disable parts of it.
     disable:
       #Automatically builds based on a schematic?
@@ -572,7 +604,7 @@ ClientControl:
   Vape:
     #Do you want to enable the Vape check?
     #Default: false
-    enabled: false
+    enabled: true
     #Map of violation levels to commands?
     commands_on_detection:
       - "aackick {player} Vape"
@@ -581,7 +613,7 @@ ClientControl:
   WorldDownloader:
     #Do you want to enable the WorldDownloader check?
     #Default: false
-    enabled: false
+    enabled: true
     #Map of violation levels to commands?
     commands_on_detection:
       - "aackick {player} WorldDownloader"
