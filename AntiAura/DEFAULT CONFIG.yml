@@ -563,7 +563,7 @@ Step:
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
   MaxDistanceMovedUpwards: 2.8
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
-  MaxDistanceMovedDownwards: 22.5
+  MaxDistanceMovedDownwards: 23.5
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #This is better for blocking players who try and fly upwards slowly, or for things like FastLadder.
   ForceUserToGround: true
