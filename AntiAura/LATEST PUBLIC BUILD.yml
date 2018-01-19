@@ -6,14 +6,14 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.36                        | #
+# |   Plugin Version: 11.38                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.1.241 BETA             | #
+# |   Config Build: BUILD 2.2.093 EXPERIMENTAL     | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
 # |                                                | #
-# |   Copyright © 2017 ItsMennyo Network           | #
+# |   Copyright © 2017 - 2018 ItsMennyo Network    | #
 # |                                                | #
 # +------------------------------------------------+ #
 ######################################################
@@ -94,34 +94,34 @@ Forcefield:
     #The maximum amount of hits that AntiAura will store to analyze the player?
     #Default: 30
     MaxHitSampleCount: 30
-    #Do you want to ignore the hits if it is canceled by AntiAura or another plugin such as safezones or spawns?
+    #Do you want to ignore the hits if it is canceled by AntiAura or another plugin such as safe-zones or spawns?
     #Default: false
     IgnoreIfHitCancelled: false
     #This checks the consistency of hit positioning.
     HitPosition:
       #The maximum values in which player hits are legitimate.
       #Default: 0.31
-      MaxValue: 0.37
+      MaxValue: 0.3723
       #If the player's movements are too controlled and consistent, the average of their hits will go below MinValue.
       #Default: 0.002
-      MinValue: 0.002
+      MinValue: 0.0027
       #Should we not count the hits if the player has been moving slowly and not turned their head significantly before the hit?
       #Default: true
       IgnoreHitsFromSlowMovingPlayers: true
-      #Command to execute when Consistency/HitPosition is detected?
+      #Command to execute when HitPosition is detected?
       HitPositionCommand: # 
     #This checks if all hits have similar head movement.
     HeadMovementPerHit:
       #The minimum amount of head movement that the average of all hits should have?
       #Default: 0.2
-      MinAverageMovementToCalculate: 0.24
+      MinAverageMovementToCalculate: 0.15
       #The amount that a hit must be near the average of all hits to be counted as similar movement per hit?
       #Default: 0.1
-      SimilarHeadMoveAmount: 0.16
+      SimilarHeadMoveAmount: 0.15
       #If more than ConsistentPercentageMax have consistent head movement, kick the player for hacking.
       #Default: 85
-      ConsistentPercentageMax: 88
-      #Command to execute when Consistency/HeadMovementPerHit is detected?
+      ConsistentPercentageMax: 85
+      #Command to execute when HeadMovementPerHit is detected?
       HeadMovementPerHitCommand: # 
   #Block players hitting outside of their field of view.
   Angle:
@@ -135,10 +135,10 @@ Forcefield:
     BlockImpossibleHits: true
     #Amount of times the player must be detected by the Angle check to be kicked?
     #Default: 8
-    Threshold: 6
+    Threshold: 10
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 1.2
-    SafeHitDecrease: 1.0
+    SafeHitDecrease: 0.25
     #Command to execute when Angle is detected?
     AngleCommand: # 
   #Block players hitting entities too far away.
@@ -147,7 +147,7 @@ Forcefield:
     Enabled: true
     #What is the maximum distance players can hit before the hit will be canceled?
     #Default: 4.4
-    MaxReach: 4.5
+    MaxReach: 4.7
     #Do you want to give extra leniency when the player is running and hitting?
     #Default: true
     BackHitAccounting: true
@@ -156,10 +156,10 @@ Forcefield:
     Threshold: 5
     #Reach hacks above the RaiseThresholdReach will raise the threshold.
     #Default: 4.6
-    RaiseThresholdReach: 4.8
+    RaiseThresholdReach: 4.9
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 0.5
-    SafeHitDecrease: 0.4
+    SafeHitDecrease: 0.1
     #Command to execute when Reach is detected?
     ReachCommand: # 
   #Block players from hitting entities through other entities or blocks.
@@ -185,8 +185,8 @@ Forcefield:
     #Default: 0.09
     MaxMove: 0.1
     #The amount that a player must have turned their head in the past ticks to drag their head back to the original position.
-    #Default: 3.0
-    LagBackThreshold: 2.5
+    #Default: 5.0
+    LagBackThreshold: 5.0
     #The time that a player cannot attack and if they do their Threshold will be raised.
     #Default: 4
     CantAttackTime: 3
@@ -197,7 +197,7 @@ Forcefield:
     CancelMove:
       #The amount that a player must have turned their head during the last recent ticks to have their attacks temporarily canceled.
       #Default: 0.15
-      CancelMove: 0.2
+      CancelMove: 0.18
       #The minimum Threshold a player must have hit for the HeadMove checks to cancel any damage from CancelMove.
       #Default: 2
       MinimumBlockThreshold: 4
@@ -210,10 +210,10 @@ Forcefield:
     Threshold: 8
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 1.2
-    SafeHitDecrease: 1.0
+    SafeHitDecrease: 0.4
     #How much should the Threshold be lowered per second?
     #Default: 0.5
-    DecreasePerSecond: 0.5
+    DecreasePerSecond: 0.2
     #Command to execute when HeadMove is detected?
     HeadCommand: # 
   #This checks for hits that are consistently positioned in exactly the same place.
@@ -222,16 +222,16 @@ Forcefield:
     Enabled: true
     #The maximum distance in which hits are counted as in the same place?
     #Default: 0.45
-    NearDistance: 0.4
+    NearDistance: 0.44
     #The minimum amount of recent head movement to take hits into account?
     #Default: 0.03
-    MinHeadMovement: 0.04
+    MinHeadMovement: 0.059
     #Amount of times the player must be detected by the Position check to be kicked?
     #Default: 7
     Threshold: 8
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 0.325
-    SafeHitDecrease: 0.25
+    SafeHitDecrease: 0.2
     #How much should the Threshold be lowered per second?
     #Default: 0.1
     DecreasePerSecond: 0.1
@@ -246,32 +246,32 @@ Forcefield:
     IsMoving: 0.007
     #This is the same as IsMoving. However it will overwrite IsMoving if the opponent is more than 3 blocks away when hit.
     #Default: 0.005
-    IsMoving2: 0.005
+    IsMoving2: 0.004
     #How long can a player have recently moved their head to be counted as having head movement?
     #Default: 4
-    MovingAttackTime: 4
+    MovingAttackTime: 3
     #Take into account movement on the yaw axis only?
     #Default: true
-    YawOnly: true
+    YawOnly: false
     #This will add extra Threshold to a hit if it is from a large distance.
     DistanceAccounting:
       #Do you want to enable Accounting for Distance?
       Enabled: true
       #How far away do you want the hit to before extra Threshold is added to it?
       #Default: 3.5
-      DistanceAmount: 3.2
+      DistanceAmount: 3.4
       #The weight of the distance? Each block of distance is multiplied by the DistanceWeight.
       #Default: 0.50
       DistanceWeight: 0.6
     #Amount of times the player must be detected by the Accuracy check to be kicked?
     #Default: 7
-    Threshold: 8
+    Threshold: 6
     ##How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 0.45
-    ArmSwingDecrease: 0.4
+    ArmSwingDecrease: 0.2
     #How much should the Threshold be lowered per second?
     #Default: 0.20
-    DecreasePerSecond: 0.2
+    DecreasePerSecond: 0.1
     #Command to execute when Accuracy is detected?
     AccuracyCommand: # 
 
@@ -532,16 +532,16 @@ Step:
   Enabled: true
   #How often do you want to check if the person has moved too much?
   #Default: 6
-  TimePerCheck: 6
+  TimePerCheck: 4
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
   #Default: 2.8
-  MaxDistanceMovedUpwards: 2.4
+  MaxDistanceMovedUpwards: 1.9
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
-  #Default: 22.5
-  MaxDistanceMovedDownwards: 21.5
+  #Default: 23.5
+  MaxDistanceMovedDownwards: 14.0
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #Default: true
-  ForceUserToGround: false
+  ForceUserToGround: true
   #Amount of times the player must be detected by the Step check to be kicked?
   #Default: 8
   Threshold: 6
@@ -593,10 +593,10 @@ Spider:
   ForceUserToGround: false
   #Amount of times the player must be detected by the Spider check to be kicked?
   #Default: 5
-  Threshold: 4
+  Threshold: 5
   #What the Threshold must be at to drag a player back?
   #Default: 0
-  DragBackThreshold: 0
+  DragBackThreshold: 2
   #Command to execute when Spider is detected?
   SpiderCommand: # 
 
@@ -609,7 +609,7 @@ Jump:
   MaxJumpOnLevelSurface: 5.4
   #Amount of times the player must be detected by the Jump check to be kicked?
   #Default: 8
-  Threshold: 6
+  Threshold: 5
   #What the Threshold must be at to drag a player back?
   #Default: 0
   DragBackThreshold: 2
@@ -647,7 +647,7 @@ Flight:
   TeleportDownOnly: false
   #Amount of times the player must be detected by the Flight check to be kicked?
   #Default: 5
-  Threshold: 6
+  Threshold: 5
   #What the Threshold must be at to drag a player back?
   #Default: 0
   DragBackThreshold: 2
@@ -701,7 +701,7 @@ Speed:
   Water: true
   #Amount of times the player must be detected by the Speed check to be kicked?
   #Default: 15
-  Threshold: 12
+  Threshold: 10
   #What the Threshold must be at to drag a player back?
   #Default: 10
   DragBackThreshold: 4
@@ -812,7 +812,7 @@ FastBreak:
   Threshold: 10
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.4
-  SafeHitDecrease: 0.25
+  SafeHitDecrease: 0.2
   #Command to execute when FastBreak is detected?
   FastBreakCommand: # 
 
@@ -828,7 +828,7 @@ NoSwing:
   Threshold: 3
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.5
-  SafeInteractDecrease: 0.2
+  SafeInteractDecrease: 0.25
   #Command to execute when NoSwing is detected?
   NoSwingCommand: # 
 
@@ -841,10 +841,10 @@ Regen:
   MaxHalfHeartsPerRegen: 1.0
   #Maximum half-hearts that a player can Regen per second?
   #Default: 4.0
-  MaxHeartsPerSecond: 4.5
+  MaxHeartsPerSecond: 4.0
   #Amount of times the player must be detected by the Regen check to be kicked?
   #Default: 5
-  Threshold: 5
+  Threshold: 4
   #Command to execute when Regen is detected?
   RegenCommand: # 
 
@@ -867,7 +867,7 @@ PotionSaver:
   Enabled: true
   #Amount of times the player must be detected by the PotionSaver check to be kicked?
   #Default: 4
-  Threshold: 4
+  Threshold: 5
   #If a player is not sending any KeepAlive packets, do not detect players for PotionSaver?
   #Default: true
   DisableWhenNotSendingKeepAlive: true
