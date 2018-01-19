@@ -189,7 +189,7 @@ Forcefield:
     #Though unlikely, can be triggered by a player trying to move their head incredibly quickly.
     CancelExtremeMovement: true
     #The amount a player must have turned their head in the past tick to drag their head back to the original position. This will ONLY work if CancelExtremeMovement is ENABLED.
-    LagBackThreshold: 3.0
+    LagBackThreshold: 5.0
     #The amount that a player must have turned their head in the last hit to be considered "turning quickly", raising the threshold.
     MaxMove: 0.09
     #A sub-section of the HeadMove check which cancels unlikely hits.
