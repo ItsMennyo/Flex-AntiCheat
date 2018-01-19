@@ -10,7 +10,7 @@
 #%NOTES% is the notes for each hack when detected. For example the CPS if caught for FastClick.
 #
 #Safe interaction means a player did something legitimately. Example: Actually taking damage from fire will lower the AntiFire threshold by the safe interaction.
-#SafeHitDecrease, ArmSwingDecrease, LowerAmount, etc, are basically all "how much you want the threshold to lower when a legitimate action occurs".
+#SafeHitDecrease, ArmSwingDecrease, LowerAmount, fetc, are basically all "how much you want the threshold to lower when a legitimate action occurs".
 #They only have different names because "Safe HIT decrease" doesn't make sense for checks such as FastEat or Speed.
 #
 #The fastest way to get support is in the AntiAura Discord: https://discord.gg/3wCqvBh
@@ -368,7 +368,7 @@ Map:
     #Enable the blockage of TileESP? 
     Enabled: true
     #If the distance from the player to the tile is less than this, show the tile.
-    ShowDistance: 15
+    ShowDistance: 5
     #If the distance from the player to the tile is less than this, do a line-of-sight check to see if the player can see the tile.
     #If the player can see the tile, it is shown. Otherwise, it is hidden.
     #If the distance is greater than TracerDistance, the tile is automatically hidden.
@@ -574,7 +574,7 @@ Step:
 
 #Options to do with accounting for velocities (e.g. launchpads).
 VelocityAccounting:
-  #If this is enabled, AntiAura will account for velocity for players who self-harm with bows to launch themselves in directions.
+  #If this is enabled, AntiAura will account for velocity for players who hit themselves with bows to launch themselves in directions.
   #Enabling this MAY create MINOR (probably useless) speed bypasses if the hacker shoots themselves with a bow to give themselves a velocity.
   AllowBowBoosting: true
   #If a player gets a velocity twice, enabling this will double the height he can go.
@@ -597,6 +597,9 @@ VelocityAccounting:
   #FlatLeniencyInBlocks is simply a simple leniency in blocks.
   #If FlatLeniencyInBlocks is 0.7 and the player is launched up 10 blocks, FlatLeniencyInBlocks will allow them to go 10.7 blocks.
   FlatLeniencyInBlocks: 0.1
+  #How long should the velocity last?
+  #Velocities last the time calculated by AntiAura, multiplied by VelocityTime.
+  VelocityTime: 2.0
 
 #This blocks any unexpected Y movement.
 #If a player goes upward unexpectedly without any blocks underneath them, this drags them down.
@@ -799,7 +802,7 @@ NoFall:
   #How long, in ticks, do you want to allow the person to be falling but still be "on the ground"?
   #If you have a SkyBlock server or similar, set this to 1 or more.
   #Set this to 0 for more instant detection.
-  LeniencyTime: 2
+  LeniencyTime: 0
   #Do you want to force the player to be dragged to the ground from the air?
   #Setting this to false will suspend the player in the air until they disable NoFall or die.
   DragToGround: true
