@@ -116,7 +116,7 @@ Forcefield:
       #The maximum and minimum values in which player hits are legitimate.
       #These are not "magic" values. Just adjust them with care! MinValue is very sensitive while MaxValue could probably be increased by 1.0 or 2.0 without seeing a significant difference.
       #If the player's movements are erratic and uncontrolled, the average of their hits will exceed MaxValue.
-      MaxValue: 0.31
+      MaxValue: 0.35
       #If the player's movements are TOO controlled and consistent, the average of their hits will go below MinValue.
       #It is recommended only adjusting this by 0.001 or less at a time.
       MinValue: 0.002
