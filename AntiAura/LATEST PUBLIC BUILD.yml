@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.38                        | #
+# |   Plugin Version: 11.40                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.2.093 EXPERIMENTAL     | #
+# |   Config Build: BUILD 2.2.152 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
@@ -100,7 +100,7 @@ Forcefield:
     #This checks the consistency of hit positioning.
     HitPosition:
       #The maximum values in which player hits are legitimate.
-      #Default: 0.31
+      #Default: 0.35
       MaxValue: 0.3723
       #If the player's movements are too controlled and consistent, the average of their hits will go below MinValue.
       #Default: 0.002
@@ -153,7 +153,7 @@ Forcefield:
     BackHitAccounting: true
     #Amount of times the player must be detected by the Reach check to be kicked?
     #Default: 8
-    Threshold: 5
+    Threshold: 6
     #Reach hacks above the RaiseThresholdReach will raise the threshold.
     #Default: 4.6
     RaiseThresholdReach: 4.9
@@ -186,7 +186,7 @@ Forcefield:
     MaxMove: 0.1
     #The amount that a player must have turned their head in the past ticks to drag their head back to the original position.
     #Default: 5.0
-    LagBackThreshold: 5.0
+    LagBackThreshold: 4.0
     #The time that a player cannot attack and if they do their Threshold will be raised.
     #Default: 4
     CantAttackTime: 3
@@ -197,7 +197,7 @@ Forcefield:
     CancelMove:
       #The amount that a player must have turned their head during the last recent ticks to have their attacks temporarily canceled.
       #Default: 0.15
-      CancelMove: 0.18
+      CancelMove: 0.2
       #The minimum Threshold a player must have hit for the HeadMove checks to cancel any damage from CancelMove.
       #Default: 2
       MinimumBlockThreshold: 4
@@ -207,7 +207,7 @@ Forcefield:
       UseHeadMoveThreshold: true
     #Amount of times the player must be detected by the HeadMove check to be kicked?
     #Default: 8
-    Threshold: 8
+    Threshold: 10
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 1.2
     SafeHitDecrease: 0.4
@@ -231,7 +231,7 @@ Forcefield:
     Threshold: 8
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 0.325
-    SafeHitDecrease: 0.2
+    SafeHitDecrease: 0.25
     #How much should the Threshold be lowered per second?
     #Default: 0.1
     DecreasePerSecond: 0.1
@@ -341,13 +341,13 @@ Map:
   LenientMode: true
   #How often do you want players to be checked?
   #Default: 10
-  HowOften: 8
+  HowOften: 5
   #If an entity is closer than this then make him visible regardless if you can actually see them?
   #Default: 10
   MinDistance: 8
   #How far should we check entities and players near the player to hide/unhide them?
   #Default: 50
-  DistanceChecked: 64
+  DistanceChecked: 32
   #How far up do you want to check per player?
   #Default: 30
   DistanceCheckedY: 32
@@ -359,7 +359,7 @@ Map:
   HidePlayersThroughBlocks: true
   #Hide entities if they are behind the players field of view?
   #Default: false
-  HidePlayersBehind: false
+  HidePlayersBehind: true
   #This blocks ESP for tile entities such as Chests and hoppers.
   TileESP:
     #Do you want to enable the blockage of TileESP?
@@ -373,10 +373,10 @@ Map:
     #How far away in chunks should the TileESP check look for tiles to hide?
     #Setting this value to -1 will set this to your servers view distance.
     #Default: -1
-    ChunkDistance: 4
+    ChunkDistance: -1
     #If the distance from the player to the tile is less than this, show the tile.
-    #Default: 15
-    ShowDistance: 16
+    #Default: 5
+    ShowDistance: 4
     #If the distance from the player to the tile is less than this, do a line-of-sight check to see if the player can see the tile.
     #Default: 60
     TracerDistance: 64
@@ -391,7 +391,7 @@ Map:
     #How far away should the XRay check look for blocks to hide?
     #Setting this value to -1 will set this to your servers view distance.
     #Default: -1
-    ChunkDistance: 4
+    ChunkDistance: -1
 
 #This check makes sure that players take proper Knockback.
 Knockback:
@@ -399,7 +399,7 @@ Knockback:
   Enabled: true
   #How many ticks after the player has been hit should it be checked if they have moved?
   #Default: 15
-  TicksAfterHitToCheck: 14
+  TicksAfterHitToCheck: 15
   #Don't check laggy people at all?
   #Default: false
   DontCheckLaggyPeople: false
@@ -420,10 +420,10 @@ Knockback:
   DontCheckIfPlayerIsSprinting: false
   #Amount of times the player must be detected by the Knockback check to be kicked?
   #Default: 8
-  Threshold: 8
+  Threshold: 10
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 0.6
-  LowerAmount: 0.5
+  LowerAmount: 0.4
   #Command to execute when Knockback is detected?
   KnockbackCommand: # 
 
@@ -455,7 +455,7 @@ Specifics:
   EnableTargetblockChecking: false
   #Teleport all players to the ground on join?
   #Default: true
-  JoinTeleport: true
+  JoinTeleport: false
 
 #This check try to stop Critical hacks which do more Criticals than a normal client.
 Criticals:
@@ -494,7 +494,7 @@ FastEat:
   Threshold: 3
   #How much do you want to lower the Threshold when the player is detected as legit?
   #Default: 1.0
-  SafeEatDecrease: 0.5
+  SafeEatDecrease: 0.4
   #Command to execute when FastEat is detected?
   FastEatCommand: # 
 
@@ -532,13 +532,13 @@ Step:
   Enabled: true
   #How often do you want to check if the person has moved too much?
   #Default: 6
-  TimePerCheck: 4
+  TimePerCheck: 5
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
   #Default: 2.8
-  MaxDistanceMovedUpwards: 1.9
+  MaxDistanceMovedUpwards: 2.4
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
   #Default: 23.5
-  MaxDistanceMovedDownwards: 14.0
+  MaxDistanceMovedDownwards: 20.0
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #Default: true
   ForceUserToGround: true
@@ -574,6 +574,9 @@ VelocityAccounting:
   #NormalVelocityLeniency and CombatVelocityLeniency are a percentage leniency.
   #Default: 0.1
   FlatLeniencyInBlocks: 0.1
+  #How long should the velocity last?
+  #Default: 2.0
+  VelocityTime: 2.0
 
 #This blocks any unexpected Y movement.
 Spider:
@@ -764,8 +767,8 @@ NoFall:
   Enabled: true
   #How long do you want to allow the person to be falling but still be on the ground?
   #Setting this value to 0 for instantly detection.
-  #Default: 2
-  LeniencyTime: 3
+  #Default: 0
+  LeniencyTime: 0
   #Do you want to force the player to be dragged to the ground from the air?
   #Default: true
   DragToGround: true
