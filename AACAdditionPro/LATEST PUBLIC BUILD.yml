@@ -1,22 +1,22 @@
-###################################################
-# +---------------------------------------------+ #
-# |                                             | #
-# |   Flex AntiCheat - Optimized AACAP Config   | #
-# |                                             | #
-# |   AntiCheat: AACAdditionPro (AACAP)         | #
-# |   Developer: Photon.166336                  | #
-# |   Spigot Page: https://goo.gl/GrX6dA        | #
-# |   Plugin Version: 3.5.0                     | #
-# |   Configurator: ItsMennyo                   | #
-# |   Config Build: BUILD 1.2.086 BETA          | #
-# |   Overview: https://goo.gl/NJQDFA           | #
-# |   Support: https://goo.gl/DAfLsX            | #
-# |   Latest Build: https://goo.gl/Gv626M       | #
-# |                                             | #
-# |   Copyright © 2017 ItsMennyo Network        | #
-# |                                             | #
-# +---------------------------------------------+ #
-###################################################
+############################################################
+# +------------------------------------------------------+ #
+# |                                                      | #
+# |   Flex AntiCheat - Optimized AACAdditionPro Config   | #
+# |                                                      | #
+# |   AntiCheat: AACAdditionPro (AACAP)                  | #
+# |   Developer: Photon.166336                           | #
+# |   Spigot Page: https://goo.gl/GrX6dA                 | #
+# |   Plugin Version: 3.9.0                              | #
+# |   Configurator: ItsMennyo                            | #
+# |   Config Build: BUILD 1.3.078 BETA                   | #
+# |   Overview: https://goo.gl/NJQDFA                    | #
+# |   Support: https://goo.gl/DAfLsX                     | #
+# |   Latest Build: https://goo.gl/Gv626M                | #
+# |                                                      | #
+# |   Copyright © 2017 - 2018 ItsMennyo Network          | #
+# |                                                      | #
+# +------------------------------------------------------+ #
+############################################################
 
 #Blocks AutoFish.
 AutoFish:
@@ -45,8 +45,8 @@ AutoFish:
       #Default: 5
       consistency_events: 5
       #The minimum offset a player has to have in order to count as non-cheating.
-      #Default: 25
-      violation_offset: 25
+      #Default: 30
+      violation_offset: 30
       #After how many failed attempts to fish between two successful attempts should a player be exempted from the consistency part?
       #Default: 12
       maximum_fails: 12
@@ -95,11 +95,11 @@ EqualRotation:
   #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the rotations?
-  #Default: 15
+  #Default: 10
   cancel_vl: 6
   #After a detection which surpasses cancel_vl AACAdditionPro cancels all movement to effectively prevent the cheat for this amount of milliseconds?
-  #Default: 1000
-  timeout: 1000
+  #Default: 3000
+  timeout: 3000
   #Map of violation levels to commands?
   thresholds:
     6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -186,8 +186,8 @@ InventoryHeuristics:
   #Default: true
   enabled: true
   #The minimum confidence of a single pattern must have to count as detection?
-  #Default: 65.0
-  detection_confidence: 68.0
+  #Default: 55.0
+  detection_confidence: 60.0
   #This will give you access to the framework including the creation of your own heuristics and training them.
   #Default: false
   unlock_full_framework: false
@@ -204,9 +204,9 @@ InventoryHeuristics:
     momentum_parameter: 0.4055
   #Map of confidence levels to command.
   thresholds:
-    75: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    80: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHeuristics"
-    85: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHeuristics"
+    65: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    70: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHeuristics"
+    80: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHeuristics"
     90: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHeuristics"
     95: "aackick {player} InventoryHeuristics"
 
@@ -265,7 +265,10 @@ KillauraEntity:
   enabled: true
   #Enable this to only spawn an entity if requested by a command?
   #Default: false
-  on_command: false
+  on_command: true
+  #This will ensure that entities will change their identities after a certain period of time?
+  #Default: 450
+  respawn_timer: 300
   #The general behaviour of the entity, mostly important for certain gamemodes.
   behaviour:
     #This determines whether the player will see the player in the tablist.
@@ -287,13 +290,13 @@ KillauraEntity:
   position:
     #How far should the entity at least be away from the player?
     #Default: 3.4
-    entityOffset: 3.5
+    entityOffset: 3.3
     #How much randomized offset should at most be added to entityOffset?
     #Default: 0.2
-    offsetRandomizationRange: 0.4
+    offsetRandomizationRange: 0.3
     #This prevents the entity from floating directly over/under a player, therefore preventing distraction and willingly caused false positives?
     #Default: 1.55
-    minXZDifference: 1.5
+    minXZDifference: 1.6
   #Here you can choose the equipment of your entity.
   equipment:
     #The armor the entities will spawn with?
@@ -304,6 +307,7 @@ KillauraEntity:
       boots: true
       leather: true
       gold: true
+      chainmail: true
       iron: true
       diamond: true
     #Normal equipment will be used upon spawning the entity and if behaviour.swap is enabled?
@@ -312,8 +316,8 @@ KillauraEntity:
       wood: true
       stone: true
       gold: true
-      diamond: true
       iron: true
+      diamond: true
       flint_and_steel: true
       bow: true
       fishing_rod: true
@@ -355,24 +359,21 @@ MultiInteraction:
   #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the interacts?
-  #Default: 6
-  cancel_vl: 8
+  #Default: 18
+  cancel_vl: 25
   #If a player has a ping higher than that value he bypasses the check?
   #Default: 400
   max_ping: 250
   #The minimum TPS the server must have to activate this check?
   #Default: 18.5
   min_tps: 19.0
-  #The time AACAdditionPro should force between two interactions in milliseconds?
-  #Default: 51
-  min_time: 51
   #Map of violation levels to commands?
   thresholds:
-    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} MultiInteraction"
-    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
-    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
-    32: "aackick {player} MultiInteraction"
+    50: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    55: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} MultiInteraction"
+    65: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
+    75: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
+    80: "aackick {player} MultiInteraction"
 
 #The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
 Pingspoof:
@@ -402,29 +403,59 @@ Scaffold:
   #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the block-places?
-  #Default: 5
+  #Default: 10
   cancel_vl: 2
-  #Over how many values should AACAdditionPro take the average for the check?
-  #Default: 6
-  buffer_size: 4
-  #The minimum delay between blockplaces that will be enforced by AACAdditionPro?
-  delays:
-    #This delay applies to any kind of straight building?
-    #Default: 259
-    normal: 259
-    #This delay applies to diagonal building?
-    #Default: 159
-    diagonal: 159
   #After a detection which surpasses cancel_vl AACAdditionPro cancels all blockplaces in the given timeframe to prevent further scaffolding?
   #Default: 1000
   timeout: 1000
+  #Control the different solutions of Scaffold.
+  parts:
+    #The main part of Scaffold preventing too fast Scaffolding.
+    average:
+      #The minimum delay between blockplaces that will be enforced by AACAdditionPro.
+      delays:
+        #This delay applies to any kind of straight building?
+        #Default: 248
+        normal: 248
+        #This delay applies to diagonal building?
+        #Default: 148
+        diagonal: 148
+      #Over how many values should AACAdditionPro take the average for the check?
+      #Default: 6
+      buffer_size: 6
+    #This part detects suspicious placement positions.
+    position:
+      #Do you want to enable the position check?
+      #Default: true
+      enabled: true
+    #This part analyzes the rotations of a player while scaffolding.
+    rotation:
+      #Do you want to enable the rotation check?
+      #Default: true
+      enabled: true
+      #How many suspicious rotations should Scaffold count as legit?
+      #Default: 3
+      rotation_threshold: 3
+    #This checks for behaviour associated with safe-walk.
+    safewalk:
+      #Do you want to enable the safewalk check?
+      #Default: true
+      enabled: true
+    #This part detects sprinting between blockplaces.
+    sprinting:
+      #Do you want to enable the sprinting check?
+      #Default: true
+      enabled: true
+      #How many suspicious sprinting periods should Scaffold count as legit?
+      #Default: 3
+      sprinting_threshold: 3
   #Map of violation levels to commands?
   thresholds:
-    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
-    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
-    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
-    8: "aackick {player} Scaffold"
+    10: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    13: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
+    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    20: "aackick {player} Scaffold"
 
 #The Skinblinker check detects Skinblinker cheats when the player sprints/sneaks.
 Skinblinker:
@@ -496,23 +527,23 @@ ClientControl:
       #This displays a vignette with different colors depending on the potion effects you have?
       #Default: false
       potion_indicator_vignette: false
-      #This displays the current armour of a player in a HUD?
+      #This displays the current armor of a player in a HUD?
       #Default: false
       armour_hud: false
       #This renders the saturation of a player additional to the current food?
       #Default: false
-      player_saturation: true
+      player_saturation: false
       #This displays the health of entities?
       #Default: true
       entity_health_indicator: true
       #A feature of 5zig to automatically reconnect to a server?
       #Default: false
-      auto_reconnect: true
+      auto_reconnect: false
     #Map of violation levels to commands?
     commands_on_detection:
       - "aackick {player} 5zig"
 
-  #A popular PvP modification to enhance the sprinting behaviour.
+  #A popular PvP modification to enhance the sprinting behavior.
   BetterSprinting:
     #Do you want to enable the BetterSprinting check?
     #Default: false
@@ -524,6 +555,17 @@ ClientControl:
     commands_on_detection:
       - "aackick {player} BetterSprinting"
 
+  #This will spoof the health of all players on your server so that DamageIndicators becomes useless.
+  DamageIndicator:
+    #Do you want to enable the DamageIndicator check?
+    #Default: true
+    enabled: true
+    #Spoof the health of the following entity categories.
+    spoof:
+      players: true
+      animals: true
+      monsters: true
+
   #A very popular mod-loader.
   Forge:
     #Do you want to enable the Forge check?
@@ -534,8 +576,65 @@ ClientControl:
       - "aackick {player} Forge"
 
   #A very popular PvP modification similar to 5zig but with more features and TS3 support.
+  #Required: https://www.spigotmc.org/resources/labymod-server-api.52423/
   LabyMod:
     #Do you want to enable the LabyMod check?
+    #Default: false
+    enabled: false
+    #This mod provides a method to disable parts of it.
+    disable:
+      #Fixes a rendering bug in MineCraft with fast lava placement?
+      #Default: false
+      improved_lava: false
+      #Fixes a rendering bug in MineCraft with fast head movement which makes the crosshair fall slightly behind?
+      #Default: false
+      crosshair_sync: false
+      #This fixes some inventory bugs to improved pot and soup refill?
+      #Default: true
+      refill_fix: true
+      #General GUI adjustments inside the mod, such as position, direction and current system time?
+      #Default: false
+      gui_all: false
+      #This renders the potion effect of the player on the display in form of a HUD?
+      #Default: false
+      gui_potion_effects: false
+      #This displays the current armor of a player in a HUD?
+      #Default: false
+      gui_armor_hud: false
+      #This allows the client to additionally render the current weapon as well as the number of arrows in ones inventory?
+      #Default: false
+      gui_item_hud: false
+      #Brings back old building animations?
+      #Default: false
+      blockbuild: false
+      #Various cosmetic features?
+      #Default: false
+      tags: false
+      #Adds additional features such as different channels or filters to the chat?
+      #Default: false
+      chat: false
+      #Purely cosmetic feature to switch back to the old animations of MC 1.7?
+      #Default: false
+      animations: false
+      #This renders the saturation of a player additional to the current food?
+      #Default: false
+      saturation_bar: false
+    commands_on_detection:
+      - "aackick {player} LabyMod
+
+  #LiteLoader is alternative mod-loader to Forge.
+  LiteLoader:
+    #Do you want to enable the LiteLoader check?
+    #Default: false
+    enabled: false
+    #Map of violation levels to commands?
+    commands_on_detection:
+      - "aackick {player} LiteLoader"
+
+  #A very popular PvP modification similar to 5zig but with more features and TS3 support.
+  #This covers the outdated versions of LabyMod.
+  OldLabyMod:
+    #Do you want to enable the OldLabyMod check?
     #Default: false
     enabled: true
     #This mod provides a method to disable parts of it.
@@ -549,24 +648,24 @@ ClientControl:
       #Provides custom nicknames for a person?
       #Default: false
       nick: false
-      #Blockbuild?
+      #Brings back old building animations?
       #Default: false
-      blockbuild: true
+      blockbuild: false
       #This is an internal chat that connects LabyMod users?
       #Default: false
-      chat: true
+      chat: false
       #Cosmetics inside the mod?
       #Default: false
-      extras: true
+      extras: false
       #Purely cosmetic feature to switch back to the old animations of MC 1.7?
       #Default: false
       old_animations: false
       #This renders the potion effect of the player on the display in form of a HUD?
       #Default: false
-      potion_effect_hud: true
-      #This displays the current armour of a player (including durability) in a HUD?
+      potion_effect_hud: false
+      #This displays the current armor of a player in a HUD?
       #Default: false
-      armour_hud: true
+      armour_hud: false
       #This displays the health of entities and players?
       #Default: true
       damage_indicator: true
@@ -574,14 +673,13 @@ ClientControl:
       #Default: true
       minimap_radar: true
 
-  #LiteLoader is alternative mod-loader to forge.
-  LiteLoader:
-    #Do you want to enable the LiteLoader check?
-    #Default: false
+  #A pvp modification from France.
+  PXMod:
+    #Do you want to enable the PXMod check?
     enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
-      - "aackick {player} LiteLoader"
+      - "aackick {player} PXMod"
 
   #A mod that lets you display holograms to improve building, but also has a module to download worlds.
   Schematica:
@@ -604,7 +702,7 @@ ClientControl:
   Vape:
     #Do you want to enable the Vape check?
     #Default: false
-    enabled: true
+    enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
       - "aackick {player} Vape"
@@ -613,7 +711,7 @@ ClientControl:
   WorldDownloader:
     #Do you want to enable the WorldDownloader check?
     #Default: false
-    enabled: true
+    enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
       - "aackick {player} WorldDownloader"
