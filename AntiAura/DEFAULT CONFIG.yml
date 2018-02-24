@@ -160,9 +160,13 @@ Forcefield:
     BackHitAccounting: true
     #What is the maximum distance players can hit before the hit is canceled?
     MaxReach: 4.4
+    #Do you want the Reach check to invisibly cancel the hit if the distance is above MaxReach?
+    #This means that entities and players will still appear to be damaged, however no actual damage or knockback will be received.
+    #If you disable this option, no damage animation will appear when a hit is cancelled.
+    SoftCancel: true
     #Just in case players hit a bit higher than the max reach (for example, during lag).
     #Only reach hacks above the RaiseThresholdReach will raise the threshold.
-    RaiseThresholdReach: 4.6
+    RaiseThresholdReach: 5.0
     #The Reach violation level to kick players at.
     Threshold: 8
     #The amount the players' reach violation level should decrease with a hit that isn't over RaiseThresholdReach.
@@ -818,6 +822,12 @@ NoFall:
 Phase:
   #Enable blockage Phase?
   Enabled: true
+  #Do you want to stop players from trqvelling between two solid blocks?
+  ThroughBlockBlocking: true
+  #Prevent teleporting to open spaces with solid blocks inbetween?
+  BlockTeleportingThroughBlocks: true
+  #The maximum distance between two locations that a player can teleport before being dragged back.
+  MaxTeleportDistance: 1.0
   #Threshold for how many times user must be detected as hacking before the command executing.
   Threshold: 5
   #Command to execute when Phase is detected?
