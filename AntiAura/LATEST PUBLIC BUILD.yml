@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.40                        | #
+# |   Plugin Version: 11.41                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.2.152 BETA             | #
+# |   Config Build: BUILD 2.2.256 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
@@ -24,13 +24,14 @@ ConsoleLogDragbacks: true
 #Make /aconfig only work for the console?
 #Default: false
 ConsoleModifyConfigOnly: false
-#If AntiAura cannot discern the cause of a Teleport, don't do any teleportation accounting?
+#If AntiAura cannot discern a teleport, don't do any teleportation accounting?
 #Default: true
 IgnoreUnknownTeleportCause: true
-#Do you want to strike a bolt of lightning at a person when they are kicked?
+#Do you want to strike a bolt of lightning at a person when they get kicked?
 #Default: false
 StrikeLightningOnHackDetection: false
-#If this is true, AntiAura will be in TestServerMode. This means that players have hunger replenished when they hit an entity and also have double the health.
+#Do you want that AntiAura will be in TestServerMode?
+#This means that players have hunger replenished when they hit an entity and also have double the health.
 #Default: false
 TestServerMode: false
 
@@ -148,6 +149,9 @@ Forcefield:
     #What is the maximum distance players can hit before the hit will be canceled?
     #Default: 4.4
     MaxReach: 4.7
+    #Do you want the Reach check to invisibly cancel the hit if the distance is above MaxReach?
+    #Default: true
+    SoftCancel: true
     #Do you want to give extra leniency when the player is running and hitting?
     #Default: true
     BackHitAccounting: true
@@ -155,7 +159,7 @@ Forcefield:
     #Default: 8
     Threshold: 6
     #Reach hacks above the RaiseThresholdReach will raise the threshold.
-    #Default: 4.6
+    #Default: 5.0
     RaiseThresholdReach: 4.9
     #How much do you want to lower the Threshold when the player is detected as legit?
     #Default: 0.5
@@ -335,7 +339,7 @@ Soup:
 #This ruins mini-maps and tracer hacks.
 Map:
   #Do you want to enable the Map check?
-  MapScrewer: true
+  MapScrewer: false
   #Do you want to only hide a player when they are definitely through a wall?
   #Default: true
   LenientMode: true
@@ -435,7 +439,7 @@ Specifics:
   #Time after using a CrackShot weapon a person should not be checked for forcefield?
   #Default: 80
   CrackShotCompatibilityTime: 80
-  #Don't change this! It will reset your config if you do.
+  #Config version but don't change this!
   version: 40
   #Do you want to call a FAKE LEAVE EVENT to the server that tells other plugins that the player has left when he is actually kicked?
   #Default: false
@@ -634,7 +638,7 @@ Flight:
   MaxHeightOffGround: 0.25
   #How long should the player be allowed to not standing on a block without going dragged back?
   #Default: 12
-  TimeInTheAir: 10
+  TimeInTheAir: 8
   #This value is automatically added onto the MaxDistancePerSecond of a player if he has a jump potion.
   #Default: 2
   ValuePerPotionLevel: 2
@@ -768,7 +772,7 @@ NoFall:
   #How long do you want to allow the person to be falling but still be on the ground?
   #Setting this value to 0 for instantly detection.
   #Default: 0
-  LeniencyTime: 0
+  LeniencyTime: 1
   #Do you want to force the player to be dragged to the ground from the air?
   #Default: true
   DragToGround: true
@@ -785,6 +789,15 @@ NoFall:
 Phase:
   #Do you want to enable the Phase check?
   Enabled: false
+  #Do you want to stop players from traveling between two solid blocks?
+  #Default: true
+  ThroughBlockBlocking: true
+  #Prevent teleporting to open spaces with solid blocks in between?
+  #Default: true
+  BlockTeleportingThroughBlocks: true
+  #The maximum distance between two locations that a player can teleport before being dragged back?
+  #Default: 1.0
+  MaxTeleportDistance: 1.0
   #Amount of times the player must be detected by the Phase check to be kicked?
   #Default: 5
   Threshold: 5
