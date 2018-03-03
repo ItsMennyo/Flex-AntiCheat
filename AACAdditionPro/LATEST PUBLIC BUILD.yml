@@ -6,9 +6,9 @@
 # |   AntiCheat: AACAdditionPro (AACAP)                  | #
 # |   Developer: Photon.166336                           | #
 # |   Spigot Page: https://goo.gl/GrX6dA                 | #
-# |   Plugin Version: 3.9.0                              | #
+# |   Plugin Version: 3.10.1                             | #
 # |   Configurator: ItsMennyo                            | #
-# |   Config Build: BUILD 1.3.078 BETA                   | #
+# |   Config Build: BUILD 1.3.146 BETA                   | #
 # |   Overview: https://goo.gl/NJQDFA                    | #
 # |   Support: https://goo.gl/DAfLsX                     | #
 # |   Latest Build: https://goo.gl/Gv626M                | #
@@ -21,7 +21,6 @@
 #Blocks AutoFish.
 AutoFish:
   #Do you want to enable the AutoFish check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the fishing?
   #Default: 10
@@ -31,7 +30,6 @@ AutoFish:
     #The inhuman_reaction part recognizes very fast reaction speeds to detect AutoFishing mods.
     inhuman_reaction:
       #Should this part of the check be enabled?
-      #Default: true
       enabled: true
       #How many milliseconds should have passed before a fishing action counts as legit?
       #Default: 145
@@ -39,7 +37,6 @@ AutoFish:
     #The consistency part recognizes static times between a successful catch and fishing again.
     consistency:
       #Should this part of the check be enabled?
-      #Default: true
       enabled: true
       #How many FishEvents should be checked by the consistency check?
       #Default: 5
@@ -61,7 +58,6 @@ AutoFish:
 #AutoPotion detects automated bots which splash the player with potions that have positive effects.
 AutoPotion:
   #Do you want to enable the AutoPotion check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel throwing potions?
   #Default: 2
@@ -92,14 +88,7 @@ AutoPotion:
 #EqualRotation checks for invalid rotation packets which have the rotation of the last packet as content.
 EqualRotation:
   #Do you want to enable the EqualRotation check?
-  #Default: true
   enabled: true
-  #Violation before AACAdditionPro starts to cancel the rotations?
-  #Default: 10
-  cancel_vl: 6
-  #After a detection which surpasses cancel_vl AACAdditionPro cancels all movement to effectively prevent the cheat for this amount of milliseconds?
-  #Default: 3000
-  timeout: 3000
   #Map of violation levels to commands?
   thresholds:
     6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -111,7 +100,6 @@ EqualRotation:
 #This module uses advanced mathematics to determine if players can see each other.
 Esp:
   #Do you want to enable the Esp check?
-  #Default: true
   enabled: false
   #After this amount of ticks the positions will be updated again?
   #Default: 3
@@ -120,7 +108,6 @@ Esp:
 #The Fastswitch check prevents players from switching their hotbar-selection too quickly.
 Fastswitch:
   #Do you want to enable the Fastswitch check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the interacts?
   #Default: 3
@@ -142,7 +129,6 @@ Fastswitch:
 #This check will block most Freecam cheats.
 Freecam:
   #Do you want to enable the Freecam check?
-  #Default: true
   enabled: true
   #The time in ms before AACAdditionPro starts to initiate teleports for an idling player?
   #Default: 1000
@@ -154,7 +140,6 @@ Freecam:
 #GravitationalModifier improves the detection speed of various movement-cheats.
 GravitationalModifier:
   #Do you want to enable the GravitationalModifier check?
-  #Default: true
   enabled: true
   #Map of violation levels to commands?
   thresholds:
@@ -167,7 +152,6 @@ GravitationalModifier:
 #The InventoryChat check detects sending chat messages while being in an inventory.
 InventoryChat:
   #Do you want to enable the InventoryChat check?
-  #Default: false
   enabled: true
   #Violation before AACAdditionPro starts to cancel the messages?
   #Default: 2
@@ -183,7 +167,6 @@ InventoryChat:
 #The InventoryHeuristics provide a neural network framework to detect advanced inventory cheats.
 InventoryHeuristics:
   #Do you want to enable the InventoryHeuristics check?
-  #Default: true
   enabled: true
   #The minimum confidence of a single pattern must have to count as detection?
   #Default: 55.0
@@ -213,7 +196,6 @@ InventoryHeuristics:
 #InventoryHit checks if a player modifies his inventory while hitting at the same time.
 InventoryHit:
   #Do you want to enable the InventoryHit check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the hits?
   #Default: 3
@@ -229,7 +211,6 @@ InventoryHit:
 #The InventoryMove check detects inventory clicks while moving.
 InventoryMove:
   #Do you want to enable the InventoryMove check?
-  #Default: true
   enabled: true
   #The minimum TPS the server must have to activate this check?
   #Default: 19.5
@@ -248,7 +229,6 @@ InventoryMove:
 #InventoryRotation checks if a player is moving his head while being in an inventory.
 InventoryRotation:
   #Do you want to enable the InventoryRotation check?
-  #Default: true
   enabled: true
   #Map of violation levels to commands?
   thresholds:
@@ -261,7 +241,6 @@ InventoryRotation:
 #Brings back an entity check of the old AAC 1.9.10 times but much more advanced.
 KillauraEntity:
   #Do you want to enable the KillauraEntity check?
-  #Default: true
   enabled: true
   #Enable this to only spawn an entity if requested by a command?
   #Default: false
@@ -269,22 +248,19 @@ KillauraEntity:
   #This will ensure that entities will change their identities after a certain period of time?
   #Default: 450
   respawn_timer: 300
-  #The general behaviour of the entity, mostly important for certain gamemodes.
+  #The general behavior of the entity, mostly important for certain gamemodes.
   behaviour:
     #This determines whether the player will see the player in the tablist.
     #Default: True
     visible_in_tablist: true
     #Should the entity join a team?
     team:
-      #Default: true
       enabled: true
     #Should the entity swap the items it is wearing and using?
     swap:
-      #Default: true
       enabled: true
     #Should the entity swing items to simulate an attack?
     swing:
-      #Default: true
       enabled: true
   #Here you can find all options regarding the positioning of the entity.
   position:
@@ -356,7 +332,6 @@ KillauraEntity:
 #The MultiInteraction check prevents players from moving more than one item per tick.
 MultiInteraction:
   #Do you want to enable the MultiInteraction check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the interacts?
   #Default: 18
@@ -378,7 +353,6 @@ MultiInteraction:
 #The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
 Pingspoof:
   #Do you want to enable the Pingspoof check?
-  #Default: true
   enabled: true
   #This is the ping-offset?
   #Default: 3.0
@@ -400,11 +374,10 @@ Pingspoof:
 #The Scaffold check detects Scaffold cheats.
 Scaffold:
   #Do you want to enable the Scaffold check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the block-places?
-  #Default: 10
-  cancel_vl: 2
+  #Default: 20
+  cancel_vl: 10
   #After a detection which surpasses cancel_vl AACAdditionPro cancels all blockplaces in the given timeframe to prevent further scaffolding?
   #Default: 1000
   timeout: 1000
@@ -414,9 +387,14 @@ Scaffold:
     average:
       #The minimum delay between blockplaces that will be enforced by AACAdditionPro.
       delays:
-        #This delay applies to any kind of straight building?
+        #This delay applies to all straight building technique?
         #Default: 248
         normal: 248
+        #Constants used for building techniques which include sneaking?
+        #Default: 30
+        sneaking_addition: 30
+        #Default: 40
+        sneaking_slow_addition: 40
         #This delay applies to diagonal building?
         #Default: 148
         diagonal: 148
@@ -426,41 +404,36 @@ Scaffold:
     #This part detects suspicious placement positions.
     position:
       #Do you want to enable the position check?
-      #Default: true
       enabled: true
     #This part analyzes the rotations of a player while scaffolding.
     rotation:
       #Do you want to enable the rotation check?
-      #Default: true
       enabled: true
       #How many suspicious rotations should Scaffold count as legit?
-      #Default: 3
-      rotation_threshold: 3
+      #Default: 6
+      rotation_threshold: 6
     #This checks for behaviour associated with safe-walk.
     safewalk:
       #Do you want to enable the safewalk check?
-      #Default: true
       enabled: true
     #This part detects sprinting between blockplaces.
     sprinting:
       #Do you want to enable the sprinting check?
-      #Default: true
       enabled: true
       #How many suspicious sprinting periods should Scaffold count as legit?
       #Default: 3
       sprinting_threshold: 3
   #Map of violation levels to commands?
   thresholds:
-    10: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    13: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
-    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
-    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
-    20: "aackick {player} Scaffold"
+    20: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    23: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Scaffold"
+    25: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    28: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Scaffold"
+    34: "aackick {player} Scaffold"
 
 #The Skinblinker check detects Skinblinker cheats when the player sprints/sneaks.
 Skinblinker:
   #Do you want to enable the Skinblinker check?
-  #Default: true
   enabled: true
   #Map of violation levels to commands?
   thresholds:
@@ -490,7 +463,6 @@ Teaming:
 #The Tower check detects Tower cheats.
 Tower:
   #Do you want to enable the Tower check?
-  #Default: true
   enabled: true
   #Violation before AACAdditionPro starts to cancel the block-places?
   #Default: 6
@@ -517,7 +489,6 @@ ClientControl:
   #This is a popular PVP modification granting additional information in various HUDs, such as potion effects.
   5zig:
     #Do you want to enable the 5zig check?
-    #Default: false
     enabled: false
     #This mod provides a method to disable parts of it.
     disable:
@@ -546,7 +517,6 @@ ClientControl:
   #A popular PvP modification to enhance the sprinting behavior.
   BetterSprinting:
     #Do you want to enable the BetterSprinting check?
-    #Default: false
     enabled: false
     #This mod provides a method to disable it?
     #Default: true
@@ -558,8 +528,7 @@ ClientControl:
   #This will spoof the health of all players on your server so that DamageIndicators becomes useless.
   DamageIndicator:
     #Do you want to enable the DamageIndicator check?
-    #Default: true
-    enabled: true
+    enabled: false
     #Spoof the health of the following entity categories.
     spoof:
       players: true
@@ -569,7 +538,6 @@ ClientControl:
   #A very popular mod-loader.
   Forge:
     #Do you want to enable the Forge check?
-    #Default: false
     enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
@@ -579,7 +547,6 @@ ClientControl:
   #Required: https://www.spigotmc.org/resources/labymod-server-api.52423/
   LabyMod:
     #Do you want to enable the LabyMod check?
-    #Default: false
     enabled: false
     #This mod provides a method to disable parts of it.
     disable:
@@ -625,7 +592,6 @@ ClientControl:
   #LiteLoader is alternative mod-loader to Forge.
   LiteLoader:
     #Do you want to enable the LiteLoader check?
-    #Default: false
     enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
@@ -635,8 +601,7 @@ ClientControl:
   #This covers the outdated versions of LabyMod.
   OldLabyMod:
     #Do you want to enable the OldLabyMod check?
-    #Default: false
-    enabled: true
+    enabled: false
     #This mod provides a method to disable parts of it.
     disable:
       #This renders the saturation of a player additional to the current food?
@@ -684,8 +649,7 @@ ClientControl:
   #A mod that lets you display holograms to improve building, but also has a module to download worlds.
   Schematica:
     #Do you want to enable the Schematica check?
-    #Default: false
-    enabled: true
+    enabled: false
     #This mod provides a method to disable parts of it.
     disable:
       #Automatically builds based on a schematic?
@@ -701,7 +665,6 @@ ClientControl:
   #Vape is a very popular ghost-client, often seen in ranked pvp gameplay and optimized to be especially hard to find in screenshares.
   Vape:
     #Do you want to enable the Vape check?
-    #Default: false
     enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
@@ -710,7 +673,6 @@ ClientControl:
   #WorldDownloader is a popular modification to get the maps of a server.
   WorldDownloader:
     #Do you want to enable the WorldDownloader check?
-    #Default: false
     enabled: false
     #Map of violation levels to commands?
     commands_on_detection:
@@ -719,7 +681,6 @@ ClientControl:
 #This automatically deletes old log files of both AAC and AACAdditionPro.
 LogBot:
   #Do you want to enable the LogBot check?
-  #Default: false
   enabled: false
   #After how many days should AAC-logs be deleted?
   #Default: 10
@@ -734,7 +695,6 @@ LogBot:
 #Heuristic-Addition.
 Heuristic-Addition:
   #Do you want to enable the Heuristic-Addition check?
-  #Default: false
   enabled: false
   #Map of violation levels to commands?
   confidences:
