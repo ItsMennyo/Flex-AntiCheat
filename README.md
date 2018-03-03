@@ -1,24 +1,23 @@
-![Flex-AntiCheat](//i.imgur.com/8XjUwW5.png)
+![Flex-AntiCheat](https://i.imgur.com/JERnbL5.png)
 
-Welcome to my AntiCheat project called Flex. In this project, I optimize AntiCheats with better and advanced configs.
+Welcome to my project called Flex. In this project I optimize AntiCheats with more advanced configs.
+My goal with Flex is to give AntiCheats less false positives and even try to prevent bugs or bypasses.
 
-This, of course, helps to reduce false positives and bypasses. And what's beautiful is that it's completely free.
+Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC), [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) version available.
 
-Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC), [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) version.
+![Features](https://i.imgur.com/waqXG43.png)
 
-![About-Flex](//i.imgur.com/RYHUP74.png)
+My config has some special features for every config and AntiCheat.
 
-Flex AntiCheat has started on 15-03-2017 on BlackSpigotMC and has been in development since then.
+The AAC version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
+The AACAdditionPro version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
+The AntiAura version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed and not to forget, optimized config values.
 
-It was so popular that I decided to place it on multiple sites including DirectLeaks and now GitHub.
+![Requirements](https://i.imgur.com/RHomEwN.png)
 
-Currently we already have version 3 and already have almost 10000 total downloads on all versions that have ever been released.
+There are a number of things required for you to use Flex as AntiCheat on your server.
 
-![Requirements](//i.imgur.com/kDsgRhA.png)
-
-To make the configs work well, you need to do some things.
-
-AAC Edition:
+AAC:
 
 1. Buy AAC [HERE](https://www.spigotmc.org/resources/aac-advanced-anti-cheat-hack-kill-aura-blocker.6442/) to support the delevoper.
 
@@ -26,7 +25,7 @@ AAC Edition:
 
 3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
-AACAdditionPro Edition:
+AACAdditionPro:
 
 1. Buy AACAdditionPro [HERE](https://www.spigotmc.org/resources/aacadditionpro.33590/) to support the delevoper.
 
@@ -34,14 +33,12 @@ AACAdditionPro Edition:
 
 3. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
-AntiAura Edition:
+AntiAura:
 
 1. Buy AntiAura [HERE](https://www.spigotmc.org/resources/antiaura-hack-blocker-1-7-1-12-compatible.1368/) to support the delevoper.
 
 2. Go to the config and tweak the settings you want to change or need for your server like ping and TPS detection. For help with configuring click [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
-![Support](//i.imgur.com/XwDyFDS.png)
+![Support](https://i.imgur.com/2M2UCi1.png)
 
 If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
-
-I do not respond to conversations or on Discord/Skype/SpigotMC for that.
