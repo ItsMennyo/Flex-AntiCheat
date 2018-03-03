@@ -6,9 +6,9 @@
 # |   AntiCheat: AAC (Advanced Anti Cheat)        | #
 # |   Developer: konsolas.58100                   | #
 # |   Spigot Page: https://goo.gl/YgNG9b          | #
-# |   Plugin Version: 3.3.9                       | #
+# |   Plugin Version: 3.3.11-b1                   | #
 # |   Configurator: ItsMennyo                     | #
-# |   Config Build: BUILD 2.0.000 BETA            | #
+# |   Config Build: BUILD 2.0.158 BETA            | #
 # |   Overview: https://goo.gl/NJQDFA             | #
 # |   Support: https://goo.gl/DAfLsX              | #
 # |   Latest Build: https://goo.gl/CFH892         | #
@@ -21,7 +21,6 @@
 #HitBox force players to look at the entities that they want to attack.
 hitbox:
   #Do you want to enable the HitBox check?
-  #Default: true
   enabled: true
   #How much should the HitBoxes be expanded?
   #Default: 0.6
@@ -51,10 +50,9 @@ hitbox:
 #BadPackets prevents players from sending packets to exploit the server.
 badpackets:
   #Do you want to enable the BadPackets check?
-  #Default: true
   enabled: true
   #After how many bad packets should it be canceled?
-  #Default: 30
+  #Default: 50
   cancel_threshold: 25
   #How many moves is a player be able to send in 3 ticks?
   #Default: 10
@@ -69,7 +67,6 @@ badpackets:
 #Criticals prevent players from using critical hits when it is not possible.
 criticals:
   #Do you want to enable the Criticals check?
-  #Default: true
   enabled: true
   #Should the illegal critical hits be canceled?
   #Default: true
@@ -87,7 +84,6 @@ criticals:
 #FastBow prevent players from shooting too quickly.
 fastbow:
   #Do you want to enable the FastBow check?
-  #Default: true
   enabled: true
   #How much lag compensation when checking for FastBow?
   #Default: 130
@@ -108,7 +104,6 @@ fastbow:
 #FightSpeed prevents players from attacking too quickly.
 fightspeed:
   #Do you want to enable the FightSpeed check?
-  #Default: true
   enabled: true
   #How many times per second can a player hit an entity?
   #Default: 15
@@ -132,7 +127,6 @@ fightspeed:
 #Fly prevents players from flying in survival mode.
 fly:
   #Do you want to enable the Fly check?
-  #Default: true
   enabled: true
   #How should the fall speeds enforced?
   #Default: 0.015
@@ -147,7 +141,7 @@ fly:
   min_vl: 50
   #How long have a player to responds to velocity?
   #Default: 30
-  vel_ticks: 50
+  vel_ticks: 60
   #Teleport the player down if he is detected?
   #Default: true
   teleport: true
@@ -170,7 +164,6 @@ fly:
 #Speed prevents players from moving too quickly in survival mode.
 speed:
   #Do you want to enable the Speed check?
-  #Default: true
   enabled: true
   #How much leniency should the Speed check have?
   #Default: 0.005
@@ -193,6 +186,21 @@ speed:
   #How long before start reducing violations?
   #Default: 20
   reduce_delay: 5
+  #Specific configuration options which control how the check works:
+  #Default: 0.5
+  item_scalar: 0.5
+  #Default: 0.63
+  sneak_scalar: 0.63
+  #Default: 0.7
+  soul_sand_scalar: 0.7
+  #Default: true
+  check_sprint_direction: true
+  #Default: true
+  check_slowness_effect: true
+  #Default: true
+  check_cobwebs: true
+  #Default: true
+  strict_velocity_checking: true
   #Map of violations levels to commands:
   thresholds:
     180: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
@@ -203,7 +211,6 @@ speed:
 #Derp stops some forms of Derp cheats.
 derp:
   #Do you want to enable the Derp check?
-  #Default: true
   enabled: true
   #Map of violations levels to commands:
   thresholds:
@@ -221,7 +228,6 @@ knockback:
 #NoSwing ensures that players swing with their arm when attacking or mining.
 noswing:
   #Do you want to enable the NoSwing check?
-  #Default: true
   enabled: true
   #Map of violations levels to commands:
   thresholds:
@@ -233,7 +239,6 @@ noswing:
 #Regen stops players from healing too quickly.
 regen:
   #Do you want to enable the Regen check?
-  #Default: true
   enabled: true
   #Should the regeneration be canceled if it happens too quickly?
   #Default: true
@@ -251,34 +256,25 @@ regen:
     15: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Regen"
     19: "aackick {player} Regen"
 
-#Killaura detects combat cheats which give an unfair advantage.
+#KillAura detects combat cheats which give an unfair advantage.
 killaura:
-  #Do you want to enable the Killaura check?
-  #Default: true
+  #Do you want to enable the KillAura check?
   enabled: true
-  #How much percent of the time should we check the player?
-  #Default: 100
-  check_chance: 100
-  #Lag compensation paramters?
-  #Default: 3
-  check_delay: 2
-  #Default: 6
-  listen_delay: 7
-  #How far away must the 2 players be to be checked?
-  #Default: 1.2
-  min_dist: 2.8
-  #How long should we check the player?
-  #Default: 20
-  duration: 20
-  #How much should the check be weighted?
+  #How much should the violation level increase if a player attacks suspiciously?
   #Default: 4
-  weight: 5
-  #How far off is a player able to look and hit the entity?
-  #Default: 0.12
-  max_diff: 0.12
-  #How far is a player able to Reach?
-  #Default: 4.6
-  max_reach: 4.7
+  suspicious_vl: 4
+  #How much should the violation level increase if a player attacks a hidden entity?
+  #Default: 1
+  entity_vl: 2
+  #Should we check KillAura with mobs instead of fake players?
+  #Default: false
+  check_mobs: false
+  #Should we cancel impossible hits?
+  #Default: false
+  cancel_hit: false
+  #How many violations before hits start being canceled?
+  #Default: 6
+  min_vl: 18
   #Map of violations levels to commands:
   thresholds:
     36: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
@@ -286,10 +282,9 @@ killaura:
     49: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Killaura"
     55: "aackick {player} Killaura"
 
-#Heuristics is used to detect advanced Killaura cheats that bypass the normal checks.
+#Heuristics is used to detect advanced KillAura cheats that bypass the normal checks.
 heuristics:
   #Do you want to enable the Heuristics check?
-  #Default: true
   enabled: true
   #How high should the Heuristic confidence be to give a violation?
   #Default: 75
@@ -305,7 +300,6 @@ heuristics:
 #NoFall ensures players take proper fall damage.
 nofall:
   #Do you want to enable the NoFall check?
-  #Default: true
   enabled: true
   #What downward Velocity is required to check for NoFall?
   #Default: -0.2
@@ -323,7 +317,6 @@ nofall:
 #Jesus stops people from walking on water.
 jesus:
   #Do you want to enable the Jesus check?
-  #Default: true
   enabled: true
   #Should we teleport the players back?
   #Default: true
@@ -338,7 +331,6 @@ jesus:
 #Phase stops people from glitching through blocks.
 phase:
   #Do you want to enable the Phase check?
-  #Default: true
   enabled: true
   #Which blocks should be exempt from phase checking?
   exclude:
@@ -371,7 +363,6 @@ phase:
 #FastUse stops players form using items too quickly.
 fastuse:
   #Do you want to enable the FastUse check?
-  #Default: true
   enabled: true
   #How much delay should we enforce for eating an item?
   #Default: 1200
@@ -386,7 +377,6 @@ fastuse:
 #FastBreak stops players from breaking blocks too quickly.
 fastbreak:
   #Do you want to enable the FastBreak check?
-  #Default: true
   enabled: true
   #How many ticks should we count as lag?
   #Default: 2
@@ -410,7 +400,6 @@ fastbreak:
 #FastPlace stops players from placing blocks too quickly.
 fastplace:
   #Do you want to enable the FastPlace check?
-  #Default: true
   enabled: true
   #How many blocks can a player place in one second?
   #Default: 10
@@ -431,7 +420,6 @@ fastplace:
 #Nuker stops players in creative mode from breaking too many blocks at once.
 nuker:
   #Do you want to enable the Nuker check?
-  #Default: true
   enabled: true
   #How many blocks is a player be able to break in 1 second?
   #Default: 40
@@ -447,7 +435,6 @@ nuker:
 #Interact stops players form interacting in impossible situations.
 interact:
   #Do you want to enable the Interact check?
-  #Default: true
   enabled: true
   #Detect interacting with liquids?
   #Default: true
@@ -481,7 +468,6 @@ interact:
 #Velocity makes sure that players take proper knockback.
 velocity:
   #Do you want to enable the Velocity check?
-  #Default: true
   enabled: true
   #How long should we check the players?
   #Default: 15
@@ -489,6 +475,12 @@ velocity:
   #The maximum distance that a detected player should be teleported?
   #Default: 3.0
   max_tp_dist: 2.0
+  #Should we use the velocity setback system?
+  #Default: true
+  use_velocity_setbacks: true
+  #Should we check for midair direction changes?
+  #Default: true
+  check_direction: true
   #How many violations before teleporting the player?
   #Default: 8
   min_vl: 7
@@ -518,19 +510,18 @@ spam:
 #Parameters for packet level movement check system.
 move:
   #Do you want to enable the Move check?
-  #Default: true
   enabled: true
   #How much lag should we compensate?
-  #Default: -60
-  min_balance: -80
+  #Default: -80
+  min_balance: -75
   #How many extra packets is a player allowed to send?
-  #Default: 5
+  #Default: 10
   cancel_threshold: 5
   #What balance should we set the player when the connection seems normal?
   #Default: -1
   reset_level: -1
   #How high should the internal packet balance be allowed to get?
-  #Default: 10
+  #Default: 15
   balance_cap: 10
   #At what tick interval should we reduce 1 VL from the player?
   #Default: 25
@@ -540,10 +531,10 @@ move:
   tp_accept_threshold: 0.001
   #Map of violations levels to commands:
   thresholds:
-    230: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
-    280: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Packets"
-    340: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Packets"
-    400: "aackick {player} Packets"
+    330: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
+    380: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Packets"
+    440: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Packets"
+    500: "aackick {player} Packets"
 
 #How many times must a player be kicked before he is banned?
 #Default: -1
