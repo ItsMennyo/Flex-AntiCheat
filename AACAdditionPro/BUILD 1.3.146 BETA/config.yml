@@ -587,7 +587,7 @@ ClientControl:
       #Default: false
       saturation_bar: false
     commands_on_detection:
-      - "aackick {player} LabyMod
+      - "aackick {player} LabyMod"
 
   #LiteLoader is alternative mod-loader to Forge.
   LiteLoader:
