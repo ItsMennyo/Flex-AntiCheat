@@ -9,9 +9,7 @@ Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/mas
 
 My config has some special features for every config and AntiCheat.
 
-The AAC version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
-
-The AACAdditionPro version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
+The AAC (and AACAdditionPro) version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
 
 The AntiAura version has an improved config layout, better and easier to understand notes for the settings of a check, a lot of language errors fixed and not to forget, optimized config values.
 
@@ -29,7 +27,7 @@ If you want to use AAC (and AACAdditionPro) as AntiCheat, you have to keep to th
 
 4. (Recommended) Download ConditionalCommands [HERE](https://www.spigotmc.org/resources/conditionalcommands.14295/).
 
-5. Copy the latest Flex build for AAC [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/blob/master/AAC/LATEST%20PUBLIC%20BUILD.yml) and for AACAdditionPro [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/blob/master/AACAdditionPro/LATEST%20PUBLIC%20BUILD.yml) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
+5. Copy the latest Flex build for AAC [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and for AACAdditionPro [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
 
 6. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
@@ -39,7 +37,7 @@ If you want to use AntiAura as AntiCheat, you have to keep to the following:
 
 2. Buy AntiAura [HERE](https://www.spigotmc.org/resources/antiaura-premium-anti-cheat-plugin.1368/).
 
-3. Copy the latest Flex build for AntiAura [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/blob/master/AntiAura/LATEST%20PUBLIC%20BUILD.yml) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
+3. Copy the latest Flex build for AntiAura [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
 
 4. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
