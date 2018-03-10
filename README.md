@@ -43,4 +43,4 @@ If you want to use AntiAura as AntiCheat, you have to keep to the following:
 
 ![Support](https://i.imgur.com/2M2UCi1.png)
 
-If you have found a language mistake, bypass, bug or need help then you can ask/report it [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
+Helping me with reporting false positives, bugs or bypasses is awesome but understand this. This is a config and a config cant fix everything. Most of the time when you found a false positive has noting to do with my Flex config. So before you report a issue, try it with the default config. If you dont have the false positive, bug or bypass with the default config but only with my Flex config then you can reprort it [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
