@@ -9,9 +9,9 @@ Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/mas
 
 My config has some special features for every config and AntiCheat.
 
-The AAC (and AACAdditionPro) version has an improved config layout, better and easier to understand notes for the settings of each check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
+The AAC (and AACAdditionPro) version has an improved config layout, better and easier to understand notes for the settings of every check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
 
-The AntiAura version has an improved config layout, better and easier to understand notes for the settings of each check, a lot of language errors fixed and not to forget, optimized config values.
+The AntiAura version has an improved config layout, better and easier to understand notes for the settings of every check, a lot of language errors fixed and not to forget, optimized config values.
 
 ![Requirements](https://i.imgur.com/RHomEwN.png)
 
