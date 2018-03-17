@@ -6,9 +6,9 @@
 # |   AntiCheat: AACAdditionPro (AACAP)                  | #
 # |   Developer: Photon.166336                           | #
 # |   Spigot Page: https://goo.gl/GrX6dA                 | #
-# |   Plugin Version: 3.10.1                             | #
+# |   Plugin Version: 3.10.2                             | #
 # |   Configurator: ItsMennyo                            | #
-# |   Config Build: BUILD 1.3.146 BETA                   | #
+# |   Config Build: BUILD 1.3.219 BETA                   | #
 # |   Overview: https://goo.gl/NJQDFA                    | #
 # |   Support: https://goo.gl/DAfLsX                     | #
 # |   Latest Build: https://goo.gl/Gv626M                | #
@@ -407,15 +407,18 @@ Scaffold:
       enabled: true
     #This part analyzes the rotations of a player while scaffolding.
     rotation:
-      #Do you want to enable the rotation check?
-      enabled: true
+      #What types of this part should be enabled?
+      type1: true
+      type2: true
+      type3: true
       #How many suspicious rotations should Scaffold count as legit?
       #Default: 6
       rotation_threshold: 6
-    #This checks for behaviour associated with safe-walk.
+    #This checks for behavior associated with safe-walk.
     safewalk:
-      #Do you want to enable the safewalk check?
-      enabled: true
+      #What types of this part should be enabled
+      type1: true
+      type2: true
     #This part detects sprinting between blockplaces.
     sprinting:
       #Do you want to enable the sprinting check?
