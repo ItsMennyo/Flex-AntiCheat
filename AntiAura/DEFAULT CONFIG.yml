@@ -581,11 +581,12 @@ VelocityAccounting:
   #If this is enabled, AntiAura will account for velocity for players who hit themselves with bows to launch themselves in directions.
   #Enabling this MAY create MINOR (probably useless) speed bypasses if the hacker shoots themselves with a bow to give themselves a velocity.
   AllowBowBoosting: true
-  #If a player gets a velocity twice, enabling this will double the height he can go.
+  #If a player gets a velocity twice, enabling this will double the height they can go.
   #For example, being launched twice from a launch pad would make AntiAura allow players to go up twice the height, even if they never got that much velocity.
   #Enabling this may be exploited by clients, allowing them to fly if they have not yet touched the ground.
   AllowMultipleVelocities: true
-  #Allow multiple velocities on the X/Z axis.
+  #Give extra leniency for multiple velocities on the X/Z axis.
+  #This, surprisingly, actually gives quite a lot of leniency. If you want strict velocity checks in PVP, you may wish to disable this.
   MultipleXZVelocities: true
   #The the multiplier to the velocity for the amount the player can move.
   XZVelocityMul: 25
@@ -603,7 +604,10 @@ VelocityAccounting:
   FlatLeniencyInBlocks: 0.1
   #How long should the velocity last?
   #Velocities last the time calculated by AntiAura, multiplied by VelocityTime.
-  VelocityTime: 2.0
+  #For non=PVP velocities:
+  NormalVelocityTime: 2.0
+  #For PVP velocities:
+  CombatVelocityTime: 3.0
 
 #This blocks any unexpected Y movement.
 #If a player goes upward unexpectedly without any blocks underneath them, this drags them down.
@@ -650,7 +654,7 @@ Jump:
   #The threshold the players' Jump violation level must reach for them to be detected for Jump.
   Threshold: 8
   #If the threshold is above the DragBackThreshold, players are dragged back when jumping too far.
-  #Setting this higher than 0 can, of course, allow players to jump illegitimately far until they reach the DragBackThreshold.
+  #Setting this higher than 0 can, of course, allow players to jump illigitimately far until they reach the DragBackThreshold.
   DragBackThreshold: 0
   #Command to execute when Jump is detected.
   JumpCommand: # 
@@ -822,7 +826,7 @@ NoFall:
 Phase:
   #Enable blockage Phase?
   Enabled: true
-  #Do you want to stop players from trqvelling between two solid blocks?
+  #Do you want to stop players from travelling between two solid blocks?
   ThroughBlockBlocking: true
   #Prevent teleporting to open spaces with solid blocks inbetween?
   BlockTeleportingThroughBlocks: true
