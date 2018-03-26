@@ -6,9 +6,9 @@
 # |   AntiCheat: AAC (Advanced Anti Cheat)        | #
 # |   Developer: konsolas.58100                   | #
 # |   Spigot Page: https://goo.gl/YgNG9b          | #
-# |   Plugin Version: 3.3.11-b1                   | #
+# |   Plugin Version: 3.3.13                      | #
 # |   Configurator: ItsMennyo                     | #
-# |   Config Build: BUILD 2.0.158 BETA            | #
+# |   Config Build: BUILD 2.0.234 BETA            | #
 # |   Overview: https://goo.gl/NJQDFA             | #
 # |   Support: https://goo.gl/DAfLsX              | #
 # |   Latest Build: https://goo.gl/CFH892         | #
@@ -23,7 +23,7 @@ hitbox:
   #Do you want to enable the HitBox check?
   enabled: true
   #How much should the HitBoxes be expanded?
-  #Default: 0.6
+  #Default: 0.65
   lenience: 0.57
   #Should the illegal hits be canceled?
   #Default: true
@@ -33,17 +33,19 @@ hitbox:
   max_reach: 3.42
   #How much should the movement of the target be compensated?
   #Default: 6.0
-  move_compensation: 3.0
+  move_compensation: 2.5
   #How many violations before canceling illegal hits?
   #Default: 4
   min_vl: 12
   #How long before start reducing violations?
   #Default: 60
-  reduce_delay: 100
+  reduce_delay: 80
   #Map of violations levels to commands:
   thresholds:
-    12: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
-    21: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Killaura /0/ aacadditionpro entitycheck {player} 300"
+    12:
+      - "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
+      - "aacadditionpro entitycheck {player} 1200"
+    21: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Killaura"
     28: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Killaura"
     35: "aackick {player} Killaura"
 
@@ -87,13 +89,13 @@ fastbow:
   enabled: true
   #How much lag compensation when checking for FastBow?
   #Default: 130
-  lenience_ms: 130
+  lenience_ms: 245
   #How long should we block the bow form using after detection?
   #Default: 100
-  block_ticks: 100
+  block_ticks: 20
   #How many violations before canceling shots?
   #Default: 8
-  min_vl: 6
+  min_vl: 99
   #Map of violations levels to commands:
   thresholds:
     6: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
@@ -119,8 +121,10 @@ fightspeed:
   consistent_threshold: 25
   #Map of violations levels to commands:
   thresholds:
-    13: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
-    17: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} AutoClicker /0/ aacadditionpro entitycheck {player} 300"
+    13:
+      - "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
+      - "aacadditionpro entitycheck {player} 1200"
+    17: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} AutoClicker"
     21: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} AutoClicker"
     25: "aackick {player} AutoClicker"
 
@@ -135,10 +139,10 @@ fly:
   e_tolerance: 0.015
   #How much should the violations increase for larger movements?
   #Default: 6.0
-  vl_multiplier: 10.0
+  vl_multiplier: 5.0
   #How many violations before teleporting the player?
   #Default: 28
-  min_vl: 50
+  min_vl: 65
   #How long have a player to responds to velocity?
   #Default: 30
   vel_ticks: 60
@@ -150,7 +154,7 @@ fly:
   abilities: false
   #How long before start reducing violations?
   #Default: 20
-  reduce_delay: 5
+  reduce_delay: 10
   #Should the player's pitch reset to 0 after detection?
   #Default: false
   reset_pitch: false
@@ -165,7 +169,7 @@ fly:
 speed:
   #Do you want to enable the Speed check?
   enabled: true
-  #How much leniency should the Speed check have?
+  #How strongly should we enforce movement speeds?
   #Default: 0.005
   threshold: 0.005
   #How long have a player to responds to velocity?
@@ -173,19 +177,19 @@ speed:
   vel_ticks: 40
   #How much should the violations increase for larger movements?
   #Default: 6.0
-  vl_multiplier: 10.0
+  vl_multiplier: 5.0
   #How many times per second can a player toggle sneak?
   #Default: 15
   max_sneak_toggles: 15
   #How many times per second can a player toggle use-item?
   #Default: 35
-  max_use_toggles: 25
+  max_use_toggles: 30
   #How many violations before teleporting the player?
   #Default: 36
   min_vl: 80
   #How long before start reducing violations?
   #Default: 20
-  reduce_delay: 5
+  reduce_delay: 10
   #Specific configuration options which control how the check works:
   #Default: 0.5
   item_scalar: 0.5
@@ -263,22 +267,24 @@ killaura:
   #How much should the violation level increase if a player attacks suspiciously?
   #Default: 4
   suspicious_vl: 4
-  #How much should the violation level increase if a player attacks a hidden entity?
-  #Default: 1
-  entity_vl: 2
+  #How long should each KillAura check last?
+  #Default: 40
+  check_duration: 40
   #Should we check KillAura with mobs instead of fake players?
   #Default: false
   check_mobs: false
   #Should we cancel impossible hits?
-  #Default: false
+  #Default: true
   cancel_hit: false
   #How many violations before hits start being canceled?
   #Default: 6
   min_vl: 18
   #Map of violations levels to commands:
   thresholds:
-    36: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
-    43: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Killaura /0/ aacadditionpro entitycheck {player} 300"
+    36:
+      - "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
+      - "aacadditionpro entitycheck {player} 1200"
+    43: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Killaura"
     49: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Killaura"
     55: "aackick {player} Killaura"
 
@@ -470,8 +476,8 @@ velocity:
   #Do you want to enable the Velocity check?
   enabled: true
   #How long should we check the players?
-  #Default: 15
-  check_length: 15
+  #Default: 30
+  check_length: 30
   #The maximum distance that a detected player should be teleported?
   #Default: 3.0
   max_tp_dist: 2.0
@@ -482,7 +488,7 @@ velocity:
   #Default: true
   check_direction: true
   #How many violations before teleporting the player?
-  #Default: 8
+  #Default: 10
   min_vl: 7
   #How much should we increase violation level on detection?
   #Default: 2
@@ -492,10 +498,10 @@ velocity:
   vl_no_packet: 0
   #Map of violations levels to commands:
   thresholds:
-    7: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
-    10: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Velocity"
-    12: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Velocity"
-    15: "aackick {player} Velocity"
+    9: "conditionalcommands:cc {player} if (-ping->1000&-tps->19.9)&-time_online->5000&-uptime->600 do aackick {player} Internet/Server Issues?"
+    13: "conditionalcommands:cc {player} if (-ping->0&-ping-<100)&-tps->19.5 do aackick {player} Velocity"
+    16: "conditionalcommands:cc {player} if (-ping->0&-ping-<250)&-tps->19.0 do aackick {player} Velocity"
+    20: "aackick {player} Velocity"
 
 spam:
   enabled: false
@@ -524,7 +530,7 @@ move:
   #Default: 15
   balance_cap: 10
   #At what tick interval should we reduce 1 VL from the player?
-  #Default: 25
+  #Default: 15
   decay: 5
   #What teleport offset should we accept from players?
   #Default: 0.001
