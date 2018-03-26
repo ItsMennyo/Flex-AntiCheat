@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.41                        | #
+# |   Plugin Version: 11.42                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.2.256 BETA             | #
+# |   Config Build: BUILD 2.2.331 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
@@ -560,7 +560,7 @@ VelocityAccounting:
   #If a player gets a velocity twice, enabling this will double the height they can go.
   #Default: true
   AllowMultipleVelocities: false
-  #Allow multiple velocities on the X/Z axis?
+  #Give extra leniency for multiple velocities on the X/Z axis?
   #Default: true
   MultipleXZVelocities: true
   #The multiplier for velocity that the player can move?
@@ -579,8 +579,12 @@ VelocityAccounting:
   #Default: 0.1
   FlatLeniencyInBlocks: 0.1
   #How long should the velocity last?
+  #For non PVP velocities:
   #Default: 2.0
-  VelocityTime: 2.0
+  NormalVelocityTime: 2.0
+  #For PVP velocities:
+  #Default: 3.0
+  CombatVelocityTime: 3.0
 
 #This blocks any unexpected Y movement.
 Spider:
