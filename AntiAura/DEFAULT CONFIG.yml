@@ -91,21 +91,21 @@ PingAccounting:
 
 Forcefield:
 
-  #The consistency checks do not work like other checks. The Consistency checks sample a number of hits and checks if they are too consistent within certain parameters.
+  #The consistency checks do not work like other killaura checks. The Consistency checks sample a number of hits and checks if they are too consistent within certain parameters.
   Consistency:
     #Enable the consistency check?
     Enabled: true
     #Do you want to ignore the hit if the hit is cancelled by AntiAura or another plugin, such as in safezones or spawn?
     #Enabling can prevent false positives in these areas.
-    IgnoreIfHitCancelled: false
+    IgnoreIfHitCancelled: true
     #The minimum amount of stored hits the player has had to have done before the hits are analyzed.
     #This means if the player has done less than MinHitSampleCount hits after they joined the server, they CANNOT be detected.
     #When testing a value of 8 worked decently, however higher values are less likely to get a good average.
-    MinHitSampleCount: 20
+    MinHitSampleCount: 17
     #The maximum amount of hits AntiAura will store to analyze for the player.
     #However, the higher it is, the less likely it will dynamically respond to changes in player behavior.
     #FOR EXAMPLE: If MaxHitSampleCount was 500 and the player did 400 legit hits without hacking, the player would have to do at least 300 more hacking hits to get detected.
-    MaxHitSampleCount: 30
+    MaxHitSampleCount: 23
     #Check the consistency of hit positioning?
     #This check is fundamentally different to Position as it checks for consistent hits placed in specific areas, whereas position just calculates the difference per hit.
     HitPosition:
@@ -617,9 +617,9 @@ Spider:
   #Height to drag players down for Spider?
   #A player standing normally on the ground has a value of "1" here.
   #A value of 1.5 may not stop players spidering up slabs. 
-  MaxHeightOffGround: 1.30
+  MaxHeightOffGround: 1.40
   #Maximum height when on climbable objects such as ladders or vines.
-  MaxHeightOnLadders: 1.30
+  MaxHeightOnLadders: 1.40
   #What the threshold must be at to drag a player back.
   #Defaults to 0, to ALWAYS drag players back.
   DragBackThreshold: 0
@@ -648,7 +648,7 @@ Jump:
   #The maximum distance a player can jump on a level surface.
   #Recommend increasing if you get false positives.
   #This value is added to or taken away from if a player jumps to a block that is higher or lower.
-  MaxJumpOnLevelSurface: 5.2
+  MaxJumpOnLevelSurface: 5.3
   #How much the players' Jump violation level goes down after a legitimate jump.
   SafeJumpDecrease: 0.5
   #The threshold the players' Jump violation level must reach for them to be detected for Jump.
@@ -728,7 +728,7 @@ Speed:
   #What leniency most a player be at to be FORCED to be dragged back, even if below the DragBackThreshold?
   ForceDragbackLeniency: 1.0
   #How many times must the player be detected for speed hacks to be kicked?
-  Threshold: 15
+  Threshold: 16
   #If the Threshold is higher than this, drag the player back for speed hacking.
   #Note: If you wish to use it, set it at a high value like 10 or more.
   #If players are not dragged back, threshold increases much faster than if they are.
@@ -736,9 +736,9 @@ Speed:
   #Please note that a higher-than-zero DragBackThreshold value on OTHER checks in AntiAura will introduce unnecessary bypasses.
   #However, the DragBackThreshold for the Speed check is important to reducing false positives, especially with laggy players.
   #And, it does not introduce significant bypasses due to the ForceDragbackLeniency option.
-  DragBackThreshold: 10
+  DragBackThreshold: 13
   #When the player is detected to be doing legitimate activities, how much should the Threshold be lowered?
-  LowerAmount: 1.0
+  LowerAmount: 1.35
   #What command do you want to execute when someone is detected for flying?
   SpeedCommand: # 
   #Setting this to true will make players detected for hacks keep looking in the same direction they were looking at when dragged back.
@@ -937,7 +937,18 @@ Elytra:
   #Block players using Elytra travelling further than they could from their take-off position.
   #Warning: Distance blockage will be disabled if the player uses a firework to boost!
   DistanceBlockage: true
-
+  ElytraSpeed:
+    #Block players from travelling too fast using Elytra?
+    SpeedBlockage: true
+    #For SpeedBlockage, this is how much speed is added for every block the player goes down.
+    SpeedMultiplier: 2.0
+    #Every tick, the players' allowed speed when using an elytra is taken away by the following formula:
+    #ElytraSpeed -= (ElytraSpeed / SpeedLossDivide)
+    #Therefore, lower SpeedLossDivide values are more lenient, and higher values are stricter.
+    SpeedLossDivide: 75
+    #The minimum distance a player must be from their take-off point before they can be detected for hacking.
+    MinDistanceBeforeCheck: 10
+  ElytraCommand: #
 
 
 #This "Blocks" manual BowAimbot. There's no way to "detect" it, and hence no way to kick the player for it.
