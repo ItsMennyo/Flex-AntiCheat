@@ -6,9 +6,9 @@
 # |   AntiCheat: AntiAura (AA)                     | #
 # |   Developer: joehot200.147                     | #
 # |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.42                        | #
+# |   Plugin Version: 11.43                        | #
 # |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.2.331 BETA             | #
+# |   Config Build: BUILD 2.2.427 BETA             | #
 # |   Overview: https://goo.gl/NJQDFA              | #
 # |   Support: https://goo.gl/DAfLsX               | #
 # |   Latest Build: https://goo.gl/9YedUw          | #
@@ -90,14 +90,14 @@ Forcefield:
     #Do you want to enable the Consistency check?
     Enabled: true
     #The minimum amount of hits that the player has had to have done before the hits are analyzed?
-    #Default: 20
-    MinHitSampleCount: 15
+    #Default: 17
+    MinHitSampleCount: 12
     #The maximum amount of hits that AntiAura will store to analyze the player?
-    #Default: 30
-    MaxHitSampleCount: 30
+    #Default: 23
+    MaxHitSampleCount: 23
     #Do you want to ignore the hits if it is canceled by AntiAura or another plugin such as safe-zones or spawns?
-    #Default: false
-    IgnoreIfHitCancelled: false
+    #Default: true
+    IgnoreIfHitCancelled: true
     #This checks the consistency of hit positioning.
     HitPosition:
       #The maximum values in which player hits are legitimate.
@@ -591,10 +591,10 @@ Spider:
   #Do you want to enable the Spider check?
   Enabled: true
   #Height to drag players down for Spider?
-  #Default: 1.30
+  #Default: 1.40
   MaxHeightOffGround: 1.42
   #Maximum height when on climbable objects?
-  #Default: 1.30
+  #Default: 1.40
   MaxHeightOnLadders: 1.42
   #Damages the player by the amount of blocks dragged back?
   #Default: true
@@ -616,7 +616,7 @@ Jump:
   #Do you want to enable the Jump check?
   Enabled: true
   #The maximum distance a player can jump on a level surface?
-  #Default: 5.2
+  #Default: 5.3
   MaxJumpOnLevelSurface: 5.4
   #Amount of times the player must be detected by the Jump check to be kicked?
   #Default: 8
@@ -711,14 +711,14 @@ Speed:
   #Default: true
   Water: true
   #Amount of times the player must be detected by the Speed check to be kicked?
-  #Default: 15
-  Threshold: 10
+  #Default: 16
+  Threshold: 12
   #What the Threshold must be at to drag a player back?
-  #Default: 10
-  DragBackThreshold: 4
+  #Default: 13
+  DragBackThreshold: 6
   #How much do you want to lower the Threshold when the player is detected as legit?
-  #Default: 1.0
-  LowerAmount: 0.5
+  #Default: 1.35
+  LowerAmount: 0.75
   #Command to execute when Speed is detected?
   SpeedCommand: # 
 
@@ -905,6 +905,14 @@ Elytra:
   #Block players using Elytra traveling further than they could from their take-off position?
   #Default: true
   DistanceBlockage: true
+  #EXPERIMENTAL CHECK. NOT READY FOR USE.
+  ElytraSpeed:
+    SpeedBlockage: false
+    SpeedMultiplier: 2.0
+    SpeedLossDivide: 75
+    MinDistanceBeforeCheck: 10
+  #Command to execute when Elytra is detected?
+  ElytraCommand: # 
 
 #This blocks manual BowAimbot.
 BowAimbot:
