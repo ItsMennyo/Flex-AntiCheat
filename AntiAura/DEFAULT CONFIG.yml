@@ -414,23 +414,13 @@ Knockback:
   #By enabling AntiKnockback and not moving at all, players will be able to bypass detection if this is enabled.
   #Enable with caution.
   DontCheckLaggyPeople: false
-  #What is the LOWEST velocity to check a player?
-  #Knockback amounts lower than this will not be checked for hacks.
-  #Setting this too low means that players just walking normally could change their velocity and be detected.
-  #If you get false positives by hitting players with your fists or blocks, RAISE THIS!
-  MinimumKnockbackCheck: 0.1
-  #If the knockback is below this, AmountMoved is changed to 0.5 to help avoid false positives.
-  #Actions such as zombie attacks, hitting other players with fists, fishing rods, all fall within this.
-  #Set to 0 to disable.
-  LowKnockbackValues: 0.35
-  #This is how far the player has to move after being given a velocity.
-  #The algorithm is: EVENT_VELOCITY * AmountMoved.
-  #Increasing this can catch players using partial AntiKnockback much easier.
-  #Decreasing this can solve a lot of false kicks.
-  AmountMoved: 1.0
-  #Set this to true if you DON'T want to check players if they are standing next to a wall.
-  #Hitting a wall obviously stops the player from being knocked back, which may cause false positives.
-  DontCheckOnWalls: true
+  #If a player is travelling slowly, what is the lowest multiplier to multiply the knockback by, to avoid false positives?
+  #This option is mainly for players standing still who then walk forwards, trying to avoid knockback.
+  LowestModifierForLowSpeed: 0.7
+  #How much leniency should the check have?
+  #1.0 equals no leniency. Values less than 1.0 make the check more lenient.
+  #For example, 0.5 would mean a player would only have to move half the distance backwards.
+  KnockbackLeniency: 1.0
   #Command to execute when person is detected for AntiKnockback.
   KnockbackCommand: # 
   #You know how thresholds work by now.
