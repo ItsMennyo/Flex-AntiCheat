@@ -795,6 +795,8 @@ FastPlace:
 NoFall:
   #Enable blockage of this hack?
   Enabled: true
+  #The threshold to not give players velocity leniencies after taking fall damage.
+  MaxThresholdToAplyLeniency: 1
   #How many times must the person be detected to be kicked?
   Threshold: 15
   #How long, in ticks, do you want to allow the person to be falling but still be "on the ground"?
@@ -922,22 +924,17 @@ PotionSaver:
 
 #Block hacks using the Elytra?
 Elytra:
-  #Block players using Elytra from flying higher than their take-off position?
+  #Block players using Elytra from flying higher than they could usually?
+  #This goes down with a timer based on the optimum glide angle.
+  #So for example: If a player took off from a Y of 63, the next second they would have a max allowed Y of 62.
   HeightBlockage: true
   #Block players using Elytra travelling further than they could from their take-off position.
   #Warning: Distance blockage will be disabled if the player uses a firework to boost!
   DistanceBlockage: true
-  ElytraSpeed:
-    #Block players from travelling too fast using Elytra?
-    SpeedBlockage: true
-    #For SpeedBlockage, this is how much speed is added for every block the player goes down.
-    SpeedMultiplier: 2.0
-    #Every tick, the players' allowed speed when using an elytra is taken away by the following formula:
-    #ElytraSpeed -= (ElytraSpeed / SpeedLossDivide)
-    #Therefore, lower SpeedLossDivide values are more lenient, and higher values are stricter.
-    SpeedLossDivide: 75
-    #The minimum distance a player must be from their take-off point before they can be detected for hacking.
-    MinDistanceBeforeCheck: 10
+  #The max speed on the X+Z axis that a player can travel using an Elytra.
+  #The max speed of 40 can only be achieved by jumping off really high (like 200 blocks), diving down, and levelling out.
+  #So servers with specific maps that cannot be built upon may wish to lower this.
+  MaxSpeedUsingElytra: 40
   ElytraCommand: #
 
 
