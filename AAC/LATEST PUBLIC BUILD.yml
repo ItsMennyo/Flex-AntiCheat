@@ -1,22 +1,25 @@
-#####################################################
-# +-----------------------------------------------+ #
-# |                                               | #
-# |   Flex AntiCheat - Optimized AAC Config       | #
-# |                                               | #
-# |   AntiCheat: AAC (Advanced Anti Cheat)        | #
-# |   Developer: konsolas.58100                   | #
-# |   Spigot Page: https://goo.gl/YgNG9b          | #
-# |   Plugin Version: 3.3.13                      | #
-# |   Configurator: ItsMennyo                     | #
-# |   Config Build: BUILD 2.0.234 BETA            | #
-# |   Overview: https://goo.gl/NJQDFA             | #
-# |   Support: https://goo.gl/DAfLsX              | #
-# |   Latest Build: https://goo.gl/CFH892         | #
-# |                                               | #
-# |   Copyright © 2017 - 2018 ItsMennyo Network   | #
-# |                                               | #
-# +-----------------------------------------------+ #
-#####################################################
+##########################################################
+# +----------------------------------------------------+ #
+# |                                                    | #
+# |   Flex AntiCheat - Optimized AAC Config            | #
+# |                                                    | #
+# |   AntiCheat: AAC (Advanced Anti Cheat)             | #
+# |   Developer: konsolas.58100                        | #
+# |   Spigot Page: https://goo.gl/YgNG9b               | #
+# |   Plugin Version: 3.3.15                           | #
+# |   Configurator: ItsMennyo                          | #
+# |   Config Build: BUILD 2.0.306 BETA                 | #
+# |   Overview: https://goo.gl/NJQDFA                  | #
+# |   Support: https://goo.gl/DAfLsX                   | #
+# |   Latest Build: https://goo.gl/CFH892              | #
+# |                                                    | #
+# |   Join the Discord server for more info, reports   | #
+# |   and support: http://bit.ly/FlexDiscordServer     | #
+# |                                                    | #
+# |   Copyright © 2017 - 2018 ItsMennyo Network        | #
+# |                                                    | #
+# +----------------------------------------------------+ #
+##########################################################
 
 #HitBox force players to look at the entities that they want to attack.
 hitbox:
@@ -532,6 +535,9 @@ move:
   #At what tick interval should we reduce 1 VL from the player?
   #Default: 15
   decay: 5
+  #Deal fall damage to players who fail the move check?
+  #Default: true
+  deal_fall: true
   #What teleport offset should we accept from players?
   #Default: 0.001
   tp_accept_threshold: 0.001
