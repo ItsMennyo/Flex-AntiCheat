@@ -1,22 +1,25 @@
-######################################################
-# +------------------------------------------------+ #
-# |                                                | #
-# |   Flex AntiCheat - Optimized AntiAura Config   | #
-# |                                                | #
-# |   AntiCheat: AntiAura (AA)                     | #
-# |   Developer: joehot200.147                     | #
-# |   Spigot Page: https://goo.gl/8wrt6R           | #
-# |   Plugin Version: 11.43                        | #
-# |   Configurator: ItsMennyo                      | #
-# |   Config Build: BUILD 2.2.427 BETA             | #
-# |   Overview: https://goo.gl/NJQDFA              | #
-# |   Support: https://goo.gl/DAfLsX               | #
-# |   Latest Build: https://goo.gl/9YedUw          | #
-# |                                                | #
-# |   Copyright © 2017 - 2018 ItsMennyo Network    | #
-# |                                                | #
-# +------------------------------------------------+ #
-######################################################
+##########################################################
+# +----------------------------------------------------+ #
+# |                                                    | #
+# |   Flex AntiCheat - Optimized AntiAura Config       | #
+# |                                                    | #
+# |   AntiCheat: AntiAura (AA)                         | #
+# |   Developer: joehot200.147                         | #
+# |   Spigot Page: https://goo.gl/8wrt6R               | #
+# |   Plugin Version: 11.45                            | #
+# |   Configurator: ItsMennyo                          | #
+# |   Config Build: BUILD 2.2.362 BETA                 | #
+# |   Overview: https://goo.gl/NJQDFA                  | #
+# |   Support: https://goo.gl/DAfLsX                   | #
+# |   Latest Build: https://goo.gl/9YedUw              | #
+# |                                                    | #
+# |   Join the Discord server for more info, reports   | #
+# |   and support: http://bit.ly/FlexDiscordServer     | #
+# |                                                    | #
+# |   Copyright © 2017 - 2018 ItsMennyo Network        | #
+# |                                                    | #
+# +----------------------------------------------------+ #
+##########################################################
 
 #Print messages to the console when a player is rubber-banded by AntiAura?
 #Default: true
@@ -407,18 +410,12 @@ Knockback:
   #Don't check laggy people at all?
   #Default: false
   DontCheckLaggyPeople: false
-  #What is the lowest velocity to check a player?
-  #Default: 0.1
-  MinimumKnockbackCheck: 0.1
-  #Change AmountMoved to 0.5 when the Knockback is lower then this?
-  #Default: 0.35
-  LowKnockbackValues: 0.3
-  #This is how far the player has to move after being given a velocity?
+  #If a player is travelling slowly, what is the lowest multiplier to multiply the knockback by, to avoid false positives?
+  #Default: 0.7
+  LowestModifierForLowSpeed: 0.7
+  #How much leniency should the check have?
   #Default: 1.0
-  AmountMoved: 0.8
-  #Don't check when players are standing next to a wall?
-  #Default: true
-  DontCheckOnWalls: true
+  KnockbackLeniency: 1.0
   #If a player is sprinting towards another player, they may travel too far forward after being hit and trigger the detection.
   #Default: false
   DontCheckIfPlayerIsSprinting: false
@@ -777,6 +774,9 @@ NoFall:
   #Setting this value to 0 for instantly detection.
   #Default: 0
   LeniencyTime: 1
+  #The threshold to not give players velocity leniencies after taking fall damage?
+  #Default: 1
+  MaxThresholdToAplyLeniency: 1
   #Do you want to force the player to be dragged to the ground from the air?
   #Default: true
   DragToGround: true
@@ -905,12 +905,9 @@ Elytra:
   #Block players using Elytra traveling further than they could from their take-off position?
   #Default: true
   DistanceBlockage: true
-  #EXPERIMENTAL CHECK. NOT READY FOR USE.
-  ElytraSpeed:
-    SpeedBlockage: false
-    SpeedMultiplier: 2.0
-    SpeedLossDivide: 75
-    MinDistanceBeforeCheck: 10
+  #The max speed on the X+Z axis that a player can travel using an Elytra.
+  #Default: 40
+  MaxSpeedUsingElytra: 40
   #Command to execute when Elytra is detected?
   ElytraCommand: # 
 
