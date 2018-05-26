@@ -6,12 +6,15 @@
 # |   AntiCheat: AACAdditionPro (AACAP)                  | #
 # |   Developer: Photon.166336                           | #
 # |   Spigot Page: https://goo.gl/GrX6dA                 | #
-# |   Plugin Version: 3.10.2                             | #
+# |   Plugin Version: 3.12.2                             | #
 # |   Configurator: ItsMennyo                            | #
-# |   Config Build: BUILD 1.3.314 BETA                   | #
+# |   Config Build: BUILD 1.3.428 BETA                   | #
 # |   Overview: https://goo.gl/NJQDFA                    | #
 # |   Support: https://goo.gl/DAfLsX                     | #
 # |   Latest Build: https://goo.gl/Gv626M                | #
+# |                                                      | #
+# |   Join the Discord server for more info, reports     | #
+# |   and support: http://bit.ly/FlexDiscordServer       | #
 # |                                                      | #
 # |   Copyright © 2017 - 2018 ItsMennyo Network          | #
 # |                                                      | #
@@ -24,7 +27,7 @@ AutoFish:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the fishing?
   #Default: 10
-  cancel_vl: 7
+  cancel_vl: 4
   #Control the different solutions of AutoFish.
   parts:
     #The inhuman_reaction part recognizes very fast reaction speeds to detect AutoFishing mods.
@@ -49,11 +52,11 @@ AutoFish:
       maximum_fails: 12
   #Map of violation levels to commands?
   thresholds:
-    7: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    10: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} AutoFish"
-    14: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} AutoFish"
-    17: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoFish"
-    21: "aackick {player} AutoFish"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} AutoFish"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} AutoFish"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoFish"
+    16: "aackick {player} AutoFish"
 
 #AutoPotion detects automated bots which splash the player with potions that have positive effects.
 AutoPotion:
@@ -61,7 +64,7 @@ AutoPotion:
   enabled: true
   #Violation before AACAdditionPro starts to cancel throwing potions?
   #Default: 2
-  cancel_vl: 3
+  cancel_vl: 2
   #After a detection which surpasses cancel_vl AACAdditionPro cancels all potion throws to effectively?
   #Default: 1000
   timeout: 1000
@@ -79,11 +82,11 @@ AutoPotion:
   look_down_angle: 80
   #Map of violation levels to commands?
   thresholds:
-    3: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
     4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} AutoPotion"
-    6: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
-    7: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
-    9: "aackick {player} AutoPotion"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
+    8: "aackick {player} AutoPotion"
 
 #EqualRotation checks for invalid rotation packets which have the rotation of the last packet as content.
 EqualRotation:
@@ -91,10 +94,10 @@ EqualRotation:
   enabled: true
   #Map of violation levels to commands?
   thresholds:
-    9: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    13: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} EqualRotation"
-    16: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
-    21: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
+    6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    12: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} EqualRotation"
+    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
+    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
     24: "aackick {player} EqualRotation"
 
 #This module uses advanced mathematics to determine if players can see each other.
@@ -111,7 +114,7 @@ Fastswitch:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the interacts?
   #Default: 3
-  cancel_vl: 5
+  cancel_vl: 4
   #If a player has a ping higher than that value he bypasses the check?
   #Default: 400
   max_ping: 250
@@ -120,11 +123,11 @@ Fastswitch:
   switch_milliseconds: 50
   #Map of violation levels to commands?
   thresholds:
-    5: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    9: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Fastswitch"
-    12: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Fastswitch"
-    14: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Fastswitch"
-    17: "aackick {player} Fastswitch"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Fastswitch"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Fastswitch"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Fastswitch"
+    16: "aackick {player} Fastswitch"
 
 #This check will block most Freecam cheats.
 Freecam:
@@ -143,11 +146,11 @@ GravitationalModifier:
   enabled: true
   #Map of violation levels to commands?
   thresholds:
-    6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    9: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} GravitationalModifier"
-    11: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
-    14: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
-    17: "aackick {player} GravitationalModifier"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} GravitationalModifier"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
+    16: "aackick {player} GravitationalModifier"
 
 #The InventoryChat check detects sending chat messages while being in an inventory.
 InventoryChat:
@@ -155,13 +158,13 @@ InventoryChat:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the messages?
   #Default: 2
-  cancel_vl: 3
+  cancel_vl: 2
   #Map of violation levels to commands?
   thresholds:
     2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    3: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryChat"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryChat"
     5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
-    7: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
     8: "aackick {player} InventoryChat"
 
 #The InventoryHeuristics provide a neural network framework to detect advanced inventory cheats.
@@ -199,14 +202,14 @@ InventoryHit:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the hits?
   #Default: 3
-  cancel_vl: 3
+  cancel_vl: 2
   #Map of violation levels to commands?
   thresholds:
-    3: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    5: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHit"
-    6: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
-    8: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
-    10: "aackick {player} InventoryHit"
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryHit"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryHit"
+    8: "aackick {player} InventoryHit"
 
 #The InventoryMove check detects inventory clicks while moving.
 InventoryMove:
@@ -217,14 +220,14 @@ InventoryMove:
   min_tps: 19.5
   #Violation before AACAdditionPro starts to cancel the movements?
   #Default: 10
-  cancel_vl: 11
+  cancel_vl: 8
   #Map of violation levels to commands?
   thresholds:
-    11: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    15: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryMove"
-    19: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
-    23: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
-    28: "aackick {player} InventoryMove"
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryMove"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
+    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
+    32: "aackick {player} InventoryMove"
 
 #InventoryRotation checks if a player is moving his head while being in an inventory.
 InventoryRotation:
@@ -232,11 +235,11 @@ InventoryRotation:
   enabled: true
   #Map of violation levels to commands?
   thresholds:
-    7: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    11: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryRotation"
-    14: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
-    19: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
-    23: "aackick {player} InventoryRotation"
+    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryRotation"
+    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
+    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
+    32: "aackick {player} InventoryRotation"
 
 #Brings back an entity check of the old AAC 1.9.10 times but much more advanced.
 KillauraEntity:
@@ -272,7 +275,7 @@ KillauraEntity:
     offsetRandomizationRange: 0.3
     #This prevents the entity from floating directly over/under a player, therefore preventing distraction and willingly caused false positives?
     #Default: 1.55
-    minXZDifference: 1.5
+    minXZDifference: 1.6
   #Here you can choose the equipment of your entity.
   equipment:
     #The armor the entities will spawn with?
@@ -323,11 +326,11 @@ KillauraEntity:
       diamond: true
   #Map of violation levels to commands?
   thresholds:
-    5: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    7: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} KillauraEntity"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} KillauraEntity"
     10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} KillauraEntity"
     12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} KillauraEntity"
-    15: "aackick {player} KillauraEntity"
+    16: "aackick {player} KillauraEntity"
 
 #The MultiInteraction check prevents players from moving more than one item per tick.
 MultiInteraction:
@@ -335,7 +338,7 @@ MultiInteraction:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the interacts?
   #Default: 18
-  cancel_vl: 30
+  cancel_vl: 25
   #If a player has a ping higher than that value he bypasses the check?
   #Default: 400
   max_ping: 250
@@ -344,11 +347,11 @@ MultiInteraction:
   min_tps: 19.0
   #Map of violation levels to commands?
   thresholds:
-    30: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    38: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} MultiInteraction"
-    46: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
-    51: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
-    65: "aackick {player} MultiInteraction"
+    50: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    55: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} MultiInteraction"
+    65: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
+    75: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
+    80: "aackick {player} MultiInteraction"
 
 #The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
 Pingspoof:
@@ -365,11 +368,11 @@ Pingspoof:
   refresh_at_vl: 4
   #Map of violation levels to commands?
   thresholds:
-    3: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    5: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Pingspoof"
-    8: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Pingspoof"
-    11: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Pingspoof"
-    14: "aackick {player} Pingspoof"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Pingspoof"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Pingspoof"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Pingspoof"
+    16: "aackick {player} Pingspoof"
 
 #The Scaffold check detects Scaffold cheats.
 Scaffold:
@@ -440,11 +443,11 @@ Skinblinker:
   enabled: true
   #Map of violation levels to commands?
   thresholds:
-    3: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    5: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Skinblinker"
-    8: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Skinblinker"
-    10: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Skinblinker"
-    12: "aackick {player} Skinblinker"
+    2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Skinblinker"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Skinblinker"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Skinblinker"
+    8: "aackick {player} Skinblinker"
 
 Teaming:
   enabled: false
@@ -469,7 +472,7 @@ Tower:
   enabled: true
   #Violation before AACAdditionPro starts to cancel the block-places?
   #Default: 6
-  cancel_vl: 7
+  cancel_vl: 4
   #Over how much values should AACAdditionPro take the average used for the check?
   #Default: 6
   buffer_size: 4
@@ -481,11 +484,11 @@ Tower:
   timeout: 5500
   #Map of violation levels to commands?
   thresholds:
-    7: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    10: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Tower"
-    12: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Tower"
-    15: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Tower"
-    19: "aackick {player} Tower"
+    4: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Tower"
+    10: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Tower"
+    12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Tower"
+    16: "aackick {player} Tower"
 
 #This gives you full control over the clients who can join.
 ClientControl:
@@ -673,6 +676,20 @@ ClientControl:
     commands_on_detection:
       - "aackick {player} Vape"
 
+  #Allows you to control which Minecraft versions can join your server if your server runs ViaVersion.
+  VersionControl:
+    ##Do you want to enable the VersionControl check?
+    enabled: false
+    #The message when an unsupported client joins the server:
+    message: "You are using an unsupported version. Supported Versions are {supportedVersions}"
+    #What versions should be able to join:
+    allowedVersions:
+      '1.8': true
+      '1.9': false
+      '1.10': true
+      '1.11': true
+      '1.12': true
+
   #WorldDownloader is a popular modification to get the maps of a server.
   WorldDownloader:
     #Do you want to enable the WorldDownloader check?
@@ -701,10 +718,10 @@ Heuristic-Addition:
   enabled: false
   #Map of violation levels to commands?
   confidences:
-    65: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    70: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Heuristics"
-    76: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Heuristics"
-    83: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Heuristics"
+    50: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    60: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} Heuristics"
+    70: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} Heuristics"
+    80: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} Heuristics"
     90: "aackick {player} Heuristics"
 
 #Should players with the aac.verbose permission get the AACAdditionPro-verbose messages.
