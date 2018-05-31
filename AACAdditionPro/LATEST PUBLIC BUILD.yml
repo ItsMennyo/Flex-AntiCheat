@@ -6,9 +6,9 @@
 # |   AntiCheat: AACAdditionPro (AACAP)                  | #
 # |   Developer: Photon.166336                           | #
 # |   Spigot Page: https://goo.gl/GrX6dA                 | #
-# |   Plugin Version: 3.12.2                             | #
+# |   Plugin Version: 3.13.1                             | #
 # |   Configurator: ItsMennyo                            | #
-# |   Config Build: BUILD 1.3.428 BETA                   | #
+# |   Config Build: BUILD 1.3.508 BETA                   | #
 # |   Overview: https://goo.gl/NJQDFA                    | #
 # |   Support: https://goo.gl/DAfLsX                     | #
 # |   Latest Build: https://goo.gl/Gv626M                | #
@@ -132,7 +132,7 @@ Fastswitch:
 #This check will block most Freecam cheats.
 Freecam:
   #Do you want to enable the Freecam check?
-  enabled: true
+  enabled: false
   #The time in ms before AACAdditionPro starts to initiate teleports for an idling player?
   #Default: 1000
   idle_time: 2500
@@ -152,9 +152,9 @@ GravitationalModifier:
     12: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} GravitationalModifier"
     16: "aackick {player} GravitationalModifier"
 
-#The InventoryChat check detects sending chat messages while being in an inventory.
-InventoryChat:
-  #Do you want to enable the InventoryChat check?
+#The ImpossibleChat check detects sending chat messages while being in an inventory.
+ImpossibleChat:
+  #Do you want to enable the ImpossibleChat check?
   enabled: true
   #Violation before AACAdditionPro starts to cancel the messages?
   #Default: 2
@@ -162,10 +162,10 @@ InventoryChat:
   #Map of violation levels to commands?
   thresholds:
     2: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryChat"
-    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
-    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryChat"
-    8: "aackick {player} InventoryChat"
+    4: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} ImpossibleChat"
+    5: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} ImpossibleChat"
+    6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} ImpossibleChat"
+    8: "aackick {player} ImpossibleChat"
 
 #The InventoryHeuristics provide a neural network framework to detect advanced inventory cheats.
 InventoryHeuristics:
@@ -228,18 +228,6 @@ InventoryMove:
     20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
     24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
     32: "aackick {player} InventoryMove"
-
-#InventoryRotation checks if a player is moving his head while being in an inventory.
-InventoryRotation:
-  #Do you want to enable the InventoryRotation check?
-  enabled: true
-  #Map of violation levels to commands?
-  thresholds:
-    8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    16: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryRotation"
-    20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
-    24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
-    32: "aackick {player} InventoryRotation"
 
 #Brings back an entity check of the old AAC 1.9.10 times but much more advanced.
 KillauraEntity:
@@ -352,6 +340,63 @@ MultiInteraction:
     65: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
     75: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} MultiInteraction"
     80: "aackick {player} MultiInteraction"
+
+#PacketAnalysis is a general check which aims to detect modifications that are closely linked to interfering with the protocol directly.
+PacketAnalysis:
+#Do you want to enable the PacketAnalysis check?
+  enabled: true
+  #Control the different parts of PacketAnalysis:
+  parts:
+    #This parts compares interactions of the client with different packet types to gain insight whether or not the client purposefully delays some packets.
+    Compare:
+      #Do you want to enable packet time comparison?
+      enabled: true
+      #How many offset milliseconds are classified as part of naturally fluctuating connections?
+      #Default: 120
+      allowed_offset: 120
+      #How many violations Compare will ignore before starting to flag?
+      #Default: 2
+      compare_threshold: 2
+    #EqualRotation checks for invalid rotation packets which have the rotation of the last packet as content.
+    EqualRotation:
+      #Do you want to enable EqualRotation?
+      enabled: true
+    #This part analyses KeepAlive packets.
+    KeepAlive:
+      #Unregistered checks for illegal packets that are not possible within the minecraft protocol.
+      unregistered:
+        #Do you want to enable the unregistered KeepAlive packet checking?
+        enabled: true
+      #Ignored checks for KeepAlive packets the client has not responded to, which is illegal in the minecraft protocol.
+      ignored:
+        #Do you want to enable the ignored KeepAlive packet checking?
+        enabled: true
+      #Offset analyses the packet order.
+      offset:
+        #Do you want to enable the packet offset checking?
+        enabled: true
+      #This injects additional KeepAlive packets in order to improve detection of some modules.
+      inject:
+        #Do you want to enable KeepAlive packet injection?
+        enabled: true
+    #This handled illegal position packets which could otherwise be used to bypass parts of the check.
+    PositionSpoof:
+      #Do you want to enable the position spoof checking?
+      enabled: true
+    #This check tries to spot manipulations of the client's time to spoof false lag.
+    TimeManipulation:
+      #Do you want to enable time manipulation spotting?
+      enabled: true
+      #How long may the client delay packets?
+      #Default: 1500
+      detection_millis: 1500
+  #Map of violation levels to commands?
+  thresholds:
+    21: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    24: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} PacketAnalysis"
+    27: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} PacketAnalysis"
+    31: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} PacketAnalysis"
+    36: "aackick {player} PacketAnalysis"
 
 #The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
 Pingspoof:
@@ -735,3 +780,4 @@ Verbose:
   #Should the verbose output be logged in the console?
   #Default: true
   console: true
+  
