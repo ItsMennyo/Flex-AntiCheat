@@ -35,6 +35,14 @@ StrikeLightningOnHackDetection: false
 #This means that players will have hunger replenished when they hit an entity, and also have double the health.
 TestServerMode: false
 
+#All options related to AntiAura's BungeeCord addon.
+#If you are not using the BungeeCord addon, none of these configuration options will matter to you.
+BungeeCord:
+  #Set ForwardOrExecute to EXECUTE if you wish to execute the command on the BungeeCord server.
+  #Set ForwardOrExecute to FORWARD if you wish to forward the command to be executed by all servers bukkit in the network.
+  #Set ForwardOrExecute to BOTH if you wish commands to execute on BungeeCord AND be forwarded to the other bukkit servers!
+  ForwardOrExecute: EXECUTE
+
 #If a person has been detected for hacking this many times, execute these commands.
 #Please visit this page for more information: https://www.spigotmc.org/resources/antiaura.1368/update?update=50139
 Violations:
