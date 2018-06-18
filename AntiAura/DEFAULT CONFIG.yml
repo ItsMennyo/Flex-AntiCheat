@@ -346,9 +346,12 @@ Map:
   #Enabling will generally not hide players though 1x1 walls, etc, disabling this will hide players as soon as possible.
   #Disabling this option slightly improves performance.
   LenientMode: true
-  #How far away should you check entities and players near the player to hide/unhide them?
+  #Enabling this costs double the performance for the entity checking. You have been warned.
+  #This will cast rays from where the camera is in F5 mode, and entities visible from that camera will remain visible to the player.
+  RaysFromF5Mode: true
+  #How far away on the X/Z plane should you check entities and players near the player to hide/unhide them?
   DistanceChecked: 50
-  #How far up do you want to check, per player?
+  #How far up/down do you want to check, per player?
   DistanceCheckedY: 30
   #In ticks, How often do you want players to be checked?
   #Raising this over 15 will decrease realism and make players appear to appear out of nowhere.
@@ -371,11 +374,11 @@ Map:
   TileESP:
     #Enable the blockage of TileESP? 
     Enabled: true
-    #If the distance from the player to the tile is less than this, show the tile.
+    #If the distance from the player to the tile is less than this, show the tile even if therre is no line of sight.
     ShowDistance: 5
     #If the distance from the player to the tile is less than this, do a line-of-sight check to see if the player can see the tile.
     #If the player can see the tile, it is shown. Otherwise, it is hidden.
-    #If the distance is greater than TracerDistance, the tile is automatically hidden.
+    #If the distance is greater than TracerDistance, the tile is automatically hidden even with a line of sight to the tile.
     TracerDistance: 60
     #The TileESP task is done every (HowOften * IntervalMult). IntervalMult cannot be less than 1.
     #Increasing this will make the task take less performance but may cause noticeable stone-to-tile changes.
