@@ -15,6 +15,7 @@
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
 # |   Build: BUILD 3.0.000 ALPHA                                               | #
+# |   Upload ID: VaBdXchml8qsc5wEcgJe                                          | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAntiAuraGitHub                           | #
 # |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
@@ -31,7 +32,7 @@ ConsoleLogDragbacks: true
 #Make /aconfig only work through the console?
 #Default: false
 ConsoleModifyConfigOnly: false
-#If AntiAura cannot discern the cause of a teleport, don't do any teleport accounting?
+#If AntiAura can’t discern the cause of a teleport, don't do any teleport accounting?
 #Default: true
 IgnoreUnknownTeleportCause: true
 #Strike a bolt of lightning at the person when they are kicked for hacking?
