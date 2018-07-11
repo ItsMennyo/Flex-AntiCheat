@@ -15,7 +15,7 @@
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
 # |   Build: BUILD 3.0.000 ALPHA                                               | #
-# |   Upload ID: VaBdXchml8qsc5wEcgJe                                          | #
+# |   Configuration ID: H8DKblcB3yttDFpyoQsT                                   | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAntiAuraGitHub                           | #
 # |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
@@ -32,24 +32,24 @@ ConsoleLogDragbacks: true
 #Make /aconfig only work through the console?
 #Default: false
 ConsoleModifyConfigOnly: false
-#If AntiAura can’t discern the cause of a teleport, don't do any teleport accounting?
+#If AntiAura can't discern the cause of a teleport, don't do any teleport accounting?
 #Default: true
 IgnoreUnknownTeleportCause: true
 #Strike a bolt of lightning at the player's location when they are kicked for hacking?
 #Default: false
 StrikeLightningOnHackDetection: false
-#Feed players when they hit an entity and give them double the health? (Used for testing).
+#Feed the player and give them double the health when they hit an entity for testing?
 #Default: false
 TestServerMode: false
 
 #Options related to AntiAura's BungeeCord addon:
 BungeeCord:
-  #Set ForwardOrExecute to EXECUTE if you want to execute the command on the BungeeCord server.
-  #Set ForwardOrExecute to FORWARD if you want to forward the command to be executed by all bukkit servers in the network.
-  #Set ForwardOrExecute to BOTH if you want commands to execute on BungeeCord and to be forwarded to the other bukkit servers.
+  #Set this to EXECUTE if you want to execute the command on the BungeeCord server.
+  #Set this to FORWARD if you want to forward the command to be executed by all bukkit servers in the network.
+  #Set this to BOTH if you want commands to execute on BungeeCord and to be forwarded to the other bukkit servers.
   ForwardOrExecute: EXECUTE
 
-#If the player has been detected a specific amount of times, execute the specified command.
+#If the player has been detected a specific amount of times, execute a specific command.
 #Find more info here: https://www.spigotmc.org/resources/antiaura.1368/update?update=50139
 Violations:
   #The command that will be executed when the player is detected by any check:
@@ -62,12 +62,11 @@ Violations:
   #If you want to disable violation level decrease, set this to 0.
   #Default: 1
   ViolationDecreasePerHour: 0
-  #If the player has been detected for hacks 'X' amount of times, then that command will be executed:
-  #EX: "4: kick %PLAYER%": Will execute the kick command after the forth detection.
+  #If the person has been detected for hacks the amount of times as a value below, then that command will be executed:
   2: tempban %PLAYER% 10m You have been temporarily banned for hacking. Please disable your hacks!
   5: ban %PLAYER% You have been banned for using the %HACKNAME% hack %HACKAMOUNT% times!
 
-#If the player is detected for hacking, the violations will increase and if they pass the SuperThreshold, the player will be kicked.
+#If the player is detected for hacking, the violations will increase and if it pass SuperThreshold, the player will be kicked.
 SuperThreshold:
   #Do you want to use the SuperThreshold function?
   Enabled: true
@@ -86,20 +85,23 @@ PingAccounting:
   #If the player has a higher ping then this, he can get false positives.
   #Default: 150
   PingLeniency: 150
-  #Remove all the ping accounting warnings?
+  #Don't display any ping accounting warnings?
   #Default: false
   SilenceWarnings: false
-  #Use the real ping that is sent by clients? (This can be faked)
+  #Use the real ping that is sent by player?
+  #This can be faked by the client itself!
   #Default: false
   UseRealPing: false
   #What is the maximum allowed ping?
-  #If a player has a higher ping than this, they will be dragged back.
+  #If the player has a higher ping than this, they will be dragged back!
   #Default: 600
   MaxPing: 600
 
-#Use many checks to detect different kinds of killauras.
+#---
+
+#Use many checks to detect different kinds of killauras:
 Forcefield:
-  #Consistency: Gets a sample of hits and checks if they are too consistent within certain parameters
+  #The Consistency check use a sample of hits and checks if they are too consistent within certain parameters:
   Consistency:
     #Do you want to use the Consistency check?
     Enabled: true
@@ -133,7 +135,7 @@ Forcefield:
       #The amount that a hit must be near the average of all hits to be counted as similar movement per hit?
       #Default: 0.1
       SimilarHeadMoveAmount: 0.1
-      #If more than ConsistentPercentageMax are "consistent" head movement then the player will be kicked?
+      #If more than ConsistentPercentageMax are consistent head movement then the player will be kicked?
       #Default: 85
       ConsistentPercentageMax: 85
       #The command that will be executed when the player is detected by this check:
@@ -146,7 +148,7 @@ Forcefield:
     #The distance that the player's cursor must be from the target to count the hit as hacking?
     #Default: 1.9
     HackingAngle: 1.9
-    #If the distance between the cursor and the target is more than HackingAngle multiplied by 2, then cancel the hit?
+    #If the distance between the cursor and the target is more than HackingAngle multiplied by 2 then cancel the hit?
     #Default: true
     BlockImpossibleHits: true
     #Amount of times the player must be detected by the Angle check to be kicked?
@@ -357,7 +359,7 @@ Soup:
 Map:
   #Do you want to use the Map check?
   MapScrewer: true
-  #Hide the player when they are definitely behind a wall?
+  #Hide the player when they are definitely through a wall?
   #Default: true
   LenientMode: true
   #How far away should we check entities near a player to hide/unhide them?
@@ -375,10 +377,10 @@ Map:
   #If an entity is closer than this, make them visible regardless of if you can actually see them?
   #Default: 10
   MinDistance: 10
-  #Hide only players instead of all entities?
+  #Hide only player instead of entities?
   #Default: false
   HideOnlyPlayers: false
-  #Hide entities if you cannot see them?	
+  #Hide entities from you if you cannot see them?	
   #Default: true
   HidePlayersThroughBlocks: true
   #Hide entities if they are behind the players field of view?
@@ -420,13 +422,13 @@ Map:
 Knockback:
   #Do you want to use the Knockback check?
   Enabled: true
-  #How long after the player has been hit should they be checked if they have moved?
+  #How long after the player has been hit should it be checked if they have moved?
   #Default: 15
   TicksAfterHitToCheck: 15
-  #don't check the player when they are not moving at all?
+  #Dont check the player when they are not moving at all?
   #Default: false
-  don'tCheckLaggyPeople: false
-  #If the player is travelling slowly, what is the lowest multiplier to multiply the knockback, to avoid false positives?
+  DontCheckLaggyPeople: false
+  #If the player is travelling slowly, what is the lowest multiplier to multiply the knockback to avoid false positives?
   #Default: 0.7
   LowestModifierForLowSpeed: 0.7
   #How much leniency should the check have?
@@ -442,7 +444,7 @@ Knockback:
   LowerAmount: 0.6
   #If a player is sprinting torwards another player, they may travel too far forward after being hit and trigger the detection?
   #Default: false
-  don'tCheckIfPlayerIsSprinting: false
+  DontCheckIfPlayerIsSprinting: false
 
 #Specific settings for how the plugin works.
 Specifics:
@@ -455,14 +457,14 @@ Specifics:
   #This will reset your whole config if you change it!
   version: 40
   #Do you want to call a FAKE LEAVE EVENT to the server that tells OTHER PLUGINS that the player has "LEFT" when he is actually kicked?
-  #Recommend to enable it if you have plugins like CombatLog, but still use it at your own risk!
+  #Recommend to enable it if you have plugins like CombatLog but still use it at your own risk!
   #Default: false
   CallFakeLeaveEvent: false
   #Command to execute when the player says invalid chat:
   InvalidChatCommand: kick %PLAYER% You have been kicked for invalid chat used for PVP Logging!#tempban %PLAYER% 30m You have been temporarily banned for invalid chat used for PVP Logging!
   #Command to execute when World downloader mod is detected:
   WorldDownloaderCommand: kick %PLAYER% World downloaders are not allowed on this server!#tempban %PLAYER% 30m You have been temporarily banned for trying to use a world downloader on this server!
-  #Enable the bypass permission "AntiAura.bypass"?
+  #Enable the bypass permission ""AntiAura.bypass?
   #Default: false
   EnablePermissions: false
   #Show extra debug messages in the console?
@@ -489,6 +491,7 @@ Criticals:
   #Default: 2.0
   SafeHitDecrease: 2.0
   #Amount of times the player must be detected by the Criticals check to be kicked?
+  #Default: 8
   Threshold: 8
   #Command to execute when the player is detected for Criticals:
   CriticalsCommand: # 
@@ -500,15 +503,17 @@ FastEat:
   #Time that the player can consume food after last having consumed food?
   #Default: 1.5
   Time: 1.5
-  #Block the player from eating if they are travelling at too high of a speed while eating?
+  #Block the player from eating if they are travelling at too high a speed?
   #Default: true
   BlockIfSpeedTooHigh: true
   #The maximum distance a player may have travelled recently to be allowed to eat food?
   #Default: 1.4
   MaxEatingTravelSpeed: 1.4
   #Amount of times the player must be detected by the FastEat check to be kicked?
+  #Default: 3
   Threshold: 3
-  #How much should the Threshold be lowered when the player has a legitimate eating attempt?
+  #How much should the Threshold be lowered when the player had a legitimate eating attempt?
+  #Default: 1.0
   SafeEatDecrease: 1.0
   #Command to execute when the player is detected for FastEat:
   FastEatCommand: # 
@@ -519,6 +524,7 @@ Spambots:
     #Do you want to use the Captcha function?
     Enabled: true
     #Enable the CAPTCHA only when the server is under a spambot attack?
+    #Default: true
     EnabledOnlyWhenSpammed: true
     #Apply the CAPTCHA only when the player is new?
     #Default: false
@@ -556,8 +562,9 @@ Step:
   #Default: true
   ForceUserToGround: true
   #Amount of times the player must be detected by the Step check to be kicked?
+  #Default: 8
   Threshold: 8
-  #Command to execute when the player is detected for Step:
+  #Command to execute when player is detected for Step:
   StepCommand: # 
 
 #Options to do with accounting for velocities.
@@ -574,7 +581,7 @@ VelocityAccounting:
   #The multiplier for velocity that the player can move?
   #Default: 25
   XZVelocityMul: 25
-  #Calculate the velocity from the clients and not from the event's velocity?
+  #Calculate the velocity from the clients and not the event's velocity?
   #Default: false
   UsePlayerVelocity: false
   #The leniency on the Y axis of all non-combat velocities?
@@ -597,7 +604,7 @@ VelocityAccounting:
 Spider:
   #Do you want to use the Spider check?
   Enabled: true
-  #From what height should the player start getting dragged back?
+  #On what height should the player be dragged down?
   #Default: 1.40
   MaxHeightOffGround: 1.40
   #Maximum height when on a climbable object?
@@ -610,8 +617,10 @@ Spider:
   #Default: true
   DamagePlayer: true
   #Cast a ray under the player and teleport them to the block below them on a Spider dragback?
+  #Default: false
   ForceUserToGround: false
   #Amount of times the player must be detected by the Spider check to be kicked?
+  #Default: 5
   Threshold: 5
   #Command to execute when the player is detected for Spider:
   SpiderCommand: # 
@@ -623,11 +632,14 @@ Jump:
   #The maximum distance a player can jump on a level surface?
   #Default: 5.3
   MaxJumpOnLevelSurface: 5.3
-  #How much should the Threshold be lowered when the player has a legitimate jump?
+  #How much should the Threshold be lowered when the player had a legitimate jump?
+  #Default: 0.5
   SafeJumpDecrease: 0.5
   #Amount of times the player must be detected by the Jump check to be kicked?
+  #Default: 8
   Threshold: 8
   #What Threshold must it to drag the player back?
+  #Default: 0
   DragBackThreshold: 0
   #Command to execute when the player is detected for Jump:
   JumpCommand: # 
@@ -660,7 +672,7 @@ Flight:
   #Damage the player depending on how high they are?
   #Default: true
   DamagePlayer: true
-  #Command to execute when the player is detected for Flight:
+  #Command to execute when Flight is detected:
   FlightCommand: # 
   #If TeleportDownOnly is set to false, players are dragged back to where they were before they tried to fly.
   #If TeleportDownOnly is set to true, players are dragged to the ground of the current location where they are flying?
@@ -675,9 +687,9 @@ Flight:
 CancelChecksIfPlayerIsTeleportedDistance: 1
 #Time to not check a player for any movement hacks after teleportation?
 #Default: 1
-don'tCheckTime: 1
+DontCheckTime: 1
 
-#Block the player from moving faster than normal. It can also block jesus and sneak hacks.
+#Block the player from moving faster than normal and blocks jesus and sneak hacks.
 Speed:
   #Do you want to use the Speed check?
   Enabled: true
@@ -708,9 +720,9 @@ Speed:
   #How much should the Threshold be lowered when the player preformed a legitimate activity?
   #Default: 1.35
   LowerAmount: 1.35
-  #Command to execute when the player is detected for Speed:
+  #Command to execute when Speed is detected:
   SpeedCommand: # 
-  #Setting this to true will make the player detected for hacks keep looking in the same direction they were looking when dragged back.
+  #Setting this to true will make the player detected for hacks keep looking in the same direction they were looking at when dragged back.
   #Setting this to false will make the player look the same direction they were with their last non-violating movement.
   #Default: true
   KeepDirection: true
@@ -749,7 +761,7 @@ FastPlace:
   #Amount of times the player must be detected by the FastPlace check to be kicked?
   #Default: 5
   Threshold: 5
-  #How many blocks can the player place, blocks per second?
+  #How many blocks can the player place blocks per second?
   #Default: 6
   MaxBlocksAllowedPerSecond: 6
   #If the player has moved their head a lot and then places more than two blocks, stop the blocks from being placed?
@@ -764,10 +776,10 @@ FastPlace:
   #The distance the block below the player must be from the players foot location to be cancelled if placing multiple blocks?
   #Default: 1.5
   TowerDistance: 1.5
-  #Maximum blocks that can be placed below the player when towering, per second?
+  #Maximum blocks that can be placed below the player when towering per second?
   #Default: 2
   MaxTowerPerSec: 2
-  #Command to execute when the player is detected for FastPlace:
+  #Command to execute when FastPlace is detected:
   FastPlaceCommand: # 
 
 #Blocks the player from taking no fall damage.
@@ -780,7 +792,7 @@ NoFall:
   #Amount of times the player must be detected by the NoFall check to be kicked?
   #Default: 15
   Threshold: 15
-  #How long do you want to allow the player to be falling, but still be considered on the ground?
+  #How long do you want to allow the player to be falling but still be considered on the ground?
   #Default: 0
   LeniencyTime: 0
   #Do you want to force the player to be dragged to the ground from the air?
@@ -789,7 +801,7 @@ NoFall:
   #Do you want to damage the player when they are detected for NoFall?
   #Default: true
   DamagePlayer: true
-  #Command to execute when the player is detected for NoFall:
+  #Command to execute when NoFall is detected:
   NoFallCommand: # 
 
 #Blocks players from moving through blocks.
@@ -807,7 +819,7 @@ Phase:
   MaxTeleportDistance: 1.0
   #Amount of times the player must be detected by the Phase check to be kicked?
   Threshold: 5
-  #Command to execute when the player is detected for Phase:
+  #Command to execute when Phase is detected:
   PhaseCommand: # 
 
 #Blocks players placing blocks too fast.
@@ -825,16 +837,16 @@ FastBreak:
   Threshold: 15
   #How much should the Threshold be lowered when the player has a legitimate block break?
   SafeHitDecrease: 0.4
-  #Maximum blocks allowed to be broken in survival, per second?
+  #Maximum blocks allowed to be broken in survival per second?
   #Default: 20
   MaxSurvivalBlocksPerSecond: 20
-  #Maximum blocks allowed to be broken in creative, per second?
+  #Maximum blocks allowed to be broken in creative per second?
   #Default: 40
   MaxCreativeBlocksPerSecond: 40
   #Disable FastBreak when breaking tree logs?
   #Default: false
   DisableFastBreakOnWood: false
-  #Command to execute when the player is detected for FastBreak:
+  #Command to execute when FastBreak is detected:
   FastBreakCommand: # 
 
 #Blocks the NoSwing hack.
@@ -850,7 +862,7 @@ NoSwing:
   #How long should it be after the player has done an action to when they place something?
   #Default: 3
   SwingLeniency: 3
-  #Command to execute when the player is detected for NoSwing:
+  #Command to execute when NoSwing is detected:
   NoSwingCommand: # 
 
 #Blocks clients from regenerating health really fast and possibly becoming unkillable.
@@ -860,7 +872,7 @@ Regen:
   #What is the maximum amount of half-hearts allowed for each regeneration?
   #Default: 1
   MaxHalfHeartsPerRegen: 1
-  #Maximum half-hearts that the player can regen, per second?
+  #Maximum half-hearts that the player can regen per second?
   #Default: 4.0
   MaxHeartsPerSecond: 4.0
   #Command to execute when Regen is detected:
@@ -879,7 +891,7 @@ MorePackets:
   #If more packets have been sent than MaxPacktsPerSecond, do you want to block the packets?
   #Default: true
   BlockPackets: true
-  #Command to execute when the player is detected for MorePackets:
+  #Command to execute when MorePackets is detected:
   MorePacketsCommand: #
 
 #Checks when a client has a positive potion and stands still, the timer on the potion doesn't go down.
@@ -890,11 +902,12 @@ PotionSaver:
   #Default: 4
   Threshold: 4
   #How much should the Threshold be lowered when the player has a legitimate potion decrease?
+  #Default: 0.25
   SafeSecondDecrease: 0.25
   #If the player is not sending any KeepAlive packets, don't check the player for PotionSaver?
   #Default: true
   DisableWhenNotSendingKeepAlive: true
-  #Command to execute when the player is detected for PotionSaver:
+  #Command to execute when PotionSaver is detected:
   PotionSaverCommand: #
 
 #Blocks hacks using the Elytra.
@@ -908,7 +921,7 @@ Elytra:
   #The maximum speed on the X/Z axis that the player can travel using an Elytra?
   #Default: 40
   MaxSpeedUsingElytra: 40
-  #Command to execute when the player is detected for Elytra:
+  #Command to execute when Elytra is detected:
   ElytraCommand: #
 
 #Blocks manual BowAimbot.
