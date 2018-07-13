@@ -8,7 +8,7 @@
 # |   Spigot Page: https://goo.gl/GrX6dA                 | #
 # |   Plugin Version: 3.13.1                             | #
 # |   Configurator: ItsMennyo                            | #
-# |   Config Build: BUILD 1.3.508 BETA                   | #
+# |   Config Build: BUILD 1.3.694 HOTFIX                 | #
 # |   Overview: https://goo.gl/NJQDFA                    | #
 # |   Support: https://goo.gl/DAfLsX                     | #
 # |   Latest Build: https://goo.gl/Gv626M                | #
@@ -88,18 +88,6 @@ AutoPotion:
     6: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} AutoPotion"
     8: "aackick {player} AutoPotion"
 
-#EqualRotation checks for invalid rotation packets which have the rotation of the last packet as content.
-EqualRotation:
-  #Do you want to enable the EqualRotation check?
-  enabled: true
-  #Map of violation levels to commands?
-  thresholds:
-    6: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
-    12: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} EqualRotation"
-    15: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
-    18: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} EqualRotation"
-    24: "aackick {player} EqualRotation"
-
 #This module uses advanced mathematics to determine if players can see each other.
 Esp:
   #Do you want to enable the Esp check?
@@ -177,17 +165,6 @@ InventoryHeuristics:
   #This will give you access to the framework including the creation of your own heuristics and training them.
   #Default: false
   unlock_full_framework: false
-  #Options that belong to this section will only work if you set "unlock_full_framework" to true.
-  framework:
-    #The epoch when training a neural net?
-    #Default: 15000
-    epoch: 15000
-    #The train parameter of all neural nets?
-    #Default: 0.6931
-    train_parameter: 0.6931
-    #The momentum parameter of all neural nets?
-    #Default: 0.4055
-    momentum_parameter: 0.4055
   #Map of confidence levels to command.
   thresholds:
     65: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -221,6 +198,9 @@ InventoryMove:
   #Violation before AACAdditionPro starts to cancel the movements?
   #Default: 10
   cancel_vl: 8
+  #This allows to add more lenience on servers with very high-ping players by stretching the no-punish time after opening an inventory.
+  #Default: 0
+  lenience_millis: 0
   #Map of violation levels to commands?
   thresholds:
     8: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
@@ -228,6 +208,18 @@ InventoryMove:
     20: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
     24: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryMove"
     32: "aackick {player} InventoryMove"
+
+#InventoryRotation checks if a player is moving his head while being in an inventory.
+InventoryRotation:
+  #Do you want to enable the InventoryRotation check?
+  enabled: true
+  #Map of violation levels to commands?
+  thresholds:
+    16: "conditionalcommands:cc {player} if -ping->1000&-time_online->5000&-uptime->1000&-tps->19.5 do aackick {player} Internet/Server Issues?"
+    19: "conditionalcommands:cc {player} if (-ping-<100&-ping->0)&-tps->19.5 do aackick {player} InventoryRotation"
+    24: "conditionalcommands:cc {player} if (-ping-<250&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
+    31: "conditionalcommands:cc {player} if (-ping-<500&-ping->0)&-tps->19.0 do aackick {player} InventoryRotation"
+    37: "aackick {player} InventoryRotation"
 
 #Brings back an entity check of the old AAC 1.9.10 times but much more advanced.
 KillauraEntity:
@@ -401,7 +393,7 @@ PacketAnalysis:
 #The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
 Pingspoof:
   #Do you want to enable the Pingspoof check?
-  enabled: true
+  enabled: false
   #This is the ping-offset?
   #Default: 3.0
   ping_offset: 4.0
@@ -446,9 +438,6 @@ Scaffold:
         #This delay applies to diagonal building?
         #Default: 148
         diagonal: 148
-      #Over how many values should AACAdditionPro take the average for the check?
-      #Default: 6
-      buffer_size: 6
     #This part detects suspicious placement positions.
     position:
       #Do you want to enable the position check?
@@ -518,12 +507,12 @@ Tower:
   #Violation before AACAdditionPro starts to cancel the block-places?
   #Default: 6
   cancel_vl: 4
-  #Over how much values should AACAdditionPro take the average used for the check?
-  #Default: 6
-  buffer_size: 4
   #If you have false positives decrease this slightly?
   #Default: 1
   tower_leniency: 1
+  #Special leniency which is only applied if the player has the levitation effect?
+  #Default: 0.9
+  levitation_leniency: 0.9
   #After a detection which surpasses cancel_vl AACAdditionPro cancels all blockplaces in the given timeframe to prevent further towering?
   #Default: 5500
   timeout: 5500
@@ -780,4 +769,3 @@ Verbose:
   #Should the verbose output be logged in the console?
   #Default: true
   console: true
-  
