@@ -577,7 +577,7 @@ Step:
   #Command to execute when Step is detected?
   StepCommand: # 
 
-#Options to do with accounting for velocities (e.g. launchpads).
+#Options to do with accounting for velocities (e.g. launchpads, pvp).
 VelocityAccounting:
   #If this is enabled, AntiAura will account for velocity for players who hit themselves with bows to launch themselves in directions.
   #Enabling this MAY create MINOR (probably useless) speed bypasses if the hacker shoots themselves with a bow to give themselves a velocity.
@@ -598,14 +598,21 @@ VelocityAccounting:
   NormalVelocityLeniency: 1.1
   #The leniency on the Y axis of combat velocities where the player takes a hit (e.g. zombies, PVP, etc).
   CombatVelocityLeniency: 2.0
+  #The leniency that is given to players who are in combat with other players.
+  #Please note that unlike other leniency values, PlayerCombatVelocityLeniency affects all axis.
+  PlayerCombatVelocityLeniency: 1.8
+  #Do you want AntiAura to manually calculate the velocity of a player if hit by another player?
+  #AntiAura does this because *some* spigot servers don't seem to calculate it themselves.
+  #So on some servers, you're safe to disable this. On others, it causes huge problems.
+  CalculatePlayerVelocity: true
   #NormalVelocityLeniency and CombatVelocityLeniency are a PERCENTAGE leniency.
-  #So for example if the player was launched up 1.0 blocks, CombatVelocityLeniency would allow them to be launched 2.0 blocks.
+  #So for example if the player was launched up 1.0 blocks with a CombatVelocityLeniency of 2.0, CombatVelocityLeniency would allow them to be launched 2.0 blocks.
   #FlatLeniencyInBlocks is simply a simple leniency in blocks.
   #If FlatLeniencyInBlocks is 0.7 and the player is launched up 10 blocks, FlatLeniencyInBlocks will allow them to go 10.7 blocks.
   FlatLeniencyInBlocks: 0.1
   #How long should the velocity last?
   #Velocities last the time calculated by AntiAura, multiplied by VelocityTime.
-  #For non=PVP velocities:
+  #For non-PVP velocities:
   NormalVelocityTime: 2.0
   #For PVP velocities:
   CombatVelocityTime: 3.0
@@ -810,10 +817,10 @@ NoFall:
   MaxThresholdToAplyLeniency: 1
   #How many times must the person be detected to be kicked?
   Threshold: 15
-  #How long, in ticks, do you want to allow the person to be falling but still be "on the ground"?
+  #How long, in ticks, do you want to allow the person to be falling but still be "on the ground" before detecting them?
   #If you have a SkyBlock server or similar, set this to 1 or more.
   #Set this to 0 for more instant detection.
-  LeniencyTime: 0
+  LeniencyTime: 1
   #Do you want to force the player to be dragged to the ground from the air?
   #Setting this to false will suspend the player in the air until they disable NoFall or die.
   DragToGround: true
@@ -940,7 +947,6 @@ Elytra:
   #So for example: If a player took off from a Y of 63, the next second they would have a max allowed Y of 62.
   HeightBlockage: true
   #Block players using Elytra travelling further than they could from their take-off position.
-  #Warning: Distance blockage will be disabled if the player uses a firework to boost!
   DistanceBlockage: true
   #The max speed on the X+Z axis that a player can travel using an Elytra.
   #The max speed of 40 can only be achieved by jumping off really high (like 200 blocks), diving down, and levelling out.
@@ -962,9 +968,25 @@ BowAimbot:
   #Change velocity ONLY for arrows?
   ArrowsOnly: false
 
+
+#The IllegalItem check blocks items with certain illegal parameters.
+#Items with disallowed parameters will be removed from the players' inventory.
+IllegalItem:
+  #Enable checking for illegal items?
+  Enabled: true
+  #If you enable BlockEvenIfOP, all illegal items will be blocked,
+  #even if you are an OP and have bypass permission for AntiAura.
+  #Useful for stopping administrators abusing power.
+  BlockEvenIfOP: false
+  #What is the maximum enchantment level allowed?
+  #Set to -1 to remove limits of enchantment.
+  MaxEnchantLevel: 100
+  #What is the maximum potion amplifier allowed?
+  #Set to -1 to remove limits of potion amplifier.
+  MaxPotionAmplifier: 2
+
 #You can ignore anything down here. It's pretty much stuff you won't ever want to change, but is there just in case.
 
-#Stuff related to what name to choose. You can usually ignore this. The defaults are fine.
 All:
   #If server TPS goes below this Threshold, don't kick anyone.
   MinTPS: 10
