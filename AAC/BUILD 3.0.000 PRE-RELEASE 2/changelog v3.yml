@@ -8,13 +8,13 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AAC                                                           | #
-# |   Version: 3.4.0                                                           | #
+# |   Version: 3.5.0                                                           | #
 # |   Developer: konsolas.58100                                                | #
 # |   Spigot Page: http://bit.ly/FlexAACSpigotMC                               | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 3.0.000 PRE-RELEASE                                         | #
+# |   Build: BUILD 3.0.000 PRE-RELEASE 2                                       | #
 # |   Configuration ID: XXXXXXXXXXXXXXXXXXXX                                   | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAACGitHub                                | #
@@ -74,13 +74,13 @@ criticals:
     8: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Criticals"
     12: "aackick {player} Criticals"
 
-#Elytra prevents players from moving incorrectly while using the Elytra (1.9+)
+#Elytra prevents players from moving incorrectly while using the Elytra.
 elytra:
   #Do you want to enable the Elytra check?
   enabled: true
   #How strongly should we enforce elytra movement?
-  #Default: 0.015
-  tolerance: 0.015
+  #Default: 0.025
+  tolerance: 0.025
   #How quickly should players be able to move after using a firework rocket?
   #Default: 3.0
   rocket_tolerance: 3.0
@@ -97,7 +97,7 @@ elytra:
     290: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Elytra"
     350: "aackick {player} Elytra"
 
-#Vehicles prevents players from exploiting vehicle movement to move too quickly
+#Vehicles prevents players from exploiting vehicle movement to move too quickly.
 vehicles:
   #Do you want to enable the Vehicles check?
   enabled: true
@@ -158,12 +158,12 @@ fightspeed:
   consistent_threshold: 25
   #Map of violation levels to commands:
   thresholds:
-    13:
+    19:
       - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
       - "aacadditionpro entitycheck {player} 1200"
-    19: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FightSpeed"
-    26: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FightSpeed"
-    32: "aackick {player} FightSpeed"
+    25: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FightSpeed"
+    31: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FightSpeed"
+    39: "aackick {player} FightSpeed"
 
 #Fly prevents players in survival mode from flying.
 fly:
@@ -220,7 +220,7 @@ speed:
   max_sneak_toggles: 20
   #How many times should a player be allowed to toggle use-item in a second?
   #Default: 35
-  max_use_toggles: 35
+  max_use_toggles: 40
   #How many violations before a player will start being teleported?
   #Default: 36
   min_vl: 60
@@ -302,44 +302,56 @@ regen:
 killaura:
   #Do you want to use the killaura check?
   enabled: true
-  #How much should the violation level increase by if a player attacks suspiciously?
-  #Default: 4
-  suspicious_vl: 5
-  #How long should each killaura check last?
-  #Default: 40
-  check_duration: 40
-  #Should we check killaura on mobs?
-  #Default: true
-  check_mobs: true
   #Should we cancel impossible hits?
   #Default: true
-  cancel_hit: true
+  cancel_hit: false
   #How many violations before hits start being cancelled?
-  #Default: 6
-  min_vl: 13
+  #Default: 30
+  min_vl: 49
+  #How much should we increase the violation level for each detection method?
+  modules:
+    #Default: 2
+    natural: 5
+    #Default: 4
+    round: 10
+    #Default: 9
+    split: 6
+    #Default: 4
+    sporadic: 6
+    #Default: 3
+    stable: 6
+    #Default: 2
+    switch: 5
+    #Default: 0
+    angle: 2
+    #Default: 4
+    click: 3
+    #Default: 3
+    miss: 4
+    #Default: 6
+    tick: 9
+    #Default: 2
+    yaw: 6
+    #Default: 1
+    normal: 2
+    #Default: 8
+    look: 11
+    #Default: 5
+    timing: 7
+    #Default: 3
+    accel: 7
+    #Default: 10
+    accuracy: 18
+    #Default: 6
+    pattern: 14
   #Map of violation levels to commands:
   thresholds:
-    26:
+    49:
       - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
       - "aacadditionpro entitycheck {player} 1200"
-    39: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Killaura"
-    45: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Killaura"
-    55: "aackick {player} Killaura"
-
-#Heuristics are used by we to detect advanced killaura cheats that bypass normal checks.
-heuristics:
-  #Do you want to use the heuristics check?
-  enabled: true
-  #Heuristic confidence required for a violation. This is calculated as a percentage from 0.0% to 100.0%.
-  #Represents how likely a player is to be using killaura, based on heuristic analysis.
-  #Default: 75
-  min_confidence: 80
-  #List of patterns which should not incur a violation:
-  exempt:
-    - "P/97!"
-  #Map of violation levels to commands:
-  thresholds:
-    1: "aackick {player} Heuristics"
+    56: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Killaura"
+    63: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Killaura"
+    70: "aackick {player} Killaura"
 
 #NoFall ensures players take fall damage.
 nofall:
@@ -348,6 +360,9 @@ nofall:
   #What downward velocity is needed to check for nofall?
   #Default: -0.2
   required_velocity: -0.2
+  #Should we check for attempts to reduce fall damage?
+  #Default: true
+  check_reduce_attempts: true
   #Should we deal fall damage to players?
   #Default: true
   deal_damage: true
@@ -576,7 +591,7 @@ move:
   #Map of violation levels to commands:
   thresholds:
     300: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    380: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} PMove"
+    380: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Move"
     440: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Move"
     550: "aackick {player} Move"
 
