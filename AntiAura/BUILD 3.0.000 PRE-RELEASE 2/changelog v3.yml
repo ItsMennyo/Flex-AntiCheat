@@ -8,13 +8,13 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AntiAura                                                      | #
-# |   Version: 11.47                                                           | #
+# |   Version: 11.48                                                           | #
 # |   Developer: joehot200.147                                                 | #
 # |   Spigot Page: http://bit.ly/FlexAntiAuraSpigotMC                          | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 3.0.000 PRE-RELEASE                                         | #
+# |   Build: BUILD 3.0.000 PRE-RELEASE 2                                       | #
 # |   Configuration ID: XXXXXXXXXXXXXXXXXXXX                                   | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAntiAuraGitHub                           | #
@@ -586,6 +586,12 @@ VelocityAccounting:
   #The leniency on the Y axis of combat velocities where the player takes a hit?
   #Default: 2.0
   CombatVelocityLeniency: 2.0
+  #The leniency that is given to players who are in combat with other players?
+  #Default: 1.8
+  PlayerCombatVelocityLeniency: 1.8
+  #Manually calculate the velocity of a player when they are hit by a player?
+  #Default: true
+  CalculatePlayerVelocity: true
   #FlatLeniencyInBlocks is a simple leniency in blocks for NormalVelocityLeniency and CombatVelocityLeniency?
   #Default: 0.1
   FlatLeniencyInBlocks: 0.1
@@ -789,7 +795,7 @@ NoFall:
   #Default: 15
   Threshold: 10
   #How long do you want to allow the player to be falling but still be considered on the ground?
-  #Default: 0
+  #Default: 1
   LeniencyTime: 1
   #Do you want to force the player to be dragged to the ground from the air?
   #Default: true
@@ -930,6 +936,22 @@ BowAimbot:
   #Change the velocity only for arrows?
   #Default: false
   ArrowsOnly: false
+
+#Blocks items with certain illegal parameters.
+IllegalItem:
+  #Do you want to use the IllegalItem check?
+  Enabled: true
+  #Also block illegal items when the player has OP?
+  #Default: false
+  BlockEvenIfOP: false
+  #What is the maximum enchantment level allowed?
+  #Set this to -1 to remove limits of enchantment.
+  #Default: 100
+  MaxEnchantLevel: 100
+  #What is the maximum potion amplifier allowed?
+  #Set this to -1 to remove limits of potion amplifier.
+  #Default: 2
+  MaxPotionAmplifier: 2
 
 #Settings related to the plugin itself.
 All:
