@@ -14,11 +14,8 @@
 #They only have different names because "Safe HIT decrease" doesn't make sense for checks such as FastEat or Speed.
 #
 #The fastest way to get support is in the AntiAura Discord: https://discord.gg/3wCqvBh
-#Please report minor bugs in discord that can be fixed quickly. Make sure to use the #bugs channel.
-#If you want to report multiple significant bugs at a time, please PM me on Spigot.
-#
-#Credis to @EthanTG for helping reformat the config.
-
+#Please report minor bugs in discord that can be fixed quickly. Make sure to use the #support or #reports channel.
+#If you want to report multiple significant bugs at a time, I'd prefer a PM Spigot.
 
 #Print messages to the console when a player is rubberbanded by AntiAura?
 ConsoleLogDragbacks: true
@@ -30,10 +27,13 @@ ConsoleModifyConfigOnly: false
 #There is a possibility that this may cause rare incompatibilities, which is why this option exists.
 IgnoreUnknownTeleportCause: true
 #Do you want to strike a bolt of lightning at a person when they are kicked for hacking?
+#I mean, it looks cool...
 StrikeLightningOnHackDetection: false
 #If this is true, AntiAura will be in "test server mode".
-#This means that players will have hunger replenished when they hit an entity, and also have double the health.
+#The intention for test server mode is simply for servers who want to test long PVP fights without needing to install other plugins to make sure they don't die.
+#If enabled, players will have all hunger replenished when they hit an entity, and also have double the health.
 TestServerMode: false
+ResetViolationsOnKick: false #TODO
 
 #All options related to AntiAura's BungeeCord addon.
 #If you are not using the BungeeCord addon, none of these configuration options will matter to you.
@@ -653,10 +653,8 @@ Jump:
   #Note with the Essentials speed command that the "speed values" are not the same as Minecraft's in-built walk speed values.
   #For example the Essentials /speed 10 command will set the player to a walk speed of 1.0. /speed 1 will set the player to a walk speed of 0.2
   Enabled: true
-  #The maximum distance a player can jump on a level surface.
-  #Recommend increasing if you get false positives.
-  #This value is added to or taken away from if a player jumps to a block that is higher or lower.
-  MaxJumpOnLevelSurface: 5.3
+  #How much further than the maximum distance should AntiAura allow players to jump?
+  LeniencyInBlocks: 0.2
   #How much the players' Jump violation level goes down after a legitimate jump.
   SafeJumpDecrease: 0.5
   #The threshold the players' Jump violation level must reach for them to be detected for Jump.
