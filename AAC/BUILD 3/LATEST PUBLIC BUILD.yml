@@ -14,8 +14,8 @@
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 3.0.000 BETA                                                | #
-# |   Configuration ID: IbEJp1RZ07AT62pHQvw4                                   | #
+# |   Build: BUILD 3.0.186 BETA                                                | #
+# |   Configuration ID: SoazdE9j7PRB5WUmOa3G                                   | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAACGitHub                                | #
 # |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
@@ -33,35 +33,36 @@ hitbox:
   #How much should we expand the hitboxes by?
   #Default: 0.65
   lenience: 0.61
-  #Should we cancel illegal hits?
+  #Should we cancel the illegal hits?
   #Default: true
   cancel: true
-  #How far should a player be able to reach?
+  #How far could the player reach?
   #Default: 3.5
   max_reach: 3.57
   #How much should we compensate for the movement of the target?
   #Default: 6.0
   move_compensation: 5.0
-  #How many violations before we starts cancelling hits?
+  #How many violations before cancelling the hits?
   #Default: 4
-  min_vl: 14
-  #Number of ticks before we starts reducing violations?
+  min_vl: 8
+  #Number of ticks before we start reducing the violation level?
   #Default: 60
   reduce_delay: 100
   #Map of violation levels to commands:
   thresholds:
-    14:
+    16:
       - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-      - "aacadditionpro entitycheck {player} 1200"
-    21: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Hitbox"
-    27: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Hitbox"
-    36: "aackick {player} Hitbox"
+      #Temporarily disabled because the KillauraEntity check is currently experimental!
+      #- "aacadditionpro entitycheck {player} 1200"
+    23: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Hitbox"
+    29: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Hitbox"
+    38: "aackick {player} Hitbox"
 
 #Criticals prevents the player from getting critical hits when it's not possible.
 criticals:
   #Do you want to use the Criticals check?
   enabled: true
-  #Should a hit be cancelled if it is a critical and the player is on the ground?
+  #Should we cancel the hit if it is a critical and the player is on the ground?
   #Default: true
   cancel_false_hit: true
   #How many ticks should we enforce between jumps?
@@ -78,16 +79,16 @@ criticals:
 elytra:
   #Do you want to enable the Elytra check?
   enabled: true
-  #How strongly should we enforce Elytra movement?
+  #How strongly should we enforce elytra movement?
   #Default: 0.025
   tolerance: 0.025
   #How quickly should players be able to move after using a firework rocket?
   #Default: 3.0
   rocket_tolerance: 3.0
-  #Should we teleport players?
+  #Should we teleport the player down?
   #Default: true
   teleport: true
-  #How many violations before we starts teleporting a player down?
+  #How many violations before teleporting the player down?
   #Default: 32
   min_vl: 45
   #Map of violation levels to commands:
@@ -110,7 +111,7 @@ vehicles:
   #Should we teleport players out of their Vehicles?
   #Default: true
   teleport: true
-  #How many violations before we kicks a player off their vehicle?
+  #How many violations before kick the player off their vehicle?
   #Default: 32
   min_vl: 40
   #Map of violation levels to commands:
@@ -130,7 +131,7 @@ fastbow:
   #How long should we block bow usage after a player is detected for Fastbow?
   #Default: 100
   block_ticks: 100
-  #How much VL does a player need before we starts blocking shots?
+  #How many violations before blocking the shots?
   #Default: 8
   min_vl: 8
   #Map of violation levels to commands:
@@ -160,7 +161,8 @@ fightspeed:
   thresholds:
     19:
       - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-      - "aacadditionpro entitycheck {player} 1200"
+      #Temporarily disabled because the KillauraEntity check is currently experimental!
+      #- "aacadditionpro entitycheck {player} 1200"
     25: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FightSpeed"
     31: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FightSpeed"
     39: "aackick {player} FightSpeed"
@@ -177,7 +179,7 @@ fly:
   #How quickly should we increase the violation level for larger movements?
   #Default: 6.0
   vl_multiplier: 5.0
-  #How many violations before we starts teleporting a player down?
+  #How many violations before teleporting the player down?
   #Default: 28
   min_vl: 50
   #How long should a player have to respond to velocity given by the server?
@@ -189,7 +191,7 @@ fly:
   #Check for invalid abilities packets?
   #Default: true
   abilities: false
-  #How many ticks should we wait before reducing a player's violation level?
+  #Number of ticks before we start reducing the violation level?
   #Default: 20
   reduce_delay: 100
   #Should we reset a player's pitch to 0 after a detection?
@@ -221,10 +223,10 @@ speed:
   #How many times should a player be allowed to toggle use-item in a second?
   #Default: 35
   max_use_toggles: 40
-  #How many violations before a player will start being teleported?
+  #How many violations before teleporting the player back?
   #Default: 36
   min_vl: 60
-  #How many ticks should we wait before reducing a player's violation level?
+  #Number of ticks before we start reducing the violation level?
   #Default: 20
   reduce_delay: 100
   #Specific configuration options which control how the check works:
@@ -282,7 +284,7 @@ noswing:
 regen:
   #Do you want to use the Regen check?
   enabled: true
-  #Should we cancel regeneration if it happens too quickly?
+  #Should we cancel the regeneration if it happens too quickly?
   #Default: true
   cancel_regen: true
   #What delay should we force between regeneration?
@@ -302,10 +304,10 @@ regen:
 killaura:
   #Do you want to use the Killaura check?
   enabled: true
-  #Should we cancel impossible hits?
+  #Should we cancel the illegal hits?
   #Default: true
   cancel_hit: true
-  #How many violations before hits start being cancelled?
+  #How many violations before cancelling the hits?
   #Default: 30
   min_vl: 49
   #How much should we increase the violation level for each detection method?
@@ -315,7 +317,7 @@ killaura:
     #Default: 4
     round: 10
     #Default: 9
-    split: 5
+    split: 4
     #Default: 4
     sporadic: 6
     #Default: 3
@@ -325,17 +327,17 @@ killaura:
     #Default: 0
     angle: 2
     #Default: 4
-    click: 3
+    click: 2
     #Default: 3
     miss: 3
     #Default: 6
     tick: 9
     #Default: 2
-    yaw: 6
+    yaw: 4
     #Default: 1
     normal: 2
     #Default: 8
-    look: 11
+    look: 13
     #Default: 5
     timing: 6
     #Default: 3
@@ -343,12 +345,13 @@ killaura:
     #Default: 10
     accuracy: 20
     #Default: 6
-    pattern: 10
+    pattern: 9
   #Map of violation levels to commands:
   thresholds:
     49:
       - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-      - "aacadditionpro entitycheck {player} 1200"
+      #Temporarily disabled because the KillauraEntity check is currently experimental!
+      #- "aacadditionpro entitycheck {player} 1200"
     56: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Killaura"
     63: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Killaura"
     70: "aackick {player} Killaura"
@@ -438,13 +441,13 @@ fastbreak:
   #How many ticks should FastBreak count as lag and ignore?
   #Default: 2
   let_ticks: 3
-  #Should we cancel an illegal block break?
+  #Should we cancel the illegal block break?
   #Default: true
   cancel_break: true
   #Should we check for a break delay?
   #Default: true
   check_delay: true
-  #How many violations before we starts cancelling block breaks?
+  #How many violations before cancelling the block breaks?
   #Default: 1
   cancel_vl: 3
   #Map of violation levels to commands:
@@ -461,10 +464,10 @@ fastplace:
   #How many blocks should a player be allowed to place in one second?
   #Default: 10
   max_place_per_second: 10
-  #Should we cancel an illegal block place?
+  #Should we cancel the illegal block place?
   #Default: true
   cancel_place: true
-  #How many violations before we starts cancelling block placements?
+  #How many violations before cancelling the block placements?
   #Default: 4
   cancel_vl: 4
   #Map of violation levels to commands:
@@ -538,7 +541,7 @@ velocity:
   #Should we check for midair direction changes?
   #Default: true
   check_direction: true
-  #How many violations before we starts teleporting players who ignore Velocity?
+  #How many violations before teleporting the player back?
   #Default: 10
   min_vl: 10
   #How much should we increase a player's violation level by on detection?
@@ -562,10 +565,9 @@ spam:
   thresholds: {}
 
 #Parameters for AAC's packet level movement check system.
-#This check is required for nearly all checks so don't disable it.
 move:
   #Do you want to use the Move check?
-  #Do not disable this check or AAC will not function correctly!
+  #Most checks use this check to collect data so don't disable it!
   enabled: true
   #How much lag should we compensate for?
   #Default: -80
@@ -579,7 +581,7 @@ move:
   #How high should the internal packet balance be allowed to get?
   #Default: 15
   balance_cap: 10
-  #At what tick interval should we reduce 1 VL from the player?
+  #On what tick interval should we reduce everytime 1 violation level?
   #Default: 15
   decay: 40
   #Should we deal fall damage to players who fail the Move check?
@@ -596,11 +598,11 @@ move:
     550: "aackick {player} Move"
 
 #How many times must the player be kicked before he will be banned?
-#Only works when the player is kicked whit /aackick!
+#Only works when the player is kicked with /aackick!
 #Default: -1
 ban_threshold: -1
 #What command should be executed when the ban_threshold is reached?
-#Only works when the player is kicked whit /aackick!
+#Only works when the player is kicked with /aackick!
 ban_command: "aacban {player}"
 #How long after the player has been kicked can he login again?
 #Default: 120
@@ -611,8 +613,8 @@ log_file: true
 #Should /aackick broadcast a message?
 #Default: false
 aackick_broadcast: false
-#Disable/enable checks dynamically?
-#If PerWorldPlugins is used, disable this!
+#Enable and disable checks dynamically?
+#If PerWorldPlugins is installed, disable this!
 #Default: true
 usetps: true
 #Enable verbose logging to players?
