@@ -8,14 +8,14 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AntiAura                                                      | #
-# |   Version: 11.48                                                           | #
+# |   Version: 11.53                                                           | #
 # |   Developer: joehot200.147                                                 | #
 # |   Spigot Page: http://bit.ly/FlexAntiAuraSpigotMC                          | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 3.0.000 BETA                                                | #
-# |   Configuration ID: v7X7scGmmVdNxQdMrvD0                                   | #
+# |   Build: BUILD 3.0.146 BETA                                                | #
+# |   Configuration ID: iCS9NiVs8OtwLepMsD5Z                                   | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAntiAuraGitHub                           | #
 # |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
@@ -41,6 +41,8 @@ StrikeLightningOnHackDetection: false
 #Feed the player and give them double the health when they hit an entity for testing?
 #Default: false
 TestServerMode: false
+#TODO
+ResetViolationsOnKick: false
 
 #Options related to AntiAura's BungeeCord addon:
 BungeeCord:
@@ -631,9 +633,9 @@ Spider:
 Jump:
   #Do you want to use the Jump check?
   Enabled: false
-  #The maximum distance a player can jump on a level surface?
-  #Default: 5.3
-  MaxJumpOnLevelSurface: 5.4
+  #How much further than the maximum distance should we allow the player to jump?
+  #Default: 0.2
+  LeniencyInBlocks: 0.2
   #How much should the Threshold be lowered when the player had a legitimate jump?
   #Default: 0.5
   SafeJumpDecrease: 0.3
