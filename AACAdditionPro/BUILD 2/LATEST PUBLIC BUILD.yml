@@ -8,14 +8,14 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AACAdditionPro                                                | #
-# |   Version: 4.2.2                                                           | #
+# |   Version: 4.4.0                                                           | #
 # |   Developer: photon.166336                                                 | #
 # |   Spigot Page: http://bit.ly/FlexAACAdditionProSpigotMC                    | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.000 BETA                                                | #
-# |   Configuration ID: RyIdc516X9gUqSduWM7i                                   | #
+# |   Build: BUILD 2.0.182 BETA                                                | #
+# |   Configuration ID: gwUPfXWFOH97ZQNrCLbz                                   | #
 # |   Overview: http://bit.ly/FlexGitHubOverview                               | #
 # |   Latest Build: http://bit.ly/FlexAACAdditionProGitHub                     | #
 # |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
@@ -30,7 +30,7 @@
 AutoFish:
   #Do you want to use the AutoFish check?
   enabled: true
-  #Violation before we starts to cancel the fishing?
+  #Violation level before cancelling the fishing?
   #Default: 10
   cancel_vl: 8
   #Control the different solutions of AutoFish:
@@ -39,20 +39,20 @@ AutoFish:
     inhuman_reaction:
       #Do you want to use the inhuman_reaction function?
       enabled: true
-      #How many milliseconds should have passed before a fishing action counts as legit?
+      #How many milliseconds should have passed before the fishing action counts as legit?
       #Default: 145
       fishing_milliseconds: 145
-    #The consistency part recognizes static times between a successful catch and fishing again:
+    #The consistency part recognizes static times between a successful catch and fishing:
     consistency:
       #Do you want to use the consistency function?
       enabled: true
       #How many FishEvents should be checked by the consistency check?
       #Default: 5
       consistency_events: 5
-      #The minimum offset a player has to have in order to count as non-cheating?
+      #The minimum offset the player has to have in order to count as non-cheating?
       #Default: 30
       violation_offset: 30
-      #After how many failed attempts to fish between two successful attempts should a player be exempted from the consistency part?
+      #After how many failed attempts between two successful attempts should the player be exempted from the consistency part?
       #Default: 12
       maximum_fails: 12
   #Map of violation levels to commands:
@@ -66,7 +66,7 @@ AutoFish:
 AutoPotion:
   #Do you want to use the AutoPotion check?
   enabled: true
-  #Violation before we starts to cancel throwing potions?
+  #Violation level before cancelling the throwing potions?
   #Default: 2
   cancel_vl: 2  
   #After a detection which surpasses cancel_vl we cancels all potion throws to effectively prevent the cheat?
@@ -103,7 +103,7 @@ Esp:
 Fastswitch:
   #Do you want to use the Fastswitch check?
   enabled: true
-  #Violation before we starts to cancel the interacts?
+  #Violation level before cancelling the interacts?
   #Default: 3
   cancel_vl: 4
   #If a player has a ping higher than that value he bypasses the check?
@@ -134,7 +134,7 @@ GravitationalModifier:
 ImpossibleChat:
   #Do you want to use the ImpossibleChat check?
   enabled: false
-  #Violation before we starts to cancel the messages?
+  #Violation level before cancelling the messages?
   #Default: 2
   cancel_vl: 2
   #Map of violation levels to commands:
@@ -144,9 +144,67 @@ ImpossibleChat:
     4: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} ImpossibleChat"
     5: "aackick {player} ImpossibleChat"
 
+#This check contains a lot of parts covering all aspects of inventory interaction.
+Inventory:
+  #Do you want to use the Inventory check?
+  enabled: true
+  #Control the different parts of the Inventory check:
+  parts:
+    #This part flags hitting while the inventory is open:
+    Hit:
+      #Do you want to use the Hit function?
+      enabled: true
+      #Violation level before cancelling the hits?
+      #Default: 30
+      cancel_vl: 25
+    #The move part detects movement when the player is still in his inventory:
+    Move:
+      #Do you want to use the Move function?
+      enabled: true
+      #Violation level before cancelling the movements?
+      #Default: 30
+      cancel_vl: 30
+      #The minimum TPS the server must be to have this check activated?
+      #Default: 19.5
+      min_tps: 19.5
+      #This allows to add more lenience on servers with very high-ping players by stretching the no-punish time after opening an inventory?
+      #Default: 0
+      lenience_millis: 0
+    #The MultiInteraction part prevents the player from moving more than one item per tick:
+    MultiInteraction:
+      #Do you want to use the MultiInteraction function?
+      enabled: true
+      #Violation level before cancelling the interacts?
+      #Default: 18
+      cancel_vl: 15
+      #If the player has a ping higher than this value, bypasses the check?
+      #Default: 400
+      max_ping: 250
+      #The minimum TPS the server must be to have this check activated?
+      #Default: 18.5
+      min_tps: 19.0
+    #The rotation part detects head movement while having an open inventory:
+    Rotation:
+      #Do you want to use the Rotation function?
+      enabled: true
+    #This part detects inventory interactions while a player is sprinting or sneaking:
+    Sprinting:
+      #Do you want to use the Sprinting function?
+      enabled: true
+      #Violation level before cancelling the inventory interactions?
+      #Default: 20
+      cancel_vl: 18
+  #Map of confidence levels to commands:
+  thresholds:
+    60: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    70: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Inventory"
+    80: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Inventory"
+    90: "aackick {player} Inventory"
+
 #The inventory heuristics provide a neural network framework to detect advanced inventory cheats.
 InventoryHeuristics:
   #Do you want to use the InventoryHeuristics check?
+  #Currently experimental and should not be used on productive servers!
   enabled: false
   #The min confidence a single pattern must have to count as detection?
   #Default: 55.0
@@ -160,54 +218,10 @@ InventoryHeuristics:
     90: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} InventoryHeuristics"
     95: "aackick {player} InventoryHeuristics"
 
-#InventoryHit checks if the player modifies his inventory while hitting at the same time.
-InventoryHit:
-  #Do you want to use the InventoryHit check?
-  enabled: true
-  #Violation before we starts to cancel the hits?
-  #Default: 3
-  cancel_vl: 3
-  #Map of violation levels to commands:
-  thresholds:
-    3: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    5: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} InventoryHit"
-    6: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} InventoryHit"
-    9: "aackick {player} InventoryHit"
-
-#The InventoryMove check detects inventory clicks while moving.
-InventoryMove:
-  #Do you want to use the InventoryMove check?
-  enabled: true
-  #The minimum TPS the server must have to activate this check?
-  #Default: 19.5
-  min_tps: 19.5
-  #Violation before we starts to cancel the movements?
-  #Default: 10
-  cancel_vl: 14
-  #This allows to add more lenience on servers with very high-ping players by stretching the no-punish time after opening an inventory?
-  #Default: 0
-  lenience_millis: 0
-  #Map of violation levels to commands:
-  thresholds:
-    14: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    20: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} InventoryMove"
-    23: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} InventoryMove"
-    28: "aackick {player} InventoryMove"
-
-#InventoryRotation checks if the player is moving his head while being in an inventory.
-InventoryRotation:
-  #Do you want to use the InventoryRotation check?
-  enabled: true
-  #Map of violation levels to commands:
-  thresholds:
-    9: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    16: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} InventoryRotation"
-    23: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} InventoryRotation"
-    30: "aackick {player} InventoryRotation"
-
 #Brings back the entity check of the old AAC 1.9.10 but more advanced.
 KillauraEntity:
   #Do you want to use the KillauraEntity check?
+  #Currently experimental and should not be used on productive servers!
   enabled: false
   #Enable this to only spawn an entity if requested by a command?
   #Default: false
@@ -340,26 +354,6 @@ KillauraEntity:
     14: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} KillauraEntity"
     17: "aackick {player} KillauraEntity"
 
-#The MultiInteraction check prevents the player from moving more than one item per tick.
-MultiInteraction:
-  #Do you want to use the MultiInteraction check?
-  enabled: true
-  #Violation before we starts to cancel the interacts?
-  #Default: 18
-  cancel_vl: 26
-  #If a player has a ping higher than that value he bypasses the check?
-  #Default: 400
-  max_ping: 250
-  #The minimum TPS the server must have to activate this check?
-  #Default: 18.5
-  min_tps: 19.0
-  #Map of violation levels to commands:
-  thresholds:
-    26: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    34: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} MultiInteraction"
-    40: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} MultiInteraction"
-    50: "aackick {player} MultiInteraction"
-
 #PacketAnalysis is a general check which aims to detect modifications that are closely linked to interfering with the protocol directly.
 PacketAnalysis:
   #Do you want to use the PacketAnalysis check?
@@ -432,7 +426,7 @@ Pingspoof:
 Scaffold:
   #Do you want to use the Scaffold check?
   enabled: true
-  #Violation before we starts to cancel the block-places?
+  #Violation level before cancelling the blockplaces?
   #Default: 20
   cancel_vl: 20
   #After a detection which surpasses cancel_vl we cancels all blockplaces in the given timeframe to prevent further scaffolding?
@@ -555,7 +549,7 @@ Teaming:
 Tower:
   #Do you want to use the Tower check?
   enabled: true
-  #Violation before we starts to cancel the block-places?
+  #Violation level before cancelling the blockplaces?
   #Default: 6
   cancel_vl: 5
   #The new Tower check has its own leniency-curve which makes it very effective?
