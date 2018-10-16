@@ -47,11 +47,11 @@ If you want to use Spartan as AntiCheat, you have to keep to the following:
 
 1. The server must be in good condition to keep the TPS high. The minimum to avoid the false positives must always be higher than 19 (19.5 and higher is the best). When the TPS falls below 19.5, the detection will go slower to prevent further false positives.
 
-2. Buy AAC [HERE](https://www.spigotmc.org/resources/spartan-anticheat-advanced-detections-hack-blocker.25638/).
+2. Buy Spartan [HERE](https://www.spigotmc.org/resources/spartan-anticheat-advanced-detections-hack-blocker.25638/).
 
 3. (Recommended) Download ConditionalCommands [HERE](https://www.spigotmc.org/resources/conditionalcommands.14295/).
 
-4. Copy the latest Flex build for AAC [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
+4. Copy the latest Flex build for Spartan [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
 
 5. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
 
