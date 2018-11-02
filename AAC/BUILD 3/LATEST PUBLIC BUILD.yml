@@ -8,18 +8,18 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AAC                                                           | #
-# |   Version: 3.5.0                                                           | #
+# |   Version: 3.6.2                                                           | #
 # |   Developer: konsolas.58100                                                | #
-# |   Spigot Page: http://bit.ly/FlexAACSpigotMC                               | #
+# |   Spigot Page: https://bit.ly/FlexAACSpigot                                | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 3.0.186 BETA                                                | #
-# |   Configuration ID: SoazdE9j7PRB5WUmOa3G                                   | #
-# |   Overview: http://bit.ly/FlexGitHubOverview                               | #
-# |   Latest Build: http://bit.ly/FlexAACGitHub                                | #
-# |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
-# |   Discord Server: http://bit.ly/FlexDiscordServer                          | #
+# |   Build: BUILD 3.0.251 BETA                                                | #
+# |   Configuration ID: mGsvMKznyDFZ87LRc1Pw                                   | #
+# |   Overview: https://bit.ly/FlexSite                                        | #
+# |   Latest Build: https://bit.ly/FlexAAC3Latest                              | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
 # |   Copyright © 2017 - 2018 ItsMennyo Network                                | #
 # |                                                                            | #
@@ -90,7 +90,7 @@ elytra:
   teleport: true
   #How many violations before teleporting the player down?
   #Default: 32
-  min_vl: 45
+  min_vl: 35
   #Map of violation levels to commands:
   thresholds:
     140: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
@@ -194,7 +194,7 @@ fly:
   #Number of ticks before we start reducing the violation level?
   #Default: 20
   reduce_delay: 100
-  #Should we reset a player's pitch to 0 after a detection?
+  #Should we reset the player's pitch to 0 after a detection?
   #Default: false
   reset_pitch: false
   # Map of violation levels to commands:
@@ -289,7 +289,7 @@ regen:
   cancel_regen: true
   #What delay should we force between regeneration?
   #Default: 3600
-  min_regen_delay: 3600
+  min_regen_delay: 3500
   #What delay should we force if the player is fully satiated?
   #Default: 450
   min_satiated_delay: 400
@@ -336,25 +336,27 @@ killaura:
     yaw: 4
     #Default: 1
     normal: 2
+    #Default: 5
+    action: 6
     #Default: 8
     look: 13
     #Default: 5
     timing: 6
     #Default: 3
-    accel: 7
+    accel: 2
     #Default: 10
     accuracy: 20
     #Default: 6
     pattern: 9
   #Map of violation levels to commands:
   thresholds:
-    49:
+    21:
       - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
       #Temporarily disabled because the KillauraEntity check is currently experimental!
       #- "aacadditionpro entitycheck {player} 1200"
-    56: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Killaura"
-    63: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Killaura"
-    70: "aackick {player} Killaura"
+    58: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Killaura"
+    66: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Killaura"
+    75: "aackick {player} Killaura"
 
 #NoFall ensures the player take proper fall damage.
 nofall:
@@ -502,6 +504,9 @@ interact:
   #Detect ghosthand to Interact with blocks?
   #Default: true
   cancel_ghost_block: true
+  #Detect block placements in suspicious circumstances?
+  #Default: true
+  cancel_suspicious_block: true
   #Detect interacting whilst dead?
   #Default: true
   cancel_dead: true
@@ -619,7 +624,7 @@ aackick_broadcast: false
 usetps: true
 #Enable verbose logging to players?
 #Default: false
-verbose: true
+verbose: false
 #Enable verbose logging in the console?
 #Default: false
-log_console: true
+log_console: false
