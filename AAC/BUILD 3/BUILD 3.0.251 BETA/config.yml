@@ -1,0 +1,630 @@
+##################################################################################
+# +----------------------------------------------------------------------------+ #
+# |                                                                            | #
+# |   █▀▀▀ █    █▀▀▀ ▀▄ ▄▀    █▀▀█ █▄  █ ▀▀█▀▀ ▀█▀ █▀▀█ █  █ █▀▀▀ █▀▀█ ▀▀█▀▀   | #
+# |   █▀▀▀ █    █▀▀▀   █      █▄▄█ █ █ █   █    █  █    █▀▀█ █▀▀▀ █▄▄█   █     | #
+# |   █    █▄▄█ █▄▄▄ ▄▀ ▀▄    █  █ █  ▀█   █   ▄█▄ █▄▄█ █  █ █▄▄▄ █  █   █     | #
+# |                                                                            | #
+# |                                                                            | #
+# |   Plugin Info:                                                             | #
+# |   AntiCheat: AAC                                                           | #
+# |   Version: 3.6.2                                                           | #
+# |   Developer: konsolas.58100                                                | #
+# |   Spigot Page: https://bit.ly/FlexAACSpigot                                | #
+# |                                                                            | #
+# |   Config Info:                                                             | #
+# |   Configurator: ItsMennyo.305436                                           | #
+# |   Build: BUILD 3.0.251 BETA                                                | #
+# |   Configuration ID: mGsvMKznyDFZ87LRc1Pw                                   | #
+# |   Overview: https://bit.ly/FlexSite                                        | #
+# |   Latest Build: https://bit.ly/FlexAAC3Latest                              | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
+# |                                                                            | #
+# |   Copyright © 2017 - 2018 ItsMennyo Network                                | #
+# |                                                                            | #
+# +----------------------------------------------------------------------------+ #
+##################################################################################
+
+#Hitbox forces the player to look at the entities they want to attack.
+hitbox:
+  #Do you want to use the Hitbox check?
+  enabled: true
+  #How much should we expand the hitboxes by?
+  #Default: 0.65
+  lenience: 0.61
+  #Should we cancel the illegal hits?
+  #Default: true
+  cancel: true
+  #How far could the player reach?
+  #Default: 3.5
+  max_reach: 3.57
+  #How much should we compensate for the movement of the target?
+  #Default: 6.0
+  move_compensation: 5.0
+  #How many violations before cancelling the hits?
+  #Default: 4
+  min_vl: 8
+  #Number of ticks before we start reducing the violation level?
+  #Default: 60
+  reduce_delay: 100
+  #Map of violation levels to commands:
+  thresholds:
+    16:
+      - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+      #Temporarily disabled because the KillauraEntity check is currently experimental!
+      #- "aacadditionpro entitycheck {player} 1200"
+    23: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Hitbox"
+    29: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Hitbox"
+    38: "aackick {player} Hitbox"
+
+#Criticals prevents the player from getting critical hits when it's not possible.
+criticals:
+  #Do you want to use the Criticals check?
+  enabled: true
+  #Should we cancel the hit if it is a critical and the player is on the ground?
+  #Default: true
+  cancel_false_hit: true
+  #How many ticks should we enforce between jumps?
+  #Default: 5
+  jump_delay: 5
+  #Map of violation levels to commands:
+  thresholds:
+    3: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    5: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Criticals"
+    8: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Criticals"
+    12: "aackick {player} Criticals"
+
+#Elytra prevents the player from moving incorrectly while using the Elytra.
+elytra:
+  #Do you want to enable the Elytra check?
+  enabled: true
+  #How strongly should we enforce elytra movement?
+  #Default: 0.025
+  tolerance: 0.025
+  #How quickly should players be able to move after using a firework rocket?
+  #Default: 3.0
+  rocket_tolerance: 3.0
+  #Should we teleport the player down?
+  #Default: true
+  teleport: true
+  #How many violations before teleporting the player down?
+  #Default: 32
+  min_vl: 35
+  #Map of violation levels to commands:
+  thresholds:
+    140: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    210: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Elytra"
+    290: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Elytra"
+    350: "aackick {player} Elytra"
+
+#Vehicles prevents the player from exploiting vehicle movement to move too quickly.
+vehicles:
+  #Do you want to enable the Vehicles check?
+  enabled: true
+  #How strongly should we enforce vehicle movement?
+  #Default: 0.015
+  tolerance: 0.015
+  #How quickly should we increase the violation level for larger movements?
+  #Default: 6.0
+  vl_multiplier: 5.0
+  #Should we teleport players out of their Vehicles?
+  #Default: true
+  teleport: true
+  #How many violations before kick the player off their vehicle?
+  #Default: 32
+  min_vl: 40
+  #Map of violation levels to commands:
+  thresholds:
+    80: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    140: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Vehicles"
+    190: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Vehicles"
+    260: "aackick {player} Vehicles"
+
+#Fastbow prevents the player from shooting their bow too quickly.
+fastbow:
+  #Do you want to use the Fastbow check?
+  enabled: true
+  #How much lag compensation should we perform when checking for Fastbow?
+  #Default: 130
+  lenience_ms: 152
+  #How long should we block bow usage after a player is detected for Fastbow?
+  #Default: 100
+  block_ticks: 100
+  #How many violations before blocking the shots?
+  #Default: 8
+  min_vl: 8
+  #Map of violation levels to commands:
+  thresholds:
+    8: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    12: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Fastbow"
+    17: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Fastbow"
+    22: "aackick {player} Fastbow"
+
+#FightSpeed prevents the player from attacking too quickly.
+fightspeed:
+  #Do you want to use the FightSpeed check?
+  enabled: true
+  #How many times should a player be able to attack per second?
+  #Default: 15
+  max_hit: 15
+  #How many times should a player be allowed to swing their arm per second?
+  #Default: 35
+  max_swing: 35
+  #Should FightSpeed check for consistent click speed?
+  #Default: true
+  consistent_check: true
+  #How close together do hit speed measurements need to be for a violation?
+  #Default: 25
+  consistent_threshold: 25
+  #Map of violation levels to commands:
+  thresholds:
+    19:
+      - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+      #Temporarily disabled because the KillauraEntity check is currently experimental!
+      #- "aacadditionpro entitycheck {player} 1200"
+    25: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FightSpeed"
+    31: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FightSpeed"
+    39: "aackick {player} FightSpeed"
+
+#Fly prevents the player from flying in survival mode.
+fly:
+  #Do you want to use the Fly check?
+  enabled: true
+  #How strongly should we enforce fall speeds?
+  #Default: 0.015
+  tolerance: 0.015
+  #Default: 0.015
+  e_tolerance: 0.015
+  #How quickly should we increase the violation level for larger movements?
+  #Default: 6.0
+  vl_multiplier: 5.0
+  #How many violations before teleporting the player down?
+  #Default: 28
+  min_vl: 50
+  #How long should a player have to respond to velocity given by the server?
+  #Default: 30
+  vel_ticks: 40
+  #Teleport the player down if detected?
+  #Default: true
+  teleport: true
+  #Check for invalid abilities packets?
+  #Default: true
+  abilities: false
+  #Number of ticks before we start reducing the violation level?
+  #Default: 20
+  reduce_delay: 100
+  #Should we reset the player's pitch to 0 after a detection?
+  #Default: false
+  reset_pitch: false
+  # Map of violation levels to commands:
+  thresholds:
+    150: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    220: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Fly"
+    290: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Fly"
+    360: "aackick {player} Fly"
+
+#Speed prevents the player from moving too quickly in survival mode.
+speed:
+  #Do you want to use the Speed check?
+  enabled: true
+  #How strongly should we enforce movement speeds?
+  #Default: 0.005
+  threshold: 0.005
+  #How long should a player have to respond to velocity given by the server?
+  #Default: 30
+  vel_ticks: 40
+  #How quickly should we increase the violation level for larger movements?
+  #Default: 6.0
+  vl_multiplier: 5.0
+  #How many times should a player be allowed to toggle sneak in a second?
+  #Default: 15
+  max_sneak_toggles: 20
+  #How many times should a player be allowed to toggle use-item in a second?
+  #Default: 35
+  max_use_toggles: 40
+  #How many violations before teleporting the player back?
+  #Default: 36
+  min_vl: 60
+  #Number of ticks before we start reducing the violation level?
+  #Default: 20
+  reduce_delay: 100
+  #Specific configuration options which control how the check works:
+  #Default: 0.5
+  item_scalar: 0.5
+  #Default: 0.63
+  sneak_scalar: 0.63
+  #Default: 0.7
+  soul_sand_scalar: 0.7
+  #Default: true
+  check_sprint_direction: true
+  #Default: true
+  check_slowness_effect: true
+  #Default: true
+  check_cobwebs: true
+  #Default: true
+  strict_velocity_checking: true
+  # Map of violation levels to commands:
+  thresholds:
+    180: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    250: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Speed"
+    340: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Speed"
+    450: "aackick {player} Speed"
+
+#Derp stops some forms of derp cheats.
+derp:
+  #Do you want to use the Derp check?
+  enabled: true
+  #Map of violation levels to commands:
+  thresholds:
+    1:
+      - "aackick {player} Derp"
+
+knockback:
+  enabled: false
+  tick_delay: 9
+  add_ping: true
+  max_ping: 500
+  min_knockback_dist: 0.01
+  min_knockback_time: 2
+  thresholds: {}
+
+#NoSwing ensures that the player swing with their arm when attacking or mining.
+noswing:
+  #Do you want to use the NoSwing check?
+  enabled: true
+  #Map of violation levels to commands:
+  thresholds:
+    11: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    23: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} NoSwing"
+    29: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} NoSwing"
+    35: "aackick {player} NoSwing"
+
+#Regen directly stops the player from healing too quickly.
+regen:
+  #Do you want to use the Regen check?
+  enabled: true
+  #Should we cancel the regeneration if it happens too quickly?
+  #Default: true
+  cancel_regen: true
+  #What delay should we force between regeneration?
+  #Default: 3600
+  min_regen_delay: 3500
+  #What delay should we force if the player is fully satiated?
+  #Default: 450
+  min_satiated_delay: 400
+  #Map of violation levels to commands:
+  thresholds:
+    5: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Regen"
+    11: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Regen"
+    16: "aackick {player} Regen"
+
+#Killaura detects combat cheats which give an unfair advantage.
+killaura:
+  #Do you want to use the Killaura check?
+  enabled: true
+  #Should we cancel the illegal hits?
+  #Default: true
+  cancel_hit: true
+  #How many violations before cancelling the hits?
+  #Default: 30
+  min_vl: 49
+  #How much should we increase the violation level for each detection method?
+  modules:
+    #Default: 2
+    natural: 5
+    #Default: 4
+    round: 10
+    #Default: 9
+    split: 4
+    #Default: 4
+    sporadic: 6
+    #Default: 3
+    stable: 6
+    #Default: 2
+    switch: 4
+    #Default: 0
+    angle: 2
+    #Default: 4
+    click: 2
+    #Default: 3
+    miss: 3
+    #Default: 6
+    tick: 9
+    #Default: 2
+    yaw: 4
+    #Default: 1
+    normal: 2
+    #Default: 5
+    action: 6
+    #Default: 8
+    look: 13
+    #Default: 5
+    timing: 6
+    #Default: 3
+    accel: 2
+    #Default: 10
+    accuracy: 20
+    #Default: 6
+    pattern: 9
+  #Map of violation levels to commands:
+  thresholds:
+    21:
+      - "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+      #Temporarily disabled because the KillauraEntity check is currently experimental!
+      #- "aacadditionpro entitycheck {player} 1200"
+    58: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Killaura"
+    66: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Killaura"
+    75: "aackick {player} Killaura"
+
+#NoFall ensures the player take proper fall damage.
+nofall:
+  #Do you want to use the NoFall check?
+  enabled: true
+  #What downward velocity is needed to check for NoFall?
+  #Default: -0.2
+  required_velocity: -0.2
+  #Should we check for attempts to reduce fall damage?
+  #Default: true
+  check_reduce_attempts: true
+  #Should we deal fall damage to players?
+  #Default: true
+  deal_damage: true
+  #Map of violation levels to commands:
+  thresholds:
+    13: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    17: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} NoFall"
+    21: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} NoFall"
+    29: "aackick {player} NoFall"
+
+#Jesus stops the player from walking on water.
+jesus:
+  #Do you want to use the Jesus check?
+  enabled: true
+  #Should Jesus teleport players?
+  #Default: true
+  teleport: true
+  #Map of violation levels to commands:
+  thresholds:
+    11: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    18: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Jesus"
+    23: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Jesus"
+    30: "aackick {player} Jesus"
+
+#Phase stops the player from glitching through blocks.
+phase:
+  #Do you want to use the Phase check?
+  enabled: true
+  #Which blocks should be exempt from Phase checking:
+  exclude:
+    - "AIR"
+    - "ANVIL"
+    - "CARPET"
+    - "CARROT"
+    - "CHEST"
+    - "CROPS"
+    - "ENDER_CHEST"
+    - "LADDER"
+    - "LAVA"
+    - "PISTON_MOVING_PIECE"
+    - "POTATO"
+    - "SOIL"
+    - "STATIONARY_LAVA"
+    - "STATIONARY_WATER"
+    - "TRAPPED_CHEST"
+    - "VINE"
+    - "WATER"
+    - "WATER_LILY"
+    - "WHEAT"
+  #Map of violation levels to commands:
+  thresholds:
+    40: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    80: "aacmessage {player} Please disconnect and log back in if you are stuck inside a block."
+
+#FastUse stops the players using items too quickly.
+fastuse:
+  #Do you want to use the FastUse check?
+  enabled: true
+  #What delay should we enforce for eating an item?
+  #Default: 1200
+  ms_to_use: 1200
+  #Map of violation levels to commands:
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    3: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FastUse"
+    4: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FastUse"
+    5: "aackick {player} FastUse"
+
+#FastBreak stops the player from breaking blocks too quickly.
+fastbreak:
+  #Do you want to use the FastBreak check?
+  enabled: true
+  #How many ticks should FastBreak count as lag and ignore?
+  #Default: 2
+  let_ticks: 3
+  #Should we cancel the illegal block break?
+  #Default: true
+  cancel_break: true
+  #Should we check for a break delay?
+  #Default: true
+  check_delay: true
+  #How many violations before cancelling the block breaks?
+  #Default: 1
+  cancel_vl: 3
+  #Map of violation levels to commands:
+  thresholds:
+    7: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    12: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FastBreak"
+    19: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FastBreak"
+    24: "aackick {player} FastBreak"
+
+#FastPlace stops the player from placing blocks too quickly.
+fastplace:
+  #Do you want to use the FastPlace check?
+  enabled: true
+  #How many blocks should a player be allowed to place in one second?
+  #Default: 10
+  max_place_per_second: 10
+  #Should we cancel the illegal block place?
+  #Default: true
+  cancel_place: true
+  #How many violations before cancelling the block placements?
+  #Default: 4
+  cancel_vl: 4
+  #Map of violation levels to commands:
+  thresholds:
+    9: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    14: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} FastPlace"
+    20: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} FastPlace"
+    26: "aackick {player} FastPlace"
+
+#Nuker stops the player from breaking too many blocks per second in creative mode.
+nuker:
+  #Do you want to use the Nuker check?
+  enabled: true
+  #How many blocks should a player be able to break in 1 second?
+  #Default: 40
+  max_breaks_per_second: 40
+  #The violation will only be recorded if it divides by this number?
+  #Default: 41
+  vl_divisor: 41
+  #Map of violation levels to commands:
+  thresholds:
+    1: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    2: "aackick {player} Nuker"
+
+#Interact stops the player interacting in impossible situations.
+interact:
+  #Do you want to use the Interact check?
+  enabled: true
+  #Detect interacting with liquids?
+  #Default: true
+  cancel_liquids: true
+  #Detect ghosthand to Interact with blocks?
+  #Default: true
+  cancel_ghost_block: true
+  #Detect block placements in suspicious circumstances?
+  #Default: true
+  cancel_suspicious_block: true
+  #Detect interacting whilst dead?
+  #Default: true
+  cancel_dead: true
+  #Detect hitting whilst using an item?
+  #Default: true
+  cancel_item_attack: true
+  #Detect hitting through walls?
+  #Default: true
+  cancel_ghost_attack: true
+  #Violation before we starts cancelling Interact when detecting ghosthand:
+  #Default: 5
+  cancel_vl_interact: 8
+  #Default: 5
+  cancel_vl_place: 4
+  #Default: 0
+  cancel_vl_break: 0
+  #Map of violation levels to commands:
+  thresholds:
+    21: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    29: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Interact"
+    35: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Interact"
+    42: "aackick {player} Interact"
+
+#Velocity makes sure that the player take proper knockback.
+velocity:
+  #Do you want to use the Velocity check?
+  enabled: true
+  #How many ticks should we check a player for?
+  #Default: 30
+  check_length: 30
+  #What is the maximum distance we should teleport a detected player?
+  #Default: 3.0
+  max_tp_dist: 2.0
+  #Should we use the Velocity setback system?
+  #Default: true
+  use_velocity_setbacks: true
+  #Should we check for midair direction changes?
+  #Default: true
+  check_direction: true
+  #How many violations before teleporting the player back?
+  #Default: 10
+  min_vl: 10
+  #How much should we increase a player's violation level by on detection?
+  #Default: 2
+  vl_normal: 1
+  #If a player seems frozen, how much should we increase their violation level?
+  #Default: 0
+  vl_no_packet: 0
+  #Map of violation levels to commands:
+  thresholds:
+    6: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    11: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Velocity"
+    15: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Velocity"
+    19: "aackick {player} Velocity"
+
+spam:
+  enabled: false
+  whitelist: {}
+  message_limit: 4
+  chat_speed: 10
+  thresholds: {}
+
+#Parameters for AAC's packet level movement check system.
+move:
+  #Do you want to use the Move check?
+  #Most checks use this check to collect data so don't disable it!
+  enabled: true
+  #How much lag should we compensate for?
+  #Default: -80
+  min_balance: -75
+  #How many extra packets should a player be allowed to send?
+  #Default: 10
+  cancel_threshold: 10
+  #What balance should we set the player to when the connection seems normal?
+  #Default: -1
+  reset_level: -1
+  #How high should the internal packet balance be allowed to get?
+  #Default: 15
+  balance_cap: 10
+  #On what tick interval should we reduce everytime 1 violation level?
+  #Default: 15
+  decay: 40
+  #Should we deal fall damage to players who fail the Move check?
+  #Default: true
+  deal_fall: true
+  #What teleport offset should we accept from players?
+  #Default: 0.001
+  tp_accept_threshold: 0.001
+  #Map of violation levels to commands:
+  thresholds:
+    300: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    380: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Move"
+    440: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Move"
+    550: "aackick {player} Move"
+
+#How many times must the player be kicked before he will be banned?
+#Only works when the player is kicked with /aackick!
+#Default: -1
+ban_threshold: -1
+#What command should be executed when the ban_threshold is reached?
+#Only works when the player is kicked with /aackick!
+ban_command: "aacban {player}"
+#How long after the player has been kicked can he login again?
+#Default: 120
+kick_ticks: -1
+#Log all the events to a file?
+#Default: true
+log_file: true
+#Should /aackick broadcast a message?
+#Default: false
+aackick_broadcast: false
+#Enable and disable checks dynamically?
+#If PerWorldPlugins is installed, disable this!
+#Default: true
+usetps: true
+#Enable verbose logging to players?
+#Default: false
+verbose: false
+#Enable verbose logging in the console?
+#Default: false
+log_console: false
