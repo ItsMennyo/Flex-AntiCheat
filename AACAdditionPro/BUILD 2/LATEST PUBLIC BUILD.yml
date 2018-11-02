@@ -8,18 +8,18 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AACAdditionPro                                                | #
-# |   Version: 4.4.0                                                           | #
+# |   Version: 4.6.0                                                           | #
 # |   Developer: photon.166336                                                 | #
-# |   Spigot Page: http://bit.ly/FlexAACAdditionProSpigotMC                    | #
+# |   Spigot Page: https://bit.ly/FlexAACAPSpigot                              | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.182 BETA                                                | #
-# |   Configuration ID: gwUPfXWFOH97ZQNrCLbz                                   | #
-# |   Overview: http://bit.ly/FlexGitHubOverview                               | #
-# |   Latest Build: http://bit.ly/FlexAACAdditionProGitHub                     | #
-# |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
-# |   Discord Server: http://bit.ly/FlexDiscordServer                          | #
+# |   Build: BUILD 2.0.235 BETA                                                | #
+# |   Configuration ID: SMWQaFR31hc6OjLAf431                                   | #
+# |   Overview: https://bit.ly/FlexSite                                        | #
+# |   Latest Build: https://bit.ly/FlexAACAP2Latest                            | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
 # |   Copyright © 2017 - 2018 ItsMennyo Network                                | #
 # |                                                                            | #
@@ -119,17 +119,6 @@ Fastswitch:
     9: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Fastswitch"
     10: "aackick {player} Fastswitch"
 
-#GravitationalModifier improves the detection speed of various movement-cheats.
-GravitationalModifier:
-  #Do you want to use the GravitationalModifier check?
-  enabled: true
-  #Map of violation levels to commands:
-  thresholds:
-    7: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    11: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} GravitationalModifier"
-    15: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} GravitationalModifier"
-    19: "aackick {player} GravitationalModifier"
-
 #ImpossibleChat check detects sending chat messages while being in an illegal situation.
 ImpossibleChat:
   #Do you want to use the ImpossibleChat check?
@@ -144,20 +133,20 @@ ImpossibleChat:
     4: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} ImpossibleChat"
     5: "aackick {player} ImpossibleChat"
 
-#This check contains a lot of parts covering all aspects of inventory interaction.
+#This check contains a lot of parts covering all aspects of Inventory interaction.
 Inventory:
   #Do you want to use the Inventory check?
   enabled: true
   #Control the different parts of the Inventory check:
   parts:
-    #This part flags hitting while the inventory is open:
+    #This part flags hitting while the Inventory is open:
     Hit:
       #Do you want to use the Hit function?
       enabled: true
       #Violation level before cancelling the hits?
       #Default: 30
       cancel_vl: 25
-    #The move part detects movement when the player is still in his inventory:
+    #The move part detects movement when the player is still in his Inventory:
     Move:
       #Do you want to use the Move function?
       enabled: true
@@ -167,7 +156,7 @@ Inventory:
       #The minimum TPS the server must be to have this check activated?
       #Default: 19.5
       min_tps: 19.5
-      #This allows to add more lenience on servers with very high-ping players by stretching the no-punish time after opening an inventory?
+      #This allows to add more lenience on servers with very high-ping players by stretching the no-punish time after opening an Inventory?
       #Default: 0
       lenience_millis: 0
     #The MultiInteraction part prevents the player from moving more than one item per tick:
@@ -183,15 +172,15 @@ Inventory:
       #The minimum TPS the server must be to have this check activated?
       #Default: 18.5
       min_tps: 19.0
-    #The rotation part detects head movement while having an open inventory:
+    #The rotation part detects head movement while having an open Inventory:
     Rotation:
       #Do you want to use the Rotation function?
       enabled: true
-    #This part detects inventory interactions while a player is sprinting or sneaking:
+    #This part detects Inventory interactions while a player is sprinting or sneaking:
     Sprinting:
       #Do you want to use the Sprinting function?
       enabled: true
-      #Violation level before cancelling the inventory interactions?
+      #Violation level before cancelling the Inventory interactions?
       #Default: 20
       cancel_vl: 18
   #Map of confidence levels to commands:
@@ -214,7 +203,7 @@ InventoryHeuristics:
   unlock_full_framework: false
   #Map of confidence levels to commands:
   thresholds:
-    85: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    80: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
     90: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} InventoryHeuristics"
     95: "aackick {player} InventoryHeuristics"
 
@@ -397,15 +386,15 @@ PacketAnalysis:
       enabled: true
   #Map of violation levels to commands:
   thresholds:
-    11: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
-    16: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} PacketAnalysis"
-    21: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} PacketAnalysis"
-    28: "aackick {player} PacketAnalysis"
+    13: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    18: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} PacketAnalysis"
+    23: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} PacketAnalysis"
+    30: "aackick {player} PacketAnalysis"
 
 #The Pingspoof check tries to identify cheaters who try to intentionally increase their ping to bypass AntiCheat-setups.
 Pingspoof:
   #Do you want to use the Pingspoof check?
-  enabled: false
+  enabled: true
   #This is the ping-offset?
   #Default: 3.0
   ping_offset: 3.0
@@ -417,10 +406,9 @@ Pingspoof:
   refresh_at_vl: 5
   #Map of violation levels to commands:
   thresholds:
-    5: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
+    7: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do aackick {player} Internet/Server Issues?"
     9: "conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do aackick {player} Pingspoof"
-    12: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Pingspoof"
-    15: "aackick {player} Pingspoof"
+    12: "aackick {player} Pingspoof"
 
 #The Scaffold check detects Scaffold cheats.
 Scaffold:
@@ -522,13 +510,13 @@ Teaming:
   #How much delay should be between the check-waves?
   #Default: 5000
   delay: 5000
-  #How far in blocks should players at most be away to count as teaming?
+  #How far in blocks should players at most be away to count as Teaming?
   #Default: 4.5
   proximity_range: 4.5
   #If you only want to allow teams with a certain member-cap you can change this value appropriately?
   #Default: 1
   allowed_size: 1
-  #Non-pvp time to count as teaming?
+  #Non-pvp time to count as Teaming?
   #Default: 6000
   no_pvp_time: 6000
   #This contains all worlds the check should be enabled in:
@@ -769,44 +757,57 @@ ClientControl:
       '1.8': true
       #Default: false
       '1.9': false
-      #Default: true
-      '1.10': true
+      #Default: false
+      '1.10': false
       #Default: true
       '1.11': true
       #Default: true
       '1.12': true
-      #Default: false
-      '1.13': false
+      #Default: true
+      '1.13': true
 
   #WorldDownloader is a popular modification to get the maps of a server.
   WorldDownloader:
     #Do you want to use the WorldDownloader function?
     enabled: false
+    #Try a method to disable it?
+    #Default: true
+    disable: true
     #Command to execute on detection:
     commands_on_detection:
     - "aackick {player} WorldDownloader"
+
+#BrandHider allows you to modify the brand that is shown in the debug screen of minecraft.
+BrandHider:
+  #Do you want to use the BrandHider function?
+  enabled: false
+  #This is the replacement text for the brand:
+  brand: "Some Spigot"
+  #How often should the text be refreshed?
+  #Default: 0
+  refresh_rate: 0
 
 #This automatically deletes old log files of both AAC and AACAdditionPro.
 LogBot:
   #Do you want to use the LogBot function?
   enabled: false
-  #After how many days should AAC-logs be deleted?
+  #After how many days should AAC logs be deleted?
   #Default: 10
   AAC: -1
-  #After how many days should AACAdditionPro-logs be deleted?
+  #After how many days should AACAdditionPro logs be deleted?
   #Default: 10
   AACAdditionPro: -1
-  #After how many days should Server-logs be deleted?
+  #After how many days should Server logs be deleted?
   #Default: 10
   Server: -1
 
 Verbose:
-  #Do you want AACAdditionPro to log into a log-file?
+  #Log the verbose messages into a log file?
   #Default: true
   file: true
-  #Should players be able to get Verbose-Messages, if they have the aac.verbose permission?
+  #Send verbose messages to the player when he has the aac.verbose permission?
   #Default: false
   players: false
-  #Should the verbose output be logged in the console?
+  #Send the verbose messages to the console?
   #Default: false
   console: false
