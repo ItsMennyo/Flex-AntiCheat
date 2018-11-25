@@ -33,6 +33,8 @@ StrikeLightningOnHackDetection: false
 #The intention for test server mode is simply for servers who want to test long PVP fights without needing to install other plugins to make sure they don't die.
 #If enabled, players will have all hunger replenished when they hit an entity, and also have double the health.
 TestServerMode: false
+#Force the 1.12 block checking even when on 1.12.
+Use1.12BlockChecking: false
 ResetViolationsOnKick: false #TODO
 
 #All options related to AntiAura's BungeeCord addon.
@@ -654,7 +656,8 @@ Jump:
   #For example the Essentials /speed 10 command will set the player to a walk speed of 1.0. /speed 1 will set the player to a walk speed of 0.2
   Enabled: true
   #How much further than the maximum distance should AntiAura allow players to jump?
-  LeniencyInBlocks: 0.2
+  #Useful for providing leniency in cases of lag.
+  LeniencyInBlocks: 0.5
   #How much the players' Jump violation level goes down after a legitimate jump.
   SafeJumpDecrease: 0.5
   #The threshold the players' Jump violation level must reach for them to be detected for Jump.
@@ -978,7 +981,7 @@ IllegalItem:
   BlockEvenIfOP: false
   #What is the maximum enchantment level allowed?
   #Set to -1 to remove limits of enchantment.
-  MaxEnchantLevel: 100
+  MaxEnchantLevel: 6
   #What is the maximum potion amplifier allowed?
   #Set to -1 to remove limits of potion amplifier.
   MaxPotionAmplifier: 2
