@@ -8,18 +8,18 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: AntiAura                                                      | #
-# |   Version: 11.53                                                           | #
+# |   Version: 11.54                                                           | #
 # |   Developer: joehot200.147                                                 | #
-# |   Spigot Page: http://bit.ly/FlexAntiAuraSpigotMC                          | #
+# |   Spigot Page: https://bit.ly/FlexAntiAuraSpigot                           | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 3.0.146 BETA                                                | #
-# |   Configuration ID: iCS9NiVs8OtwLepMsD5Z                                   | #
-# |   Overview: http://bit.ly/FlexGitHubOverview                               | #
-# |   Latest Build: http://bit.ly/FlexAntiAuraGitHub                           | #
-# |   GitHub Reports: http://bit.ly/FlexGitHubReports                          | #
-# |   Discord Server: http://bit.ly/FlexDiscordServer                          | #
+# |   Build: BUILD 3.0.216 BETA (TEMPORARY ABANDON)                            | #
+# |   Configuration ID: 7Az2sxoMi7Aad3DElXTe                                   | #
+# |   Overview: https://bit.ly/FlexOverview                                    | #
+# |   Latest Build: https://bit.ly/FlexAntiAura3Latest                         | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
 # |   Copyright © 2017 - 2018 ItsMennyo Network                                | #
 # |                                                                            | #
@@ -41,6 +41,9 @@ StrikeLightningOnHackDetection: false
 #Feed the player and give them double the health when they hit an entity for testing?
 #Default: false
 TestServerMode: false
+#Force 1.12 block checking when on 1.12?
+#Default: false
+Use1.12BlockChecking: false
 #TODO
 ResetViolationsOnKick: false
 
@@ -77,7 +80,7 @@ SuperThreshold:
   SuperThreshold: 1.0
   #How much do you want to decrease the violation level every second?
   #Default: 0.005
-  ViolationDecreasePerSecond: 0.01
+  ViolationDecreasePerSecond: 0.05
 
 #Check the ping that is sent by the client.
 PingAccounting:
@@ -86,7 +89,7 @@ PingAccounting:
   #How much leniency do you want to give the player?
   #If the player has a higher ping then this, he can get false positives.
   #Default: 150
-  PingLeniency: 100
+  PingLeniency: 250
   #Don't display any ping accounting warnings?
   #Default: false
   SilenceWarnings: true
@@ -146,7 +149,7 @@ Forcefield:
     Enabled: true
     #The distance that the player's cursor must be from the target to count the hit as hacking?
     #Default: 1.9
-    HackingAngle: 1.6
+    HackingAngle: 1.7
     #If the distance between the cursor and the target is more than HackingAngle multiplied by 2 then cancel the hit?
     #Default: true
     BlockImpossibleHits: true
@@ -179,7 +182,7 @@ Forcefield:
     Threshold: 6
     #How much should the Threshold be lowered when the player has a legitimate hit?
     #Default: 0.5
-    SafeHitDecrease: 0.25
+    SafeHitDecrease: 0.3
     #The command that will be executed when the player is detected by this check:
     ReachCommand: # 
   #Block hits on entities if they go through other entities or blocks:
@@ -209,12 +212,12 @@ Forcefield:
     LagBackThreshold: 5.0
     #The amount that the player must have turned their head in the last hit to be considered turning quickly?
     #Default: 0.09
-    MaxMove: 0.1
+    MaxMove: 0.12
     #Canceling unlikely hits:
     CancelMove:
       #The amount that the player must have turned their head to have their attacks temporarily cancelled?
       #Default: 0.15
-      CancelMove: 0.15
+      CancelMove: 0.18
       #Use the HeadMove Threshold to set how much damage is to be blocked?
       #Default: true
       UseHeadMoveThreshold: true
@@ -226,7 +229,7 @@ Forcefield:
     CantAttackTime: 5
     #Amount of times the player must be detected by the HeadMove check to be kicked?
     #Default: 8
-    Threshold: 8
+    Threshold: 10
     #How much should the Threshold be lowered when the player has a legitimate hit?
     #Default: 1.2
     SafeHitDecrease: 0.8
@@ -278,7 +281,7 @@ Forcefield:
       DistanceAmount: 3.5
       #The weight of distance, each block of distance is multiplied by the DistanceWeight?
       #Default: 0.50
-      DistanceWeight: 0.5
+      DistanceWeight: 0.4
     #Take only the yaw axis into account?
     #Default: true
     YawOnly: true
@@ -287,7 +290,7 @@ Forcefield:
     Threshold: 8
     #How much should the Threshold be lowered when the player interacts without hitting an opponent?
     #Default: 0.45
-    ArmSwingDecrease: 0.4
+    ArmSwingDecrease: 0.5
     #How much should the Threshold be lowered every second?
     #Default: 0.20
     DecreasePerSecond: 0.2
@@ -300,7 +303,7 @@ FastClick:
   Enabled: true
   #Amount of times the player must be detected by the FastClick check to be kicked?
   #Default: 5
-  Threshold: 4
+  Threshold: 3
   #What is the maximum amount of clicks allowed per second?
   #Default: 8
   MaxClicksPerSecond: 15
@@ -431,7 +434,7 @@ Knockback:
   LowestModifierForLowSpeed: 0.7
   #How much leniency should the check have?
   #Default: 1.0
-  KnockbackLeniency: 1.0
+  KnockbackLeniency: 1.45
   #Command to execute when player is detected for AntiKnockback:
   KnockbackCommand: # 
   #Amount of times the player must be detected by the Knockback check to be kicked?
@@ -439,7 +442,7 @@ Knockback:
   Threshold: 8
   #How much should the Threshold be lowered when the player is detected as legit?
   #Default: 0.6
-  LowerAmount: 0.6
+  LowerAmount: 0.5
   #If a player is sprinting torwards another player, they may travel too far forward after being hit and trigger the detection?
   #Default: false
   DontCheckIfPlayerIsSprinting: true
@@ -587,7 +590,7 @@ VelocityAccounting:
   NormalVelocityLeniency: 1.1
   #The leniency on the Y axis of combat velocities where the player takes a hit?
   #Default: 2.0
-  CombatVelocityLeniency: 2.0
+  CombatVelocityLeniency: 4.0
   #The leniency that is given to players who are in combat with other players?
   #Default: 1.8
   PlayerCombatVelocityLeniency: 1.8
@@ -602,7 +605,7 @@ VelocityAccounting:
   NormalVelocityTime: 2.0
   #How long should the velocity last for PvP velocities?
   #Default: 3.0
-  CombatVelocityTime: 3.0
+  CombatVelocityTime: 9.0
 
 #Blocks any unexpected Y movement.
 Spider:
@@ -634,8 +637,8 @@ Jump:
   #Do you want to use the Jump check?
   Enabled: false
   #How much further than the maximum distance should we allow the player to jump?
-  #Default: 0.2
-  LeniencyInBlocks: 0.2
+  #Default: 0.5
+  LeniencyInBlocks: 0.5
   #How much should the Threshold be lowered when the player had a legitimate jump?
   #Default: 0.5
   SafeJumpDecrease: 0.3
@@ -705,13 +708,13 @@ Speed:
   EfficientCheck: false
   #Exempt the player from this check if they have been given an upward velocity?
   #Default: false
-  ExemptWhenUsingVelocity: false
+  ExemptWhenUsingVelocity: true
   #Block the player from sprinting while stationary?
   #Default: false
   BlockStationarySprinting: true
   #How many more blocks can the player travel than normal walking speed before being dragged back?
   #Default: 0.20
-  SpeedLeniency: 0.25
+  SpeedLeniency: 0.3
   #What leniency must a player be at to be dragged back, even if below the DragBackThreshold?
   #Default: 1.0
   ForceDragbackLeniency: 1.0
@@ -720,10 +723,10 @@ Speed:
   Threshold: 10
   #What Threshold must it to drag the player back?
   #Default: 13
-  DragBackThreshold: 4
+  DragBackThreshold: 5
   #How much should the Threshold be lowered when the player preformed a legitimate activity?
   #Default: 1.35
-  LowerAmount: 1.2
+  LowerAmount: 1.25
   #Command to execute when Speed is detected:
   SpeedCommand: # 
   #Setting this to true will make the player detected for hacks keep looking in the same direction they were looking at when dragged back.
@@ -948,8 +951,8 @@ IllegalItem:
   BlockEvenIfOP: false
   #What is the maximum enchantment level allowed?
   #Set this to -1 to remove limits of enchantment.
-  #Default: 100
-  MaxEnchantLevel: 100
+  #Default: 6
+  MaxEnchantLevel: 6
   #What is the maximum potion amplifier allowed?
   #Set this to -1 to remove limits of potion amplifier.
   #Default: 2
