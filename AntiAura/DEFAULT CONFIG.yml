@@ -570,7 +570,7 @@ Step:
   #In the TimePerCheck, what is the maximum distance a player can move upwards?
   MaxDistanceMovedUpwards: 2.8
   #In the TimePerCheck, what is the maximum distance a player can move downwards?
-  MaxDistanceMovedDownwards: 23.5
+  MaxDistanceMovedDownwards: 25
   #If a person is dragged back for hacking, do you want to force them to the ground?
   #This is better for blocking players who try and fly upwards slowly, or for things like FastLadder.
   ForceUserToGround: true
@@ -856,6 +856,9 @@ Phase:
 FastBreak:
   #Enable blockage of FastBreak, GhostHand, Nuker, etc?
   Enabled: true
+  #Force kicks, even for OPs, if the blocks broken in a second is double the maximum?
+  #Prevents people with bypass permission crashing the server with Nuker.
+  ForceKicks: true
   #Accuracy-based detection is ALWAYS enabled in Survival mode.
   #Should accuracy-based FastBreak detection be enabled in Creative?
   AccuracyCreative: false
