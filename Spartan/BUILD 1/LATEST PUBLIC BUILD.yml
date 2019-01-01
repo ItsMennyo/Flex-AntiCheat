@@ -8,20 +8,20 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 207                                                             | #
+# |   Version: 212                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 1.0.000 ALPHA                                               | #
-# |   Configuration ID: rHdkL6XvK7JAKlH46yh5                                   | #
-# |   Overview: https://bit.ly/FlexSite                                        | #
+# |   Build: BUILD 1.0.158 BETA                                                | #
+# |   Configuration ID: eBNjM3p4ZMXUF7pi7wl9                                   | #
+# |   Overview: https://bit.ly/FlexOverview                                    | #
 # |   Latest Build: https://bit.ly/FlexSpartan1Latest                          | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
 # |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
-# |   Copyright © 2017 - 2018 ItsMennyo Network                                | #
+# |   Copyright © 2017 - 2019 ItsMennyo Network | All Rights Reserved          | #
 # |                                                                            | #
 # +----------------------------------------------------------------------------+ #
 ##################################################################################
@@ -34,11 +34,11 @@ CombatAnalysis:
   silent_worlds: ''
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '10':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -52,11 +52,11 @@ Exploits:
   cancel_after_violation: 0
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '10':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -70,12 +70,12 @@ EntityMove:
   cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '11':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '14':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '13':
       '1': spartan kick {player} {detection}
 
 NoSwing:
@@ -87,13 +87,13 @@ NoSwing:
   silent: false
   cancel_after_violation: 3
   punishments:
+    '7':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '9':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
-    '10':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
-    '13':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '18':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
+    '11':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '15':
       '1': spartan kick {player} {detection}
 
 IrregularMovements:
@@ -106,11 +106,11 @@ IrregularMovements:
   cancel_after_violation: 2
   punishments:
     '7':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '10':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -123,13 +123,13 @@ Clip:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '4':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
-    '6':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+    '5':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '9':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
+    '8':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '10':
       '1': spartan kick {player} {detection}
 
 ImpossibleActions:
@@ -142,11 +142,11 @@ ImpossibleActions:
   cancel_after_violation: 1
   punishments:
     '3':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '5':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '7':
       '1': spartan kick {player} {detection}
 
@@ -160,11 +160,11 @@ ItemDrops:
   cancel_after_violation: 1
   punishments:
     '4':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '8':
       '1': spartan kick {player} {detection}
 
@@ -176,11 +176,11 @@ AutoRespawn:
   silent_worlds: ''
   punishments:
     '3':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '5':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '7':
       '1': spartan kick {player} {detection}
 
@@ -194,11 +194,11 @@ InventoryClicks:
   cancel_after_violation: 1
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '10':
       '1': spartan kick {player} {detection}
 
@@ -211,12 +211,12 @@ Sprint:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '7':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
-    '9':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+    '6':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
+    '8':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '10':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -230,12 +230,12 @@ Jesus:
   cancel_after_violation: 1
   punishments:
     '7':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '12':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '15':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '14':
       '1': spartan kick {player} {detection}
 
 NoSlowdown:
@@ -248,11 +248,11 @@ NoSlowdown:
   cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '10':
       '1': spartan kick {player} {detection}
 
@@ -265,12 +265,12 @@ Criticals:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '4':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+    '5':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '9':
       '1': spartan kick {player} {detection}
 
@@ -284,12 +284,12 @@ Nuker:
   cancel_after_violation: 0
   punishments:
     '3':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '5':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '8':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '9':
       '1': spartan kick {player} {detection}
 
 GhostHand:
@@ -302,12 +302,12 @@ GhostHand:
   cancel_after_violation: 3
   punishments:
     '9':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '11':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '13':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '16':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '15':
       '1': spartan kick {player} {detection}
 
 Liquids:
@@ -320,11 +320,11 @@ Liquids:
   cancel_after_violation: 2
   punishments:
     '7':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '11':
       '1': spartan kick {player} {detection}
 
@@ -338,11 +338,11 @@ BlockReach:
   cancel_after_violation: 1
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '10':
       '1': spartan kick {player} {detection}
 
@@ -356,11 +356,11 @@ ElytraMove:
   cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -374,11 +374,11 @@ BoatMove:
   cancel_after_violation: 1
   punishments:
     '4':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '5':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '8':
       '1': spartan kick {player} {detection}
 
@@ -391,13 +391,13 @@ FastBow:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '3':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
     '5':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '8':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '10':
       '1': spartan kick {player} {detection}
 
 FastClicks:
@@ -408,11 +408,11 @@ FastClicks:
   silent_worlds: ''
   punishments:
     '7':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '10':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -426,11 +426,11 @@ FastHeal:
   cancel_after_violation: 0
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '10':
       '1': spartan kick {player} {detection}
 
@@ -444,11 +444,11 @@ Fly:
   cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
-    '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
+    '8':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -462,11 +462,11 @@ ImpossibleInventory:
   cancel_after_violation: 1
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '10':
       '1': spartan kick {player} {detection}
 
@@ -479,13 +479,13 @@ HitReach:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '4':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
-    '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+    '5':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '9':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
+    '10':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '11':
       '1': spartan kick {player} {detection}
 
 FastBreak:
@@ -498,11 +498,11 @@ FastBreak:
   cancel_after_violation: 2
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -516,11 +516,11 @@ Speed:
   cancel_after_violation: 2
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '11':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '14':
       '1': spartan kick {player} {detection}
 
@@ -534,11 +534,11 @@ FastPlace:
   cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '11':
       '1': spartan kick {player} {detection}
 
@@ -551,12 +551,12 @@ MorePackets:
   silent: false
   cancel_after_violation: 2
   punishments:
-    '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+    '6':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '10':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '12':
       '1': spartan kick {player} {detection}
 
@@ -570,11 +570,11 @@ NoFall:
   cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '11':
       '1': spartan kick {player} {detection}
 
@@ -587,12 +587,12 @@ IllegalPosition:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+    '6':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '10':
       '1': spartan kick {player} {detection}
 
@@ -606,11 +606,11 @@ FastEat:
   cancel_after_violation: 1
   punishments:
     '5':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '7':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '9':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '11':
       '1': spartan kick {player} {detection}
 
@@ -621,15 +621,15 @@ Velocity:
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
+  cancel_after_violation: 1
   punishments:
     '6':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '8':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
+    '10':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
     '11':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '13':
       '1': spartan kick {player} {detection}
 
 KillAura:
@@ -641,11 +641,11 @@ KillAura:
   silent: false
   cancel_after_violation: 0
   punishments:
-    '4':
-      '1': conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do spartan kick {player} Internet/Server Issues?
     '5':
-      '1': conditionalcommands:cc {player} if -ping-<50&-tps->19.8 do spartan kick {player} {detection}
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '6':
-      '1': conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do spartan kick {player} {detection}
-    '7':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
+    '8':
+      '1': spartan {player} if {ping} is-less-than 100 do spartan {player} if {tps} is-greater-than 19.0 do spartan kick {player} {detection}
+    '9':
       '1': spartan kick {player} {detection}
