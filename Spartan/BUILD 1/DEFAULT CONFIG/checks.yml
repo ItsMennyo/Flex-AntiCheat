@@ -1,5 +1,6 @@
 FastBreak:
   cancel_seconds: 1
+  check_surface_blocks: true
 FastPlace:
   cancel_seconds: 1
 Exploits:
