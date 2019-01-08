@@ -33,3 +33,5 @@ RAM_over_CPU: false
 prevent_same_chat_messages: false
 player_limit_per_ip: 3
 output_silent_check_verbose: true
+enable_performance_optimizer: true
+enable_false_positive_detection: true
