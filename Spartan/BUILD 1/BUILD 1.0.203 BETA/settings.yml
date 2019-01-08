@@ -1,0 +1,65 @@
+##################################################################################
+# +----------------------------------------------------------------------------+ #
+# |                                                                            | #
+# |   █▀▀▀ █    █▀▀▀ ▀▄ ▄▀    █▀▀█ █▄  █ ▀▀█▀▀ ▀█▀ █▀▀█ █  █ █▀▀▀ █▀▀█ ▀▀█▀▀   | #
+# |   █▀▀▀ █    █▀▀▀   █      █▄▄█ █ █ █   █    █  █    █▀▀█ █▀▀▀ █▄▄█   █     | #
+# |   █    █▄▄█ █▄▄▄ ▄▀ ▀▄    █  █ █  ▀█   █   ▄█▄ █▄▄█ █  █ █▄▄▄ █  █   █     | #
+# |                                                                            | #
+# |                                                                            | #
+# |   Plugin Info:                                                             | #
+# |   AntiCheat: Spartan                                                       | #
+# |   Version: 213                                                             | #
+# |   Developer: Vagdedes.66556                                                | #
+# |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
+# |                                                                            | #
+# |   Config Info:                                                             | #
+# |   Configurator: ItsMennyo.305436                                           | #
+# |   Build: BUILD 1.0.203 BETA                                                | #
+# |   Configuration ID: b6UDDnI1JfpX2vQGV1sZ                                   | #
+# |   Overview: https://bit.ly/FlexOverview                                    | #
+# |   Latest Build: https://bit.ly/FlexSpartan1Latest                          | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
+# |                                                                            | #
+# |   Copyright © 2017 - 2019 ItsMennyo Network | All Rights Reserved          | #
+# |                                                                            | #
+# +----------------------------------------------------------------------------+ #
+##################################################################################
+
+broadcast_on_kick: false
+broadcast_on_ban: false
+violations_reset_message: false
+op_bypass: false
+log_console: true
+log_mysql: false
+log_file: true
+enable_permissions: true
+vl_reset_time: 60
+public_verbose: true
+verbose_notifications: true
+enable_verbose_on_login: true
+fall_damage_on_teleport: true
+ground_teleport_on_detection: false
+chat_cooldown: 0
+command_cooldown: 0
+reconnect_cooldown: 0
+enable_mining_notifications_on_login: false
+wave_broadcast_message: false
+run_wave_if_its_full: false
+max_wave_size: 100
+staff_chat: true
+use_tps_protection: false
+use_ping_protection: true
+use_teleport_protection: false
+log_file_limit: 5000
+avoid_self_bow_damage: true
+allow_cancelled_hit_checking: false
+check_server_compatibility_on_load: true
+update_blocks_upon_teleport: false
+developer_api_events: false
+RAM_over_CPU: true
+prevent_same_chat_messages: false
+player_limit_per_ip: 3
+output_silent_check_verbose: false
+enable_performance_optimizer: true
+enable_false_positive_detection: true
