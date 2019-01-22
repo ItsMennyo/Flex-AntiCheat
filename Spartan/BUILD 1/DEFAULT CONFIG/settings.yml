@@ -1,37 +1,44 @@
-broadcast_on_kick: true
-broadcast_on_ban: false
-violations_reset_message: true
-op_bypass: false
-log_console: false
-log_mysql: false
-log_file: true
-enable_permissions: true
-vl_reset_time: 60
-public_verbose: true
-verbose_notifications: true
-enable_verbose_on_login: false
-fall_damage_on_teleport: true
-ground_teleport_on_detection: true
-chat_cooldown: 0
-command_cooldown: 0
-reconnect_cooldown: 5
-enable_mining_notifications_on_login: false
-wave_broadcast_message: true
-run_wave_if_its_full: false
-max_wave_size: 100
-staff_chat: true
-use_tps_protection: false
-use_ping_protection: true
-use_teleport_protection: false
-log_file_limit: 5000
-avoid_self_bow_damage: true
-allow_cancelled_hit_checking: false
-check_server_compatibility_on_load: true
-update_blocks_upon_teleport: false
-developer_api_events: false
-RAM_over_CPU: false
-prevent_same_chat_messages: false
-player_limit_per_ip: 3
-output_silent_check_verbose: true
-enable_performance_optimizer: true
-enable_false_positive_detection: true
+Punishments:
+  broadcast_on_kick: true
+  broadcast_on_ban: false
+  wave_broadcast_message: true
+  run_wave_if_its_full: false
+  max_wave_size: 100
+Logs:
+  log_console: false
+  log_mysql: false
+  log_file: true
+  log_file_limit: 5000
+Notifications:
+  public_verbose: true
+  verbose_notifications: true
+  enable_verbose_on_login: false
+  output_silent_check_verbose: true
+  enable_mining_notifications_on_login: false
+  violations_reset_message: true
+  staff_chat: true
+Teleportation:
+  fall_damage_on_teleport: true
+  ground_teleport_on_detection: true
+Protections:
+  chat_cooldown: 0
+  command_cooldown: 0
+  reconnect_cooldown: 5
+  use_tps_protection: true
+  use_ping_protection: true
+  use_teleport_protection: false
+  avoid_self_bow_damage: true
+  prevent_same_chat_messages: false
+  player_limit_per_ip: 3
+Important:
+  op_bypass: false
+  enable_permissions: true
+  check_server_compatibility_on_load: true
+  vl_reset_time: 60
+  developer_api_events: false
+Detections:
+  allow_cancelled_hit_checking: false
+  update_blocks_upon_teleport: false
+Performance:
+  enable_performance_optimizer: true
+  enable_false_positive_detection: true
