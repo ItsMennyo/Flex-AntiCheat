@@ -122,6 +122,7 @@ Fly:
   check_fly: true
   check_glide: true
 ElytraMove:
+  check_ratio: true
   check_speed: true
   check_fly: true
 NoFall:
@@ -129,6 +130,7 @@ NoFall:
   check_landing: true
   check_ground: true
   check_pattern: true
+  check_ratio: true
 NoSlowdown:
   check_item_usage: true
   check_bow_shots: true
@@ -137,7 +139,6 @@ NoSlowdown:
 MorePackets:
   check_timer: true
   check_blink: true
-  check_motion: true
   check_overall: true
   check_difference: true
   check_delay: true
