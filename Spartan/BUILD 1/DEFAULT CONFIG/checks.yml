@@ -37,7 +37,6 @@ Velocity:
   check_extreme: true
   check_opposite: true
   check_direction: true
-  check_prediction: true
 FastClicks:
   cps_limit: 15
   check_cps: true
