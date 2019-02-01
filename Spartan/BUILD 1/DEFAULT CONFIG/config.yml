@@ -17,7 +17,7 @@ Exploits:
   silent: false
   cancel_after_violation: 2
   punishments:
-    '5':
+    '6':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 EntityMove:
@@ -41,7 +41,7 @@ NoSwing:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '4':
+    '5':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 IrregularMovements:
@@ -53,7 +53,7 @@ IrregularMovements:
   silent: false
   cancel_after_violation: 3
   punishments:
-    '8':
+    '9':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 Clip:
@@ -123,7 +123,7 @@ Sprint:
   silent: false
   cancel_after_violation: 1
   punishments:
-    '4':
+    '5':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 Jesus:
@@ -147,7 +147,7 @@ NoSlowdown:
   silent: false
   cancel_after_violation: 2
   punishments:
-    '8':
+    '6':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 Criticals:
@@ -177,11 +177,11 @@ Nuker:
 GhostHand:
   enabled: true
   name: GhostHand
-  violation_divisor: 1
+  violation_divisor: 3
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
+  cancel_after_violation: 2
   punishments:
     '100':
       '1': spartan warn {player} You were detected for {detection}
@@ -219,19 +219,19 @@ ElytraMove:
   silent: false
   cancel_after_violation: 3
   punishments:
-    '12':
+    '10':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 BoatMove:
   enabled: true
   name: BoatMove
-  violation_divisor: 2
+  violation_divisor: 4
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
+  cancel_after_violation: 3
   punishments:
-    '8':
+    '10':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 FastBow:
@@ -283,13 +283,13 @@ Fly:
 ImpossibleInventory:
   enabled: true
   name: ImpossibleInventory
-  violation_divisor: 1
+  violation_divisor: 2
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
+  cancel_after_violation: 1
   punishments:
-    '4':
+    '5':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
 HitReach:
@@ -355,11 +355,11 @@ MorePackets:
 NoFall:
   enabled: true
   name: NoFall
-  violation_divisor: 2
+  violation_divisor: 3
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
+  cancel_after_violation: 2
   punishments:
     '6':
       '1': spartan warn {player} You were detected for {detection}
