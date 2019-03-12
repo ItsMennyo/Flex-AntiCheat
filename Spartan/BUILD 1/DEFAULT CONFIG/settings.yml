@@ -12,7 +12,7 @@ Logs:
 Notifications:
   public_verbose: true
   verbose_notifications: true
-  enable_verbose_on_login: false
+  enable_verbose_notifications_on_login: false
   output_silent_check_verbose: true
   enable_mining_notifications_on_login: false
   violations_reset_message: true
