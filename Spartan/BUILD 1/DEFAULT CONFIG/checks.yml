@@ -52,6 +52,7 @@ ImpossibleActions:
 Nuker:
   check_delay: true
   check_breaks_per_sec: true
+  check_moves_in_between: true
   max_breaks_per_second: 40
   cancel_seconds: 2
 FastBow:
@@ -62,9 +63,9 @@ NoSwing:
   check_breaking: true
 ImpossibleInventory:
   check_sneaking: false
-  check_sprinting: true
+  check_sprinting: false
   check_sleeping: true
-  check_walking: true
+  check_walking: false
   check_dead: true
   check_sprint_jumping: true
   check_walk_jumping: true
