@@ -1,0 +1,173 @@
+##################################################################################
+# +----------------------------------------------------------------------------+ #
+# |                                                                            | #
+# |   █▀▀▀ █    █▀▀▀ ▀▄ ▄▀    █▀▀█ █▄  █ ▀▀█▀▀ ▀█▀ █▀▀█ █  █ █▀▀▀ █▀▀█ ▀▀█▀▀   | #
+# |   █▀▀▀ █    █▀▀▀   █      █▄▄█ █ █ █   █    █  █    █▀▀█ █▀▀▀ █▄▄█   █     | #
+# |   █    █▄▄█ █▄▄▄ ▄▀ ▀▄    █  █ █  ▀█   █   ▄█▄ █▄▄█ █  █ █▄▄▄ █  █   █     | #
+# |                                                                            | #
+# |                                                                            | #
+# |   Plugin Info:                                                             | #
+# |   AntiCheat: Spartan                                                       | #
+# |   Version: 228                                                             | #
+# |   Developer: Vagdedes.66556                                                | #
+# |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
+# |                                                                            | #
+# |   Config Info:                                                             | #
+# |   Configurator: ItsMennyo.305436                                           | #
+# |   Build: BUILD 1.0.416 BETA                                                | #
+# |   Configuration ID: lNbvAlChoqy7VPrARvnq                                   | #
+# |   Overview: https://bit.ly/FlexOverview                                    | #
+# |   Latest Build: https://bit.ly/FlexSpartan1Latest                          | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
+# |                                                                            | #
+# |   Copyright © 2017 - 2019 ItsMennyo Network | All Rights Reserved          | #
+# |                                                                            | #
+# +----------------------------------------------------------------------------+ #
+##################################################################################
+
+FastPlace:
+  cancel_seconds: 1
+Exploits:
+  check_ping_spoof: true
+FastBreak:
+  cancel_seconds: 1
+  check_surface_blocks: true
+EntityMove:
+  check_speed: true
+  check_vertical: true
+Clip:
+  check_when_flying: false
+  check_instant_movements: true
+  check_inside_movements: true
+  check_block_change: true
+  check_pistons: false
+Criticals:
+  check_location: true
+  check_position: true
+  check_mini_jump: true
+BoatMove:
+  check_horizontal: true
+  check_vertical: true
+  check_stable: true
+  check_packets: true
+HitReach:
+  horizontal_distance: 3.5
+  vertical_distance: 4.0
+Speed:
+  check_sneaking: true
+  check_walking: true
+Velocity:
+  check_distance: true
+  check_vertical: true
+  check_horizontal: true
+  check_combined: true
+  check_extreme: true
+  check_opposite: true
+  check_direction: true
+  check_prediction: true
+FastClicks:
+  cps_limit: 15
+  check_cps: true
+  check_click_time: true
+  check_click_consistency: true
+ImpossibleActions:
+  check_tower: true
+  check_scaffold: true
+  check_actions: true
+  check_cactus: true
+  check_item_usage: false
+  cancel_seconds: 1
+Nuker:
+  check_delay: true
+  check_breaks_per_sec: true
+  max_breaks_per_second: 40
+  cancel_seconds: 2
+FastBow:
+  check_bow_force: true
+  check_bow_shots: true
+NoSwing:
+  check_damage: true
+  check_breaking: true
+ImpossibleInventory:
+  check_sneaking: false
+  check_sprinting: false
+  check_sleeping: true
+  check_walking: false
+  check_dead: true
+  check_sprint_jumping: true
+  check_walk_jumping: true
+Sprint:
+  check_food_sprinting: true
+  check_omnidirectional_sprinting: true
+KillAura:
+  check_overall: true
+  check_accuracy: true
+  check_angle: true
+  check_block_raytrace: true
+  check_combined: true
+  check_direction: true
+  check_entity_raytrace: true
+  check_hits_per_second: true
+  check_hit_time: true
+  check_impossible_hits: true
+  check_item_usage: false
+  check_pitch_movement: true
+  check_yaw_movement: true
+  check_rapid_hits: true
+  check_rotations: true
+  check_hitbox: true
+  check_aim_consistency: true
+  check_aim_accuracy: true
+  check_comparison: true
+  check_modulo: true
+  check_stability: true
+  check_precision: true
+  check_targeted_area: true
+GhostHand:
+  check_block_breaking: true
+  check_player_interactions: true
+IrregularMovements:
+  check_combat: true
+  check_step_hacking: true
+  check_bouncing_blocks: true
+  check_block_climbing: true
+  check_hop_movement: true
+  check_jump_movement: true
+Jesus:
+  check_speed: true
+  check_repeated_movement: true
+  check_horizontal_movement: true
+  check_swimming: true
+  check_walking: true
+  check_upwards_movement: true
+  check_liquid_exit: true
+  check_y_position: true
+Liquids:
+  check_block_breaking: true
+  check_block_placing: true
+Fly:
+  check_fly: true
+  check_glide: true
+ElytraMove:
+  check_ratio: true
+  check_speed: true
+  check_fly: true
+NoFall:
+  check_air: true
+  check_landing: true
+  check_ground: true
+  check_pattern: true
+  check_ratio: true
+NoSlowdown:
+  check_item_usage: false
+  check_bow_shots: true
+  check_food_eating: true
+  check_cobweb_movement: true
+MorePackets:
+  check_timer: true
+  check_blink: true
+  check_overall: true
+  check_difference: true
+  check_delay: true
+  check_motion: true
