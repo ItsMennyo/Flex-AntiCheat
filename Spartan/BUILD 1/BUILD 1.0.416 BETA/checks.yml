@@ -81,6 +81,7 @@ ImpossibleActions:
 Nuker:
   check_delay: true
   check_breaks_per_sec: true
+  check_moves_in_between: true
   max_breaks_per_second: 40
   cancel_seconds: 2
 FastBow:
