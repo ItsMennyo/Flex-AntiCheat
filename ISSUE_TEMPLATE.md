@@ -1,45 +1,23 @@
-**Which AntiCheat do you use? AAC, AACAdditionPro or AntiAura?**
-
+Which AntiCheat do you use? AAC, AACAdditionPro, Spartan or AntiAura?
 **AntiCheat**: 
-
 ---
-
-**What's the problem? Bypass, False Positive, Bug or Help?**
-
+What's the problem? Bypass, False Positive, Bug or Help?
 **Problem**: 
-
 ---
-
-**What version does your server use?**
-
+What server version is your server?
 **Server Version**: 
-
 ---
-
-**Which Minecraft client did you use?**
-
+What Minecraft client and version do you use?
 **Minecraft Client**: 
-
 ---
-
-**Which BUILD of Flex do you use?**
-
+Which Flex build do you use?
 **Flex BUILD**: 
-
 ---
-
-**What is the AntiCheat version itself?**
-
+What for version is the AntiCheat?
 **AntiCheat Version**: 
-
 ---
-
-**Do you have any proof?**
-
+Do you have proof of the issue you have like photos or videos?
 **Video or Photo**: 
-
 ---
-
-**Try to explain your problem...**
-
+More information about the issue?
 **Description**: 
