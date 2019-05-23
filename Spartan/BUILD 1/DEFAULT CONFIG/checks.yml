@@ -23,9 +23,11 @@ BoatMove:
   check_vertical: true
   check_stable: true
   check_packets: true
+  compatibility_protection: true
 HitReach:
   horizontal_distance: 3.5
   vertical_distance: 4.0
+  exempt_player_chasing: true
 Speed:
   check_sneaking: true
   check_walking: true
@@ -73,6 +75,9 @@ Sprint:
   check_food_sprinting: true
   check_omnidirectional_sprinting: true
 KillAura:
+  detection:
+    players: true
+    entities: true
   check_overall: true
   check_accuracy: true
   check_angle: true
@@ -128,7 +133,6 @@ ElytraMove:
 NoFall:
   check_air: true
   check_landing: true
-  check_ground: true
   check_pattern: true
   check_ratio: true
 NoSlowdown:
@@ -142,3 +146,4 @@ MorePackets:
   check_overall: true
   check_difference: true
   check_delay: true
+  check_instant: true
