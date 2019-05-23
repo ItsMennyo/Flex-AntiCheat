@@ -18,7 +18,7 @@ Notifications:
   violations_reset_message: true
   staff_chat: true
 Teleportation:
-  fall_damage_on_teleport: true
+  fall_damage_on_teleport: false
   ground_teleport_on_detection: true
 Protections:
   chat_cooldown: 0
@@ -30,6 +30,7 @@ Protections:
   avoid_self_bow_damage: true
   prevent_same_chat_messages: false
   player_limit_per_ip: 3
+  interactions_per_tick: 20
 Important:
   op_bypass: false
   enable_permissions: true
