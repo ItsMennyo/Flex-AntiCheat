@@ -31,6 +31,7 @@ Protections:
   prevent_same_chat_messages: false
   player_limit_per_ip: 3
   interactions_per_tick: 20
+  disallowed_building: true
 Important:
   op_bypass: false
   enable_permissions: true
