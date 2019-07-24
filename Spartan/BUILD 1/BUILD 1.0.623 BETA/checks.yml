@@ -74,7 +74,7 @@ FastClicks:
   check_cps: true
   check_click_time: true
   check_click_consistency: true
-    combat_only_mode: false
+  combat_only_mode: false
 ImpossibleActions:
   check_tower: true
   check_scaffold: true
