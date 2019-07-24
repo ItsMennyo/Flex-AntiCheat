@@ -2,6 +2,7 @@ FastPlace:
   cancel_seconds: 1
 Exploits:
   check_ping_spoof: true
+  check_undetected_movement: true
 FastBreak:
   cancel_seconds: 1
   check_surface_blocks: true
@@ -44,6 +45,7 @@ FastClicks:
   check_cps: true
   check_click_time: true
   check_click_consistency: true
+  combat_only_mode: false
 ImpossibleActions:
   check_tower: true
   check_scaffold: true
@@ -105,7 +107,6 @@ GhostHand:
   check_block_breaking: true
   check_player_interactions: true
 IrregularMovements:
-  check_combat: true
   check_step_hacking: true
   check_bouncing_blocks: true
   check_block_climbing: true
@@ -141,7 +142,6 @@ NoSlowdown:
   check_food_eating: true
   check_cobweb_movement: true
 MorePackets:
-  check_timer: true
   check_blink: true
   check_overall: true
   check_difference: true
