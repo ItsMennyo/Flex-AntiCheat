@@ -8,14 +8,14 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 250                                                             | #
+# |   Version: 255                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 1.0.623 BETA                                                | #
-# |   Configuration ID: xtEtjn02yi5aKkqNCgWy                                   | #
+# |   Build: BUILD 1.0.755 BETA                                                | #
+# |   Configuration ID: 85IWuWyXfygIhyeQxNcz                                   | #
 # |   Overview: https://bit.ly/FlexOverview                                    | #
 # |   Latest Build: https://bit.ly/FlexSpartan1Latest                          | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
@@ -25,6 +25,18 @@
 # |                                                                            | #
 # +----------------------------------------------------------------------------+ #
 ##################################################################################
+
+XRay:
+  enabled: true
+  name: XRay
+  violation_divisor: 1
+  disabled_worlds: ''
+  silent_worlds: ''
+  punishments:
+    '1':
+      '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 18.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
+    '2':
+      '1': spartan kick {player} {detection}
 
 CombatAnalysis:
   enabled: true
