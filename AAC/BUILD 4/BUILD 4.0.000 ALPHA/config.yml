@@ -136,7 +136,7 @@ fightspeed:
     9: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} FightSpeed"
     13: "kick {player} FightSpeed"
 
-#Hitbox forces players to look at entities that they want to attack. DATA: https://haste.itsmennyo.ga/tavihavedo.md https://haste.itsmennyo.ga/koxalubeke.md
+#Hitbox forces players to look at entities that they want to attack.
 hitbox:
   #Do you want to enable the Hitbox check?
   enabled: true
