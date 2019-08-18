@@ -31,7 +31,7 @@ If you want to use AAC (and AACAdditionPro) as AntiCheat, you have to keep to th
 
 5. Copy the latest Flex build for AAC [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and for AACAdditionPro [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
 
-6. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
+6. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://bit.ly/FlexReports).
 
 If you want to use AntiAura as AntiCheat, you have to keep to the following:
 
@@ -41,7 +41,7 @@ If you want to use AntiAura as AntiCheat, you have to keep to the following:
 
 3. Copy the latest Flex build for AntiAura [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
 
-4. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
+4. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://bit.ly/FlexReports).
 
 If you want to use Spartan as AntiCheat, you have to keep to the following:
 
@@ -53,8 +53,8 @@ If you want to use Spartan as AntiCheat, you have to keep to the following:
 
 4. Copy the latest Flex build for Spartan [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
 
-5. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
+5. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://bit.ly/FlexReports).
 
 ![Support](https://flex.itsmennyo.ga/images/flex-support.png)
 
-Helping me with reporting false positives, bugs or bypasses is awesome but understand this. This is a config and a config cant fix everything. Most of the time when you found a false positive has noting to do with my Flex config. So before you report a issue, try it with the default config. If you dont have the false positive, bug or bypass with the default config but only with my Flex config then you can report it [HERE](https://github.com/ItsMennyo/Flex-AntiCheat/issues).
+Helping me with reporting false positives, bugs or bypasses is awesome but understand this. This is a config and a config cant fix everything. Most of the time when you found a false positive has noting to do with my Flex config. So before you report a issue, try it with the default config. If you dont have the false positive, bug or bypass with the default config but only with my Flex config then you can report it [HERE](https://bit.ly/FlexReports).
