@@ -1,0 +1,627 @@
+##################################################################################
+# +----------------------------------------------------------------------------+ #
+# |                                                                            | #
+# |   █▀▀▀ █    █▀▀▀ ▀▄ ▄▀    █▀▀█ █▄  █ ▀▀█▀▀ ▀█▀ █▀▀█ █  █ █▀▀▀ █▀▀█ ▀▀█▀▀   | #
+# |   █▀▀▀ █    █▀▀▀   █      █▄▄█ █ █ █   █    █  █    █▀▀█ █▀▀▀ █▄▄█   █     | #
+# |   █    █▄▄█ █▄▄▄ ▄▀ ▀▄    █  █ █  ▀█   █   ▄█▄ █▄▄█ █  █ █▄▄▄ █  █   █     | #
+# |                                                                            | #
+# |                                                                            | #
+# |   Plugin Info:                                                             | #
+# |   AntiCheat: AAC                                                           | #
+# |   Version: 4.1.3                                                           | #
+# |   Developer: konsolas.58100                                                | #
+# |   Spigot Page: https://bit.ly/FlexAACSpigot                                | #
+# |                                                                            | #
+# |   Config Info:                                                             | #
+# |   Configurator: ItsMennyo.305436                                           | #
+# |   Build: BUILD 4.0.184 ALPHA                                               | #
+# |   Configuration ID: jSsyciZMlZbkzMmIHNVb                                   | #
+# |   Overview: https://bit.ly/FlexOverview                                    | #
+# |   Latest Build: https://bit.ly/FlexAAC4Latest                              | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
+# |                                                                            | #
+# |   Copyright © 2017 - 2019 ItsMennyo Network                                | #
+# |                                                                            | #
+# +----------------------------------------------------------------------------+ #
+##################################################################################
+
+#Criticals stops players from performing critical hits whilst on the ground.
+criticals:
+  #Do you want to enable the Criticals check?
+  enabled: true
+  #Should AAC detect clients that perform minijumps to get critical hits?
+  #Default: true
+  check_minijump: true
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 100
+    interval: 100
+    #Default: 100
+    delay: 200
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: false
+    #Default: 0
+    min_vl: 1
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    3: "kick {player} Criticals"
+
+#FastBow stops players from shooting arrows too quickly.
+fastbow:
+  #Do you want to enable the FastBow check?
+  enabled: true
+  #How lenient should AAC be when measuring bow drawback times?
+  #Default: 200
+  lenience: 152
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 100
+    interval: 100
+    #Default: 100
+    delay: 200
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 5
+    min_vl: 4
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    5: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} FastBow"
+    12: "kick {player} FastBow"
+
+#FastUse stops players from consuming items too quickly.
+fastuse:
+  #Do you want to enable the FastUse check?
+  enabled: true
+  #How long should AAC require item consumption to take?
+  #Default: 1200
+  min_consumption_time: 1100
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 100
+    interval: 100
+    #Default: 100
+    delay: 200
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 5
+    min_vl: 4
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    6: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    8: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} FastUse"
+    11: "kick {player} FastUse"
+
+#FightSpeed stops players from attacking too quickly.
+fightspeed:
+  #Do you want to enable the FightSpeed check?
+  enabled: true
+  #How many hits per second should AAC limit players to?
+  #Default: 15
+  max_hit: 15
+  #How many swings per second should AAC limit players to?
+  #Default: 40
+  max_swing: 35
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 50
+    interval: 60
+    #Default: 100
+    delay: 140
+    #Default: 1
+    amount: 1
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    14: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    19: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} FightSpeed"
+    23: "kick {player} FightSpeed"
+
+#Hitbox forces players to look at entities that they want to attack.
+hitbox:
+  #Do you want to enable the Hitbox check?
+  enabled: true
+  #How much more lenient should AAC be when a player is attacking a mob?
+  #Default: 0.65
+  mob_lenience: 0.62
+  #How lenient should AAC be when checking players?
+  #Default: 0.001
+  lenience: 0.001
+  #What should AAC limit a player's attack reach to?
+  #Default: 3.0
+  max_reach: 3.64
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 50
+    interval: 40
+    #Default: 20
+    delay: 80
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: false
+    #Default: 30
+    min_vl: 23
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    29: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    33: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} Hitbox"
+    38: "kick {player} Hitbox"
+
+#Killaura detects modifications that create an unfair advantage in combat.
+killaura:
+  #Do you want to enable the Killaura check?
+  enabled: true
+  #How much should the violation level be increased for each of these methods:
+  modules:
+    #Default: 10
+    A1: 12
+    #Default: 10
+    A2: 3
+    #Default: 10
+    A3: 10
+    #Default: 10
+    A4: 11
+    #Default: 10
+    A5: 10
+    #Default: 45
+    A6: 40
+    #Default: 10
+    B1: 13
+    #Default: 9
+    B2: 9
+    #Default: 10
+    B3: 12
+    #Default: 10
+    B4: 15
+    #Default: 10
+    B5: 10
+    #Default: 6
+    B6: 5
+    #Default: 10
+    B7: 9
+    #Default: 5
+    C1: 5
+    #Default: 5
+    C2: 6
+    #Default: 5
+    C3: 3
+    #Default: 5
+    C4: 7
+    #Default: 5
+    C5: 3
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 5
+    interval: 10
+    #Default: 10
+    delay: 40
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: false
+    #Default: 40
+    min_vl: 67
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    93: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    108: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} Killaura"
+    121: "kick {player} Killaura"
+
+#Regen stops players from regenerating health too quickly.
+regen:
+  #Do you want to enable the Regen check?
+  enabled: true
+  #What delay should AAC enforce between regeneration attempts?
+  #Default: 3600
+  min_regen_delay: 3600
+  #What delay should AAC enforce if this is the case?
+  #Default: 450
+  min_satiated_delay: 450
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 100
+    #Default: 100
+    delay: 200
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 1
+    min_vl: 1
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    3: "kick {player} Regen"
+
+#Derp detects illegal rotations sent by players.
+derp:
+  #Do you want to enable the Derp check?
+  enabled: true
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 100
+    #Default: 20
+    delay: 200
+    #Default: 1
+    amount: 1
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    2: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    3: "kick {player} Derp"
+
+#Move controls player movement.
+move:
+  enabled: true
+  #Should AAC check players asynchronously?
+  #Default: false
+  async: false
+  #What's the maximum amount that a single violation should be able to add to a player's VL?
+  #Default: 500
+  max_vl_increment: 550
+  #How many simulations should AAC carry forward from the previous movement?
+  #Default: 3
+  simulation_limit: 2
+  #Control how AAC checks movements in general:
+  normal:
+    #How lenient should AAC be when checking?
+    #Default: 0.001
+    tolerance: 0.004
+    #How much should a move violation of this type contribute to a player's overall VL?
+    #Default: 1.0
+    weight: 0.9
+  #Control how AAC checks movements in water:
+  water:
+    #How lenient should AAC be when checking?
+    #Default: 0.001
+    tolerance: 0.0014
+    #How fast should players be able to move with riptide?
+    #Default: 4.2
+    riptide_speed: 4.2
+    #How much should AAC allow flowing water to accelerate a player?
+    #Default: 0.1
+    flowing: 0.12
+    #How much should AAC allow bubble columns to accelerate a player?
+    #Default: 1.8
+    bubble_column: 1.8
+    #How much should a move violation of this type contribute to a player's overall VL?
+    #Default: 1.0
+    weight: 0.9
+  #Control how AAC checks movements while using the elytra:
+  elytra:
+    #How lenient should AAC be when checking?
+    #Default: 0.001
+    tolerance: 0.001
+    #How quickly should players be able to travel when rocket boosting with an elytra?
+    #Default: 2.0
+    rocket_speed: 2.0
+    #How much should a move violation of this type contribute to a player's overall VL?
+    #Default: 0.6
+    weight: 0.7
+  #Control how AAC checks movements when on a vehicle:
+  vehicle:
+    #How lenient should AAC be when checking?
+    #Default: 0.001
+    tolerance: 0.001
+    #How much should a move violation of this type contribute to a player's overall VL?
+    #Default: 0.2
+    weight: 0.3
+  #Control how AAC checks small movements:
+  small:
+    #How much faster should a player be able to move after an initial small movement?
+    #Default: 1.0
+    multiplier: 1.2
+    #How lenient should AAC be when checking?
+    #Default: 0.0012
+    tolerance: 0.0012
+    #How much should a move violation of this type contribute to a player's overall VL?
+    #Default: 0.5
+    weight: 0.5
+  #Control how AAC checks movement when velocity is applied:
+  velocity:
+    #Should AAC check for anti-velocity?
+    #Default: true
+    enabled: true
+    #How long should AAC wait for a player to send the correct velocity?
+    #Default: 1000
+    wait_time: 1000
+    #How far should AAC send a player back if mitigation is enabled?
+    #Default: 20.0
+    setback_ticks: 20.0
+    #How much should AAC add to a player's VL if they ignore velocity?
+    #Default: 30
+    vl_increment: 30
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 1
+    interval: 5
+    #Default: 20
+    delay: 20
+    #Default: 1
+    amount: 5
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 100
+    min_vl: 475
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    1950: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    2690: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} Move"
+    3330: "conditionalcommands:cc {player} if -ping-<100&-tps->19.5 do aackick {player} Move"
+    3780: "kick {player} Move"
+
+#NoFall stops players from avoiding fall damage.
+nofall:
+  #Do you want to enable the NoFall check?
+  enabled: true
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 25
+    interval: 40
+    #Default: 50
+    delay: 80
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 0
+    min_vl: 0
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    20: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    27: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} NoFall"
+    33: "kick {player} NoFall"
+
+#Phase stops players from moving through solid walls.
+phase:
+  #Do you want to enable the Phase check?
+  enabled: true
+  #Which blocks should AAC treat as air:
+  exclude:
+    - "AIR"
+    - "ANVIL"
+    - "CARPET"
+    - "CARROT"
+    - "CHEST"
+    - "CROPS"
+    - "ENDER_CHEST"
+    - "GRASS_PATH"
+    - "HUGE_MUSHROOM_1"
+    - "IRON_FENCE"
+    - "KELP_PLANT"
+    - "LADDER"
+    - "LAVA"
+    - "LILY_PAD"
+    - "PISTON_MOVING_PIECE"
+    - "POTATO"
+    - "SEAGRASS"
+    - "SOIL"
+    - "STAINED_CLAY"
+    - "STATIONARY_LAVA"
+    - "STATIONARY_WATER"
+    - "TALL_SEAGRASS"
+    - "TRAPPED_CHEST"
+    - "VINE"
+    - "WATER"
+    - "WATER_LILY"
+    - "WHEAT"
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 10
+    interval: 40
+    #Default: 20
+    delay: 100
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 0
+    min_vl: 0
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    40: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+
+#Timer stops players from performing actions too quickly by speeding up time.
+timer:
+  #Do you want to enable the Timer check?
+  enabled: true
+  #How much lag should AAC compensate for when checking?
+  #Default: -20
+  min_balance: -20
+  #How many extra packets should AAC limit a player to?
+  #Default: 15
+  max_extra: 15
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 20
+    #Default: 20
+    delay: 60
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 5
+    min_vl: 14
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    110: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    270: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} Timer"
+    325: "kick {player} Timer"
+
+#BadPackets checks for invalid packets.
+badpackets:
+  #Do you want to enable the BadPackets check?
+  enabled: true
+  #Should AAC check for player ability packets?
+  #Default: true
+  check_abilities: true
+  #How many times should a player be allowed to toggle use item in one second?
+  #Default: 40
+  max_use_toggle: 40
+  #How many times should a player be allowed to toggle sneak in one second?
+  #Default: 10
+  max_sneak_toggle: 20
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 40
+    #Default: 20
+    delay: 80
+    #Default: 1
+    amount: 1
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    68: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    79: "conditionalcommands:cc {player} if -ping-<50&-tps->19.5 do kick {player} BadPackets"
+    85: "kick {player} BadPackets"
+
+#FastBreak stops players from breaking blocks too quickly.
+fastbreak:
+  #Do you want to enable the FastBreak check?
+  enabled: true
+  #Should AAC check for a delay between successive block break attempts?
+  #Default: true
+  check_delay: true
+  #How lenient should AAC be when checking?
+  #Default: 2
+  tolerance: 2
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 40
+    #Default: 20
+    delay: 100
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 5
+    min_vl: 4
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    11: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    18: "kick {player} FastBreak"
+
+#FastPlace stops players from placing blocks too quickly.
+fastplace:
+  #Do you want to enable the FastPlace check?
+  enabled: true
+  #What should AAC limit block placement to?
+  #Default: 15
+  max_place_per_second: 14
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 40
+    #Default: 20
+    delay: 100
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 5
+    min_vl: 3
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    9: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    16: "kick {player} FastPlace"
+
+#Interact detects a number of impossible actions that a hacked client could perform.
+interact:
+  #Do you want to enable the Interact check?
+  enabled: true
+  #Should AAC detect suspicious block placements?
+  #Default: true
+  check_suspicious_block: true
+  #Should AAC check if a player interacts with a block out of their line of sight?
+  #Default: true
+  check_interact: false
+  #Should AAC check if a player interacts whilst dead?
+  #Default: true
+  check_dead: true
+  #Should AAC check if a player breaks a block out of their line of sight?
+  #Default: true
+  check_break: true
+  #Should AAC check if a player incorrectly interacts with a liquid?
+  #Default: true
+  check_liquids: true
+  #Should AAC check if a player places a block out of their line of sight?
+  #Default: true
+  check_place: true
+  #Should AAC check if a player opens an inventory out of their line of sight?
+  #Default: true
+  check_inventory: true
+  #Should AAC check if a player attacks an entity behind a wall?
+  #Default: true
+  check_attack: true
+  #Should AAC check if a player attacks while using an item?
+  #Default: true
+  check_item_attack: true
+  #Control how the violation level decays over time:
+  decay:
+    #Default: 20
+    interval: 40
+    #Default: 20
+    delay: 80
+    #Default: 1
+    amount: 1
+  #Control how AAC mitigates a cheater's actions:
+  mitigation:
+    #Default: true
+    enabled: true
+    #Default: 10
+    min_vl: 6
+  #Control actions taken upon reaching certain violation levels:
+  thresholds:
+    16: "conditionalcommands:cc {player} if -ping->1000&-tps->19.0&-time_online->5000&-uptime->200 do kick {player} Internet/Server Issues?"
+    25: "kick {player} Interact"
+
+#How much should AAC slow players down after they are detected?
+#Default: 0.8
+move_vl_slowdown: 0.7
+#Should AAC use a log file?
+#Default: true
+log_file: true
+#Should AAC log events to the console?
+#Default: false
+log_console: true
+
+#AAC can enforce a minimum delay for players before they are allowed rejoin your server after leaving.
+relog_protection: 0
+relog_message: "Please wait before rejoining the server"
+#AAC implements a basic form of staff chat. You can enable it by setting a prefix, such as "@", here.
+staff_chat_prefix: "&7[&6AAC&7] &2[{sender}] &r"
