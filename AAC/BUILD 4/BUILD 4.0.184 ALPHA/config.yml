@@ -618,7 +618,7 @@ move_vl_slowdown: 0.7
 log_file: true
 #Should AAC log events to the console?
 #Default: false
-log_console: true
+log_console: false
 
 #AAC can enforce a minimum delay for players before they are allowed rejoin your server after leaving.
 relog_protection: 0
