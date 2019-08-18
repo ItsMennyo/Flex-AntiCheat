@@ -1,11 +1,11 @@
-![Flex-AntiCheat](https://flex.itsmennyo.ga/images/flex-anticheat)
+![Flex-AntiCheat](https://flex.itsmennyo.ga/images/flex-anticheat.png)
 
 Welcome to my project called Flex AntiCheat. In this project I optimize AntiCheats with more advanced configs.
 My goal with Flex is to give AntiCheats less false positives and even try to prevent bugs, bypasses or even better detection!
 
 Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC), [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro), [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) and [Spartan](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) version available.
 
-![Information](https://flex.itsmennyo.ga/images/flex-information)
+![Information](https://flex.itsmennyo.ga/images/flex-information.png)
 
 My config has some special features for every config and AntiCheat.
 
@@ -15,7 +15,7 @@ The AntiAura version has an improved config layout, better and easier to underst
 
 The Spartan version has an improved config layout, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
 
-![Installation](https://flex.itsmennyo.ga/images/flex-installation)
+![Installation](https://flex.itsmennyo.ga/images/flex-installation.png)
 
 There are a number of things required to use Flex as an AntiCheat on your server. If you do not stick to this, Flex will not work correctly and the consequences may be, hackers that bypass the checks or false positives.
 
@@ -55,6 +55,6 @@ If you want to use Spartan as AntiCheat, you have to keep to the following:
 
 5. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://bit.ly/FlexReports).
 
-![Support](https://flex.itsmennyo.ga/images/flex-support)
+![Support](https://flex.itsmennyo.ga/images/flex-support.png)
 
 Helping me with reporting false positives, bugs or bypasses is awesome but understand this. This is a config and a config cant fix everything. Most of the time when you found a false positive has noting to do with my Flex config. So before you report a issue, try it with the default config. If you dont have the false positive, bug or bypass with the default config but only with my Flex config then you can report it [HERE](https://bit.ly/FlexReports).
