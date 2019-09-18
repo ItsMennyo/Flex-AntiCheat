@@ -628,7 +628,7 @@ log_file: true
 #Should AAC compress older log files?
 compress_old_log_files: true
 #Should AAC log events to the console?
-log_console: true
+log_console: false
 
 #AAC can enforce a minimum delay for players before they are allowed rejoin your server after leaving.
 relog_protection: 0
