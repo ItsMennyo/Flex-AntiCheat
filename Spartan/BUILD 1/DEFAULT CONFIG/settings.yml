@@ -9,6 +9,7 @@ Logs:
   log_mysql: false
   log_file: true
   log_file_limit: 5000
+  log_false_positives: true
 Notifications:
   public_verbose: true
   verbose_notifications: true
