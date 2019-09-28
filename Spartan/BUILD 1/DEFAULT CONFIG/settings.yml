@@ -17,6 +17,7 @@ Notifications:
   enable_mining_notifications_on_login: false
   violations_reset_message: true
   staff_chat: true
+  awareness_notifications: true
 Teleportation:
   fall_damage_on_teleport: false
   ground_teleport_on_detection: true
