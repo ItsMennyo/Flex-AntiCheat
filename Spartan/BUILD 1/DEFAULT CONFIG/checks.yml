@@ -131,11 +131,6 @@ ElytraMove:
   check_ratio: true
   check_speed: true
   check_fly: true
-NoFall:
-  check_air: true
-  check_landing: true
-  check_pattern: true
-  check_ratio: true
 NoSlowdown:
   check_item_usage: true
   check_bow_shots: true
