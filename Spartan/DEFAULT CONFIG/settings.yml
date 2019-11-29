@@ -35,16 +35,20 @@ Protections:
   player_limit_per_ip: 3
   interactions_per_tick: 20
   disallowed_building: true
+  custom_knockback: false
 Important:
   op_bypass: false
   enable_permissions: true
   check_server_compatibility_on_load: true
+  server_version: Configure this if the plugin is unable to detect your server's version.
   vl_reset_time: 60
   developer_api_events: false
+  periodically_refresh_configuration: false
 Detections:
   allow_cancelled_hit_checking: false
   update_blocks_upon_teleport: false
   run_asynchronously: false
+  ignore_shields: false
 Performance:
   enable_performance_optimizer: true
   enable_false_positive_detection: true
