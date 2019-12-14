@@ -9,14 +9,11 @@ Logs:
   log_mysql: false
   log_file: true
   log_file_limit: 5000
-  log_false_positives: true
 Notifications:
   public_verbose: true
-  verbose_notifications: true
   enable_verbose_notifications_on_login: false
   output_silent_check_verbose: true
   enable_mining_notifications_on_login: false
-  violations_reset_message: true
   staff_chat: true
   awareness_notifications: true
 Teleportation:
@@ -31,7 +28,6 @@ Protections:
   use_ping_protection: true
   use_teleport_protection: false
   avoid_self_bow_damage: true
-  prevent_same_chat_messages: false
   player_limit_per_ip: 3
   interactions_per_tick: 20
   disallowed_building: true
@@ -42,8 +38,7 @@ Important:
   check_server_compatibility_on_load: true
   server_version: Configure this if the plugin is unable to detect your server's version.
   vl_reset_time: 60
-  developer_api_events: false
-  periodically_refresh_configuration: false
+  cloud_feature: true
 Detections:
   allow_cancelled_hit_checking: false
   update_blocks_upon_teleport: false
