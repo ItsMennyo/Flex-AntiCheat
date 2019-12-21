@@ -8,14 +8,14 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 282                                                             | #
+# |   Version: 304                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.000 ALPHA                                               | #
-# |   Configuration ID: DHcOT5LCylPjM9UAsZSN                                   | #
+# |   Build: BUILD 2.0.208 BETA                                                | #
+# |   Configuration ID: 1c17yXpASkBPAwyuPgfy                                   | #
 # |   Overview: https://bit.ly/FlexOverview                                    | #
 # |   Latest Build: https://bit.ly/FlexSpartanLatestBuild                      | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
@@ -31,6 +31,9 @@ FastPlace:
 Exploits:
   check_ping_spoof: true
   check_undetected_movement: true
+FastHeal:
+  check_unusual: true
+  check_illegal: true
 FastBreak:
   cancel_seconds: 1
   check_surface_blocks: true
@@ -54,9 +57,10 @@ BoatMove:
   check_packets: true
   compatibility_protection: true
 HitReach:
-  horizontal_distance: 3.5
-  vertical_distance: 4.0
-  exempt_player_chasing: true
+  horizontal_distance: 3.0
+  vertical_distance: 3.5
+  exempt_player_chasing: false
+  account_speed_effect: false
 Speed:
   check_sneaking: true
   check_walking: true
