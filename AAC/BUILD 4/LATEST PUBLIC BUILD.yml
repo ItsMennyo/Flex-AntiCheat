@@ -14,8 +14,8 @@
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 4.0.578 STABLE                                              | #
-# |   Configuration ID: L4KzAPmpwIaCkse7SpWZ                                   | #
+# |   Build: BUILD 4.0.614 BETA                                                | #
+# |   Configuration ID: sIe5gQ7kAaXVVKMCHll5                                   | #
 # |   Overview: https://bit.ly/FlexOverview                                    | #
 # |   Latest Build: https://bit.ly/FlexAAC4Latest                              | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
@@ -287,9 +287,6 @@ move:
   #What's the maximum amount that a single violation should be able to add to a player's VL?
   #Default: 500
   max_vl_increment: 430
-  #Can AAC skip simulations in certain cases when an exact match is seen?
-  #Default: true
-  enable_skipping: false
   #How many simulations should AAC carry forward from the previous movement?
   #Default: 3
   simulation_limit: 3
@@ -318,6 +315,9 @@ move:
     #How much should AAC allow bubble columns to accelerate a player?
     #Default: 1.8
     bubble_column: 1.8
+    #How lenient should AAC be when a player is around boats?
+    #Default: 0.6
+    boat: 0.6
     #How much should a move violation of this type contribute to a player's overall VL?
     #Default: 1.0
     weight: 1.3
