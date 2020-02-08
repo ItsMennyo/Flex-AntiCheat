@@ -4,6 +4,7 @@ Punishments:
   wave_broadcast_message: true
   run_wave_if_its_full: false
   max_wave_size: 100
+  enable_raw_report_command: false
 Logs:
   log_console: false
   log_mysql: false
