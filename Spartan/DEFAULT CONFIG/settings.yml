@@ -5,14 +5,15 @@ Punishments:
   run_wave_if_its_full: false
   max_wave_size: 100
   enable_raw_report_command: false
+  enable_raw_ban_commands: false
 Logs:
   log_console: false
   log_mysql: false
   log_file: true
-  log_file_limit: 5000
+  log_file_limit: 3500
 Notifications:
   public_verbose: true
-  enable_verbose_notifications_on_login: false
+  enable_verbose_notifications_on_login: true
   output_silent_check_verbose: true
   enable_mining_notifications_on_login: false
   staff_chat: true
