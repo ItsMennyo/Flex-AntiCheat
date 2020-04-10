@@ -8,20 +8,20 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 304                                                             | #
+# |   Version: 341                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.208 BETA                                                | #
-# |   Configuration ID: 1c17yXpASkBPAwyuPgfy                                   | #
+# |   Build: BUILD 2.0.347 BETA                                                | #
+# |   Configuration ID: XBmYYxLPZZ3ru5CW8ybC                                   | #
 # |   Overview: https://bit.ly/FlexOverview                                    | #
 # |   Latest Build: https://bit.ly/FlexSpartanLatestBuild                      | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
 # |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
-# |   Copyright © 2017 - 2019 ItsMennyo Network | All Rights Reserved          | #
+# |   Copyright © 2017 - 2020 ItsMennyo Network | All Rights Reserved          | #
 # |                                                                            | #
 # +----------------------------------------------------------------------------+ #
 ##################################################################################
@@ -113,18 +113,18 @@ KillAura:
     players: true
     entities: true
   check_overall: true
-  check_accuracy: true
+  check_hit_accuracy: true
   check_angle: true
   check_block_raytrace: true
   check_combined: true
   check_direction: true
   check_entity_raytrace: true
   check_hits_per_second: true
-  check_hit_time: true
+  check_relative_aim: true
   check_impossible_hits: true
   check_item_usage: false
-  check_pitch_movement: true
-  check_yaw_movement: true
+  check_pitch: true
+  check_yaw: true
   check_rapid_hits: true
   check_rotations: true
   check_hitbox: true
@@ -134,7 +134,7 @@ KillAura:
   check_modulo: true
   check_stability: true
   check_precision: true
-  check_targeted_area: true
+  check_area: true
 GhostHand:
   check_block_breaking: true
   check_player_interactions: true
@@ -163,6 +163,11 @@ ElytraMove:
   check_ratio: true
   check_speed: true
   check_fly: true
+NoFall:
+  check_air: true
+  check_landing: true
+  check_pattern: true
+  check_ratio: true
 NoSlowdown:
   check_item_usage: true
   check_bow_shots: true
