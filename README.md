@@ -3,15 +3,14 @@
 Welcome to my project called Flex AntiCheat. In this project I optimize AntiCheats with more advanced configs.
 My goal with Flex is to give AntiCheats less false positives and even try to prevent bugs, bypasses or even better detection!
 
-Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and [Spartan](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) version available. Support for [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) is discontinued.
+Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and [Spartan](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) version available.
+Support for [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) is discontinued.
 
 ![Information](https://flex.itsmennyo.nl/images/flex-information.png)
 
 My config has some special features for every config and AntiCheat.
 
 The AAC (and AACAdditionPro) version has an improved config layout, better and easier to understand notes for the settings of every check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
-
-The AntiAura version has an improved config layout, better and easier to understand notes for the settings of every check, a lot of language errors fixed and not to forget, optimized config values.
 
 The Spartan version has an improved config layout, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
 
