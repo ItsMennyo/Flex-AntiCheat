@@ -3,7 +3,7 @@
 Welcome to my project called Flex AntiCheat. In this project I optimize AntiCheats with more advanced configs.
 My goal with Flex is to give AntiCheats less false positives and even try to prevent bugs, bypasses or even better detection!
 
-Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC), [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro), [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) and [Spartan](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) version available.
+Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and [Spartan](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) version available. Support for [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) is discontinued.
 
 ![Information](https://flex.itsmennyo.nl/images/flex-information.png)
 
