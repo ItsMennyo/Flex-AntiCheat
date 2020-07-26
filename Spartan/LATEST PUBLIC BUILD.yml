@@ -8,16 +8,16 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 341                                                             | #
+# |   Version: 358                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.347 BETA                                                | #
-# |   Configuration ID: XBmYYxLPZZ3ru5CW8ybC                                   | #
-# |   Overview: https://bit.ly/FlexOverview                                    | #
-# |   Latest Build: https://bit.ly/FlexSpartanLatestBuild                      | #
+# |   Build: BUILD 2.0.487 BETA                                                | #
+# |   Configuration ID: p7gUS2Sq3B6OiQb0LgJu                                   | #
+# |   Overview: https://bit.ly/FlexNewOverview                                 | #
+# |   Latest Build: https://bit.ly/FlexSpartanBuildLatest                      | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
 # |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
@@ -36,16 +36,6 @@ XRay:
     '2':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
     '3':
-      '1': spartan kick {player} {detection}
-
-CombatAnalysis:
-  enabled: true
-  name: CombatAnalysis
-  violation_divisor: 1
-  disabled_worlds: ''
-  silent_worlds: ''
-  punishments:
-    '1':
       '1': spartan kick {player} {detection}
 
 Exploits:
