@@ -77,12 +77,13 @@ ImpossibleInventory:
   check_dead: true
   check_sprint_jumping: true
   check_walk_jumping: true
+  check_jumping: true
 Sprint:
   check_food_sprinting: true
   check_omnidirectional_sprinting: true
 KillAura:
   detection:
-    players: true
+    gameplay: true
     entities: true
   check_overall: true
   check_hit_accuracy: true
@@ -114,7 +115,6 @@ IrregularMovements:
   check_step_hacking: true
   check_bouncing_blocks: true
   check_block_climbing: true
-  check_hop_movement: true
   check_jump_movement: true
 Jesus:
   check_speed: true
@@ -141,10 +141,12 @@ NoFall:
   check_pattern: true
   check_ratio: true
 NoSlowdown:
+  check_packets: true
   check_item_usage: true
   check_bow_shots: true
   check_food_eating: true
   check_cobweb_movement: true
+  check_potion: true
 MorePackets:
   check_blink: true
   check_overall: true
