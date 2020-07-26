@@ -8,16 +8,16 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 341                                                             | #
+# |   Version: 358                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.347 BETA                                                | #
-# |   Configuration ID: XBmYYxLPZZ3ru5CW8ybC                                   | #
-# |   Overview: https://bit.ly/FlexOverview                                    | #
-# |   Latest Build: https://bit.ly/FlexSpartanLatestBuild                      | #
+# |   Build: BUILD 2.0.487 BETA                                                | #
+# |   Configuration ID: p7gUS2Sq3B6OiQb0LgJu                                   | #
+# |   Overview: https://bit.ly/FlexNewOverview                                 | #
+# |   Latest Build: https://bit.ly/FlexSpartanBuildLatest                      | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
 # |   Discord Server: https://bit.ly/FlexDiscord                               | #
 # |                                                                            | #
@@ -105,12 +105,13 @@ ImpossibleInventory:
   check_dead: true
   check_sprint_jumping: true
   check_walk_jumping: true
+  check_jumping: true
 Sprint:
   check_food_sprinting: true
   check_omnidirectional_sprinting: true
 KillAura:
   detection:
-    players: true
+    gameplay: true
     entities: true
   check_overall: true
   check_hit_accuracy: true
@@ -142,7 +143,6 @@ IrregularMovements:
   check_step_hacking: true
   check_bouncing_blocks: true
   check_block_climbing: true
-  check_hop_movement: true
   check_jump_movement: true
 Jesus:
   check_speed: true
@@ -169,10 +169,12 @@ NoFall:
   check_pattern: true
   check_ratio: true
 NoSlowdown:
+  check_packets: true
   check_item_usage: true
   check_bow_shots: true
   check_food_eating: true
   check_cobweb_movement: true
+  check_potion: true
 MorePackets:
   check_blink: true
   check_overall: true
