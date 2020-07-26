@@ -5,16 +5,6 @@ XRay:
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
-    '2':
-      '1': spartan warn {player} You were detected for {detection}
-      '2': spartan kick {player} {detection}
-CombatAnalysis:
-  enabled: true
-  name: CombatAnalysis
-  violation_divisor: 1
-  disabled_worlds: ''
-  silent_worlds: ''
-  punishments:
     '1':
       '1': spartan warn {player} You were detected for {detection}
       '2': spartan kick {player} {detection}
