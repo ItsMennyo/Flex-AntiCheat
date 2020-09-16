@@ -8,14 +8,14 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 358                                                             | #
+# |   Version: 364                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.487 BETA                                                | #
-# |   Configuration ID: p7gUS2Sq3B6OiQb0LgJu                                   | #
+# |   Build: BUILD 2.0.534 BETA                                                | #
+# |   Configuration ID: ibDijy5GvFOf63ZO3FYL                                   | #
 # |   Overview: https://bit.ly/FlexNewOverview                                 | #
 # |   Latest Build: https://bit.ly/FlexSpartanBuildLatest                      | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
@@ -29,7 +29,6 @@
 XRay:
   enabled: true
   name: XRay
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
@@ -41,11 +40,9 @@ XRay:
 Exploits:
   enabled: true
   name: Exploits
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '5':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -57,11 +54,9 @@ Exploits:
 EntityMove:
   enabled: true
   name: EntityMove
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '6':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -71,11 +66,9 @@ EntityMove:
 NoSwing:
   enabled: true
   name: NoSwing
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '5':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -85,11 +78,9 @@ NoSwing:
 IrregularMovements:
   enabled: true
   name: IrregularMovements
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '7':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -101,11 +92,9 @@ IrregularMovements:
 Clip:
   enabled: true
   name: Clip
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
   punishments:
     '4':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -115,11 +104,9 @@ Clip:
 ImpossibleActions:
   enabled: true
   name: ImpossibleActions
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -131,11 +118,9 @@ ImpossibleActions:
 ItemDrops:
   enabled: true
   name: ItemDrops
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '2':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -145,7 +130,6 @@ ItemDrops:
 AutoRespawn:
   enabled: true
   name: AutoRespawn
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
@@ -155,11 +139,9 @@ AutoRespawn:
 InventoryClicks:
   enabled: true
   name: InventoryClicks
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '2':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -171,11 +153,9 @@ InventoryClicks:
 Sprint:
   enabled: true
   name: Sprint
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '5':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -187,11 +167,9 @@ Sprint:
 Jesus:
   enabled: true
   name: Jesus
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '6':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -203,11 +181,9 @@ Jesus:
 NoSlowdown:
   enabled: true
   name: NoSlowdown
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '5':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -217,11 +193,9 @@ NoSlowdown:
 Criticals:
   enabled: true
   name: Criticals
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -231,11 +205,9 @@ Criticals:
 Nuker:
   enabled: true
   name: Nuker
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -245,11 +217,9 @@ Nuker:
 GhostHand:
   enabled: true
   name: GhostHand
-  violation_divisor: 5
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 3
   punishments:
     '15':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -261,11 +231,9 @@ GhostHand:
 Liquids:
   enabled: true
   name: Liquids
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '2':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -275,11 +243,9 @@ Liquids:
 BlockReach:
   enabled: true
   name: BlockReach
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '4':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -289,27 +255,23 @@ BlockReach:
 ElytraMove:
   enabled: true
   name: ElytraMove
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
-  silent: false
-  cancel_after_violation: 2
+  silent: true
   punishments:
-    '7':
+    '9':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
-    '10':
-      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
     '12':
+      '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
+    '14':
       '1': spartan kick {player} {detection}
 
 BoatMove:
   enabled: true
   name: BoatMove
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 3
   punishments:
     '7':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -321,11 +283,9 @@ BoatMove:
 FastBow:
   enabled: true
   name: FastBow
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -335,7 +295,6 @@ FastBow:
 FastClicks:
   enabled: true
   name: FastClicks
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
@@ -347,11 +306,9 @@ FastClicks:
 FastHeal:
   enabled: true
   name: FastHeal
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -361,11 +318,9 @@ FastHeal:
 Fly:
   enabled: true
   name: Fly
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 3
   punishments:
     '7':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -379,11 +334,9 @@ Fly:
 ImpossibleInventory:
   enabled: true
   name: ImpossibleInventory
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
   punishments:
     '4':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -395,11 +348,9 @@ ImpossibleInventory:
 HitReach:
   enabled: true
   name: HitReach
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '4':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -409,11 +360,9 @@ HitReach:
 FastBreak:
   enabled: true
   name: FastBreak
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -423,11 +372,9 @@ FastBreak:
 Speed:
   enabled: true
   name: Speed
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 2
   punishments:
     '5':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -441,11 +388,9 @@ Speed:
 FastPlace:
   enabled: true
   name: FastPlace
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -455,11 +400,9 @@ FastPlace:
 MorePackets:
   enabled: true
   name: MorePackets
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 3
   punishments:
     '7':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -471,11 +414,9 @@ MorePackets:
 NoFall:
   enabled: true
   name: NoFall
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '4':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -485,11 +426,9 @@ NoFall:
 IllegalPosition:
   enabled: true
   name: IllegalPosition
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 0
   punishments:
     '2':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -499,11 +438,9 @@ IllegalPosition:
 FastEat:
   enabled: true
   name: FastEat
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
   punishments:
     '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -515,11 +452,9 @@ FastEat:
 Velocity:
   enabled: true
   name: Velocity
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
   punishments:
     '4':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
@@ -529,15 +464,13 @@ Velocity:
 KillAura:
   enabled: true
   name: KillAura
-  violation_divisor: 1
   disabled_worlds: ''
   silent_worlds: ''
   silent: false
-  cancel_after_violation: 1
   punishments:
-    '4':
+    '3':
       '1': spartan {player} if {ping} is-greater-than 1000 do spartan {player} if {tps} is-greater-than 19.0 do spartan {player} if {time-online} is-greater-than 5 do spartan kick {player} Internet/Server Issues?
-    '6':
+    '5':
       '1': spartan {player} if {ping} is-less-than 50 do spartan {player} if {tps} is-greater-than 19.5 do spartan kick {player} {detection}
-    '7':
+    '6':
       '1': spartan kick {player} {detection}
