@@ -8,14 +8,14 @@
 # |                                                                            | #
 # |   Plugin Info:                                                             | #
 # |   AntiCheat: Spartan                                                       | #
-# |   Version: 358                                                             | #
+# |   Version: 364                                                             | #
 # |   Developer: Vagdedes.66556                                                | #
 # |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
 # |                                                                            | #
 # |   Config Info:                                                             | #
 # |   Configurator: ItsMennyo.305436                                           | #
-# |   Build: BUILD 2.0.487 BETA                                                | #
-# |   Configuration ID: p7gUS2Sq3B6OiQb0LgJu                                   | #
+# |   Build: BUILD 2.0.534 BETA                                                | #
+# |   Configuration ID: ibDijy5GvFOf63ZO3FYL                                   | #
 # |   Overview: https://bit.ly/FlexNewOverview                                 | #
 # |   Latest Build: https://bit.ly/FlexSpartanBuildLatest                      | #
 # |   GitHub Reports: https://bit.ly/FlexReports                               | #
@@ -58,12 +58,13 @@ BoatMove:
   compatibility_protection: true
 HitReach:
   horizontal_distance: 3.0
-  vertical_distance: 3.5
+  vertical_distance: 3.3
   exempt_player_chasing: false
   account_speed_effect: false
 Speed:
   check_sneaking: true
   check_walking: true
+  minimum_limit_in_blocks: 0.0
 Velocity:
   check_distance: true
   check_vertical: true
@@ -87,7 +88,6 @@ ImpossibleActions:
   cancel_seconds: 1
 Nuker:
   check_delay: true
-  check_breaks_per_sec: true
   check_moves_in_between: true
   max_breaks_per_second: 40
   cancel_seconds: 2
@@ -100,8 +100,8 @@ NoSwing:
 ImpossibleInventory:
   check_sneaking: false
   check_sprinting: false
-  check_sleeping: true
   check_walking: false
+  check_sleeping: true
   check_dead: true
   check_sprint_jumping: true
   check_walk_jumping: true
@@ -111,7 +111,7 @@ Sprint:
   check_omnidirectional_sprinting: true
 KillAura:
   detection:
-    gameplay: true
+    players: true
     entities: true
   check_overall: true
   check_hit_accuracy: true
@@ -136,6 +136,7 @@ KillAura:
   check_stability: true
   check_precision: true
   check_area: true
+  aimbot_max_distance: 9.0
 GhostHand:
   check_block_breaking: true
   check_player_interactions: true
@@ -143,6 +144,7 @@ IrregularMovements:
   check_step_hacking: true
   check_bouncing_blocks: true
   check_block_climbing: true
+  check_hop_movement: true
   check_jump_movement: true
 Jesus:
   check_speed: true
@@ -153,6 +155,7 @@ Jesus:
   check_upwards_movement: false
   check_liquid_exit: true
   check_y_position: true
+  minimum_limit_in_blocks: 0.0
 Liquids:
   check_block_breaking: true
   check_block_placing: true
@@ -180,4 +183,4 @@ MorePackets:
   check_overall: true
   check_difference: true
   check_delay: true
-  check_instant: true
+  check_instant: false
