@@ -4,9 +4,10 @@ XRay:
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
-    '1':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Exploits:
   enabled: true
@@ -15,10 +16,10 @@ Exploits:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
-        spartan kick {player} {detection}
+    certain:
+      '1': spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
 EntityMove:
   enabled: true
   name: EntityMove
@@ -26,9 +27,10 @@ EntityMove:
   silent_worlds: ''
   silent: false
   punishments:
-    '8':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 NoSwing:
   enabled: true
@@ -37,9 +39,10 @@ NoSwing:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 IrregularMovements:
   enabled: true
@@ -48,9 +51,10 @@ IrregularMovements:
   silent_worlds: ''
   silent: false
   punishments:
-    '9':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Clip:
   enabled: true
@@ -59,9 +63,10 @@ Clip:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 ImpossibleActions:
   enabled: true
@@ -70,9 +75,10 @@ ImpossibleActions:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 ItemDrops:
   enabled: true
@@ -81,9 +87,10 @@ ItemDrops:
   silent_worlds: ''
   silent: false
   punishments:
-    '3':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 AutoRespawn:
   enabled: true
@@ -91,9 +98,10 @@ AutoRespawn:
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
-    '1':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 InventoryClicks:
   enabled: true
@@ -102,9 +110,10 @@ InventoryClicks:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Sprint:
   enabled: true
@@ -113,9 +122,10 @@ Sprint:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Jesus:
   enabled: true
@@ -124,9 +134,10 @@ Jesus:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 NoSlowdown:
   enabled: true
@@ -135,9 +146,10 @@ NoSlowdown:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Criticals:
   enabled: true
@@ -146,9 +158,10 @@ Criticals:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Nuker:
   enabled: true
@@ -157,9 +170,10 @@ Nuker:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 GhostHand:
   enabled: true
@@ -174,9 +188,10 @@ Liquids:
   silent_worlds: ''
   silent: false
   punishments:
-    '3':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 BlockReach:
   enabled: true
@@ -185,9 +200,10 @@ BlockReach:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 ElytraMove:
   enabled: true
@@ -196,9 +212,10 @@ ElytraMove:
   silent_worlds: ''
   silent: true
   punishments:
-    '12':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 BoatMove:
   enabled: true
@@ -207,9 +224,10 @@ BoatMove:
   silent_worlds: ''
   silent: false
   punishments:
-    '10':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 FastBow:
   enabled: true
@@ -218,9 +236,10 @@ FastBow:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 FastClicks:
   enabled: true
@@ -228,9 +247,10 @@ FastClicks:
   disabled_worlds: ''
   silent_worlds: ''
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 FastHeal:
   enabled: true
@@ -239,9 +259,10 @@ FastHeal:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Fly:
   enabled: true
@@ -250,9 +271,10 @@ Fly:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 ImpossibleInventory:
   enabled: true
@@ -261,9 +283,10 @@ ImpossibleInventory:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 HitReach:
   enabled: true
@@ -272,9 +295,10 @@ HitReach:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 FastBreak:
   enabled: true
@@ -283,9 +307,10 @@ FastBreak:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Speed:
   enabled: true
@@ -294,9 +319,10 @@ Speed:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 FastPlace:
   enabled: true
@@ -305,9 +331,10 @@ FastPlace:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 MorePackets:
   enabled: true
@@ -316,9 +343,10 @@ MorePackets:
   silent_worlds: ''
   silent: false
   punishments:
-    '10':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 NoFall:
   enabled: true
@@ -327,9 +355,10 @@ NoFall:
   silent_worlds: ''
   silent: false
   punishments:
-    '6':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 IllegalPosition:
   enabled: true
@@ -338,9 +367,10 @@ IllegalPosition:
   silent_worlds: ''
   silent: false
   punishments:
-    '3':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 FastEat:
   enabled: true
@@ -349,9 +379,10 @@ FastEat:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 Velocity:
   enabled: true
@@ -360,9 +391,10 @@ Velocity:
   silent_worlds: ''
   silent: false
   punishments:
-    '5':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
 KillAura:
   enabled: true
@@ -371,7 +403,8 @@ KillAura:
   silent_worlds: ''
   silent: false
   punishments:
-    '4':
+    potential:
       '1': spartan warn {player} You were detected for {detection}
-      '2': spartan {player} if {ping} < 200 do spartan {player} if {tps} > 18.0 do
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do
         spartan kick {player} {detection}
