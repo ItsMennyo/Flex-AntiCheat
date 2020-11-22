@@ -1,5 +1,7 @@
 FastPlace:
   cancel_seconds: 1
+Velocity:
+  check_zero_distance: true
 Exploits:
   check_ping_spoof: true
   check_undetected_movement: true
@@ -22,14 +24,14 @@ Criticals:
   check_location: true
   check_position: true
   check_mini_jump: true
+  check_damage: true
 BoatMove:
   check_horizontal: true
   check_vertical: true
   check_stable: true
-  check_packets: true
-  compatibility_protection: true
+  compatibility_protection: false
 HitReach:
-  horizontal_distance: 3.3
+  horizontal_distance: 3.25
   vertical_distance: 4.0
   exempt_player_chasing: true
   account_speed_effect: false
@@ -37,17 +39,8 @@ Speed:
   check_sneaking: true
   check_walking: true
   minimum_limit_in_blocks: 0.0
-Velocity:
-  check_distance: true
-  check_vertical: true
-  check_horizontal: true
-  check_combined: true
-  check_extreme: true
-  check_opposite: true
-  check_direction: true
 FastClicks:
   cps_limit: 15
-  check_cps: true
   check_click_time: true
   check_click_consistency: true
   combat_only_mode: false
@@ -150,9 +143,3 @@ NoSlowdown:
   check_food_eating: true
   check_cobweb_movement: true
   check_potion: true
-MorePackets:
-  check_blink: true
-  check_overall: true
-  check_difference: true
-  check_delay: true
-  check_instant: false
