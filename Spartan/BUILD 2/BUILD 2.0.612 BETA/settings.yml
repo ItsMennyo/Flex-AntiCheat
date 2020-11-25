@@ -1,0 +1,86 @@
+##################################################################################
+# +----------------------------------------------------------------------------+ #
+# |                                                                            | #
+# |   █▀▀▀ █    █▀▀▀ ▀▄ ▄▀    █▀▀█ █▄  █ ▀▀█▀▀ ▀█▀ █▀▀█ █  █ █▀▀▀ █▀▀█ ▀▀█▀▀   | #
+# |   █▀▀▀ █    █▀▀▀   █      █▄▄█ █ █ █   █    █  █    █▀▀█ █▀▀▀ █▄▄█   █     | #
+# |   █    █▄▄█ █▄▄▄ ▄▀ ▀▄    █  █ █  ▀█   █   ▄█▄ █▄▄█ █  █ █▄▄▄ █  █   █     | #
+# |                                                                            | #
+# |                                                                            | #
+# |   Plugin Info:                                                             | #
+# |   AntiCheat: Spartan                                                       | #
+# |   Version: 376                                                             | #
+# |   Developer: Vagdedes.66556                                                | #
+# |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
+# |                                                                            | #
+# |   Config Info:                                                             | #
+# |   Configurator: ItsMennyo.305436                                           | #
+# |   Build: BUILD 2.0.612 BETA                                                | #
+# |   Configuration ID: IUPeokjAX7COJJT7k967                                   | #
+# |   Overview: https://bit.ly/FlexNewOverview                                 | #
+# |   Latest Build: https://bit.ly/FlexSpartanBuildLatest                      | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
+# |                                                                            | #
+# |   Copyright © 2017 - 2020 ItsMennyo Network | All Rights Reserved          | #
+# |                                                                            | #
+# +----------------------------------------------------------------------------+ #
+##################################################################################
+
+Punishments:
+  broadcast_on_kick: true
+  broadcast_on_ban: false
+  wave_broadcast_message: false
+  run_wave_if_its_full: false
+  max_wave_size: 100
+  enable_raw_report_command: false
+  enable_raw_ban_commands: false
+Logs:
+  log_console: true
+  log_sql: false
+  log_file: true
+  log_file_limit: 3500
+Notifications:
+  cross_server_notifications: specify server name
+  awareness_notifications: true
+  individual_only_verbose_notifications: false
+  enable_verbose_notifications_on_login: true
+  enable_mining_notifications_on_login: false
+  output_silent_check_verbose: true
+  output_uncertain_check_verbose: true
+Teleportation:
+  ground_teleport_on_detection: true
+  fall_damage_on_teleport: false
+Chat:
+  message_cooldown: 0
+  command_cooldown: 0
+  prevent_same_message: false
+  blocked_words: blockedWord1, blockedWord2
+  blocked_commands: blockedCommand1, blockedCommand2
+  staff_chat_character: '@'
+Protections:
+  explosion_detection_cooldown: 4
+  reconnect_cooldown: 0
+  use_tps_protection: true
+  use_ping_protection: true
+  use_teleport_protection: false
+  avoid_self_bow_damage: true
+  player_limit_per_ip: 0
+  interactions_per_tick: 20
+  disallowed_building: true
+  custom_knockback: false
+  limit_server_flying: false
+Important:
+  op_bypass: false
+  enable_permissions: true
+  use_permission_cache: false
+  server_version: Configure this if the plugin is unable to detect your server's version.
+  violations_reset_seconds: 60
+  violations_reset_on_kick: true
+  cloud_feature: true
+Detections:
+  allow_cancelled_hit_checking: false
+  update_blocks_upon_violation: false
+  ignore_shields: false
+Performance:
+  enable_performance_optimizer: true
+  enable_false_positive_detection: true
