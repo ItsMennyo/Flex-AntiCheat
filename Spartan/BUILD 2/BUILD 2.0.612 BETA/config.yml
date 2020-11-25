@@ -1,0 +1,439 @@
+##################################################################################
+# +----------------------------------------------------------------------------+ #
+# |                                                                            | #
+# |   █▀▀▀ █    █▀▀▀ ▀▄ ▄▀    █▀▀█ █▄  █ ▀▀█▀▀ ▀█▀ █▀▀█ █  █ █▀▀▀ █▀▀█ ▀▀█▀▀   | #
+# |   █▀▀▀ █    █▀▀▀   █      █▄▄█ █ █ █   █    █  █    █▀▀█ █▀▀▀ █▄▄█   █     | #
+# |   █    █▄▄█ █▄▄▄ ▄▀ ▀▄    █  █ █  ▀█   █   ▄█▄ █▄▄█ █  █ █▄▄▄ █  █   █     | #
+# |                                                                            | #
+# |                                                                            | #
+# |   Plugin Info:                                                             | #
+# |   AntiCheat: Spartan                                                       | #
+# |   Version: 376                                                             | #
+# |   Developer: Vagdedes.66556                                                | #
+# |   Spigot Page: https://bit.ly/FlexSpartanSpigot                            | #
+# |                                                                            | #
+# |   Config Info:                                                             | #
+# |   Configurator: ItsMennyo.305436                                           | #
+# |   Build: BUILD 2.0.612 BETA                                                | #
+# |   Configuration ID: IUPeokjAX7COJJT7k967                                   | #
+# |   Overview: https://bit.ly/FlexNewOverview                                 | #
+# |   Latest Build: https://bit.ly/FlexSpartanBuildLatest                      | #
+# |   GitHub Reports: https://bit.ly/FlexReports                               | #
+# |   Discord Server: https://bit.ly/FlexDiscord                               | #
+# |                                                                            | #
+# |   Copyright © 2017 - 2020 ItsMennyo Network | All Rights Reserved          | #
+# |                                                                            | #
+# +----------------------------------------------------------------------------+ #
+##################################################################################
+
+XRay:
+  enabled: true
+  name: XRay
+  disabled_worlds: ''
+  silent_worlds: ''
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Exploits:
+  enabled: true
+  name: Exploits
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+EntityMove:
+  enabled: true
+  name: EntityMove
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+      
+NoSwing:
+  enabled: true
+  name: NoSwing
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+IrregularMovements:
+  enabled: true
+  name: IrregularMovements
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Clip:
+  enabled: true
+  name: Clip
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+ImpossibleActions:
+  enabled: true
+  name: ImpossibleActions
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+ItemDrops:
+  enabled: true
+  name: ItemDrops
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+AutoRespawn:
+  enabled: true
+  name: AutoRespawn
+  disabled_worlds: ''
+  silent_worlds: ''
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+InventoryClicks:
+  enabled: true
+  name: InventoryClicks
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Sprint:
+  enabled: true
+  name: Sprint
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Jesus:
+  enabled: true
+  name: Jesus
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+NoSlowdown:
+  enabled: true
+  name: NoSlowdown
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Criticals:
+  enabled: true
+  name: Criticals
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Nuker:
+  enabled: true
+  name: Nuker
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+GhostHand:
+  enabled: true
+  name: GhostHand
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+
+Liquids:
+  enabled: true
+  name: Liquids
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+BlockReach:
+  enabled: true
+  name: BlockReach
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+ElytraMove:
+  enabled: true
+  name: ElytraMove
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: true
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+BoatMove:
+  enabled: true
+  name: BoatMove
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+FastBow:
+  enabled: true
+  name: FastBow
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+FastClicks:
+  enabled: true
+  name: FastClicks
+  disabled_worlds: ''
+  silent_worlds: ''
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+FastHeal:
+  enabled: true
+  name: FastHeal
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Fly:
+  enabled: true
+  name: Fly
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+ImpossibleInventory:
+  enabled: true
+  name: ImpossibleInventory
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+HitReach:
+  enabled: true
+  name: HitReach
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+FastBreak:
+  enabled: true
+  name: FastBreak
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Speed:
+  enabled: true
+  name: Speed
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+FastPlace:
+  enabled: true
+  name: FastPlace
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+MorePackets:
+  enabled: true
+  name: MorePackets
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+NoFall:
+  enabled: true
+  name: NoFall
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+IllegalPosition:
+  enabled: true
+  name: IllegalPosition
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+FastEat:
+  enabled: true
+  name: FastEat
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+Velocity:
+  enabled: true
+  name: Velocity
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
+
+KillAura:
+  enabled: true
+  name: KillAura
+  disabled_worlds: ''
+  silent_worlds: ''
+  silent: false
+  punishments:
+    potential:
+      '1': spartan warn {player} You were detected for {detection}
+    certain:
+      '1': spartan {player} if {ping} < 250 do spartan {player} if {tps} > 18.0 do spartan kick {player} {detection}
