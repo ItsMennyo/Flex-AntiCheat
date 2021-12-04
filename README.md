@@ -1,48 +1,7 @@
 ![Flex-AntiCheat](https://flex.itsmennyo.nl/images/flex-anticheat.png)
 
-Welcome to my project called Flex AntiCheat. In this project I optimize AntiCheats with more advanced configs.
-My goal with Flex is to give AntiCheats less false positives and even try to prevent bugs, bypasses or even better detection!
+The Story Behind This Decision
 
-Currently there is an [AAC](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AAC) and [Spartan](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/Spartan) version available. Support for [AACAdditionPro](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AACAdditionPro) and [AntiAura](https://github.com/ItsMennyo/Flex-AntiCheat/tree/master/AntiAura) is discontinued.
+Hello everyone. First thing, a happy late new year, best wishes from me. I want to have a serious conversation with you about me, it's quite silent from my side lately and that has to do with a few things. I started with a new education that is way more difficult then I was hoping so I have to spend so much time into it then I was hoping so. Second thing, almost 1 month ago I had a car accident where I slipped out of a curve when it was slippery and I written off the complete front of the car but my car was my everything... I still have it difficult with that but the good news is I don't have any injuries, the other occupant have no injuries and the car will be fixed again but I have to fix a lot of stuff myself and that also ask a lot of time from me. Third thing, I have a new girlfriend and im really happy with her in my life, i've never felt this good with a person in my life and I don't want to lose her at all. But a small week ago I was on the point of a sort of mental breakdown, I had so much stuff in my head flying around that I have to do, I have to finish and not to forget that I said I have to do something about it before it goes to far. So I come to the following decision... I will discontinue Flex completely. I always did it for free with my free spare time. I did it with a lot of fun but now I don't have high priorities for it anymore so I have to let this fall right now and I will never continue with it anymore. Sorry that it has to go like this but always listen to yourself, that's the important thing in life to get a good and successful life and that's what I want to do right now. If anyone have questions for me please don't hesitate and ask them on Discord and I will answer them. Thanks everyone for the good 4 years this project lasted and a special thanks to everyone that contributed into this project! Love you all!
 
-![Information](https://flex.itsmennyo.nl/images/flex-information.png)
-
-My config has some special features for every config and AntiCheat.
-
-The AAC version has an improved config layout, better and easier to understand notes for the settings of every check, a lot of language errors fixed, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
-
-The Spartan version has an improved config layout, ConditionalCommands support for TPS, Ping, uptime, playtime and false kicks protection and not to forget, optimized config values.
-
-![Installation](https://flex.itsmennyo.nl/images/flex-installation.png)
-
-There are a number of things required to use Flex as an AntiCheat on your server. If you do not stick to this, Flex will not work correctly and the consequences may be, hackers that bypass the checks or false positives.
-
-If you want to use AAC as AntiCheat, you have to keep to the following:
-
-1. The server must be in good condition to keep the TPS high. The minimum to avoid the false positives must always be higher than 19 (19.5 and higher is the best). When the TPS falls below 19.5, the detection will go slower to prevent further false positives.
-
-2. Buy AAC [HERE](https://bit.ly/FlexAACSpigot).
-
-3. (Recommended) Download ConditionalCommands [HERE](https://bit.ly/FlexConditionalCommands).
-
-4. Copy the latest Flex build for AAC [HERE](https://bit.ly/FlexAAC4Latest) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
-
-5. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://bit.ly/FlexReports) or use Discord [HERE](https://bit.ly/FlexDiscord).
-
-If you want to use Spartan as AntiCheat, you have to keep to the following:
-
-1. The server must be in good condition to keep the TPS high. The minimum to avoid the false positives must always be higher than 19 (19.5 and higher is the best). When the TPS falls below 19.5, the detection will go slower to prevent further false positives.
-
-2. Buy Spartan [HERE](https://bit.ly/FlexSpartanSpigot).
-
-3. (Recommended) Download ConditionalCommands [HERE](https://bit.ly/FlexConditionalCommands).
-
-4. Copy the latest Flex build for Spartan [HERE](https://bit.ly/FlexSpartanBuildLatest) into the existing config of the AntiCheat. Also look at the spacing before run the config or you will get a error.
-
-5. Always check the config before you use it on your server. Sometimes you do not want to use certain checks or things that have to do with ping or TPS detection. If you need further assistance you can always make a report [HERE](https://bit.ly/FlexReports) or use Discord [HERE](https://bit.ly/FlexDiscord).
-
-Support for AACAdditionPro and AntiAura is discontinued and no support will given.
-
-![Support](https://flex.itsmennyo.nl/images/flex-support.png)
-
-Helping me with reporting false positives, bugs or bypasses is awesome but understand this. This is a config and a config cant fix everything. Most of the time when you found a false positive has noting to do with my Flex config. So before you report a issue, try it with the default config. If you dont have the false positive, bug or bypass with the default config but only with my Flex config then you can report it [HERE](https://bit.ly/FlexReports) or use Discord [HERE](https://bit.ly/FlexDiscord).
+Message posted in the Flex Discord server at 13-01-2020
